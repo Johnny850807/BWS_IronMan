@@ -11,7 +11,7 @@
 Requests two web views
 ### waiting for rooms view
 
-	1. present rooms created by someone.
+	1. present all rooms created by someone.
     2. there should be an input box for the user naming himself , if the user did not name himself , he will be anonymous at the room.
     3. and the user can join every room by clicking it.
     4. the user can also create a room by himself with required both room name and topic , he will join his own room when finished sending the creation request.
