@@ -8,7 +8,7 @@
 
 ## Requirements Analyze
 
-Requests two web view
+Requests two web views
 ### waiting for rooms view
 
 	1. present rooms created by someone.
