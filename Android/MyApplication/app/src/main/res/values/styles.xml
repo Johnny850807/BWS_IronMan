@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="myEditTextStyle">
+        <item name="android:layout_width">@dimen/input_edit_width</item>
+        <item name="android:layout_height">@dimen/input_edit_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/my_edittext</item>
+        <item name="android:textColorHint">#0650cf</item>
+    </style>
 </resources>
