@@ -8,7 +8,22 @@
 
 ## Requirements Analyze
 
-需要兩個 Webview
+# Android 前端 Two Activities
+
+### 歡迎登入頁面
+
+	1. 顯示歡迎訊息
+    2. 給使用者輸入帳號與密碼 以及登入按鈕
+    1. 如果輸入錯誤，顯示快顯訊息。
+    4. 可以使用匿名登入 (使用者會顯示為匿名，而且不能存取聊天紀錄)
+    
+### 註冊帳密頁面
+
+	1. 有輸入暱稱、帳號、密碼的三個欄位。
+    2. 確認帳號暱稱無誤無重複之後提交並註冊，否則顯示錯誤訊息，註冊後進入到**等候房間列表**畫面。
+
+## 兩個 Webview 
+
 ### 等候房間列表
 
 	1. 顯示所有已被建立的房間。
@@ -21,21 +36,3 @@
 	1. 房間主人可以點選按鈕 "Leave" 離開並關閉聊天室。
     2. 使用者可以打字、傳送訊息以及接收聊天訊息。
     3. 每當有使用者離開，要顯示訊息通知大家。
-
-
-
-
-
-Requests two web views
-### waiting for rooms view
-
-	1. present all rooms created by someone.
-    2. there should be an input box for the user naming himself , if the user did not name himself , he will be anonymous at the room.
-    3. and the user can join every room by clicking it.
-    4. the user can also create a room by himself with required both room name and topic , he will join his own room when finished sending the creation request.
-    
-### inside room view
-
-	1. the room owner can remove the room by clicking the button with a text "Leave".
-    2. users can text , send and receive messages for chatting.
-    3. users can leave , show a message whenever somebody left.
