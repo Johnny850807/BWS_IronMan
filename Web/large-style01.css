@@ -1,0 +1,23 @@
+body	{	
+			margin: 24px 10px;
+			padding: 5px;
+			height: 160%;
+			border: 1px solid pink;
+			background-image:url('http://img.sccnn.com/bimg/338/21525.jpg')
+		}
+		
+#headering img{
+			height: 30%;
+			width: 50%;
+			float:left;
+		}
+
+#headering1 img{
+			height: 30%;
+			width: 50%;
+			float:right;
+		}
+		
+h1		{
+			color: #007500;
+		}
