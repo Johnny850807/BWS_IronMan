@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_chat_room_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/main_background"
+    tools:context="com.ood.waterball.webchattingroom.ChatRoomPage">
+
+    <!--歡迎-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/welcomeTxt_chatroom" />
+
+    <!--廣告文字-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeTxt_chatroom"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginTop="25dp"
+        android:id="@+id/announceTxt_chatroom"
+        android:text="Test for announcing ,
+         Test for announcing !"/>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:id="@+id/charWebView_chatroom"
+        android:layout_below="@id/announceTxt_chatroom">
+    </WebView>
+
+</RelativeLayout>
