@@ -1,56 +1,46 @@
 package com.ood.waterball.webchattingroom;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
-import android.widget.TextView;
+import android.webkit.WebViewClient;
 
 public class ChatRoomPage extends AppCompatActivity {
-    private TextView announceTxt , welcomeTxt;
     private WebView chatWebView;  //聊天室web前端
-    private final String chatroomURL = "http://waterball.lionfree.net/%E8%81%8A%E5%A4%A9%E5%AE%A4%E5%A4%A7%E5%BB%B3.html";
+    private final String chatroomURL = "http://waterball.lionfree.net/waterball.lionfree.net/johnny850807/homepage.html";
 
-    private void processViews(){
-        announceTxt = (TextView) findViewById(R.id.announceTxt_chatroom);
-        welcomeTxt = (TextView) findViewById(R.id.welcomeTxt_chatroom);
-        chatWebView = (WebView) findViewById(R.id.charWebView_chatroom);
-    }
 
-    private void processController(){
-        autoLoginHandle();
-        setWelcomeTexts();
-        setWebPage();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_room_page);
-        processViews();
-        processController();
+        webviewSetting();
+        loadWebPageFromServer();
+        setContentView(chatWebView);
+
     }
 
-    private void autoLoginHandle(){
-        //處理自動登入的儲存
-        boolean autoLogin = getIntent().getBooleanExtra("autoLogin",false);
-        Log.d("myLog","自動登入 : "+autoLogin);
+    private void webviewSetting(){
+        chatWebView = new WebView(this);
 
-        //處理
+        /***讓網址request在android內完成而非開啟新的瀏覽器***/
+        chatWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    chatWebView.loadUrl(request.getUrl().toString());
+                }
+                return super.shouldOverrideUrlLoading(view, request);
+            }
+        });
     }
 
-    private void setWelcomeTexts(){
-        String welcome = getResources().getString(R.string.welcometxt);
-        String announcement = getResources().getString(R.string.announcement);
+    private void loadWebPageFromServer(){
 
-        welcome += "水球潘";
-        announcement += "宗億光碟買一送一 !!";
 
-        announceTxt.setText(announcement);
-        welcomeTxt.setText(welcome);
-    }
-
-    private void setWebPage(){
+        //載入
         chatWebView.loadUrl(chatroomURL);
     }
 }
