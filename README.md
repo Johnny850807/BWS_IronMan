@@ -1,4 +1,4 @@
-# BWS_IronMan_Practice_ChattingRoom
+﻿# BWS_IronMan_Practice_ChattingRoom
 城市鐵男─程式鐵男
 
 **簽到區**
@@ -7,6 +7,7 @@
 - 阿宗師簽到
 - 傑哥簽到
 - 老師簽到
+- 花柳齋簽到
 
 ## 組長廣播頻道
 ### 資訊接收以及討論都在Github 上面完成，組員要自己頻繁來這兒逛逛，有問題在issue討論，進度管理分工在Project規劃，才能記錄完善提升效率，建立一個完善的合作制度後─各司其職，專研特優我們也是辦得到的！！
