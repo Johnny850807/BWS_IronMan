@@ -23,7 +23,7 @@
             android:padding="50dp"
             android:textSize="40sp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/welcomeTxt" />
+            android:text="@string/ironman_txt" />
         <EditText
             style="@style/myEditTextStyle"
             android:layout_marginTop="10dp"
@@ -37,20 +37,42 @@
             android:id="@+id/password_Ed_main"
             android:hint="@string/input_password"
             android:inputType="textPassword" />
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/my_whitebutton"
-            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/login"/>
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:background="@drawable/my_whitebutton"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:onClick="logInOnClick"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/login"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:background="@drawable/my_whitebutton"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:onClick="registerOnClick"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/register"/>
+        </LinearLayout>
+
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/auto_login"
             android:layout_marginTop="15dp"
-            android:layout_gravity="right"/>
+            android:id="@+id/autoLogIn_Main"
+            android:layout_gravity="end"/>
     </LinearLayout>
 
 </RelativeLayout>
