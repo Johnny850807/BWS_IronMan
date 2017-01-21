@@ -1,4 +1,4 @@
-﻿# BWS_IronMan_Practice_ChattingRoom
+# BWS_IronMan_Practice_ChattingRoom
 城市鐵男─程式鐵男
 
 **簽到區**
@@ -23,7 +23,7 @@
 	1. 顯示歡迎訊息
     2. 給使用者輸入帳號與密碼 以及登入按鈕
     1. 如果輸入錯誤，顯示快顯訊息。
-    4. 可以使用匿名登入 (使用者會顯示為匿名，而且不能存取聊天紀錄)
+    4. 可以使用匿名登入 (使用者會顯示為匿名，而且不能存取聊天紀錄)  -- test line -- -- test line -- -- test line -- -- test line -- -- test line -- -- test line -- -- test line -- -- test line -- 
     
 ### 註冊帳密頁面
 
