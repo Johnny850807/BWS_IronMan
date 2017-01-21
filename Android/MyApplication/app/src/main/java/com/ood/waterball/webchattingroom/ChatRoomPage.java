@@ -11,7 +11,7 @@ import android.webkit.WebViewClient;
 
 public class ChatRoomPage extends AppCompatActivity {
     private WebView chatWebView;  //聊天室web前端
-    private String chatroomURL = "http://waterball.lionfree.net/waterball.lionfree.net/johnny850807/homepage.html";
+    private String chatroomURL = "http://waterball.somee.com/homepage.html";
 
     private static MediaPlayer mediaPlayer;  //背景音樂
 
@@ -69,7 +69,7 @@ public class ChatRoomPage extends AppCompatActivity {
     public void playBackgroundMusic(){
         createMediaplayer();
         Log.d("myLog","目前位於: "+chatroomURL);
-        if ( chatroomURL.equals("http://waterball.lionfree.net/waterball.lionfree.net/johnny850807/chatroom.html") ){
+        if ( chatroomURL.equals("http://waterball.somee.com/chatroom.html") ){
             mediaPlayer.start();
             Log.d("myLog","進入聊天室，撥放音樂");
         }
