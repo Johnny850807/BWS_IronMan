@@ -1,0 +1,96 @@
+﻿body {
+    background-color: #E9EBEE; /*FB背景灰白*/
+    padding: 15px 35px 35px 15px;
+    font-family: 微軟正黑體;
+}
+
+/*深藍色項目*/
+.BlueItem{
+    background-color: #3B5998; /*FB深藍配色*/
+
+}
+
+header h1{
+    background-color: #ffffff;
+    border: 0px;
+    border-radius: 45px;
+    height: 126px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 126px;  /*垂直置中*/
+    letter-spacing: 8px;
+    color:  #3F48CC;
+}
+
+/*導覽列*/
+#navigationList{
+    display: table;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+#navigationList li{
+    list-style-type: none;
+    float: right;
+    margin-left: 30px;
+    padding: 0px;
+}
+
+#navigationList li a{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#navigationList li a:hover {
+    background-color: #728EC9;
+}
+
+/*聊天室列表*/
+
+#roomList{
+    float: left;
+    padding: 8px;
+    width: 70%;
+}
+
+.RoomItem{
+    width: 100%;
+    font-size: large;
+    color: black;
+}
+
+.RoomItem p span{
+    color: dimgray; /*人數限制*/
+}
+
+aside{
+    margin-left:auto;
+    background-color: #fff;
+    width: 20%;
+}
+
+#sideAdsList{
+    border: 4px solid black;
+    height: 1000px;
+    background-color: aqua;
+}
+
+#sideAdsList li{
+    color: #fff;
+    background-color: aliceblue;
+    margin: 7px;
+    border-bottom: 1px solid blue;
+}
+
+
+
+
+
+
