@@ -1,13 +1,12 @@
 ﻿body {
     background-color: #E9EBEE; /*FB背景灰白*/
-    padding: 15px 35px 35px 15px;
+    padding: 15px 0 15px 0;
     font-family: 微軟正黑體;
 }
 
 /*深藍色項目*/
 .BlueItem{
     background-color: #3B5998; /*FB深藍配色*/
-
 }
 
 header h1{
@@ -57,7 +56,7 @@ header h1{
 #roomList{
     float: left;
     padding: 8px;
-    width: 70%;
+    width: 55%;
 
     
 }
@@ -75,7 +74,7 @@ header h1{
 aside{
     margin-left:auto;
     background-color: #fff;
-    width: 25%;
+    width: 40%;
 }
 
 #sideAdsList{
