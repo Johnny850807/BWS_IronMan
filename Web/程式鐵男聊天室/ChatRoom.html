@@ -6,6 +6,18 @@
 	<meta charset="utf-8" />
 
     <link rel="stylesheet" href="ChatRoom.css" />
+    <link rel="stylesheet" href="ChatRoomList.css" />
+
+    <script>
+        function runScript(e) {
+            if (e.keyCode == 13) {
+                var chatDiv = document.getElementById("Chat");
+                var input = document.getElementById("inputText");
+                chatDiv.innerHTML = chatDiv.innerHTML + "<span class=\"myText\">" + input.value + "</span><br /><br />";
+                input.value = "";
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -21,12 +33,16 @@
         </nav>
 
         <div id="Chat">
-            <b>
-            <span>水球:我要減肥</span><br /><br />
-            <span>嘉偉:廠廠</span><br /><br />
-            <span>韋傑:90後小鮮肉</span><br /><br />
-            <span id="myself">水球只要喝水就會變大</span><br />
-            </b>
+            <span class="othersText">水球:我要減肥</span><br /><br />
+            <span class="othersText">嘉偉:廠廠</span><br /><br />
+            <span class="othersText">韋傑:90後小鮮肉</span><br /><br />
+            <span class="myText">水球只要喝水就會變大</span><br /><br />
+            <span class="othersText">宗億:MOMO摸摸</span><br /><br />
+        </div>
+
+        <div id="textInput">
+            <input id="inputText" type="text" autocomplete="on" placeholder="輸入訊息..." autofocus="autofocus"
+                   onkeypress=" runScript(event)"/>
         </div>
 
     </div>
