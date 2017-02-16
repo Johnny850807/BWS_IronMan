@@ -3,7 +3,14 @@
 <head>
     <title>程式鐵男</title>
 	<meta charset="utf-8" />
+
  
+	<script>
+		function Redirect() {
+		    window.location.href = 'ChatRoom.html';
+		    return false;
+            }
+	</script>
     <link rel="stylesheet" href="ChatRoomList.css" />
 
 </head>
@@ -26,10 +33,10 @@
                 <legend>聊天室列表</legend>
                 <form>
                     <!--搜尋所有聊天室列表-->
-                    <button id ="chatButton" class="RoomItem" onclick="location.href = 'ChatRoom.html'"><p>野戰08 勿針 <span>(2/8)</span></p></button>
-                    <button id="chatButton" class="RoomItem"><p>野戰08 勿針 <span>(2/8)</span></p></button>
-                    <button id="chatButton" class="RoomItem"><p>野戰08 勿針 <span>(2/8)</span></p></button>
-                    <button id="chatButton" class="RoomItem"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                    <button id ="chatButton" class="RoomItem" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                    <button id="chatButton" class="RoomItem" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                    <button id="chatButton" class="RoomItem" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                    <button id="chatButton" class="RoomItem" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
                 </form>
             </fieldset>
         </div>
