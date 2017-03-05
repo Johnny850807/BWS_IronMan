@@ -7,24 +7,35 @@
     border-width:1px;
     background-color:#bbb9b9;
     font-weight: bold;
+    word-wrap:break-word; 
 }
 
 span.myText{
+    display:block;
+    float:right;
+    width:-40%;
     border-radius: 45px;
     border:solid;
     border-width:1px;
     background-color:#E9EBEE;
-    padding:9px;
+    padding:7px;
     float:right;
     color:#ab0af1;
+    max-width:40%;
+
+
 }
 
 span.othersText{
+    display:block;
+    float:left;
+    width: 40%;
     border-radius: 45px;
     border:solid;
     border-width:1px;
     background-color:#E9EBEE;
-    padding:9px;
+    padding:7px;
+    
     color:#3B5998;
 }
 
