@@ -1,5 +1,4 @@
-﻿
-#Chat {
+﻿#Chat {
     border-radius: 45px;
     margin:20px;
     padding:20px;
@@ -7,37 +6,29 @@
     border-width:1px;
     background-color:#bbb9b9;
     font-weight: bold;
-    word-wrap:break-word; 
+    height: 400px; overflow-y: scroll
+}
+.Text{
+  border-radius:15px;
+  max-width:80%;
+  padding: 10px;
+  margin-top:5px;
 }
 
-span.myText{
-    display:block;
-    float:right;
-    width:-40%;
-    border-radius: 45px;
-    border:solid;
-    border-width:1px;
-    background-color:#E9EBEE;
-    padding:7px;
-    float:right;
-    color:#ab0af1;
-    max-width:40%;
-
-
-}
-
-span.othersText{
-    display:block;
+.others {
+    border: 1px solid #3B5998;
     float:left;
-    width: 40%;
-    border-radius: 45px;
-    border:solid;
-    border-width:1px;
     background-color:#E9EBEE;
-    padding:7px;
-    
     color:#3B5998;
-}
+    }
+    
+.my {
+  border: 1px solid #ab0af1;
+    float:right;
+    background-color:#E9EBEE;
+    color:#ab0af1;
+    }
+
 
 #container{
     padding-bottom: 70px;  /*留置底內距 來容納 footer*/

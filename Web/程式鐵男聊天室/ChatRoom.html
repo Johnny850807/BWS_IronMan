@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>野戰08 勿針</title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
 
     <link rel="stylesheet" href="ChatRoom.css" />
     <link rel="stylesheet" href="ChatRoomList.css" />
@@ -13,10 +13,10 @@
             if (e.keyCode == 13) {
                 var chatDiv = document.getElementById("Chat");
                 var input = document.getElementById("inputText");
-                chatDiv.innerHTML = chatDiv.innerHTML + "<span class=\"myText\">" + input.value + "</span><br /><br /><br/>";
+                chatDiv.innerHTML = chatDiv.innerHTML + "<div class=\"my Text\">" + input.value + "</div><br /><br /><br/>";
                 input.value = "";
             }
-            
+
         }
     </script>
 </head>
@@ -34,16 +34,18 @@
         </nav>
 
         <div id="Chat">
-            <span class="othersText">水球:我要減肥</span><br /><br />
-            <span class="othersText">嘉偉:廠廠</span><br /><br />
-            <span class="othersText">韋傑:90後小鮮肉</span><br /><br />
-            <span class="myText">水球只要喝水就會變大</span><br /><br />
-            <span class="othersText">宗億:MOMO摸摸</span><br /><br />
+            <div class="others Text">Johnny:The air quality in this city is horrendous! The pollution levels were so high that we all need to wear a face mask when we go outside.</div>
+            <div class="my Text">Exhaust fumes from vehicles cause a great deal of damage to the environment.</div>
+            <div class="others Text">Johnny:On top of that, there are a few large chemical factories in the suburbs, which are contributing to the high pollution levels in the water and the air in this city.</div>
+            <div class="my Text">As much as I love this city, I think I'm going to have to find a greener city to live in. Living in a polluted city like this just can't be good for my health.</div>
+            <div class="others Text">Johnny:I know what you mean. However, there are so few places left that have not been affected by global warming. If it's not the pollution, then it's the natural disasters, deforestation, or the greenhouse effect.</div>
+            <div class="my Text">What is the greenhouse effect exactly?  </div>
+            <div class="others Text">Johnny:It's the gradual rise in the earth's temperature.</div>
         </div>
 
         <div id="textInput">
-            <input id="inputText" type="text" autocomplete="on" placeholder="輸入訊息..." autofocus="autofocus"
-                   onkeypress="runScript(event)"/>
+            <input id="inputText" type="text" autocomplete="on" placeholder="Enter Text..." autofocus="autofocus"
+                   onkeypress="runScript(event)" />
         </div>
 
     </div>
