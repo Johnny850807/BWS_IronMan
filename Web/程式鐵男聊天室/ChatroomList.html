@@ -2,19 +2,26 @@
 <html>
 <head>
     <title>程式鐵男</title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8">
 
- 
-	<script>
-		function Redirect() {
-		    window.location.href = 'ChatRoom.html';
-		    return false;
-            }
-	</script>
-    <link rel="stylesheet" href="ChatRoomList.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        function Redirect() {
+            window.location.href = 'ChatRoom.html';
+            return false;
+        }
+
+    </script>
+    <link rel="stylesheet" href="ChatRoomList.css">
 
 </head>
-<body>
+<body class="modal-open" style="padding-right: 17px;">
     <div id="container">
         <header>
             <h1>程式鐵男</h1>
@@ -23,20 +30,56 @@
         <nav class="BlueItem">
             <ul id="navigationList">
                 <li><a href="https://github.com/Johnny850807/BWS_IronMan_Practice_ChattingRoom">登出</a></li>
-                <li><a href="https://github.com/Johnny850807/BWS_IronMan_Practice_ChattingRoom">創建房間</a></li>
+                <li><a href="#"  data-toggle="modal" data-target="#myModal">創建房間</a></li>
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title"><b>創建房間</b></h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="usr">房名:</label>
+                                        <input type="text" class="form-control" id="RoomName">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">人數:</label>
+                                        <input type="password" class="form-control" id="NumberLimit">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">暱稱:</label>
+                                        <input type="password" class="form-control" id="PersonName">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-primary btn-lg" data-dismiss="modal">創建</button>
+                                <button type="button" class="btn-primary btn-lg" data-dismiss="modal">取消</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </ul>
         </nav>
 
 
         <div id="roomList">
             <fieldset>
-                <legend>聊天室列表</legend>
+                <h2>聊天室列表</h2>
                 <form>
                     <!--搜尋所有聊天室列表-->
-                    <button id ="chatButton" class="RoomItem" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
-                    <button id="chatButton" class="RoomItem" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
-                    <button id="chatButton" class="RoomItem" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
-                    <button id="chatButton" class="RoomItem" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                    <button id="chatButton" class="btn-info" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                    <button id="chatButton" class="btn-info" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                    <button id="chatButton" class="btn-info" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                    <button id="chatButton" class="btn-info" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                    <button id="chatButton" class="btn-info" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                    <button id="chatButton" class="btn-info" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                    <button id="chatButton" class="btn-info" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
                 </form>
             </fieldset>
         </div>
