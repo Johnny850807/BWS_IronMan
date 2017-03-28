@@ -6,7 +6,7 @@
     border-width:1px;
     background-color:#bbb9b9;
     font-weight: bold;
-    height: 400px; overflow-y: scroll
+    overflow-y: hidden;
 }
 
 .r-block {
