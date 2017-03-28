@@ -3,13 +3,19 @@
 <head>
     <title>程式鐵男</title>
 	<meta charset="utf-8" />
-
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  
 	<script>
 		function Redirect() {
 		    window.location.href = 'ChatRoom.html';
 		    return false;
-            }
+		}
+ 
 	</script>
     <link rel="stylesheet" href="ChatRoomList.css" />
 
@@ -23,22 +29,21 @@
         <nav class="BlueItem">
             <ul id="navigationList">
                 <li><a href="https://github.com/Johnny850807/BWS_IronMan_Practice_ChattingRoom">登出</a></li>
-                <li><a href="https://github.com/Johnny850807/BWS_IronMan_Practice_ChattingRoom">創建房間</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#myModal">創建房間</a></li>
             </ul>
         </nav>
 
 
         <div id="roomList">
-            <fieldset>
-                <legend>聊天室列表</legend>
-                <form>
-                    <!--搜尋所有聊天室列表-->
-                    <button id ="chatButton" class="RoomItem" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
-                    <button id="chatButton" class="RoomItem" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
-                    <button id="chatButton" class="RoomItem" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
-                    <button id="chatButton" class="RoomItem" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
-                </form>
-            </fieldset>
+            <h2>聊天室列表</h2>
+            <form>
+                <!--搜尋所有聊天室列表-->
+                <button id ="chatButton" class="RoomItem btn btn-default" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                <button id="chatButton" class="RoomItem btn btn-default" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                <button id="chatButton" class="RoomItem btn btn-default" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+                <button id="chatButton" class="RoomItem btn btn-default" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
+            </form>
+  
         </div>
         <aside>
             <!--張貼廣告-->
@@ -57,6 +62,27 @@
         <h4>Waterball &copy; 2017</h4>
     </footer>
     
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">  <!--標題區-->
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">創建房間</h4>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <!--內容區 放 創建房間的填寫表單-->
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <!--結尾區-->
+                        <button type="button" class="btn btn-default" data-dismiss="modal">創建</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
    
 </body>
 </html>
