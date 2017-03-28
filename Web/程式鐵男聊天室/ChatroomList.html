@@ -3,6 +3,7 @@
 <head>
     <title>程式鐵男</title>
 	<meta charset="utf-8" />
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -19,8 +20,9 @@
 	</script>
     <link rel="stylesheet" href="ChatRoomList.css" />
 
+
 </head>
-<body>
+<body class="modal-open" style="padding-right: 17px;">
     <div id="container">
         <header>
             <h1>程式鐵男</h1>
@@ -29,7 +31,34 @@
         <nav class="BlueItem">
             <ul id="navigationList">
                 <li><a href="https://github.com/Johnny850807/BWS_IronMan_Practice_ChattingRoom">登出</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#myModal">創建房間</a></li>
+                <li><a href="#"  data-toggle="modal" data-target="#myModal">創建房間</a></li>
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog modal-sm">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title"><b>創建房間</b></h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="Room">房名: <span class="btn btn-danger">請勿使用粗雅、騷擾言語</span></label>
+                                        <input type="text" class="form-control" id="RoomName" placeholder="Ex:野戰08...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">人數: <span class="badge">1~8</span></label>
+                                        <input type="text" class="form-control" id="NumberLimit" placeholder="請輸入1~8人">
+                                    </div>
+                                        <button type="submit" class="btn-primary btn-lg" data-dismiss="modal">創建</button>
+                                        <button type="button" class="btn-primary btn-lg" data-dismiss="modal">取消</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </ul>
         </nav>
 
@@ -43,7 +72,6 @@
                 <button id="chatButton" class="RoomItem btn btn-default" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
                 <button id="chatButton" class="RoomItem btn btn-default" onclick="return Redirect()"><p>野戰08 勿針 <span>(2/8)</span></p></button>
             </form>
-  
         </div>
         <aside>
             <!--張貼廣告-->
