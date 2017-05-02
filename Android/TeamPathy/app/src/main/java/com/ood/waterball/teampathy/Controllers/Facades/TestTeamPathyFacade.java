@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestTeamPathyFacade implements ITeamPathyFacade{
-    private static final String IMAGE_URL_PROJECT = "http://imgur.com/download/5s7vtxN";
+    private static final String IMAGE_URL_PROJECT = "http://grinews.com/news/wp-content/uploads/2016/08/%E9%A3%9F%E7%89%A9006.jpg";
     private List<Project> projectList;
 
     @Override

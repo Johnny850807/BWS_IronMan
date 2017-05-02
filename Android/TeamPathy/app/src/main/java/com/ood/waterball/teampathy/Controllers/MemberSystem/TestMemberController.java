@@ -18,6 +18,7 @@ public class TestMemberController extends MemberController {
             throw new AccountNotFoundException();
 
         activeMember = new Member("Waterball",account,password);
+        activeMember.setId("sada564a56sd4as6d4a5s6d465as");
     }
 
     @Override

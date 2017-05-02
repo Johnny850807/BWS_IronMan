@@ -20,6 +20,8 @@ import com.ood.waterball.teampathy.Domains.Project;
 
 import java.util.List;
 
+import static com.ood.waterball.teampathy.MyLog.Log;
+
 public class MemberHomePageActivity extends AppCompatActivity {
     private List<Project> projectList;
 
@@ -33,9 +35,14 @@ public class MemberHomePageActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        findViews();
-        setListeners();
-        initProjectGridView();
+        try {
+            findViews();
+            setListeners();
+            initProjectList();
+            initProjectGridView();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void findViews(){
@@ -56,6 +63,7 @@ public class MemberHomePageActivity extends AppCompatActivity {
     private void initProjectList() throws Exception {
         String userId = Global.getMemberController().getActiveMember().getId();
         projectList = Global.getTeamPathyFacade().getAllProjectsByUserId(userId);
+        Log(String.valueOf(projectList.size()));
     }
 
     private void initProjectGridView(){
@@ -84,11 +92,15 @@ public class MemberHomePageActivity extends AppCompatActivity {
             else
                 viewHolder = (ViewHolder) convertView.getTag();
 
+            Project project = getItem(position);
+
+
             Glide.with(MemberHomePageActivity.this)
-                    .load(getItem(position).getImageUrl())
+                    .load(R.drawable.testimg)
                     .into(viewHolder.image);
 
 
+            viewHolder.text.setText(project.getName());
 
             return convertView;
         }
