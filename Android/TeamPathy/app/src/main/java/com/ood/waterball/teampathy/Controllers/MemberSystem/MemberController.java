@@ -11,4 +11,8 @@ public abstract class MemberController {
 
     public abstract void logIn(String account,String password) throws AccountNotFoundException;
     public abstract void register(Member member ,String passwordConfirm) throws ModelValidationException , AccountDuplicatedException;
+
+    public Member getActiveMember(){
+        return activeMember;
+    }
 }

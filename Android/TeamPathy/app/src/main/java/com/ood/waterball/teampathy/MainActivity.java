@@ -26,6 +26,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void logInOnClickMain(View view) {
-
     }
 }
