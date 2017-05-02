@@ -8,6 +8,13 @@ public class Project extends Entity{
     private String type;
     private String imageUrl;
 
+    public Project(String name,String type,String description,String imageUrl){
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.imageUrl = imageUrl;
+    }
+
     public String getName() {
         return name;
     }

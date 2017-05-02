@@ -16,5 +16,6 @@
     <string name="accountDuplicated">帳號已重複</string>
     <string name="accountNotFound">帳號或密碼錯誤</string>
     <string name="modelValidation">註冊格式錯誤</string>
+    <string name="app_chinese_name">行動化團隊合作系統</string>
 
 </resources>
