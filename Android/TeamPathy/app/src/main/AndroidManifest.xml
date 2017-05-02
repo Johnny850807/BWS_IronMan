@@ -15,7 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".MemberHomePageActivity"
+            android:label="@string/app_name"
+            android:theme="@style/TeamPathy"></activity>
     </application>
 
 </manifest>

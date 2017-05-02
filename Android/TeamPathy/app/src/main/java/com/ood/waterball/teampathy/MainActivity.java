@@ -26,5 +26,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void logInOnClickMain(View view) {
+        startActivity(new Intent(this,MemberHomePageActivity.class));
     }
 }

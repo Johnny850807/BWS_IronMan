@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="TeamPathy" parent="Theme.AppCompat.NoActionBar" >
+    <style name="TeamPathy" parent="Theme.AppCompat.NoActionBar">
         <item name="colorAccent">@color/app_textword_color</item>
     </style>
 
@@ -16,5 +16,9 @@
         <item name="android:textColor">@color/app_textword_color</item>
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
     </style>
+
+    <style name="TeamPathy.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="TeamPathy.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
