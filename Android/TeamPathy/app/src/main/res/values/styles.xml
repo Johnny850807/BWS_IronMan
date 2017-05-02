@@ -12,4 +12,9 @@
         <item name="colorAccent">@color/app_textword_color</item>
     </style>
 
+    <style name="TeamPathyTextView">
+        <item name="android:textColor">@color/app_textword_color</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    </style>
+
 </resources>
