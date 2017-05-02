@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">TeamPathy</string>
+
+
+    <string name="Inputaccount">輸入帳號</string>
+    <string name="Inputpassword">輸入密碼</string>
+    <string name="logIn">登入</string>
+    <string name="register">註冊</string>
+    <string name="forgotPassword">忘記密碼?</string>
+    <string name="inputname">輸入暱稱</string>
+    <string name="inputPasswordConfirm">密碼確認</string>
+    <string name="finishRegistering">完成註冊</string>
+
+
+    <!--Exception-->
+    <string name="accountDuplicated">帳號已重複</string>
+    <string name="accountNotFound">帳號或密碼錯誤</string>
+    <string name="modelValidation">註冊格式錯誤</string>
+    <string name="app_chinese_name">行動化團隊合作系統</string>
+
+</resources>
