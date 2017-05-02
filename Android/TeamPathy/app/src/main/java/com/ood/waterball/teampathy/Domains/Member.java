@@ -1,7 +1,7 @@
 package com.ood.waterball.teampathy.Domains;
 
 
-public class Member {
+public class Member extends Entity{
     private String name;
     private String account;
     private String password;

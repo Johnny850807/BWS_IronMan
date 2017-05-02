@@ -2,7 +2,7 @@ package com.ood.waterball.teampathy.Domains;
 
 
 
-public class Project {
+public class Project extends Entity{
     private String name;
     private String description;
     private String type;
