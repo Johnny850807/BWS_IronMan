@@ -1,11 +1,13 @@
-package com.ood.waterball.teampathy;
+package com.ood.waterball.teampathy.Fragments;
 
+
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,38 +19,58 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Project;
+import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
-import static com.ood.waterball.teampathy.MyLog.Log;
+import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
-public class MemberHomePageActivity extends AppCompatActivity {
+public class MemberHomePageFragment extends Fragment {
     private List<Project> projectList;
 
     private GridView projectGridView;
     private ProjectGridAdapter projectGridAdapter;
     private FloatingActionButton fab;
+
+    public MemberHomePageFragment() {
+        // Required empty public constructor
+    }
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_member_home_page);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         try {
-            findViews();
-            setListeners();
-            initProjectList();
-            initProjectGridView();
+            fetchProjectList();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
-    private void findViews(){
-        projectGridView = (GridView) findViewById(R.id.projectGridMemberHomePage);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
+    private void fetchProjectList() throws Exception {
+        String userId = Global.getMemberController().getActiveMember().getId();
+        projectList = Global.getTeamPathyFacade().getAllProjectsByUserId(userId);
+        Log(String.valueOf(projectList.size()));
     }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_member_home_page, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        projectGridView = (GridView) view.findViewById(R.id.projectGridMemberHomePage);
+        fab = (FloatingActionButton) view.findViewById(R.id.fab);
+
+        initProjectGridView();
+        setListeners();
+    }
+
 
     private void setListeners(){
         fab.setOnClickListener(new View.OnClickListener() {
@@ -60,21 +82,18 @@ public class MemberHomePageActivity extends AppCompatActivity {
         });
     }
 
-    private void initProjectList() throws Exception {
-        String userId = Global.getMemberController().getActiveMember().getId();
-        projectList = Global.getTeamPathyFacade().getAllProjectsByUserId(userId);
-        Log(String.valueOf(projectList.size()));
-    }
 
     private void initProjectGridView(){
-        projectGridAdapter = new ProjectGridAdapter();
+        projectGridAdapter = new ProjectGridAdapter(getContext());
         projectGridView.setAdapter(projectGridAdapter);
     }
 
-    public class ProjectGridAdapter extends ArrayAdapter<Project>{
 
-        public ProjectGridAdapter() {
-            super(MemberHomePageActivity.this, R.layout.project_item , projectList);
+
+    public class ProjectGridAdapter extends ArrayAdapter<Project> {
+
+        public ProjectGridAdapter(Context context) {
+            super( context , R.layout.project_item , projectList);
         }
 
         @NonNull
@@ -83,19 +102,25 @@ public class MemberHomePageActivity extends AppCompatActivity {
             ViewHolder viewHolder;
             if ( convertView == null )
             {
-                convertView = LayoutInflater.from(MemberHomePageActivity.this).inflate(R.layout.project_item,parent,false);
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.project_item,parent,false);
                 viewHolder = new ViewHolder();
                 viewHolder.image = (ImageView) convertView.findViewById(R.id.img_projectItem);
                 viewHolder.text = (TextView) convertView.findViewById(R.id.name_projectItem);
                 convertView.setTag(viewHolder);
+                convertView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //todo 進入專案
+                    }
+                });
             }
             else
                 viewHolder = (ViewHolder) convertView.getTag();
 
             Project project = getItem(position);
 
-
-            Glide.with(MemberHomePageActivity.this)
+            //todo Glide 載入 網路圖片問題
+            Glide.with(getContext())
                     .load(R.drawable.testimg)
                     .into(viewHolder.image);
 
@@ -111,7 +136,5 @@ public class MemberHomePageActivity extends AppCompatActivity {
         }
 
     }
-
-
 
 }

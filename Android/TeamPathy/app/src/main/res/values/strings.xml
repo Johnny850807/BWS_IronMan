@@ -17,5 +17,10 @@
     <string name="accountNotFound">帳號或密碼錯誤</string>
     <string name="modelValidation">註冊格式錯誤</string>
     <string name="app_chinese_name">行動化團隊合作系統</string>
+    <string name="title_activity_project">ProjectActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

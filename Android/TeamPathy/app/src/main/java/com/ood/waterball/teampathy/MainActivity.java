@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void forgotOnClick(View view) {
-
+        //todo 忘記密碼
     }
 
     public void registerOnClick(View view) {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             Global.getMemberController().logIn(accountEd.getText().toString(),
                     passwordEd.getText().toString());
 
-            startActivity(new Intent(this,MemberHomePageActivity.class));
+            startActivity(new Intent(this,BaseInterfaceActivity.class));
 
         } catch (AccountNotFoundException e) {
             Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();

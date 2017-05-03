@@ -1,7 +1,9 @@
 package com.ood.waterball.teampathy.Domains;
 
 
-public class Entity {
+import java.io.Serializable;
+
+public class Entity implements Cloneable , Serializable{
     private String id;
 
     public String getId() {
