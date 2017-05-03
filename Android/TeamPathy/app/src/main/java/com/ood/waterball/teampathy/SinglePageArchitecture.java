@@ -6,6 +6,6 @@ package com.ood.waterball.teampathy;
 
 import android.support.v4.app.Fragment;
 
-public interface SingleActivityArchitecture {
+public interface SinglePageArchitecture {
     public void changePage(Fragment fragment);
 }

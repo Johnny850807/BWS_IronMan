@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             Global.getMemberController().logIn(accountEd.getText().toString(),
                     passwordEd.getText().toString());
 
-            startActivity(new Intent(this,BaseInterfaceActivity.class));
+            startActivity(new Intent(this,BaseInterfacePage.class));
 
         } catch (AccountNotFoundException e) {
             Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();

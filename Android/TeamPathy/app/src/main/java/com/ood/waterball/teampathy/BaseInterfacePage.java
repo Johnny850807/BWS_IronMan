@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import com.ood.waterball.teampathy.Controllers.PageController;
 import com.ood.waterball.teampathy.Fragments.MemberHomePageFragment;
 
-public class BaseInterfaceActivity extends AppCompatActivity implements SingleActivityArchitecture {
+public class BaseInterfacePage extends AppCompatActivity implements SinglePageArchitecture {
     private PageController pageController;
 
     @Override
@@ -21,7 +21,7 @@ public class BaseInterfaceActivity extends AppCompatActivity implements SingleAc
     }
 
     private void onPageInitiate(){
-        pageController = new PageController(getSupportFragmentManager());
+        pageController = new PageController(getSupportFragmentManager(),R.id.base_interface_fragment_content);
         pageController.changePage(new MemberHomePageFragment());
     }
 

@@ -10,5 +10,6 @@ public interface ITeamPathyController {
 
     public List<Project> getAllProjectsByUserId(String userId) throws Exception;
 
-    public List<Issue> getAllIssuesByProjectId(String projecyId) throws Exception;
+    public Project getProjectById(String projectId) throws Exception;
+    public List<Issue> getAllIssuesByProjectId(String projectId) throws Exception;
 }

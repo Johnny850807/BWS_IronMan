@@ -8,23 +8,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ood.waterball.teampathy.SingleActivityArchitecture;
+import com.ood.waterball.teampathy.SinglePageArchitecture;
 
 
 public abstract class ContentFragment extends Fragment {
 
-    protected SingleActivityArchitecture activity;
+    protected SinglePageArchitecture singlePage;
 
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof SingleActivityArchitecture) {
-            activity = (SingleActivityArchitecture) context;
+        if (context instanceof SinglePageArchitecture) {
+            singlePage = getParentSinglePage(context);
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement SingleActivityArchitecture");
+                    + " must implement SinglePageArchitecture");
         }
+    }
+
+    protected SinglePageArchitecture getParentSinglePage(Context context){
+        return (SinglePageArchitecture) context;
     }
 
     @Override
@@ -54,13 +58,13 @@ public abstract class ContentFragment extends Fragment {
     protected abstract void onFindViews(View parentView);
     protected abstract void onControlViews();
 
-    protected SingleActivityArchitecture getSingleActivity(){
-        return activity;
+    protected SinglePageArchitecture getSinglePage(){
+        return singlePage;
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        activity = null;
+        singlePage = null;
     }
 }

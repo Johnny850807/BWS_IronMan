@@ -9,8 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestTeamPathyController implements ITeamPathyController {
-    private static final String IMAGE_URL_PROJECT = "http://grinews.com/news/wp-content/uploads/2016/08/%E9%A3%9F%E7%89%A9006.jpg";
+    private static final String IMAGE_URL_PROJECT = "http://i.imgur.com/5s7vtxN.jpg";
     private List<Project> projectList;
+    private Project project = new Project("TeamPathy","軟體專案","行動化團隊合作系統",IMAGE_URL_PROJECT);;
     private List<Issue> issueList;
 
     @Override
@@ -36,7 +37,12 @@ public class TestTeamPathyController implements ITeamPathyController {
     }
 
     @Override
-    public List<Issue> getAllIssuesByProjectId(String projecyId) throws Exception {
+    public Project getProjectById(String projectId) throws Exception {
+        return project;
+    }
+
+    @Override
+    public List<Issue> getAllIssuesByProjectId(String projectId) throws Exception {
         if (issueList != null)
             return issueList;
 

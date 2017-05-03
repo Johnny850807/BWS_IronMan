@@ -92,7 +92,7 @@ public class MemberHomePageFragment extends ContentFragment {
 
         @NonNull
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             ViewHolder viewHolder;
             if ( convertView == null )
             {
@@ -100,11 +100,13 @@ public class MemberHomePageFragment extends ContentFragment {
                 viewHolder = new ViewHolder();
                 viewHolder.image = (ImageView) convertView.findViewById(R.id.img_projectItem);
                 viewHolder.text = (TextView) convertView.findViewById(R.id.name_projectItem);
+
                 convertView.setTag(viewHolder);
                 convertView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //todo 進入專案
+                        String projectId = getItem(position).getId();
+                        singlePage.changePage( ProjectHomePageFragment.getInstance(projectId) );
                     }
                 });
             }
