@@ -11,7 +11,7 @@ public class ProjectHomePageFragment extends ContentFragment {
     public static ProjectHomePageFragment getInstance(String projectId){
         ProjectHomePageFragment fragment = new ProjectHomePageFragment();
         Bundle args = new Bundle();
-        args.putSerializable("projectId",projectId);
+        args.putString("projectId",projectId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -22,7 +22,7 @@ public class ProjectHomePageFragment extends ContentFragment {
 
     @Override
     protected void onFetchData(@Nullable Bundle savedInstanceState , @Nullable Bundle arguBundle) {
-
+        String projectId = arguBundle.getString("projectId");
     }
 
     @Override
