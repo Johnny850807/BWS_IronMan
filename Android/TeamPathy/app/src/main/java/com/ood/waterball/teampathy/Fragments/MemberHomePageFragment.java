@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +24,7 @@ import java.util.List;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
-public class MemberHomePageFragment extends Fragment {
+public class MemberHomePageFragment extends ContentFragment {
     private List<Project> projectList;
 
     private GridView projectGridView;
@@ -37,36 +36,31 @@ public class MemberHomePageFragment extends Fragment {
     }
 
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
+    @Override
+    protected void onFetchData(@Nullable Bundle savedInstanceState) {
         try {
-            fetchProjectList();
+            String userId = Global.getMemberController().getActiveMember().getId();
+            projectList = Global.getTeamPathyFacade().getAllProjectsByUserId(userId);
+            Log(String.valueOf(projectList.size()));
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-    }
-
-    private void fetchProjectList() throws Exception {
-        String userId = Global.getMemberController().getActiveMember().getId();
-        projectList = Global.getTeamPathyFacade().getAllProjectsByUserId(userId);
-        Log(String.valueOf(projectList.size()));
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_member_home_page, container, false);
+    protected int getLayoutResource() {
+        return R.layout.fragment_member_home_page;
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        projectGridView = (GridView) view.findViewById(R.id.projectGridMemberHomePage);
-        fab = (FloatingActionButton) view.findViewById(R.id.fab);
+    protected void onFindViews(View parentView) {
+        projectGridView = (GridView) parentView.findViewById(R.id.projectGridMemberHomePage);
+        fab = (FloatingActionButton) parentView.findViewById(R.id.fab);
+    }
 
+    @Override
+    protected void onControlViews() {
         initProjectGridView();
         setListeners();
     }
