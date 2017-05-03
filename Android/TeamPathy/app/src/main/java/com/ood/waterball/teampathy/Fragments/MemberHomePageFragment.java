@@ -38,7 +38,7 @@ public class MemberHomePageFragment extends ContentFragment {
 
 
     @Override
-    protected void onFetchData(@Nullable Bundle savedInstanceState) {
+    protected void onFetchData(@Nullable Bundle savedInstanceState , @Nullable Bundle arguBundle) {
         try {
             String userId = Global.getMemberController().getActiveMember().getId();
             projectList = Global.getTeamPathyFacade().getAllProjectsByUserId(userId);

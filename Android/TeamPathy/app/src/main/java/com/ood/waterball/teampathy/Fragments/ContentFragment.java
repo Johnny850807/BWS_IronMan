@@ -13,7 +13,8 @@ import com.ood.waterball.teampathy.SingleActivityArchitecture;
 
 public abstract class ContentFragment extends Fragment {
 
-    SingleActivityArchitecture activity;
+    protected SingleActivityArchitecture activity;
+
 
     @Override
     public void onAttach(Context context) {
@@ -29,10 +30,11 @@ public abstract class ContentFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        onFetchData(savedInstanceState);
+        onFetchData(savedInstanceState,getArguments());
     }
 
-    protected abstract void onFetchData(@Nullable Bundle savedInstanceState);
+
+    protected abstract void onFetchData(@Nullable Bundle savedInstanceState , @Nullable Bundle arguBundle);
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
