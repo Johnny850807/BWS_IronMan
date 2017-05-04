@@ -21,11 +21,7 @@
         android:id="@+id/viewpager_project_home"
         android:layout_above="@id/tablayout_poject_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/fragment_vertical_margin"
-        android:paddingLeft="@dimen/fragment_horizontal_margin"
-        android:paddingRight="@dimen/fragment_horizontal_margin"
-        android:paddingTop="@dimen/fragment_vertical_margin" />
+        android:layout_height="match_parent" />
 
 
 </RelativeLayout>
