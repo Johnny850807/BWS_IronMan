@@ -5,10 +5,11 @@ import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.Member;
 import com.ood.waterball.teampathy.Domains.Project;
+import com.ood.waterball.teampathy.R;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//todo 把每個crud 非同步化
 public class TestTeamPathyFacade implements ITeamPathyFacade {
     private static final String IMAGE_URL_PROJECT = "http://i.imgur.com/5s7vtxN.jpg";
     private List<Project> projectList;
@@ -17,7 +18,7 @@ public class TestTeamPathyFacade implements ITeamPathyFacade {
     private Issue issue;
 
     @Override
-    public List<Project> getAllProjectsByUserId(String userId) throws Exception {
+    public List<Project> getProjectListByUserId(String userId) throws Exception {
 
         if (projectList != null)
             return projectList;
@@ -44,7 +45,7 @@ public class TestTeamPathyFacade implements ITeamPathyFacade {
     }
 
     @Override
-    public List<Issue> getAllIssuesByProjectId(String projectId) throws Exception {
+    public List<Issue> getIssueListByProjectId(String projectId) throws Exception {
         if (issueList != null)
             return issueList;
 
@@ -129,6 +130,11 @@ public class TestTeamPathyFacade implements ITeamPathyFacade {
         for (int i = 0 ; i < issueList.size() ; i ++ )
             issueList.set(i,issue.getClone());
         return issue;
+    }
+
+    @Override
+    public String[] getIssueTypeListByProjectId(String projectId) throws Exception {
+        return new String[]{Global.globalResources.getString(R.string.get_all_issue_types),"投票","討論","議題","瞎聊"};
     }
 
 
