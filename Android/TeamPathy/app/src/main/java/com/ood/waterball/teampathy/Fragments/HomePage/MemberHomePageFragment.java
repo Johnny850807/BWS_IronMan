@@ -48,7 +48,7 @@ public class MemberHomePageFragment extends ActivityBaseFragment {
     private List<Project> fetchUserProjectList() throws Exception {
         String userId = Global.getMemberController().getActiveMember().getId();
         projectList = Global.getTeamPathyFacade().getAllProjectsByUserId(userId);
-        Log(String.valueOf(projectList.size()));
+        Log("擁有專案數量:" + String.valueOf(projectList.size()));
         return projectList;
     }
 

@@ -1,20 +1,23 @@
 package com.ood.waterball.teampathy.Domains;
 
 
-
-
+import java.util.Date;
 
 public class Issue extends Entity {
     private String title;
     private String content;
+    private String type;
+    private Date datetime;
     private Member poster;
 
     public Issue(){}
 
-    public Issue(Member poster,String title,String content){
+    public Issue(Member poster,String title,String content,String type){
         this.poster = poster;
         this.title = title;
         this.content = content;
+        this.type = type;
+        datetime = new Date();
     }
 
     public String getContent() {
@@ -39,5 +42,21 @@ public class Issue extends Entity {
 
     public void setPoster(Member poster) {
         this.poster = poster;
+    }
+
+    public Date getDatetime() {
+        return datetime;
+    }
+
+    public void setDatetime(Date datetime) {
+        this.datetime = datetime;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

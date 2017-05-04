@@ -51,7 +51,7 @@ public class ProjectHomePageFragment extends ActivityBaseFragment {
         String projectId = arguBundle.getString("projectId");
         Log(projectId);
         currentProject = Global.getTeamPathyFacade().getProjectById(projectId);
-        Log(currentProject.toString());
+        Log("取得目前專案:" + currentProject.toString());
     }
 
     @Override

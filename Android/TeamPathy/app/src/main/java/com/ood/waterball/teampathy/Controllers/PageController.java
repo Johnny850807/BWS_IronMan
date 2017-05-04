@@ -21,7 +21,7 @@ public class PageController {
         String name = fragment.getClass().getName();
 
         fragmentTransaction.replace(targetContainerId , fragment , name);
-        Log.d("myLog","Change Page to " + name);
+        Log.d("myLog","更換頁面至 to " + name);
 
         fragmentTransaction.addToBackStack(name);
         fragmentTransaction.commit();

@@ -6,11 +6,24 @@
     android:layout_height="match_parent"
     android:background="@drawable/app_background"
     tools:context="com.ood.waterball.teampathy.MainActivity">
-    <TextView
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_forum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="討論區"
-        style="@style/TeamPathyTextView"/>
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_input_add"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="47dp"
+        android:paddingRight="47dp"
+        android:id="@+id/issues_recyclerview_forum">
+    </android.support.v7.widget.RecyclerView>
 
 
 </RelativeLayout>

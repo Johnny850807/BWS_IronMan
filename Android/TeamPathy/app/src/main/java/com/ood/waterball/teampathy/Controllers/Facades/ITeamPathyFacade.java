@@ -6,7 +6,7 @@ import com.ood.waterball.teampathy.Domains.Project;
 
 import java.util.List;
 
-public interface ITeamPathyController {
+public interface ITeamPathyFacade {
 
     public List<Project> getAllProjectsByUserId(String userId) throws Exception;
 
