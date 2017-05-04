@@ -31,7 +31,9 @@ public abstract class ActivityBaseFragment extends Fragment {
     }
 
     protected SinglePageArchitecture getParentSinglePage(Context context){
-        return (SinglePageArchitecture) context;
+        SinglePageArchitecture singlePageArchitecture = (SinglePageArchitecture) context;
+        //Log("根頁面: " + singlePageArchitecture.getPageName());
+        return singlePageArchitecture;
     }
 
     @Override

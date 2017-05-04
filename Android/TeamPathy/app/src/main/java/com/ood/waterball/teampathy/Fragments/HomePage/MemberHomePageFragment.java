@@ -1,4 +1,4 @@
-package com.ood.waterball.teampathy.Fragments;
+package com.ood.waterball.teampathy.Fragments.HomePage;
 
 
 import android.content.Context;
@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Project;
+import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
 import com.ood.waterball.teampathy.R;
 
 import java.util.List;

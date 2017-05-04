@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.ood.waterball.teampathy.Controllers.PageController;
-import com.ood.waterball.teampathy.Fragments.MemberHomePageFragment;
+import com.ood.waterball.teampathy.Fragments.HomePage.MemberHomePageFragment;
 
 public class BaseInterfaceActivity extends AppCompatActivity implements SinglePageArchitecture {
     private PageController pageController;
@@ -29,5 +29,10 @@ public class BaseInterfaceActivity extends AppCompatActivity implements SinglePa
     @Override
     public void changePage(Fragment fragment) {
         pageController.changePage(fragment);
+    }
+
+    @Override
+    public String getPageName() {
+        return "單一Activity主頁";
     }
 }

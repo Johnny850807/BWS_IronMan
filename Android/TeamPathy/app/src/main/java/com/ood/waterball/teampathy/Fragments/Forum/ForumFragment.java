@@ -1,19 +1,17 @@
-package com.ood.waterball.teampathy.Fragments;
+package com.ood.waterball.teampathy.Fragments.Forum;
 
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Issue;
+import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
 import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
-import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
-
-public class ForumFragment extends ContentFragment {
+public class ForumFragment extends ActivityBaseFragment {
 
     private List<Issue> issueList;
 
@@ -32,19 +30,8 @@ public class ForumFragment extends ContentFragment {
     }
 
     @Override
-    protected String getFragmentName() {
-        return ProjectHomePageFragment.TabFragmentPageAdapter.class.getName()+ ProjectHomePageFragment.TabFragmentPageAdapter.FORUM;
-    }
-
-    @Override
     protected void onFetchData(@Nullable Bundle savedInstanceState, @Nullable Bundle arguBundle) {
-        try {
-            String projectId = arguBundle.getString("projectId");
-            Log(projectId);
-            issueList = Global.getTeamPathyFacade().getAllIssuesByProjectId(projectId);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Override

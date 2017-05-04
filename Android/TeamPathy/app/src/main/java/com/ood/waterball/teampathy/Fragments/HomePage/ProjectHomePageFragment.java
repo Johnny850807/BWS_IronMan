@@ -1,16 +1,22 @@
-package com.ood.waterball.teampathy.Fragments;
+package com.ood.waterball.teampathy.Fragments.HomePage;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.PagerAdapter;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Project;
+import com.ood.waterball.teampathy.Domains.ProjectSection;
+import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
+import com.ood.waterball.teampathy.Fragments.Forum.ForumFragment;
+import com.ood.waterball.teampathy.Fragments.Office.OfficeFragment;
+import com.ood.waterball.teampathy.Fragments.TodoList.TodoListFragment;
+import com.ood.waterball.teampathy.Fragments.WorkAnalysis.WorkAnalysisFragment;
 import com.ood.waterball.teampathy.R;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
@@ -18,7 +24,6 @@ import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 public class ProjectHomePageFragment extends ActivityBaseFragment {
     private ViewPager viewPager;
     private TabLayout tabLayout;
-    private PagerAdapter fragmentPagerAdapter;
     private Project currentProject;
 
     public static ProjectHomePageFragment getInstance(String projectId){
@@ -62,42 +67,47 @@ public class ProjectHomePageFragment extends ActivityBaseFragment {
 
     @Override
     protected void onControlViews() {
-       onViewPagerInitiate();
+        initiateViewPager();
     }
 
-    private void onViewPagerInitiate(){
-        fragmentPagerAdapter = new TabFragmentPageAdapter(getFragmentManager());
-        viewPager.setAdapter(fragmentPagerAdapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+    private void initiateViewPager(){
+        viewPager.setAdapter(new MyFragmentPageAdapter(getChildFragmentManager()));
+        tabLayout.setupWithViewPager(viewPager);
     }
 
-    public class TabFragmentPageAdapter extends MyFragmentPagerAdapter{
-        public static final int FORUM = 0;
+     class MyFragmentPageAdapter extends FragmentPagerAdapter{
 
-        public TabFragmentPageAdapter(FragmentManager fm) {
+        private final String[] projectSections;
+
+        public MyFragmentPageAdapter(FragmentManager fm) {
             super(fm);
+            projectSections = getResources().getStringArray(R.array.project_sections);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            super.getPageTitle(position);
+
+            return projectSections[position];
         }
 
         @Override
         public Fragment getItem(int position) {
-            switch (position){
-                case FORUM:
-                    return TabBaseFragment.getInstance(ForumFragment.class);
-                default:
-                    return TabBaseFragment.getInstance(ForumFragment.class);
-            }
-        }
-
-        @Override
-        protected String makeFragmentName(int position) {
-            return TabFragmentPageAdapter.class.getName()+position;
+            if (position == ProjectSection.FORUM.ordinal())
+                return ForumFragment.getInstance(currentProject.getId());
+            else if (position == ProjectSection.TODOLIST.ordinal())
+                return TodoListFragment.getInstance(currentProject.getId());
+            else if (position == ProjectSection.WORK_ANALYSIS.ordinal())
+                return WorkAnalysisFragment.getInstance(currentProject.getId());
+            else
+                return OfficeFragment.getInstance(currentProject.getId());
         }
 
         @Override
         public int getCount() {
-            return 4;
+            return ProjectSection.values().length;
         }
-
     }
 
 }

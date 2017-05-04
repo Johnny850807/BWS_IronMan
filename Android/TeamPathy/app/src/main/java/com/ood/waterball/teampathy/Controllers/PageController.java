@@ -23,7 +23,7 @@ public class PageController {
         fragmentTransaction.replace(targetContainerId , fragment , name);
         Log.d("myLog","Change Page to " + name);
 
-
+        fragmentTransaction.addToBackStack(name);
         fragmentTransaction.commit();
     }
 
