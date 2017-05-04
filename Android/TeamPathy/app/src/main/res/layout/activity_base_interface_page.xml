@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.ood.waterball.teampathy.BaseInterfacePage">
+    tools:context="com.ood.waterball.teampathy.BaseInterfaceActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -26,6 +26,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
         android:id="@+id/base_interface_fragment_content">
     </FrameLayout>
 

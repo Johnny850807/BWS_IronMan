@@ -9,23 +9,22 @@ import android.util.Log;
 public class PageController {
 
     private FragmentManager fragmentManager;
-    private int contentId;
+    private int targetContainerId;
 
-    public PageController(FragmentManager fragmentManager , int contentId){
+    public PageController(FragmentManager fragmentManager , int targetContainerId){
         this.fragmentManager = fragmentManager;
-        this.contentId = contentId;
+        this.targetContainerId = targetContainerId;
     };
 
     public void changePage(Fragment fragment){
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         String name = fragment.getClass().getName();
 
-        fragmentTransaction.replace(contentId , fragment , name);
+        fragmentTransaction.replace(targetContainerId , fragment , name);
         Log.d("myLog","Change Page to " + name);
 
 
         fragmentTransaction.commit();
-        fragmentManager.executePendingTransactions();
     }
 
 }

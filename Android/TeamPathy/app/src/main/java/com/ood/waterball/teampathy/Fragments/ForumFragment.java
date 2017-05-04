@@ -13,7 +13,7 @@ import java.util.List;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
-public class ForumFragment extends SinglePageFragment {
+public class ForumFragment extends ContentFragment {
 
     private List<Issue> issueList;
 
@@ -25,8 +25,15 @@ public class ForumFragment extends SinglePageFragment {
         return fragment;
     }
 
+
     public ForumFragment() {
         // Required empty public constructor
+        //todo 更換正確id
+    }
+
+    @Override
+    protected String getFragmentName() {
+        return ProjectHomePageFragment.TabFragmentPageAdapter.class.getName()+ ProjectHomePageFragment.TabFragmentPageAdapter.FORUM;
     }
 
     @Override

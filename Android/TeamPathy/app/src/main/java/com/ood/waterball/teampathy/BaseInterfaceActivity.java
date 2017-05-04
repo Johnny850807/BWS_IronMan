@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import com.ood.waterball.teampathy.Controllers.PageController;
 import com.ood.waterball.teampathy.Fragments.MemberHomePageFragment;
 
-public class BaseInterfacePage extends AppCompatActivity implements SinglePageArchitecture {
+public class BaseInterfaceActivity extends AppCompatActivity implements SinglePageArchitecture {
     private PageController pageController;
 
     @Override
@@ -17,10 +17,10 @@ public class BaseInterfacePage extends AppCompatActivity implements SinglePageAr
         setContentView(R.layout.activity_base_interface_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        onPageInitiate();
+        onPageControllerInitiate();
     }
 
-    private void onPageInitiate(){
+    private void onPageControllerInitiate(){
         pageController = new PageController(getSupportFragmentManager(),R.id.base_interface_fragment_content);
         pageController.changePage(new MemberHomePageFragment());
     }

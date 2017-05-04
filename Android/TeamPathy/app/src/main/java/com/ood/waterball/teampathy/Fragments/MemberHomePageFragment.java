@@ -24,7 +24,7 @@ import java.util.List;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
-public class MemberHomePageFragment extends ContentFragment {
+public class MemberHomePageFragment extends ActivityBaseFragment {
     private List<Project> projectList;
 
     private GridView projectGridView;
@@ -35,17 +35,20 @@ public class MemberHomePageFragment extends ContentFragment {
         // Required empty public constructor
     }
 
-
-
     @Override
     protected void onFetchData(@Nullable Bundle savedInstanceState , @Nullable Bundle arguBundle) {
         try {
-            String userId = Global.getMemberController().getActiveMember().getId();
-            projectList = Global.getTeamPathyFacade().getAllProjectsByUserId(userId);
-            Log(String.valueOf(projectList.size()));
+            fetchUserProjectList();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private List<Project> fetchUserProjectList() throws Exception {
+        String userId = Global.getMemberController().getActiveMember().getId();
+        projectList = Global.getTeamPathyFacade().getAllProjectsByUserId(userId);
+        Log(String.valueOf(projectList.size()));
+        return projectList;
     }
 
     @Override
@@ -65,6 +68,10 @@ public class MemberHomePageFragment extends ContentFragment {
         setListeners();
     }
 
+    private void initProjectGridView(){
+        projectGridAdapter = new ProjectGridAdapter(getContext());
+        projectGridView.setAdapter(projectGridAdapter);
+    }
 
     private void setListeners(){
         fab.setOnClickListener(new View.OnClickListener() {
@@ -75,14 +82,6 @@ public class MemberHomePageFragment extends ContentFragment {
             }
         });
     }
-
-
-    private void initProjectGridView(){
-        projectGridAdapter = new ProjectGridAdapter(getContext());
-        projectGridView.setAdapter(projectGridAdapter);
-    }
-
-
 
     public class ProjectGridAdapter extends ArrayAdapter<Project> {
 
@@ -102,6 +101,8 @@ public class MemberHomePageFragment extends ContentFragment {
                 viewHolder.text = (TextView) convertView.findViewById(R.id.name_projectItem);
 
                 convertView.setTag(viewHolder);
+
+                /**每個專案格子點下去之後都要換到該專案的首頁**/
                 convertView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -112,6 +113,8 @@ public class MemberHomePageFragment extends ContentFragment {
             }
             else
                 viewHolder = (ViewHolder) convertView.getTag();
+
+            /**載入專案圖片以及標題**/
 
             Project project = getItem(position);
 
