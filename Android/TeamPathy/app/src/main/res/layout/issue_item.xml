@@ -4,47 +4,58 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/issue_card_height"
     app:cardElevation="14dp"
-    app:cardUseCompatPadding="true"
+    app:contentPadding="15dp"
+    android:clickable="true"
+    android:layout_margin="20dp"
+    android:foreground="?android:attr/selectableItemBackground"
     app:cardCornerRadius="25dp"
     app:cardBackgroundColor="@color/app_textword_color">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="15dp">
+        android:layout_height="match_parent">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
                 android:id="@+id/datetime_text_issue_item"
                 android:text="2017 21 Apr "
-                android:textColor="@color/app_hint_color"/>
+                android:layout_weight="1"
+                android:textColor="@color/app_hint_color"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
-                android:layout_toRightOf="@id/datetime_text_issue_item"
+                android:layout_marginLeft="17dp"
                 android:id="@+id/author_text_issue_item"
                 android:text="林宗億"
-                android:textColor="#646464"/>
-        </RelativeLayout>
+                android:layout_weight="5"
+                android:textColor="#646464"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/datetime_text_issue_item"
+                android:layout_toEndOf="@+id/datetime_text_issue_item"
+                android:layout_marginStart="17dp" />
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
+                android:layout_weight="1"
                 android:id="@+id/title_text_issue_item"
                 android:text="功能"
                 android:textColor="@color/app_button_word_color"/>
@@ -52,11 +63,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_weight="1"
+                android:gravity="end"
                 android:id="@+id/type_text_issue_item"
                 android:text="投票"
                 android:textColor="@color/app_hint_color"/>
 
-        </RelativeLayout>
+        </LinearLayout>
     </RelativeLayout>
 
 

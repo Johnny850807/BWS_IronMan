@@ -16,7 +16,8 @@ import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
 import com.ood.waterball.teampathy.R;
 
-import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
@@ -85,9 +86,18 @@ public class ForumFragment extends ActivityBaseFragment {
         public void onBindViewHolder(MyViewHolder holder, int position) {
             holder.titleTxt.setText(issueList.get(position).getTitle());
             holder.typeTxt.setText(issueList.get(position).getType());
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            holder.dateTxt.setText( dateFormat.format(issueList.get(position).getDatetime()));
+            holder.dateTxt.setText(convertDateToString(issueList.get(position).getDatetime()));
             holder.authorTxt.setText(issueList.get(position).getPoster().getName());
+        }
+
+        private String convertDateToString(Date datetime){
+            String[] monthNames = getResources().getStringArray(R.array.month_names);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(datetime);
+            String date = String.valueOf(calendar.get(Calendar.DATE));
+            String month = monthNames[(calendar.get(Calendar.MONTH))];
+            String year = String.valueOf(calendar.get(Calendar.YEAR));
+            return year + " " + date + " " + month;
         }
 
         @Override
