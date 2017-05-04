@@ -5,7 +5,7 @@
     android:layout_height="@dimen/issue_card_height"
     app:cardElevation="14dp"
     app:cardUseCompatPadding="true"
-    app:cardCornerRadius="14dp"
+    app:cardCornerRadius="25dp"
     app:cardBackgroundColor="@color/app_textword_color">
 
     <RelativeLayout
