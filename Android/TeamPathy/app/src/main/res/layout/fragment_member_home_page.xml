@@ -7,7 +7,7 @@
     android:paddingBottom="@dimen/fragment_vertical_margin"
     android:paddingLeft="@dimen/fragment_horizontal_margin"
     android:paddingRight="@dimen/fragment_horizontal_margin"
-    android:paddingTop="@dimen/fragment_vertical_margin"
+    android:paddingTop="12dp"
     android:background="@drawable/app_background"
     tools:context="com.ood.waterball.teampathy.MainActivity">
 

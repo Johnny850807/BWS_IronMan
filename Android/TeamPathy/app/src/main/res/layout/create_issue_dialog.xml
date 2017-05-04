@@ -58,7 +58,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minLines="15"
+                android:minLines="12"
                 android:maxLines="10"
                 android:hint="@string/issue_content"
                 android:textColorHint="@color/app_hint_color"
