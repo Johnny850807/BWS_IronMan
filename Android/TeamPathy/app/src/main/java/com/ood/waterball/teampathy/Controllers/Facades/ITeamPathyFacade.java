@@ -12,4 +12,8 @@ public interface ITeamPathyFacade {
 
     public Project getProjectById(String projectId) throws Exception;
     public List<Issue> getAllIssuesByProjectId(String projectId) throws Exception;
+    public Issue getIssueById(String issueId)throws Exception;
+    public Issue addIssue(Issue issue)throws Exception;
+    public Issue removeIssue(Issue issue)throws Exception;
+    public Issue editIssue(Issue issue)throws Exception;;
 }

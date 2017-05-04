@@ -59,4 +59,13 @@ public class Issue extends Entity {
     public void setType(String type) {
         this.type = type;
     }
+
+    public Issue getClone()throws CloneNotSupportedException{
+        return (Issue) this.clone();
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return new Issue(poster,title,content,type);
+    }
 }

@@ -1,6 +1,7 @@
 package com.ood.waterball.teampathy.Controllers.Facades;
 
 
+import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.Member;
 import com.ood.waterball.teampathy.Domains.Project;
@@ -13,6 +14,7 @@ public class TestTeamPathyFacade implements ITeamPathyFacade {
     private List<Project> projectList;
     private Project project = new Project("TeamPathy","軟體專案","行動化團隊合作系統",IMAGE_URL_PROJECT);
     private List<Issue> issueList;
+    private Issue issue;
 
     @Override
     public List<Project> getAllProjectsByUserId(String userId) throws Exception {
@@ -102,5 +104,32 @@ public class TestTeamPathyFacade implements ITeamPathyFacade {
 
         return issueList;
     }
+
+    @Override
+    public Issue getIssueById(String issueId) throws Exception {
+        if (issue == null)
+            issue = new Issue(Global.getMemberController().getActiveMember(),"TeamPathy","我們行不行 ? 絕對沒問題 !!! ","議題");
+        return issue;
+    }
+
+    @Override
+    public Issue addIssue(Issue issue) throws Exception {
+        issueList.add(issue);
+        return issue;
+    }
+
+    @Override
+    public Issue removeIssue(Issue issue) throws Exception {
+        issueList.remove(issue);
+        return issue;
+    }
+
+    @Override
+    public Issue editIssue(Issue issue) throws Exception {
+        for (int i = 0 ; i < issueList.size() ; i ++ )
+            issueList.set(i,issue.getClone());
+        return issue;
+    }
+
 
 }
