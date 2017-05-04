@@ -44,5 +44,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="issue_title">文章名稱</string>
+    <string name="issue_content">文章內容</string>
+    <string name="CreateIssue">新增議題</string>
+    <string name="create">新增</string>
+    <string name="cancel">取消</string>
 
 </resources>

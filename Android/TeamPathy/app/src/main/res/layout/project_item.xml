@@ -8,7 +8,7 @@
     <ImageView
         android:layout_width="@dimen/projectIconSize"
         android:layout_height="@dimen/projectIconSize"
-        android:src="@drawable/testimg"
+        android:src="@drawable/logo"
         android:id="@+id/img_projectItem"
         android:layout_gravity="center_horizontal"/>
 

@@ -21,4 +21,10 @@
 
     <style name="TeamPathy.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="gray_textinputlayout" parent="Widget.Design.TextInputLayout">
+        <item name="android:textColorHint">@color/app_hint_color</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+
+
 </resources>

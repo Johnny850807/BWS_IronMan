@@ -1,9 +1,11 @@
 package com.ood.waterball.teampathy.Fragments.Forum;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -65,11 +67,41 @@ public class ForumFragment extends ActivityBaseFragment {
 
     @Override
     protected void onControlViews() {
+
+    }
+
+    private void initiateRecyclerView(){
         recyclerAdapter = new MyRecyclerAdapter();
         issueRecyclerView.setAdapter(recyclerAdapter);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         issueRecyclerView.setLayoutManager(layoutManager);
+    }
+
+    private void setListeners(){
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.create_issue_dialog,null);
+                new AlertDialog.Builder(getContext())
+                        .setIcon(R.drawable.logo)
+                        .setView(dialogView)
+                        .setTitle(R.string.CreateIssue)
+                        .setPositiveButton(getString(R.string.create), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        })
+                        .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        })
+                        .show();
+            }
+        });
     }
 
 

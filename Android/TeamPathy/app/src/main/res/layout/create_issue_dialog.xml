@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:counterEnabled="true"
+        app:counterMaxLength="12"
+        app:errorEnabled="true"
+        style="@style/gray_textinputlayout">
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:maxLength="12"
+            android:hint="@string/issue_title"
+            android:id="@+id/issueTitleED_issue_dialog"
+            android:singleLine="true"
+            android:inputType="textPersonName"
+            android:maxLines="1"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Spinner
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/typeSpinner_issue_dialog">
+
+    </Spinner>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:counterEnabled="true"
+        app:errorEnabled="true"
+        style="@style/gray_textinputlayout">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="15"
+            android:maxLines="10"
+            android:hint="@string/issue_content"
+            android:textColorHint="@color/app_hint_color"
+            android:gravity="center_horizontal"
+            android:id="@+id/issueContentED_issue_dialog"/>
+    </android.support.design.widget.TextInputLayout>
+
+
+</LinearLayout>
