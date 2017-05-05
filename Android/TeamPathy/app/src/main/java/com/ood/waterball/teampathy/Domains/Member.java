@@ -1,17 +1,21 @@
 package com.ood.waterball.teampathy.Domains;
 
 
+import com.ood.waterball.teampathy.Controllers.Global;
+
 public class Member extends Entity{
     private String name;
     private String account;
     private String password;
+    private String imageUrl;
 
     public Member(){}
 
-    public Member(String name,String account,String password){
+    public Member(String name,String account,String password,String imageUrl){
         this.name = name;
         this.account = account;
         this.password = password;
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -37,5 +41,14 @@ public class Member extends Entity{
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
 
 }

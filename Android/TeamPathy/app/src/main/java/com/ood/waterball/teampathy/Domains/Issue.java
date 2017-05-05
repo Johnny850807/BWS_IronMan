@@ -1,13 +1,15 @@
 package com.ood.waterball.teampathy.Domains;
 
 
+import com.ood.waterball.teampathy.Controllers.Global;
+
 import java.util.Date;
 
 public class Issue extends Entity {
     private String title;
     private String content;
     private String type;
-    private Date datetime;
+    private Date postDate;
     private Member poster;
 
     public Issue(){}
@@ -17,7 +19,7 @@ public class Issue extends Entity {
         this.title = title;
         this.content = content;
         this.type = type;
-        datetime = new Date();
+        postDate = new Date();
     }
 
     public String getContent() {
@@ -44,12 +46,12 @@ public class Issue extends Entity {
         this.poster = poster;
     }
 
-    public Date getDatetime() {
-        return datetime;
+    public Date getPostDate() {
+        return postDate;
     }
 
-    public void setDatetime(Date datetime) {
-        this.datetime = datetime;
+    public void setPostDate(Date postDate) {
+        this.postDate = postDate;
     }
 
     public String getType() {
@@ -67,5 +69,9 @@ public class Issue extends Entity {
     @Override
     protected Object clone() throws CloneNotSupportedException {
         return new Issue(poster,title,content,type);
+    }
+
+    public String getDateString(){
+        return Global.getTeamPathyFacade().convertDateToString(postDate);
     }
 }

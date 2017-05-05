@@ -216,6 +216,7 @@ public class ForumFragment extends ActivityBaseFragment {
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View v = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.issue_item, parent, false);
+
             return  new MyViewHolder(v);
         }
 
@@ -223,7 +224,7 @@ public class ForumFragment extends ActivityBaseFragment {
         public void onBindViewHolder(MyViewHolder holder, int position) {
             holder.titleTxt.setText(issueList.get(position).getTitle());
             holder.typeTxt.setText(issueList.get(position).getType());
-            holder.dateTxt.setText(convertDateToString(issueList.get(position).getDatetime()));
+            holder.dateTxt.setText(convertDateToString(issueList.get(position).getPostDate()));
             holder.authorTxt.setText(issueList.get(position).getPoster().getName());
         }
 
@@ -248,6 +249,15 @@ public class ForumFragment extends ActivityBaseFragment {
                 typeTxt = (TextView) itemView.findViewById(R.id.type_text_issue_item);
                 dateTxt = (TextView) itemView.findViewById(R.id.datetime_text_issue_item);
                 authorTxt = (TextView) itemView.findViewById(R.id.author_text_issue_item);
+
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int position = getLayoutPosition();
+                        Issue issue = issueList.get(position);
+                        getSinglePage().changePage(IssueDetailsFragment.getInstance(issue));
+                    }
+                });
             }
         }
     }
