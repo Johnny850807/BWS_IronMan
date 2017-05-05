@@ -15,7 +15,14 @@ public class EnglishAbbreviationDateConvert implements DateConvertStrategy {
         String date = String.valueOf(calendar.get(Calendar.DATE));
         String month = DATE_NAME_ENG_ABR[(calendar.get(Calendar.MONTH))];
         String year = String.valueOf(calendar.get(Calendar.YEAR));
-        return year + " " + date + " " + month;
+        String hour = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
+        if (hour.length() == 1)
+            hour = "0" + hour ;
+        String minute = String.valueOf(calendar.get(Calendar.MINUTE));
+        if (minute.length() == 1)
+            minute = "0" + minute ;
+
+        return year + " " + date + " " + month + " " + hour + ":" + minute;
     }
 
 }
