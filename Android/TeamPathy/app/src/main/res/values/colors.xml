@@ -7,5 +7,6 @@
     <color name="almost_white">#f2f2f2</color>
     <color name="app_textword_color">#e6e6e6</color>
     <color name="app_hint_color">#807f7f</color>
-    <color name="app_button_word_color">#201f1f</color>
+    <color name="app_black_word_color">#201f1f</color>
+    <color name="issue_content_color">#303030</color>
 </resources>

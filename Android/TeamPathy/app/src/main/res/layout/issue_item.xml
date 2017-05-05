@@ -6,10 +6,10 @@
     app:cardElevation="50dp"
     app:contentPadding="15dp"
     android:clickable="true"
-    android:layout_margin="20dp"
     android:foreground="?android:attr/selectableItemBackground"
-    app:cardCornerRadius="25dp"
-    app:cardBackgroundColor="@color/app_textword_color">
+    app:cardCornerRadius="12dp"
+    app:cardBackgroundColor="@color/app_textword_color"
+    android:layout_margin="20dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                 android:layout_weight="1"
                 android:id="@+id/title_text_issue_item"
                 android:text="功能"
-                android:textColor="@color/app_button_word_color"/>
+                android:textColor="@color/app_black_word_color"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

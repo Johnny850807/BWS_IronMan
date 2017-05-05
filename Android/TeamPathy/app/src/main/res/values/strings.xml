@@ -55,5 +55,9 @@
     <string name="please_choose_an_issue_type">請選擇文章分類</string>
     <string name="issue_content_cannot_be_empty">文章內容不能為空</string>
     <string name="issue_created_completed">文章新增完畢</string>
+    <string name="card_transitionname">card</string>
+    <string name="issue_title_transitionname">issuetitle</string>
+    <string name="test_long_string">就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了，我哭著臉回家找媽。就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了</string>
+    <string name="issue_content_transitionname">issuecontent</string>
 
 </resources>

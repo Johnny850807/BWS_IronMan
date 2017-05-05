@@ -31,7 +31,7 @@
         android:layout_marginBottom="10dp"
         android:maxLines="1"
         android:singleLine="true"
-        android:textColor="@color/app_button_word_color"
+        android:textColor="@color/app_black_word_color"
         android:id="@+id/inputAccount_Main" />
 
     <EditText
@@ -39,7 +39,7 @@
         android:layout_height="55dp"
         android:gravity="center"
         android:hint="@string/Inputpassword"
-        android:textColor="@color/app_button_word_color"
+        android:textColor="@color/app_black_word_color"
         android:maxLines="1"
         android:singleLine="true"
         android:textColorHint="@color/app_hint_color"
@@ -82,7 +82,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/corner_button"
         android:text="@string/logIn"
-        android:textColor="@color/app_button_word_color"
+        android:textColor="@color/app_black_word_color"
         android:onClick="logInOnClickMain"/>
 
 
