@@ -76,18 +76,16 @@ public class TitleContentPostingDialogBuilder extends PostingDialogBuilder {
                 if ( onDetectListener == null )
                     onDetectListener = new OnDetectListener() {
                         @Override
-                        public boolean onTextEmptyReport(int errorViewId) {
+                        public boolean onTextEmptyReport(int errorViewId,TextView errorText) {
                             if (errorViewId == titleTextInputEditTextId)
                             {
-                                error.setText("Title should not be empty.");
-                                error.setVisibility(View.VISIBLE);
+                                errorText.setText("Title should not be empty.");
                                 return false;
                             }
 
                             else if (errorViewId == contentTextInputEditTextId)
                             {
-                                error.setText("Content should not be empty.");
-                                error.setVisibility(View.VISIBLE);
+                                errorText.setText("Content should not be empty.");
                                 return false;
                             }
 
@@ -95,10 +93,10 @@ public class TitleContentPostingDialogBuilder extends PostingDialogBuilder {
                         }
 
                         @Override
-                        public boolean onElseDetect() {return true;}
+                        public boolean onElseDetect(TextView errorText) {return true;}
 
                         @Override
-                        public boolean onDetectLength(int viewId, int length) { return true; }
+                        public boolean onDetectLength(int viewId, int length,TextView errorText) { return true; }
 
                     };
                 boolean titleAvailable = true;
@@ -107,28 +105,32 @@ public class TitleContentPostingDialogBuilder extends PostingDialogBuilder {
                 if ( title != null )
                 {
                     if ( title.getText().toString().isEmpty() )
-                        titleAvailable = onDetectListener.onTextEmptyReport(titleTextInputEditTextId)
-                                && onDetectListener.onDetectLength(titleTextInputEditTextId,title.getText().length());
+                        titleAvailable = onDetectListener.onTextEmptyReport(titleTextInputEditTextId,error)
+                                && onDetectListener.onDetectLength(titleTextInputEditTextId,title.getText().length(),error);
                 }
 
 
                 if ( content != null )
                 {
                     if ( content.getText().toString().isEmpty() )
-                        contentAvailable = onDetectListener.onTextEmptyReport(contentTextInputEditTextId)
-                                && onDetectListener.onDetectLength(contentTextInputEditTextId,content.getText().length());
+                        contentAvailable = onDetectListener.onTextEmptyReport(contentTextInputEditTextId,error)
+                                && onDetectListener.onDetectLength(contentTextInputEditTextId,content.getText().length(),error);
                 }
 
 
                 if (errorDetect)
-                    if (  titleAvailable && contentAvailable && onDetectListener.onElseDetect()  )
+                    if (  titleAvailable && contentAvailable && onDetectListener.onElseDetect(error)  )
                     {
                         onFinishListener.onFinish(title == null ? null : title.getText().toString(),
                                 content == null ? null : content.getText().toString());
                         currentDialog.dismiss();
                     }
                     else if (scrollView != null)
+                    {
+                        error.setVisibility(View.VISIBLE);
                         scrollView.fullScroll(ScrollView.FOCUS_UP);
+                    }
+
 
             }
         };
@@ -136,9 +138,9 @@ public class TitleContentPostingDialogBuilder extends PostingDialogBuilder {
 
 
     public interface OnDetectListener {
-        public boolean onTextEmptyReport(int errorViewId); // if any of texts is empty , it will be pass as a parameter in the function
-        public boolean onElseDetect();  // add additional stuffs here to detect else things and pass a boolean result to decide if an error occurs.
-        public boolean onDetectLength(int viewId , int length); // to detect whether all views' lengths are correct and return a boolean result to decide if an error occurs.
+        public boolean onTextEmptyReport(int errorViewId,TextView errorText); // if any of texts is empty , it will be pass as a parameter in the function
+        public boolean onElseDetect(TextView errorText);  // add additional stuffs here to detect else things and pass a boolean result to decide if an error occurs.
+        public boolean onDetectLength(int viewId , int length ,TextView errorText); // to detect whether all views' lengths are correct and return a boolean result to decide if an error occurs.
     }
 
     public interface onFinishListener{

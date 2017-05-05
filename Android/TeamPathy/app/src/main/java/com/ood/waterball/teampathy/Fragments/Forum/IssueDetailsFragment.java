@@ -126,6 +126,27 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
                                 }
                             }
                         })
+                        .setOnDetectListener(new TitleContentPostingDialogBuilder.OnDetectListener() {
+                            @Override
+                            public boolean onTextEmptyReport(int errorViewId,TextView errorText) {
+                                if (errorViewId == R.id.commentContentED_issue_comment_dialog)
+                                {
+                                    errorText.setText(getString(R.string.issue_content_cannot_be_empty));
+                                    return false;
+                                }
+                                return true;
+                            }
+
+                            @Override
+                            public boolean onElseDetect(TextView errorText) {
+                                return true;
+                            }
+
+                            @Override
+                            public boolean onDetectLength(int viewId, int length,TextView errorText) {
+                                return true;
+                            }
+                        })
                         .setScrollviewId(R.id.scrollView_issue_comment_dialog)
                         .setCancelDialogContentString(getString(R.string.make_sure_to_cancel))
                         .setConfirmString(getString(R.string.confirm))

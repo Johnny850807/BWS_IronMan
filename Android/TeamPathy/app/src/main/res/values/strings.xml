@@ -63,5 +63,6 @@
     <string name="issue_comment_content">留言內容</string>
     <string name="comment_created_completed">留言新增完畢</string>
     <string name="watch">觀看</string>
+    <string name="enter">進入</string>
 
 </resources>

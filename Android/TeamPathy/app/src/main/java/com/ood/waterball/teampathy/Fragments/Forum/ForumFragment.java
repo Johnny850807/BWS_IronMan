@@ -141,12 +141,8 @@ public class ForumFragment extends ActivityBaseFragment {
             @Override
             public void onClick(View view) {
                 try {
-                    if ( createIssueAndCheckAvailable(dialogView) )
-                    {
+                    if ( checkAvailableAndAddIssueThenNotify(dialogView) )
                         alertDialog.dismiss();
-                        Snackbar.make(fab, R.string.issue_created_completed, Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
-                    }
                     else
                         scrollView.fullScroll(ScrollView.FOCUS_UP);  //偵測到錯誤之後，將對話窗回到頂端，才能看到錯誤訊息
 
@@ -177,7 +173,7 @@ public class ForumFragment extends ActivityBaseFragment {
     }
 
 
-    private boolean createIssueAndCheckAvailable(View dialogView) throws Exception {
+    private boolean checkAvailableAndAddIssueThenNotify(View dialogView) throws Exception {
         TextInputLayout titleEd = (TextInputLayout)dialogView.findViewById(R.id.issueTitleED_issue_dialog);
         TextView errorTxt = (TextView) dialogView.findViewById(R.id.errorTxt_issue_dialog);
         String title = titleEd.getEditText().getText().toString();
@@ -202,11 +198,22 @@ public class ForumFragment extends ActivityBaseFragment {
             return false;
         }
 
-        Global.getTeamPathyFacade().addIssue(new Issue(poster,title,content,issueType));
-        recyclerAdapter.notifyDataSetChanged();
-        layoutManager.scrollToPosition(0);
+        addIssueAndNotify(new Issue(poster,title,content,issueType));
 
         return true;
+    }
+
+    private void addIssueAndNotify(final Issue issue) throws Exception {
+        Global.getTeamPathyFacade().addIssue(issue);
+        recyclerAdapter.notifyDataSetChanged();
+        layoutManager.scrollToPosition(0);
+        Snackbar.make(fab, R.string.issue_created_completed, Snackbar.LENGTH_LONG)
+                .setAction(R.string.enter, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        getSinglePage().changePage(IssueDetailsFragment.getInstance(issue));
+                    }
+                }).show();
     }
 
 
