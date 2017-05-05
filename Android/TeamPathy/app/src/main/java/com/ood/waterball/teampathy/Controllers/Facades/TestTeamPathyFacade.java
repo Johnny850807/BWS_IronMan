@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 //todo 把每個crud 非同步化
 public class TestTeamPathyFacade extends TeamPathyFacade {
-    private static final String IMAGE_URL_PROJECT = "http://i.imgur.com/5s7vtxN.jpg";
+    private static final String IMAGE_URL_PROJECT = "http://i.imgur.com/fIfxle9.png";
     private List<Project> projectList;
     private Project project = new Project("TeamPathy","軟體專案","行動化團隊合作系統",IMAGE_URL_PROJECT);
     private List<Issue> issueList;

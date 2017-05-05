@@ -89,8 +89,7 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
     }
 
     private void setupViews(){
-        //todo Glide 載入
-        Glide.with(this).load(R.drawable.zongye).into(posterHeadImg);
+        Glide.with(this).load(currentIssue.getPoster().getImageUrl()).into(posterHeadImg);
         issueContentTxt.setText(currentIssue.getContent());
         issueTypeTxt.setText(currentIssue.getType());
         issueTitleTxt.setText(currentIssue.getTitle());

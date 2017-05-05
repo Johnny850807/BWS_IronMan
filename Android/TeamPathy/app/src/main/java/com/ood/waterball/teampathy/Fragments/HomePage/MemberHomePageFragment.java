@@ -121,7 +121,7 @@ public class MemberHomePageFragment extends ActivityBaseFragment {
 
             //todo Glide 載入 網路圖片問題
             Glide.with(getContext())
-                    .load(R.drawable.logo)
+                    .load(project.getImageUrl())
                     .into(viewHolder.image);
 
 
