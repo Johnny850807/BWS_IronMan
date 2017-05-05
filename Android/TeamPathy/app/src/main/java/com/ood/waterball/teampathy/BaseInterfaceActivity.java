@@ -21,7 +21,7 @@ public class BaseInterfaceActivity extends AppCompatActivity implements SinglePa
     }
 
     private void onPageControllerInitiate(){
-        pageController = new PageController(getSupportFragmentManager(),R.id.base_interface_fragment_content);
+        pageController = new PageController(this,getSupportFragmentManager(),R.id.base_interface_fragment_content);
         pageController.changePage(new MemberHomePageFragment());
     }
 
