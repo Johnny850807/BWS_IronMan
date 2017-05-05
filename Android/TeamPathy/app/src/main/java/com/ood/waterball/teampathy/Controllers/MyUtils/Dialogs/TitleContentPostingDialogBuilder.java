@@ -113,8 +113,7 @@ public class TitleContentPostingDialogBuilder extends PostingDialogBuilder {
                         contentAvailable = onDetectListener.onTextEmptyReport(contentTextInputEditTextId);
 
                 if (errorDetect)
-                    if (  titleAvailable && contentAvailable &&
-                            onDetectListener.onTextEmptyReport(contentTextInputEditTextId) &&
+                    if (  titleAvailable && contentAvailable  &&
                             onDetectListener.onDetectLength(titleTextInputEditTextId,title.getText().length()) &&
                             onDetectListener.onDetectLength(contentTextInputEditTextId,content.getText().length()) &&
                             onDetectListener.onElseDetect()  )
