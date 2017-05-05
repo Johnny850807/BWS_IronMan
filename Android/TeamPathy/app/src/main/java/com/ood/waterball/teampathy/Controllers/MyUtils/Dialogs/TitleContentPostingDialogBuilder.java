@@ -14,7 +14,6 @@ public class TitleContentPostingDialogBuilder extends PostingDialogBuilder {
     protected int contentTextInputEditTextId;
     protected int scrollviewId;
     protected int errorTextViewId;
-    protected boolean errorDetect = true;
     protected onFinishListener onFinishListener;
     protected OnDetectListener onDetectListener;
 
@@ -51,11 +50,6 @@ public class TitleContentPostingDialogBuilder extends PostingDialogBuilder {
 
     public TitleContentPostingDialogBuilder setErrorTextViewId(int errorTextViewId) {
         this.errorTextViewId = errorTextViewId;
-        return this;
-    }
-
-    public TitleContentPostingDialogBuilder setErrorDetect(boolean errorDetect) {
-        this.errorDetect = errorDetect;
         return this;
     }
 
@@ -118,18 +112,17 @@ public class TitleContentPostingDialogBuilder extends PostingDialogBuilder {
                 }
 
 
-                if (errorDetect)
-                    if (  titleAvailable && contentAvailable && onDetectListener.onElseDetect(error)  )
-                    {
-                        onFinishListener.onFinish(title == null ? null : title.getText().toString(),
-                                content == null ? null : content.getText().toString());
-                        currentDialog.dismiss();
-                    }
-                    else if (scrollView != null)
-                    {
-                        error.setVisibility(View.VISIBLE);
-                        scrollView.fullScroll(ScrollView.FOCUS_UP);
-                    }
+                if (  titleAvailable && contentAvailable && onDetectListener.onElseDetect(error)  )
+                {
+                    onFinishListener.onFinish(title == null ? null : title.getText().toString(),
+                            content == null ? null : content.getText().toString());
+                    currentDialog.dismiss();
+                }
+                else if (scrollView != null)
+                {
+                    error.setVisibility(View.VISIBLE);
+                    scrollView.fullScroll(ScrollView.FOCUS_UP);
+                }
 
 
             }

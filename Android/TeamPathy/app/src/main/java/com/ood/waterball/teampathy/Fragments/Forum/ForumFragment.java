@@ -1,13 +1,10 @@
 package com.ood.waterball.teampathy.Fragments.Forum;
 
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,13 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.ood.waterball.teampathy.Controllers.Global;
+import com.ood.waterball.teampathy.Controllers.MyUtils.Dialogs.TitleContentPostingDialogBuilder;
 import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.Member;
 import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
@@ -98,13 +93,69 @@ public class ForumFragment extends ActivityBaseFragment {
                 final View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.create_issue_dialog,null);
                 setDialogSpinnerListener(dialogView);
 
-                AlertDialog alertDialog = new AlertDialog.Builder(getContext())
+                TitleContentPostingDialogBuilder builder = new TitleContentPostingDialogBuilder(getContext());
+                builder.setContentTextInputEditTextId(R.id.issueContentED_issue_dialog)
+                        .setTitleTextInputEditTextId(R.id.issueTitleED_issue_dialog)
+                        .setErrorTextViewId(R.id.errorTxt_issue_dialog)
+                        .setOnFinishListener(new TitleContentPostingDialogBuilder.onFinishListener() {
+                            @Override
+                            public void onFinish(String title,String content) {
+                                try {
+                                    Member poster = Global.getMemberController().getActiveMember();
+                                    addIssueAndNotify(new Issue(poster,title,content,issueType));
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        })
+                        .setOnDetectListener(new TitleContentPostingDialogBuilder.OnDetectListener() {
+                            @Override
+                            public boolean onTextEmptyReport(int errorViewId,TextView errorText) {
+                                if (errorViewId == R.id.issueTitleED_issue_dialog)
+                                {
+                                    errorText.setText(getString(R.string.title_cannot_be_empty));
+                                    return false;
+                                }
+                                if (errorViewId == R.id.issueContentED_issue_dialog)
+                                {
+                                    errorText.setText(getString(R.string.issue_content_cannot_be_empty));
+                                    return false;
+                                }
+                                return true;
+                            }
+
+                            @Override
+                            public boolean onElseDetect(TextView errorText) {
+                                if ( issueType.equals(getString(R.string.get_all_issue_types)) )
+                                {
+                                    errorText.setText(getString(R.string.please_choose_an_issue_type));
+                                    errorText.setVisibility(View.VISIBLE);
+                                    return false;
+                                }
+                                return true;
+                            }
+
+                            @Override
+                            public boolean onDetectLength(int viewId, int length,TextView errorText) {
+                                if ( viewId == R.id.issueTitleED_issue_dialog && length > 12 )
+                                {
+                                    errorText.setText(R.string.title_cannt_be_exceeding_12_words);
+                                    return false;
+                                }
+                                return true;
+                            }
+                        })
+                        .setScrollviewId(R.id.scrollView_issue_dialog)
+                        .setCancelDialogContentString(getString(R.string.make_sure_to_cancel))
+                        .setConfirmString(getString(R.string.confirm))
+                        .setCancelString(getString(R.string.cancel))
+                        .setConfirmButtonId(R.id.confirmBTN_issue_dialog)
+                        .setCancelButtonId(R.id.cancelBTN_issue_dialog)
                         .setIcon(R.drawable.logo)
                         .setView(dialogView)
-                        .setTitle(R.string.CreateIssue)
+                        .setTitle(getString(R.string.CreateIssue))
                         .show();
 
-                setDialogButtonListener(dialogView,alertDialog);
             }
         });
     }
@@ -132,76 +183,6 @@ public class ForumFragment extends ActivityBaseFragment {
 
     }
 
-    private void setDialogButtonListener(final View dialogView, final AlertDialog alertDialog){
-        final ScrollView scrollView = (ScrollView) dialogView.findViewById(R.id.scrollView_issue_dialog);
-        Button confirmBTN = ((Button)dialogView.findViewById(R.id.confirmBTN_issue_dialog));
-        Button cancleBTN = (Button) dialogView.findViewById(R.id.cancelBTN_issue_dialog);
-
-        confirmBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    if ( checkAvailableAndAddIssueThenNotify(dialogView) )
-                        alertDialog.dismiss();
-                    else
-                        scrollView.fullScroll(ScrollView.FOCUS_UP);  //偵測到錯誤之後，將對話窗回到頂端，才能看到錯誤訊息
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        cancleBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new AlertDialog.Builder(getContext())
-                        .setIcon(R.drawable.logo)
-                        .setTitle(R.string.make_sure_to_cancel)
-                        .setPositiveButton(getString(R.string.confirm), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                alertDialog.dismiss();
-                            }
-                        })
-                        .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {}
-                        }).show();
-            }
-        });
-    }
-
-
-    private boolean checkAvailableAndAddIssueThenNotify(View dialogView) throws Exception {
-        TextInputLayout titleEd = (TextInputLayout)dialogView.findViewById(R.id.issueTitleED_issue_dialog);
-        TextView errorTxt = (TextView) dialogView.findViewById(R.id.errorTxt_issue_dialog);
-        String title = titleEd.getEditText().getText().toString();
-        String content = ((EditText)dialogView.findViewById(R.id.issueContentED_issue_dialog)).getText().toString();
-        Member poster = Global.getMemberController().getActiveMember();
-        if (title.isEmpty())
-        {
-            errorTxt.setText(getString(R.string.title_cannot_be_empty));
-            errorTxt.setVisibility(View.VISIBLE);
-            return false;
-        }
-        else if ( issueType.equals(getString(R.string.get_all_issue_types)) )
-        {
-            errorTxt.setText(getString(R.string.please_choose_an_issue_type));
-            errorTxt.setVisibility(View.VISIBLE);
-            return false;
-        }
-        else if ( content.isEmpty() )
-        {
-            errorTxt.setText(getString(R.string.issue_content_cannot_be_empty));
-            errorTxt.setVisibility(View.VISIBLE);
-            return false;
-        }
-
-        addIssueAndNotify(new Issue(poster,title,content,issueType));
-
-        return true;
-    }
 
     private void addIssueAndNotify(final Issue issue) throws Exception {
         Global.getTeamPathyFacade().addIssue(issue);

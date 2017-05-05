@@ -64,5 +64,6 @@
     <string name="comment_created_completed">留言新增完畢</string>
     <string name="watch">觀看</string>
     <string name="enter">進入</string>
+    <string name="title_cannt_be_exceeding_12_words">標題請勿超過12個字</string>
 
 </resources>
