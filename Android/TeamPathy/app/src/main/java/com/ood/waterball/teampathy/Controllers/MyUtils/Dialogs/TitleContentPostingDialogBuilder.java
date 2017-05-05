@@ -70,28 +70,11 @@ public class TitleContentPostingDialogBuilder extends PostingDialogBuilder {
                 if ( onDetectListener == null )
                     onDetectListener = new OnDetectListener() {
                         @Override
-                        public boolean onTextEmptyReport(int errorViewId,TextView errorText) {
-                            if (errorViewId == titleTextInputEditTextId)
-                            {
-                                errorText.setText("Title should not be empty.");
-                                return false;
-                            }
-
-                            else if (errorViewId == contentTextInputEditTextId)
-                            {
-                                errorText.setText("Content should not be empty.");
-                                return false;
-                            }
-
-                            return true;
-                        }
-
+                        public boolean onTextEmptyReport(int errorViewId,TextView errorText) {return true;}
                         @Override
                         public boolean onElseDetect(TextView errorText) {return true;}
-
                         @Override
                         public boolean onDetectLength(int viewId, int length,TextView errorText) { return true; }
-
                     };
                 boolean titleAvailable = true;
                 boolean contentAvailable = true;
