@@ -16,9 +16,11 @@ import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.Dialogs.TitleContentPostingDialogBuilder;
 import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.IssueComment;
+import com.ood.waterball.teampathy.Domains.Member;
 import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
 import com.ood.waterball.teampathy.R;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -107,8 +109,29 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
             public void onClick(View v) {
                 View view = LayoutInflater.from(getContext()).inflate(R.layout.create_issue_comment_dialog,null);
                 TitleContentPostingDialogBuilder builder = new TitleContentPostingDialogBuilder(getContext());
-
-
+                builder.setContentTextInputEditTextId(R.id.commentContentED_issue_comment_dialog)
+                        .setErrorTextViewId(R.id.errorTxt_issue_comment_dialog)
+                        .setOnFinishListener(new TitleContentPostingDialogBuilder.onFinishListener() {
+                            @Override
+                            public void onFinish(String title,String content) {
+                                try {
+                                    Member poster = Global.getMemberController().getActiveMember();
+                                    Global.getTeamPathyFacade().addIssueComment(new IssueComment(poster,content,new Date()));
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        })
+                        .setScrollviewId(R.id.scrollView_issue_comment_dialog)
+                        .setCancelDialogContentString(getString(R.string.make_sure_to_cancel))
+                        .setConfirmString(getString(R.string.confirm))
+                        .setCancelString(getString(R.string.cancel))
+                        .setConfirmButtonId(R.id.confirmBTN_issue_comment_dialog)
+                        .setCancelButtonId(R.id.cancelBTN_issue_comment_dialog)
+                        .setIcon(R.drawable.logo_transparent)
+                        .setView(view)
+                        .setTitle(getString(R.string.create_issue_comment))
+                        .show();
             }
         });
     }

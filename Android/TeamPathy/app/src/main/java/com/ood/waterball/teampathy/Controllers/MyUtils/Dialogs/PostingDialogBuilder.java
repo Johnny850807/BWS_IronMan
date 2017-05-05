@@ -36,31 +36,33 @@ public class PostingDialogBuilder extends AlertDialog.Builder {
         return this;
     }
 
-    public PostingDialogBuilder setCancelDialogContentStringId(String cancelDialogContentString) {
+    public PostingDialogBuilder setCancelDialogContentString(String cancelDialogContentString) {
         this.cancelDialogContentString = cancelDialogContentString;
         return this;
     }
 
-    public PostingDialogBuilder setConfirmStringId(String confirmStr) {
+    public PostingDialogBuilder setConfirmString(String confirmStr) {
         this.confirmStr = confirmStr;
         return this;
     }
 
-    public PostingDialogBuilder setCancelStringId(String cancelStr) {
+    public PostingDialogBuilder setCancelString(String cancelStr) {
         this.cancelStr = cancelStr;
         return this;
     }
 
     @Override
     public PostingDialogBuilder setIcon(int iconId) {
+        super.setIcon(iconId);
         this.iconId = iconId;
-        return (PostingDialogBuilder) super.setIcon(iconId);
+        return this;
     }
 
     @Override
     public PostingDialogBuilder setView(View view) {
+        super.setView(view);
         this.view = view;
-        return (PostingDialogBuilder) super.setView(view);
+        return this;
     }
 
     @Override
@@ -83,9 +85,9 @@ public class PostingDialogBuilder extends AlertDialog.Builder {
         Button cancelButton = (Button) view.findViewById(cancelBTNid);
 
         if (confirmBtnListener == null)  // it won't always be null , because users can set listener before creating.
-            confirmBtnListener = getConfirmBtnListener(); // if it hasn't been set , get it from subclass method.
+            confirmBtnListener = getConfirmBtnListener(dialog); // if it hasn't been set , get it from subclass method.
         if ( cancelBtnListener == null) // it won't always be null , because users can set listener before creating.
-            cancelBtnListener = getCancelBtnListener();  // if it hasn't been set , use default.
+            cancelBtnListener = getCancelBtnListener(dialog);  // if it hasn't been set , use default.
 
         if ( confirmBtnListener == null)  // it there is no subclass overriding getConfirmBtnListener() method , use default
             confirmButton.setOnClickListener(new View.OnClickListener() {
@@ -108,31 +110,34 @@ public class PostingDialogBuilder extends AlertDialog.Builder {
             cancelButton.setOnClickListener(cancelBtnListener);
     }
 
-    protected View.OnClickListener getConfirmBtnListener(){
+    protected View.OnClickListener getConfirmBtnListener(final AlertDialog currentDialog){
         return null;
     }
 
-    protected View.OnClickListener getCancelBtnListener(){
+    protected View.OnClickListener getCancelBtnListener(final AlertDialog currentDialog){
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 if ( iconId != 0 )
                     builder.setIcon(iconId);
-                if ( !cancelDialogContentString.isEmpty() )
+                if ( cancelDialogContentString != null )
                     builder.setTitle(cancelDialogContentString);
-                if ( !confirmStr.isEmpty() )
-                    builder.setPositiveButton( confirmStr, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialog.dismiss();
-                        }
-                    });
-                if ( !cancelStr.isEmpty()  )
-                    builder.setNegativeButton( cancelStr, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {}
-                    }).show();
+                else
+                    builder.setTitle("Are you going to close?");
+                String confirm = confirmStr == null ? "Finish" : confirmStr;
+                String cancel = cancelStr == null ? "Cancel" : cancelStr;
+
+                builder.setPositiveButton( confirm, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        currentDialog.dismiss();
+                    }
+                });
+                builder.setNegativeButton( cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {}
+                }).show();
             }
         };
     }

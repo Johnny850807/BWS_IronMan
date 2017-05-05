@@ -161,5 +161,11 @@ public class TestTeamPathyFacade extends TeamPathyFacade {
         return issueCommentList;
     }
 
+    @Override
+    public IssueComment addIssueComment(IssueComment issueComment) throws Exception {
+        issueCommentList.add(issueComment);
+        return issueComment;
+    }
+
 
 }

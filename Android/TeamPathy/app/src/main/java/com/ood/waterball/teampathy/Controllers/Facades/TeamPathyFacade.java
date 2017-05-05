@@ -28,4 +28,5 @@ public abstract class TeamPathyFacade {
     public abstract Issue editIssue(Issue issue)throws Exception;
     public abstract String[] getIssueTypeListByProjectId(String projectId) throws Exception;
     public abstract List<IssueComment> getIssueCommentListByIssueId(String issueId) throws Exception;
+    public abstract IssueComment addIssueComment(IssueComment issueComment) throws Exception;
 }
