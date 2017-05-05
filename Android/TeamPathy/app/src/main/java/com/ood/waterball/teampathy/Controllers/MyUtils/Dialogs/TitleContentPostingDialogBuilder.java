@@ -20,28 +20,34 @@ public class TitleContentPostingDialogBuilder extends PostingDialogBuilder {
         super(context);
     }
 
-    public void setTitleHint(String titleHint) {
+    public TitleContentPostingDialogBuilder setTitleHint(String titleHint) {
         this.titleHint = titleHint;
+        return this;
     }
 
-    public void setTitleTextInputEditTextId(int titleTextInputEditTextId) {
+    public TitleContentPostingDialogBuilder setTitleTextInputEditTextId(int titleTextInputEditTextId) {
         this.titleTextInputEditTextId = titleTextInputEditTextId;
+        return this;
     }
 
-    public void setContentHint(String contentHint) {
+    public TitleContentPostingDialogBuilder setContentHint(String contentHint) {
         this.contentHint = contentHint;
+        return this;
     }
 
-    public void setDetectListener(DetectListener detectListener) {
+    public TitleContentPostingDialogBuilder setDetectListener(DetectListener detectListener) {
         this.detectListener = detectListener;
+        return this;
     }
 
-    public void setContentTextInputEditTextId(int contentTextInputEditTextId) {
+    public TitleContentPostingDialogBuilder setContentTextInputEditTextId(int contentTextInputEditTextId) {
         this.contentTextInputEditTextId = contentTextInputEditTextId;
+        return this;
     }
 
-    public void setErrorDetect(boolean errorDetect) {
+    public TitleContentPostingDialogBuilder setErrorDetect(boolean errorDetect) {
         this.errorDetect = errorDetect;
+        return this;
     }
 
     @Override

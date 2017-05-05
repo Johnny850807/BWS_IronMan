@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView_issue_dialog"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/issueTitleED_issue_comment_dialog"
+            app:counterEnabled="true"
+            app:counterMaxLength="12"
+            style="@style/gray_textinputlayout">
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:maxLength="12"
+                android:hint="@string/issue_title"
+                android:singleLine="true"
+                android:inputType="textPersonName"
+                android:maxLines="1"/>
+        </android.support.design.widget.TextInputLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:visibility="gone"
+            android:id="@+id/errorTxt_issue_dialog"
+            android:textColor="#ff0000"
+            android:layout_gravity="center_horizontal"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:counterEnabled="true"
+            app:errorEnabled="true"
+
+            style="@style/gray_textinputlayout">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="12"
+                android:maxLines="10"
+                android:hint="@string/issue_content"
+                android:textColorHint="@color/app_hint_color"
+                android:gravity="center_horizontal"
+                android:id="@+id/issueContentED_issue_comment_dialog"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:id="@+id/cancelBTN_issue_comment_dialog"
+                android:layout_weight="1"
+                android:layout_margin="12dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm"
+                android:id="@+id/confirmBTN_issue_comment_dialog"
+                android:layout_weight="1"
+                android:layout_margin="12dp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

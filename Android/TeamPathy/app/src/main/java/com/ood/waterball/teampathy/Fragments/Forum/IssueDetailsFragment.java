@@ -2,6 +2,7 @@ package com.ood.waterball.teampathy.Fragments.Forum;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.ood.waterball.teampathy.Controllers.Global;
+import com.ood.waterball.teampathy.Controllers.MyUtils.Dialogs.TitleContentPostingDialogBuilder;
 import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.IssueComment;
 import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
@@ -32,6 +34,7 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
     private RecyclerView commentsRecyclerView;
     private LinearLayoutManager layoutManager;
     private MyRecyclerAdapter recyclerAdapter;
+    private FloatingActionButton fab;
 
     public static IssueDetailsFragment getInstance(Issue currentIssue){
         IssueDetailsFragment fragment = new IssueDetailsFragment();
@@ -69,12 +72,15 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
         dateTxt = (TextView) parentView.findViewById(R.id.postdate_issue_details);
         issueTypeTxt = (TextView) parentView.findViewById(R.id.issuetype_issue_details);
         commentsRecyclerView = (RecyclerView) parentView.findViewById(R.id.recycler_issue_details);
+        fab = (FloatingActionButton) parentView.findViewById(R.id.fab_issue_details);
     }
 
     @Override
     protected void onControlViews() {
         setupViews();
         initiateRecyclerView();
+        setCommentingFabListener();
+
     }
 
     private void setupViews(){
@@ -93,6 +99,18 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
         commentsRecyclerView.setLayoutManager(layoutManager);
         commentsRecyclerView.setAdapter(recyclerAdapter);
         commentsRecyclerView.setNestedScrollingEnabled(false);  //改善 scrollview 滑動慢的問題 see : http://stackoverflow.com/questions/33143485/recyclerview-inside-scrollview-not-scrolling-smoothly
+    }
+
+    private void setCommentingFabListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View view = LayoutInflater.from(getContext()).inflate(R.layout.create_issue_comment_dialog,null);
+                TitleContentPostingDialogBuilder builder = new TitleContentPostingDialogBuilder(getContext());
+
+
+            }
+        });
     }
 
 

@@ -26,40 +26,41 @@ public class PostingDialogBuilder extends AlertDialog.Builder {
         this.context = context;
     }
 
-    public AlertDialog.Builder setConfirmButtonId(int confirmBTNid) {
+    public PostingDialogBuilder setConfirmButtonId(int confirmBTNid) {
         this.confirmBTNid = confirmBTNid;
         return this;
     }
 
-    public AlertDialog.Builder setCancelButtonId(int cancelBTNid) {
+    public PostingDialogBuilder setCancelButtonId(int cancelBTNid) {
         this.cancelBTNid = cancelBTNid;
         return this;
     }
 
-    public AlertDialog.Builder setCancelDialogContentStringId(String cancelDialogContentString) {
+    public PostingDialogBuilder setCancelDialogContentStringId(String cancelDialogContentString) {
         this.cancelDialogContentString = cancelDialogContentString;
         return this;
     }
 
-    public AlertDialog.Builder setConfirmStringId(String confirmStr) {
+    public PostingDialogBuilder setConfirmStringId(String confirmStr) {
         this.confirmStr = confirmStr;
         return this;
     }
 
-    public AlertDialog.Builder setCancelStringId(String cancelStr) {
+    public PostingDialogBuilder setCancelStringId(String cancelStr) {
         this.cancelStr = cancelStr;
         return this;
     }
 
-    public AlertDialog.Builder setIcon(int iconId) {
+    @Override
+    public PostingDialogBuilder setIcon(int iconId) {
         this.iconId = iconId;
-        return super.setIcon(iconId);
+        return (PostingDialogBuilder) super.setIcon(iconId);
     }
 
     @Override
-    public AlertDialog.Builder setView(View view) {
+    public PostingDialogBuilder setView(View view) {
         this.view = view;
-        return super.setView(view);
+        return (PostingDialogBuilder) super.setView(view);
     }
 
     @Override
@@ -69,11 +70,11 @@ public class PostingDialogBuilder extends AlertDialog.Builder {
         return dialog;
     }
 
-    protected void setConfirmButtonListener(View.OnClickListener listener){
+    public void setConfirmButtonListener(View.OnClickListener listener){
         this.confirmBtnListener = listener;
     }
 
-    protected void setCancelButtonListener(View.OnClickListener listener){
+    public void setCancelButtonListener(View.OnClickListener listener){
         this.cancelBtnListener = listener;
     }
 
