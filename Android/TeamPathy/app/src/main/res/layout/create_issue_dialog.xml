@@ -16,7 +16,6 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:id="@+id/issueTitleED_issue_dialog"
             app:counterEnabled="true"
             app:counterMaxLength="12"
             style="@style/gray_textinputlayout">
@@ -24,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:id="@+id/issueTitleED_issue_dialog"
                 android:maxLength="12"
                 android:hint="@string/issue_title"
                 android:singleLine="true"
