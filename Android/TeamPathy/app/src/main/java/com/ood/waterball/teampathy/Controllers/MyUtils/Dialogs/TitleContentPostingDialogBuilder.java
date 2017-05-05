@@ -105,20 +105,26 @@ public class TitleContentPostingDialogBuilder extends PostingDialogBuilder {
                 boolean contentAvailable = true;
 
                 if ( title != null )
+                {
                     if ( title.getText().toString().isEmpty() )
-                        titleAvailable = onDetectListener.onTextEmptyReport(titleTextInputEditTextId);
+                        titleAvailable = onDetectListener.onTextEmptyReport(titleTextInputEditTextId)
+                                && onDetectListener.onDetectLength(titleTextInputEditTextId,title.getText().length());
+                }
+
 
                 if ( content != null )
+                {
                     if ( content.getText().toString().isEmpty() )
-                        contentAvailable = onDetectListener.onTextEmptyReport(contentTextInputEditTextId);
+                        contentAvailable = onDetectListener.onTextEmptyReport(contentTextInputEditTextId)
+                                && onDetectListener.onDetectLength(contentTextInputEditTextId,content.getText().length());
+                }
+
 
                 if (errorDetect)
-                    if (  titleAvailable && contentAvailable  &&
-                            onDetectListener.onDetectLength(titleTextInputEditTextId,title.getText().length()) &&
-                            onDetectListener.onDetectLength(contentTextInputEditTextId,content.getText().length()) &&
-                            onDetectListener.onElseDetect()  )
+                    if (  titleAvailable && contentAvailable && onDetectListener.onElseDetect()  )
                     {
-                        onFinishListener.onFinish(title.getText().toString(),content.getText().toString());
+                        onFinishListener.onFinish(title == null ? null : title.getText().toString(),
+                                content == null ? null : content.getText().toString());
                         currentDialog.dismiss();
                     }
                     else if (scrollView != null)

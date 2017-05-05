@@ -147,7 +147,8 @@ public class TestTeamPathyFacade extends TeamPathyFacade {
     @Override
     public List<IssueComment> getIssueCommentListByIssueId(String issueId) throws Exception {
         Date now = new Date();
-        issueCommentList = new ArrayList<>();
+        if ( issueCommentList == null )
+            issueCommentList = new ArrayList<>();
         issueCommentList.add( new IssueComment(new Member("曾韋傑","","",""),"阿是有多閒拉",now));
         issueCommentList.add( new IssueComment(new Member("黃嘉偉","","",""),"白癡 用GoodNight阿",now));
         issueCommentList.add( new IssueComment(new Member("Wang Ning","","",""),"聽說好像可以用url做女搜",now));

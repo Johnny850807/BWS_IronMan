@@ -3,12 +3,14 @@ package com.ood.waterball.teampathy.Fragments.Forum;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -33,6 +35,7 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
     private TextView issueContentTxt;
     private TextView dateTxt;
     private TextView issueTypeTxt;
+    private ScrollView scrollView;
     private RecyclerView commentsRecyclerView;
     private LinearLayoutManager layoutManager;
     private MyRecyclerAdapter recyclerAdapter;
@@ -75,6 +78,7 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
         issueTypeTxt = (TextView) parentView.findViewById(R.id.issuetype_issue_details);
         commentsRecyclerView = (RecyclerView) parentView.findViewById(R.id.recycler_issue_details);
         fab = (FloatingActionButton) parentView.findViewById(R.id.fab_issue_details);
+        scrollView = (ScrollView) parentView.findViewById(R.id.scrollview_issue_detail);
     }
 
     @Override
@@ -82,7 +86,6 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
         setupViews();
         initiateRecyclerView();
         setCommentingFabListener();
-
     }
 
     private void setupViews(){
@@ -97,6 +100,7 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
     private void initiateRecyclerView(){
         layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        layoutManager.setStackFromEnd(true);
         recyclerAdapter = new MyRecyclerAdapter();
         commentsRecyclerView.setLayoutManager(layoutManager);
         commentsRecyclerView.setAdapter(recyclerAdapter);
@@ -116,7 +120,7 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
                             public void onFinish(String title,String content) {
                                 try {
                                     Member poster = Global.getMemberController().getActiveMember();
-                                    Global.getTeamPathyFacade().addIssueComment(new IssueComment(poster,content,new Date()));
+                                    addNewIssueCommentAndRefresh(new IssueComment(poster,content,new Date()));
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -134,6 +138,19 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
                         .show();
             }
         });
+    }
+
+    private void addNewIssueCommentAndRefresh(IssueComment issueComment) throws Exception {
+        Global.getTeamPathyFacade().addIssueComment(issueComment);
+        recyclerAdapter.notifyDataSetChanged();
+
+        /**通知並且設定點擊觀看則scroll到新留言所在position**/
+        Snackbar.make(fab,R.string.comment_created_completed,Snackbar.LENGTH_SHORT).setAction(getString(R.string.watch), new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        }).show();
     }
 
 

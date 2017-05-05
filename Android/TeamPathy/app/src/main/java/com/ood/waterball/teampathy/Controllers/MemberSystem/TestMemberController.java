@@ -8,8 +8,8 @@ import com.ood.waterball.teampathy.Domains.Member;
 
 public class TestMemberController extends MemberController {
 
-    private final String TEST_ACCOUNT = "12345";
-    private final String TEST_PASSWORD = "12345";
+    private final String TEST_ACCOUNT = "";
+    private final String TEST_PASSWORD = "";
 
     @Override
     public void logIn(String account, String password) throws AccountNotFoundException {

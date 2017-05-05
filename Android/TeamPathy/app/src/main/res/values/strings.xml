@@ -61,5 +61,7 @@
     <string name="issue_content_transitionname">issuecontent</string>
     <string name="create_issue_comment">新增留言</string>
     <string name="issue_comment_content">留言內容</string>
+    <string name="comment_created_completed">留言新增完畢</string>
+    <string name="watch">觀看</string>
 
 </resources>
