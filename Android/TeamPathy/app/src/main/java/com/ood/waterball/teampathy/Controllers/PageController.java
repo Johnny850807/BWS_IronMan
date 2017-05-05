@@ -45,7 +45,7 @@ public class PageController {
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
             enterTransition = TransitionInflater.from(context).inflateTransition(R.transition.auto_transition);
-            exitTransition = fragment.setExitTransition(TransitionInflater.from(context).inflateTransition(R.transition.auto_transition);
+            exitTransition = TransitionInflater.from(context).inflateTransition(R.transition.auto_transition);
         }
 
         changePage(fragment,enterTransition,exitTransition);
