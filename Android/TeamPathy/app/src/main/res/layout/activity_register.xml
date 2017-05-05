@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/corner_button"
             android:text="@string/finishRegistering"
-            android:textColor="@color/app_button_word_color"
+            android:textColor="@color/app_black_word_color"
             android:layout_marginTop="17dp"
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
