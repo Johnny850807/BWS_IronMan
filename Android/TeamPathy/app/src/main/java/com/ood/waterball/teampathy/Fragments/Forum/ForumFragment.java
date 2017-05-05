@@ -27,7 +27,6 @@ import com.ood.waterball.teampathy.Domains.Member;
 import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
 import com.ood.waterball.teampathy.R;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -229,13 +228,7 @@ public class ForumFragment extends ActivityBaseFragment {
         }
 
         private String convertDateToString(Date datetime){
-            String[] monthNames = getResources().getStringArray(R.array.month_names);
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(datetime);
-            String date = String.valueOf(calendar.get(Calendar.DATE));
-            String month = monthNames[(calendar.get(Calendar.MONTH))];
-            String year = String.valueOf(calendar.get(Calendar.YEAR));
-            return year + " " + date + " " + month;
+            return Global.getTeamPathyFacade().convertDateToString(datetime);
         }
 
         @Override

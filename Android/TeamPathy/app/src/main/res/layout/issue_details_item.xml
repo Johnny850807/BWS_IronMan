@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/title_text_issue_details_item"
+            android:id="@+id/comment_text_issue_details_item"
             android:text="阿你是不會用GoodNight喔?"
             android:textColor="@color/app_black_word_color" />
         <LinearLayout

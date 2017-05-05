@@ -2,6 +2,7 @@ package com.ood.waterball.teampathy.Controllers.Facades;
 
 
 import com.ood.waterball.teampathy.Controllers.Global;
+import com.ood.waterball.teampathy.Controllers.MyUtils.DateConvertStrategy.DateConvertStrategy;
 import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.Member;
 import com.ood.waterball.teampathy.Domains.Project;
@@ -10,12 +11,16 @@ import com.ood.waterball.teampathy.R;
 import java.util.ArrayList;
 import java.util.List;
 //todo 把每個crud 非同步化
-public class TestTeamPathyFacade implements ITeamPathyFacade {
+public class TestTeamPathyFacade extends TeamPathyFacade {
     private static final String IMAGE_URL_PROJECT = "http://i.imgur.com/5s7vtxN.jpg";
     private List<Project> projectList;
     private Project project = new Project("TeamPathy","軟體專案","行動化團隊合作系統",IMAGE_URL_PROJECT);
     private List<Issue> issueList;
     private Issue issue;
+
+    public TestTeamPathyFacade(DateConvertStrategy dateConvertStrategy) {
+        super(dateConvertStrategy);
+    }
 
     @Override
     public List<Project> getProjectListByUserId(String userId) throws Exception {
