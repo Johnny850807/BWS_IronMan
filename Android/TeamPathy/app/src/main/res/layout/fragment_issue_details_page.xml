@@ -42,7 +42,6 @@
                         <ImageView
                             android:layout_width="@dimen/member_head_picture_size"
                             android:layout_height="@dimen/member_head_picture_size"
-                            android:src="@drawable/zongye"
                             android:id="@+id/poster_picture_issue_details"
                             android:scaleType="fitCenter"/>
                         <LinearLayout
