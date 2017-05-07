@@ -19,14 +19,14 @@ import com.ood.waterball.teampathy.Controllers.MyUtils.Dialogs.TitleContentPosti
 import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.IssueComment;
 import com.ood.waterball.teampathy.Domains.Member;
-import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
+import com.ood.waterball.teampathy.Fragments.EntityAsyncCRUDFragment;
 import com.ood.waterball.teampathy.R;
 
 import java.util.Date;
 import java.util.List;
 
 
-public class IssueDetailsFragment extends ActivityBaseFragment {
+public class IssueDetailsFragment extends EntityAsyncCRUDFragment {
     private Issue currentIssue;
     private List<IssueComment> issueCommentList;
 

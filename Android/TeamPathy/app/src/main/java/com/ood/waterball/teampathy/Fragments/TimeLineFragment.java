@@ -30,7 +30,7 @@ import java.util.Random;
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
 
-public class TimeLineFragment extends ActivityBaseFragment {
+public class TimeLineFragment extends EntityAsyncCRUDFragment {
     private List<Timeline> timelineList;
     private String projectId;
 

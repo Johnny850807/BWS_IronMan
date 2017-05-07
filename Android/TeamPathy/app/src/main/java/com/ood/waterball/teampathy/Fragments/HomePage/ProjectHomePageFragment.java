@@ -12,7 +12,7 @@ import android.view.View;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Project;
 import com.ood.waterball.teampathy.Domains.ProjectSection;
-import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
+import com.ood.waterball.teampathy.Fragments.EntityAsyncCRUDFragment;
 import com.ood.waterball.teampathy.Fragments.Forum.ForumFragment;
 import com.ood.waterball.teampathy.Fragments.Office.OfficeFragment;
 import com.ood.waterball.teampathy.Fragments.TimeLineFragment;
@@ -21,7 +21,7 @@ import com.ood.waterball.teampathy.R;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
-public class ProjectHomePageFragment extends ActivityBaseFragment {
+public class ProjectHomePageFragment extends EntityAsyncCRUDFragment {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private Project currentProject;

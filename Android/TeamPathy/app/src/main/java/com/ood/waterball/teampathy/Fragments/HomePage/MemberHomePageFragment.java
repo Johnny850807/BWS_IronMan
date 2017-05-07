@@ -18,14 +18,14 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Project;
-import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
+import com.ood.waterball.teampathy.Fragments.EntityAsyncCRUDFragment;
 import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
-public class MemberHomePageFragment extends ActivityBaseFragment {
+public class MemberHomePageFragment extends EntityAsyncCRUDFragment {
     private List<Project> projectList;
 
     private GridView projectGridView;

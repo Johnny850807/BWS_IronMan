@@ -6,12 +6,12 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.ood.waterball.teampathy.Domains.Issue;
-import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
+import com.ood.waterball.teampathy.Fragments.EntityAsyncCRUDFragment;
 import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
-public class TodoListFragment extends ActivityBaseFragment {
+public class TodoListFragment extends EntityAsyncCRUDFragment {
 
     private List<Issue> issueList;
 

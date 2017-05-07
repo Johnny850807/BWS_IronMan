@@ -19,14 +19,14 @@ import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.Dialogs.TitleContentPostingDialogBuilder;
 import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.Member;
-import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
+import com.ood.waterball.teampathy.Fragments.EntityAsyncCRUDFragment;
 import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
-public class ForumFragment extends ActivityBaseFragment {
+public class ForumFragment extends EntityAsyncCRUDFragment {
     private String projectId;
     private List<Issue> issueList;
     private FloatingActionButton fab;
