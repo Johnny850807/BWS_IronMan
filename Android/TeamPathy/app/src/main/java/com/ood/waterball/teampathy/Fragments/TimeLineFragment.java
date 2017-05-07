@@ -37,6 +37,7 @@ public class TimeLineFragment extends ActivityBaseFragment {
     private CardView inputCardView;
     private ImageView inputPostHeaderImg;
     private EditText inputContentED;
+    private TextView posternameTXT;
 
     private RecyclerView timelineRecyclerView;
     private LinearLayoutManager layoutManager;
@@ -77,13 +78,16 @@ public class TimeLineFragment extends ActivityBaseFragment {
         inputCardView = (CardView) parentView.findViewById(R.id.workline_input_cardview_timeline);
         inputPostHeaderImg = (ImageView) parentView.findViewById(R.id.workline_input_poster_header_timeline);
         inputContentED = (EditText) parentView.findViewById(R.id.workline_input_content_ed_timeline);
+        posternameTXT = (TextView) parentView.findViewById(R.id.poster_name_timeline);
     }
 
 
     @Override
     protected void onControlViews() {
+        Member currentUser = Global.getMemberController().getActiveMember();
+        posternameTXT.setText(currentUser.getName());
         GlideHelper.loadToCircularImage(getContext(),inputPostHeaderImg,
-                Global.getMemberController().getActiveMember().getImageUrl());
+                currentUser.getImageUrl());
         initiateRecyclerView();
         setListeners();
     }

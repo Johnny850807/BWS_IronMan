@@ -27,6 +27,15 @@
                 android:id="@+id/workline_input_poster_header_timeline"
                 android:scaleType="fitCenter"
                 android:src="@drawable/logo"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/workline_item_poster_headpicture_size"
+                android:gravity="center"
+                android:layout_marginLeft="7dp"
+                android:text="林宗億"
+                android:id="@+id/poster_name_timeline"
+                android:textColor="@color/app_black_word_color"
+                android:layout_toRightOf="@id/workline_input_poster_header_timeline"/>
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
