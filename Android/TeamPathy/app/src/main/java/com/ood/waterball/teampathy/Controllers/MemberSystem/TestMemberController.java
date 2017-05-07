@@ -17,7 +17,7 @@ public class TestMemberController extends MemberController {
         if (!TEST_ACCOUNT.equals(account) || !TEST_PASSWORD.equals(password))
             throw new AccountNotFoundException();
 
-        activeMember = new Member("Waterball",account,password,"");
+        activeMember = new Member("Waterball",account,password,"http://i.imgur.com/4wXEKrP.png");
         activeMember.setId("sada564a56sd4as6d4a5s6d465as");
     }
 

@@ -15,8 +15,8 @@ import com.ood.waterball.teampathy.Domains.ProjectSection;
 import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
 import com.ood.waterball.teampathy.Fragments.Forum.ForumFragment;
 import com.ood.waterball.teampathy.Fragments.Office.OfficeFragment;
+import com.ood.waterball.teampathy.Fragments.TimeLineFragment;
 import com.ood.waterball.teampathy.Fragments.TodoList.TodoListFragment;
-import com.ood.waterball.teampathy.Fragments.WorkAnalysis.WorkAnalysisFragment;
 import com.ood.waterball.teampathy.R;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
@@ -88,18 +88,18 @@ public class ProjectHomePageFragment extends ActivityBaseFragment {
         @Override
         public CharSequence getPageTitle(int position) {
             super.getPageTitle(position);
-
             return projectSections[position];
         }
 
         @Override
         public Fragment getItem(int position) {
-            if (position == ProjectSection.FORUM.ordinal())
+
+            if (position == ProjectSection.TIMELINE.ordinal())
+                return TimeLineFragment.getInstance(currentProject.getId());
+            else if (position == ProjectSection.FORUM.ordinal())
                 return ForumFragment.getInstance(currentProject.getId());
             else if (position == ProjectSection.TODOLIST.ordinal())
                 return TodoListFragment.getInstance(currentProject.getId());
-            else if (position == ProjectSection.WORK_ANALYSIS.ordinal())
-                return WorkAnalysisFragment.getInstance(currentProject.getId());
             else
                 return OfficeFragment.getInstance(currentProject.getId());
         }

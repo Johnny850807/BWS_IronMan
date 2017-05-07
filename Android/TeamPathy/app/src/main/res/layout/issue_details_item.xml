@@ -9,7 +9,9 @@
     android:foreground="?android:attr/selectableItemBackground"
     app:cardCornerRadius="12dp"
     app:cardBackgroundColor="@color/app_textword_color"
-    android:layout_margin="20dp">
+    android:layout_marginTop="@dimen/item_margin_top"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -9,4 +9,11 @@
     <color name="app_hint_color">#807f7f</color>
     <color name="app_black_word_color">#201f1f</color>
     <color name="issue_content_color">#303030</color>
+
+    <color name="timeline_colors_blue">#c8fbff</color>
+    <color name="timeline_colors_red">#fccece</color>
+    <color name="timeline_colors_yellow">#fdffd5</color>
+    <color name="timeline_colors_green">#e1ffe0</color>
+    <color name="timeline_colors_orange">#fff1d2</color>
+    <color name="timeline_colors_purple">#eedaff</color>
 </resources>
