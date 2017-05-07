@@ -183,10 +183,11 @@ public class IssueDetailsFragment extends ActivityBaseFragment {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.authorTxt.setText(issueCommentList.get(position).getPoster().getName());
-            holder.commentTxt.setText(issueCommentList.get(position).getContent());
+            IssueComment issueComment = issueCommentList.get(position);
+            holder.authorTxt.setText(issueComment.getPoster().getName());
+            holder.commentTxt.setText(issueComment.getContent());
             holder.dateTxt.setText(Global.getTeamPathyFacade().
-                    convertDateToString(issueCommentList.get(position).getPostDate()));
+                    convertDateToString(issueComment.getPostDate()));
         }
 
         @Override

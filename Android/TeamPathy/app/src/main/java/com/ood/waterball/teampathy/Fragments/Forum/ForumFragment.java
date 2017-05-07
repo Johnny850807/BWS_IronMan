@@ -22,7 +22,6 @@ import com.ood.waterball.teampathy.Domains.Member;
 import com.ood.waterball.teampathy.Fragments.ActivityBaseFragment;
 import com.ood.waterball.teampathy.R;
 
-import java.util.Date;
 import java.util.List;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
@@ -155,7 +154,6 @@ public class ForumFragment extends ActivityBaseFragment {
                         .setView(dialogView)
                         .setTitle(getString(R.string.CreateIssue))
                         .show();
-
             }
         });
     }
@@ -210,14 +208,11 @@ public class ForumFragment extends ActivityBaseFragment {
 
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
-            holder.titleTxt.setText(issueList.get(position).getTitle());
-            holder.typeTxt.setText(issueList.get(position).getType());
-            holder.dateTxt.setText(convertDateToString(issueList.get(position).getPostDate()));
-            holder.authorTxt.setText(issueList.get(position).getPoster().getName());
-        }
-
-        private String convertDateToString(Date datetime){
-            return Global.getTeamPathyFacade().convertDateToString(datetime);
+            Issue issue = issueList.get(position);
+            holder.titleTxt.setText(issue.getTitle());
+            holder.typeTxt.setText(issue.getType());
+            holder.dateTxt.setText(Global.getTeamPathyFacade().convertDateToString(issueList.get(position).getPostDate()));
+            holder.authorTxt.setText(issue.getPoster().getName());
         }
 
         @Override

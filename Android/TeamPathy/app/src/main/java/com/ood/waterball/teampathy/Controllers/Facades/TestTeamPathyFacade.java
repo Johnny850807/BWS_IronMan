@@ -7,11 +7,15 @@ import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.IssueComment;
 import com.ood.waterball.teampathy.Domains.Member;
 import com.ood.waterball.teampathy.Domains.Project;
+import com.ood.waterball.teampathy.Domains.Timeline;
 import com.ood.waterball.teampathy.R;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
+
 //todo 把每個crud 非同步化
 public class TestTeamPathyFacade extends TeamPathyFacade {
     private static final String IMAGE_URL_PROJECT = "http://i.imgur.com/fIfxle9.png";
@@ -20,6 +24,8 @@ public class TestTeamPathyFacade extends TeamPathyFacade {
     private List<Issue> issueList;
     private Issue issue;
     private List<IssueComment> issueCommentList;
+    private Timeline timeline;
+    private List<Timeline> timelineList;
 
     public TestTeamPathyFacade(DateConvertStrategy dateConvertStrategy) {
         super(dateConvertStrategy);
@@ -167,6 +173,34 @@ public class TestTeamPathyFacade extends TeamPathyFacade {
     public IssueComment addIssueComment(IssueComment issueComment) throws Exception {
         issueCommentList.add(issueComment);
         return issueComment;
+    }
+
+    @Override
+    public List<Timeline> getTimelineListByProjectId(String projectId) throws Exception {
+        if (timelineList != null)
+            return timelineList;
+        Member zheng = new Member("曾韋傑 Curry0423","","","http://imgur.com/download/c3qnbkg");
+        timelineList = new ArrayList<>();
+        timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過1!!",new Date()));
+        timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過2!!",new Date()));
+        timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過3!!",new Date()));
+        timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過4!!",new Date()));
+        timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過5!!",new Date()));
+        timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過6!!",new Date()));
+        return timelineList;
+    }
+
+    @Override
+    public Timeline addTimeline(Timeline timeline) throws Exception {
+        Log(timeline.toString());
+        timelineList.add(0,timeline);
+        return timeline;
+    }
+
+    @Override
+    public Timeline removeTimeline(Timeline timeline) throws Exception {
+        timelineList.remove(timeline);
+        return timeline;
     }
 
 

@@ -21,9 +21,9 @@
     <string name="action_settings">Settings</string>
 
     <string-array name="project_sections">
+        <item>動態牆</item>>
         <item>討論區</item>
         <item>代辦清單</item>
-        <item>工作分析</item>
         <item>辦公室</item>
     </string-array>
 
@@ -65,5 +65,9 @@
     <string name="watch">觀看</string>
     <string name="enter">進入</string>
     <string name="title_cannt_be_exceeding_12_words">標題請勿超過12個字</string>
+    <string name="describe_how_you_feel_about_working">表達你的工作心情吧!</string>
+    <string name="timeline_created_completed">工作心情小語新增完畢</string>
+    <string name="timeline_removed_completed">工作心情小語刪除完畢</string>
+    <string name="send">送出</string>
 
 </resources>
