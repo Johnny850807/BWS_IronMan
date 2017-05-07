@@ -155,7 +155,6 @@ public class ForumFragment extends ActivityBaseFragment {
                         .setView(dialogView)
                         .setTitle(getString(R.string.CreateIssue))
                         .show();
-
             }
         });
     }
