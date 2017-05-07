@@ -93,13 +93,16 @@ public class TimeLineFragment extends ActivityBaseFragment {
     }
 
     private void setListeners(){
+        //todo 改善輸入區 點選card就能夠觸發到edit focus
         /**讓輸入欄位能夠按下Enter送出**/
         inputContentED.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if ((event.getKeyCode() == KeyEvent.KEYCODE_ENTER) && (event.getAction() == KeyEvent.ACTION_DOWN ))
                     try {
-                        addTimeline();
+                        Member poster = Global.getMemberController().getActiveMember();
+                        Timeline timeline = new Timeline(poster,inputContentED.getText().toString(),new Date());
+                        addTimeline(timeline);
                         clearInputEdittextStatus();
                         return true;
                     } catch (Exception e) {
@@ -117,9 +120,7 @@ public class TimeLineFragment extends ActivityBaseFragment {
         imm.hideSoftInputFromWindow(inputContentED.getWindowToken(), 0);
     }
 
-    private void addTimeline() throws Exception {
-        Member poster = Global.getMemberController().getActiveMember();
-        Timeline timeline = new Timeline(poster,inputContentED.getText().toString(),new Date());
+    private void addTimeline(Timeline timeline) throws Exception {
         Global.getTeamPathyFacade().addTimeline(timeline);
         recyclerAdapter.notifyDataSetChanged();
         snackberNotify(timeline);
@@ -139,7 +140,7 @@ public class TimeLineFragment extends ActivityBaseFragment {
                                         @Override
                                         public void onClick(View view) {
                                             try {
-                                                addTimeline();
+                                                addTimeline(timeline);
                                             } catch (Exception e) {
                                                 e.printStackTrace();
                                             }
