@@ -27,7 +27,7 @@
             android:gravity="center"
             android:layout_marginLeft="4dp"
             android:textColor="@color/app_black_word_color"
-            android:layout_toRightOf="@id/poster_header_workline_item"
+            android:layout_toRightOf="@+id/poster_header_workline_item"
             android:textSize="15sp"
             android:id="@+id/poster_nametxt_workline_item"
             android:text="林宗億"/>
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/workline_item_poster_headpicture_size"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/content_workline_item"
+            android:layout_below="@+id/content_workline_item"
             android:gravity="center"
             android:textColor="@color/app_hint_color"
             android:id="@+id/datetxt_workline_item"
@@ -44,7 +44,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/poster_header_workline_item"
+            android:layout_below="@+id/poster_header_workline_item"
             android:layout_marginTop="2dp"
             android:id="@+id/content_workline_item"
             android:textColor="@color/app_black_word_color"
