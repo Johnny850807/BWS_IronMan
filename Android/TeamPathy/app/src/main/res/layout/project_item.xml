@@ -4,13 +4,20 @@
     android:layout_height="@dimen/projectItemSize"
     android:focusable="true"
     android:orientation="vertical">
-
-    <ImageView
+    <FrameLayout
         android:layout_width="@dimen/projectIconSize"
         android:layout_height="@dimen/projectIconSize"
-        android:src="@drawable/logo"
-        android:id="@+id/img_projectItem"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal">
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/progressbar_projectItem"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/img_projectItem"/>
+    </FrameLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
