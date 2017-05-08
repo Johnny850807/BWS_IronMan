@@ -1,4 +1,4 @@
-package com.ood.waterball.teampathy.Fragments;
+package com.ood.waterball.teampathy.Fragments.Architecture;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -9,11 +9,10 @@ import android.view.ViewGroup;
 
 import com.ood.waterball.teampathy.Controllers.MyUtils.AsyncTaskController;
 
-/**
-    在 Single Activity Architecture結構下，放置在Base Activity中的Fragment
- */
+import java.util.List;
 
-public abstract class EntityAsyncCRUDFragment extends ActivityBaseFragment {
+
+public abstract class AsyncTemplateFragment<T> extends InsideFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,17 +25,15 @@ public abstract class EntityAsyncCRUDFragment extends ActivityBaseFragment {
     @Override
     public void onViewCreated(final View view, @Nullable final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
+        AsyncTask<Void,Void,List<T>> asyncTask = new AsyncTask<Void, Void, List<T>>() {
             @Override
-            protected Void doInBackground(Void... voids) {
-                onFetchData(savedInstanceState,getArguments());
-                return null;
+            protected List<T> doInBackground(Void... voids) {
+                return onFetchData(getArguments());
             }
 
             @Override
-            protected void onPostExecute(Void aVoid) {
-                onFindViews(view);
+            protected void onPostExecute(List<T> entityList) {
+                onFindViews(view,entityList);
                 onControlViews();
             }
         };
@@ -44,9 +41,8 @@ public abstract class EntityAsyncCRUDFragment extends ActivityBaseFragment {
         AsyncTaskController.runAsyncTask(asyncTask);
     }
 
-    protected abstract void onFetchData(@Nullable Bundle savedInstanceState , @Nullable Bundle arguBundle);
-    protected abstract void onFindViews(View parentView);
+    protected abstract List<T> onFetchData(@Nullable Bundle arguBundle);
+    protected abstract void onFindViews(View parentView,List<T> entityList);
     protected abstract void onControlViews();
-
 
 }

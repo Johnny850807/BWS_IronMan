@@ -12,16 +12,14 @@ import android.view.View;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Project;
 import com.ood.waterball.teampathy.Domains.ProjectSection;
-import com.ood.waterball.teampathy.Fragments.EntityAsyncCRUDFragment;
+import com.ood.waterball.teampathy.Fragments.Architecture.TemplateFragment;
 import com.ood.waterball.teampathy.Fragments.Forum.ForumFragment;
-import com.ood.waterball.teampathy.Fragments.Office.OfficeFragment;
 import com.ood.waterball.teampathy.Fragments.TimeLineFragment;
-import com.ood.waterball.teampathy.Fragments.TodoList.TodoListFragment;
 import com.ood.waterball.teampathy.R;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
-public class ProjectHomePageFragment extends EntityAsyncCRUDFragment {
+public class ProjectHomePageFragment extends TemplateFragment {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private Project currentProject;
@@ -39,7 +37,7 @@ public class ProjectHomePageFragment extends EntityAsyncCRUDFragment {
     }
 
     @Override
-    protected void onFetchData(@Nullable Bundle savedInstanceState , @Nullable Bundle arguBundle) {
+    protected void onFetchData(@Nullable Bundle arguBundle) {
         try {
             fetchCurrentProject(arguBundle);
         } catch (Exception e) {
@@ -50,7 +48,7 @@ public class ProjectHomePageFragment extends EntityAsyncCRUDFragment {
     private void fetchCurrentProject(Bundle arguBundle) throws Exception {
         String projectId = arguBundle.getString("projectId");
         Log(projectId);
-        currentProject = Global.getTeamPathyFacade().getProjectById(projectId);
+        currentProject = Global.getProjectController().read(projectId);
         Log("取得目前專案:" + currentProject.toString());
     }
 
@@ -98,10 +96,8 @@ public class ProjectHomePageFragment extends EntityAsyncCRUDFragment {
                 return TimeLineFragment.getInstance(currentProject.getId());
             else if (position == ProjectSection.FORUM.ordinal())
                 return ForumFragment.getInstance(currentProject.getId());
-            else if (position == ProjectSection.TODOLIST.ordinal())
-                return TodoListFragment.getInstance(currentProject.getId());
             else
-                return OfficeFragment.getInstance(currentProject.getId());
+                return ForumFragment.getInstance(currentProject.getId());
         }
 
         @Override

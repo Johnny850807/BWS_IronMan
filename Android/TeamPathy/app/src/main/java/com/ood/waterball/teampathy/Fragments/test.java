@@ -1,35 +1,18 @@
-package com.ood.waterball.teampathy.Fragments.TodoList;
+package com.ood.waterball.teampathy.Fragments;
 
-
-import android.os.Bundle;
 import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
-import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 
 import java.util.List;
 
-public class TodoListFragment extends AsyncQueryRecyclerFragment {
+/**
+ * Created by AndroidWork on 2017/5/8.
+ */
 
-    private List<Issue> issueList;
-
-    public static TodoListFragment getInstance(String projectId){
-        TodoListFragment fragment = new TodoListFragment();
-        Bundle args = new Bundle();
-        args.putString("projectId",projectId);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-
-    public TodoListFragment() {
-        // Required empty public constructor
-        //todo 更換正確id
-    }
-
-
+public class test extends AsyncQueryRecyclerFragment {
     @Override
     protected EntityController createEntityController() {
         return null;

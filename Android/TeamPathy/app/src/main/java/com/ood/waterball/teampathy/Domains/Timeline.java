@@ -1,11 +1,9 @@
 package com.ood.waterball.teampathy.Domains;
 
 
-import com.ood.waterball.teampathy.Controllers.Global;
-
 import java.util.Date;
 
-public class Timeline extends Entity{
+public class Timeline extends PostDateEntity {
 
     private Member poster;
     private String content;
@@ -14,6 +12,7 @@ public class Timeline extends Entity{
     private int color;
 
     public Timeline( Member poster,String content,Date postdate) {
+        super(postdate);
         this.content = content;
         this.postdate = postdate;
         this.poster = poster;
@@ -33,18 +32,6 @@ public class Timeline extends Entity{
 
     public void setPoster(Member poster) {
         this.poster = poster;
-    }
-
-    public Date getPostdate() {
-        return postdate;
-    }
-
-    public void setPostdate(Date postdate) {
-        this.postdate = postdate;
-    }
-
-    public String getDateString(){
-        return Global.getTeamPathyFacade().convertDateToString(postdate);
     }
 
     public int getType() {

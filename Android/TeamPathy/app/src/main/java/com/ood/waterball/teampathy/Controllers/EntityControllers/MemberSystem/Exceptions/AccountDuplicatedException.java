@@ -1,4 +1,4 @@
-package com.ood.waterball.teampathy.Controllers.MemberSystem.Exceptions;
+package com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.Exceptions;
 
 import com.ood.waterball.teampathy.R;
 

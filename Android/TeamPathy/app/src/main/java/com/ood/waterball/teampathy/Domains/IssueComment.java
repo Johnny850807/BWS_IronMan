@@ -3,15 +3,16 @@ package com.ood.waterball.teampathy.Domains;
 
 import java.util.Date;
 
-public class IssueComment extends Entity{
+public class IssueComment extends PostDateEntity{
     private Member poster;
     private String content;
-    private Date postDate;
 
-    public IssueComment(){}
+    public IssueComment(){
+        super(new Date());
+    }
 
     public IssueComment(Member poster,String content,Date postDate){
-        this.postDate = postDate;
+        super(postDate);
         this.poster = poster;
         this.content = content;
     }
@@ -32,11 +33,4 @@ public class IssueComment extends Entity{
         this.content = content;
     }
 
-    public Date getPostDate() {
-        return postDate;
-    }
-
-    public void setPostDate(Date postDate) {
-        this.postDate = postDate;
-    }
 }

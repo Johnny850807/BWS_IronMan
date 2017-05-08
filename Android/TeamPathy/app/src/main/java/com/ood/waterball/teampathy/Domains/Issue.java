@@ -1,25 +1,25 @@
 package com.ood.waterball.teampathy.Domains;
 
 
-import com.ood.waterball.teampathy.Controllers.Global;
-
 import java.util.Date;
 
-public class Issue extends Entity {
+public class Issue extends PostDateEntity {
     private String title;
     private String content;
     private String type;
     private Date postDate;
     private Member poster;
 
-    public Issue(){}
+    public Issue(){
+        super(new Date());
+    }
 
     public Issue(Member poster,String title,String content,String type){
+        super(new Date());
         this.poster = poster;
         this.title = title;
         this.content = content;
         this.type = type;
-        postDate = new Date();
     }
 
     public String getContent() {
@@ -46,14 +46,6 @@ public class Issue extends Entity {
         this.poster = poster;
     }
 
-    public Date getPostDate() {
-        return postDate;
-    }
-
-    public void setPostDate(Date postDate) {
-        this.postDate = postDate;
-    }
-
     public String getType() {
         return type;
     }
@@ -71,7 +63,5 @@ public class Issue extends Entity {
         return new Issue(poster,title,content,type);
     }
 
-    public String getDateString(){
-        return Global.getTeamPathyFacade().convertDateToString(postDate);
-    }
+
 }

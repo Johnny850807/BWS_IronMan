@@ -11,13 +11,11 @@
     android:background="@drawable/app_background"
     tools:context="com.ood.waterball.teampathy.MainActivity">
 
-    <GridView
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnWidth="@dimen/projectItemSize"
-        android:id="@+id/projectGridMemberHomePage"
-        android:numColumns="auto_fit">
-    </GridView>
+        android:id="@+id/projectGridMemberHomePage">
+    </android.support.v7.widget.RecyclerView>
 
     <!--todo 浮動按鈕的配色-->
     <android.support.design.widget.FloatingActionButton
