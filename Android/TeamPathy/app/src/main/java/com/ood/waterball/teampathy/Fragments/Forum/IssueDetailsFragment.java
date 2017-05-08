@@ -9,10 +9,10 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.Dialogs.TitleContentPostingDialogBuilder;
+import com.ood.waterball.teampathy.Controllers.MyUtils.GlideHelper;
 import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.IssueComment;
 import com.ood.waterball.teampathy.Domains.Member;
@@ -89,7 +89,7 @@ public class IssueDetailsFragment extends AsyncQueryRecyclerFragment<IssueCommen
     }
 
     private void setupViews(){
-        Glide.with(this).load(currentIssue.getPoster().getImageUrl()).into(posterHeadImg);
+        GlideHelper.loadToCircularImage(getContext(),posterHeadImg,currentIssue.getPoster().getImageUrl());
         issueContentTxt.setText(currentIssue.getContent());
         issueTypeTxt.setText(currentIssue.getType());
         issueTitleTxt.setText(currentIssue.getTitle());
