@@ -6,17 +6,17 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.ood.waterball.teampathy.Domains.Issue;
-import com.ood.waterball.teampathy.Fragments.EntityAsyncCRUDFragment;
+import com.ood.waterball.teampathy.Fragments.Fragmenttt;
 import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
-public class WorkAnalysisFragment extends EntityAsyncCRUDFragment {
+public class WorkAnalysisFragmentAsyncQuery extends Fragmenttt {
 
     private List<Issue> issueList;
 
-    public static WorkAnalysisFragment getInstance(String projectId){
-        WorkAnalysisFragment fragment = new WorkAnalysisFragment();
+    public static WorkAnalysisFragmentAsyncQuery getInstance(String projectId){
+        WorkAnalysisFragmentAsyncQuery fragment = new WorkAnalysisFragmentAsyncQuery();
         Bundle args = new Bundle();
         args.putString("projectId",projectId);
         fragment.setArguments(args);
@@ -24,7 +24,7 @@ public class WorkAnalysisFragment extends EntityAsyncCRUDFragment {
     }
 
 
-    public WorkAnalysisFragment() {
+    public WorkAnalysisFragmentAsyncQuery() {
         // Required empty public constructor
         //todo 更換正確id
     }

@@ -2,16 +2,16 @@ package com.ood.waterball.teampathy.Fragments.TodoList;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Domains.Issue;
-import com.ood.waterball.teampathy.Fragments.EntityAsyncCRUDFragment;
-import com.ood.waterball.teampathy.R;
+import com.ood.waterball.teampathy.Fragments.AsyncQueryRecyclerFragment;
+import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 
 import java.util.List;
 
-public class TodoListFragment extends EntityAsyncCRUDFragment {
+public class TodoListFragment extends AsyncQueryRecyclerFragment {
 
     private List<Issue> issueList;
 
@@ -29,24 +29,29 @@ public class TodoListFragment extends EntityAsyncCRUDFragment {
         //todo 更換正確id
     }
 
+
     @Override
-    protected void onFetchData(@Nullable Bundle savedInstanceState, @Nullable Bundle arguBundle) {
+    protected EntityController createEntityController() {
+        return null;
+    }
+
+    @Override
+    protected RecyclerViewAbstractFactory createRecyclerFactory(View parentView) {
+        return null;
+    }
+
+    @Override
+    protected void onFindUseCaseViews(View parentView) {
 
     }
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.fragment_todolist_page;
-    }
-
-    @Override
-    protected void onFindViews(View parentView) {
-
+        return 0;
     }
 
     @Override
     protected void onControlViews() {
 
     }
-
 }

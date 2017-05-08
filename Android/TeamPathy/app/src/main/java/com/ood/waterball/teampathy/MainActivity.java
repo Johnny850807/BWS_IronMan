@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ood.waterball.teampathy.Controllers.Global;
-import com.ood.waterball.teampathy.Controllers.MemberSystem.Exceptions.AccountNotFoundException;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.Exceptions.AccountNotFoundException;
 
 public class MainActivity extends AppCompatActivity {
     private EditText accountEd;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             Global.getMemberController().logIn(accountEd.getText().toString(),
                     passwordEd.getText().toString());
 
-            startActivity(new Intent(this,BaseInterfaceActivity.class));
+            startActivity(new Intent(this,BaseActivity.class));
 
         } catch (AccountNotFoundException e) {
             Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();

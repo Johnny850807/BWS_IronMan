@@ -6,7 +6,6 @@ package com.ood.waterball.teampathy;
 
 import android.support.v4.app.Fragment;
 
-public interface SinglePageArchitecture {
+public interface ParentActivityCallBack {
     public void changePage(Fragment fragment);
-    public String getPageName();
 }

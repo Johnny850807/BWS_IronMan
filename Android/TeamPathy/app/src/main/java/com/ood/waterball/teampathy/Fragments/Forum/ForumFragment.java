@@ -1,32 +1,29 @@
 package com.ood.waterball.teampathy.Fragments.Forum;
 
 
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
+import com.ood.waterball.teampathy.Controllers.MyUtils.AsyncTaskController;
 import com.ood.waterball.teampathy.Controllers.MyUtils.Dialogs.TitleContentPostingDialogBuilder;
 import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.Member;
-import com.ood.waterball.teampathy.Fragments.EntityAsyncCRUDFragment;
+import com.ood.waterball.teampathy.Fragments.AsyncQueryRecyclerFragment;
+import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.IssuesRecyclerViewFactory;
+import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.R;
 
-import java.util.List;
-
-import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
-
-public class ForumFragment extends EntityAsyncCRUDFragment<Issue> {
+public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
     private String projectId;
     private FloatingActionButton fab;
 
@@ -45,47 +42,27 @@ public class ForumFragment extends EntityAsyncCRUDFragment<Issue> {
         // Required empty public constructor
     }
 
-    @Override
-    protected void onFetchData (@Nullable Bundle arguBundle) {
-        try {
-            projectId = (String) arguBundle.get("projectId");
-            return Global.getTeamPathyFacade().getIssueListByProjectId(projectId);
-            Log("文章數量:" + issueList.size());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     protected int getLayoutResource() {
         return R.layout.fragment_forum_page;
     }
 
+
     @Override
-    protected void onFindViews(View parentView) {
-        issueRecyclerView =
+    protected void onFindUseCaseViews(View parentView) {
         fab = (FloatingActionButton) parentView.findViewById(R.id.fab_forum);
     }
 
     @Override
+    protected RecyclerViewAbstractFactory<Issue> createRecyclerFactory(View parentView) {
+        projectId = (String) getArguments().get("projectId");
+        return new IssuesRecyclerViewFactory(parentView,projectId);
+    }
+
+    @Override
     protected void onControlViews() {
-        initiateRecyclerView();
         setListeners();
-    }
-
-    @Override
-    protected void onFurtherRecyclerViewConfig(RecyclerView recyclerView, RecyclerView.Adapter adapter, RecyclerView.LayoutManager layoutManager) {
-
-    }
-
-    @Override
-    protected RecyclerView onFindRecyclerView(View parentView) {
-        return (RecyclerView) parentView.findViewById(R.id.issues_recyclerview_forum);;
-    }
-
-    @Override
-    protected RecyclerView.Adapter onInitiateAdapter(List<Issue> entityList) {
-        return null;
     }
 
     private void setListeners(){
@@ -99,16 +76,13 @@ public class ForumFragment extends EntityAsyncCRUDFragment<Issue> {
                 builder.setContentTextInputEditTextId(R.id.issueContentED_issue_dialog)
                         .setTitleTextInputEditTextId(R.id.issueTitleED_issue_dialog)
                         .setErrorTextViewId(R.id.errorTxt_issue_dialog)
-                        .setOnFinishListener(new TitleContentPostingDialogBuilder.onFinishListener() {
-                            @Override
-                            public void onFinish(String title,String content) {
+                        .setOnFinishListener((title,content)-> {
                                 try {
                                     Member poster = Global.getMemberController().getActiveMember();
                                     addIssueAndNotify(new Issue(poster,title,content,issueType));
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
-                            }
                         })
                         .setOnDetectListener(new TitleContentPostingDialogBuilder.OnDetectListener() {
                             @Override
@@ -164,88 +138,54 @@ public class ForumFragment extends EntityAsyncCRUDFragment<Issue> {
 
     private void setDialogSpinnerListener(View dialogView){
 
-        try {
-            Spinner typeSpinner = (Spinner) dialogView.findViewById(R.id.typeSpinner_issue_dialog);
-            final String[] typeList = Global.getTeamPathyFacade().getIssueTypeListByProjectId(projectId);
-            ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,typeList);
-            typeSpinner.setAdapter(stringArrayAdapter);
-            typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                    issueType = typeList[position];
+        AsyncTask<Void,Void,String[]> asyncTask = new AsyncTask<Void, Void, String[]>() {
+            @Override
+            protected String[] doInBackground(Void... voids) {
+                try {
+                    return Global.getIssueController().readIssueTypeList(projectId);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
+                return null;
+            }
+            @Override
+            protected void onPostExecute(String[] issueTypeList) {
+                Spinner typeSpinner = (Spinner) dialogView.findViewById(R.id.typeSpinner_issue_dialog);
+                ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,issueTypeList);
+                typeSpinner.setAdapter(stringArrayAdapter);
+                typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                        issueType = issueTypeList[position];
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {}
+                });
+            }
+        };
 
-                @Override
-                public void onNothingSelected(AdapterView<?> adapterView) {}
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        AsyncTaskController.runAsyncTask(asyncTask);
     }
 
 
     private void addIssueAndNotify(final Issue issue) throws Exception {
-        Global.getTeamPathyFacade().addIssue(issue);
-        recyclerAdapter.notifyDataSetChanged();
+        CREATE(issue, ()->useSnackBarToNotify(issue));
+    }
+
+    private void useSnackBarToNotify(final Issue issue){
         layoutManager.scrollToPosition(0);
         Snackbar.make(fab, R.string.issue_created_completed, Snackbar.LENGTH_LONG)
                 .setAction(R.string.enter, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        getSinglePage().changePage(IssueDetailsFragment.getInstance(issue));
+                        getParentActivity().changePage(IssueDetailsFragment.getInstance(issue));
                     }
                 }).show();
     }
 
-
-    class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.MyViewHolder>{
-
-        @Override
-        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View v = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.issue_item, parent, false);
-
-            return  new MyViewHolder(v);
-        }
-
-        @Override
-        public void onBindViewHolder(MyViewHolder holder, int position) {
-            Issue issue = issueList.get(position);
-            holder.titleTxt.setText(issue.getTitle());
-            holder.typeTxt.setText(issue.getType());
-            holder.dateTxt.setText(Global.getTeamPathyFacade().convertDateToString(issueList.get(position).getPostDate()));
-            holder.authorTxt.setText(issue.getPoster().getName());
-        }
-
-        @Override
-        public int getItemCount() {
-            return issueList.size();
-        }
-
-        class MyViewHolder extends  RecyclerView.ViewHolder{
-            TextView titleTxt;
-            TextView typeTxt;
-            TextView dateTxt;
-            TextView authorTxt;
-
-            public MyViewHolder(View itemView) {
-                super(itemView);
-                titleTxt = (TextView) itemView.findViewById(R.id.title_text_issue_item);
-                typeTxt = (TextView) itemView.findViewById(R.id.type_text_issue_item);
-                dateTxt = (TextView) itemView.findViewById(R.id.datetime_text_issue_item);
-                authorTxt = (TextView) itemView.findViewById(R.id.author_text_issue_item);
-
-                itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        int position = getLayoutPosition();
-                        Issue issue = issueList.get(position);
-                        getSinglePage().changePage(IssueDetailsFragment.getInstance(issue));
-                    }
-                });
-            }
-        }
+    @Override
+    protected EntityController createEntityController() {
+        return Global.getIssueController();
     }
 
 }

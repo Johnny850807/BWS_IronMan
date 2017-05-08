@@ -69,5 +69,6 @@
     <string name="timeline_created_completed">工作心情小語新增完畢</string>
     <string name="timeline_removed_completed">工作心情小語刪除完畢</string>
     <string name="send">送出</string>
+    <string name="password_not_conform">密碼不吻合!</string>
 
 </resources>
