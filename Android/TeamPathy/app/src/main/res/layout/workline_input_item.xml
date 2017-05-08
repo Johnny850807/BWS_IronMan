@@ -15,21 +15,11 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
-        <FrameLayout
+        <ImageView
             android:layout_width="@dimen/workline_item_poster_headpicture_size"
             android:layout_height="@dimen/workline_item_poster_headpicture_size"
-            android:id="@+id/card_frame_workline_item">
-            <ProgressBar
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/progressbar_worklineItem"/>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/poster_header_workline_item"
-                android:visibility="gone"
-                android:scaleType="fitCenter"/>
-        </FrameLayout>
+            android:id="@+id/poster_header_workline_item"
+            android:scaleType="fitCenter"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,11 +27,11 @@
             android:gravity="center"
             android:layout_marginStart="4dp"
             android:textColor="@color/app_black_word_color"
-            android:layout_toEndOf="@+id/card_frame_workline_item"
+            android:layout_toEndOf="@+id/poster_header_workline_item"
             android:textSize="15sp"
             android:id="@+id/poster_nametxt_workline_item"
             android:text="林宗億"
-            android:layout_toRightOf="@+id/card_frame_workline_item"
+            android:layout_toRightOf="@+id/poster_header_workline_item"
             android:layout_marginLeft="4dp" />
         <TextView
             android:layout_width="wrap_content"
@@ -58,7 +48,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/card_frame_workline_item"
+            android:layout_below="@+id/poster_header_workline_item"
             android:layout_marginTop="2dp"
             android:id="@+id/content_workline_item"
             android:textColor="@color/app_black_word_color"

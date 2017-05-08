@@ -39,11 +39,21 @@
                     <LinearLayout android:layout_width="match_parent"
                         android:layout_height="@dimen/member_head_picture_size"
                         android:orientation="horizontal">
-                        <ImageView
+                        <FrameLayout
                             android:layout_width="@dimen/member_head_picture_size"
                             android:layout_height="@dimen/member_head_picture_size"
-                            android:id="@+id/poster_picture_issue_details"
-                            android:scaleType="fitCenter"/>
+                            android:id="@+id/card_frame_workline_item">
+                            <ProgressBar
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/progressbar_issuedetailItem"/>
+                            <ImageView
+                                android:layout_width="@dimen/member_head_picture_size"
+                                android:layout_height="@dimen/member_head_picture_size"
+                                android:id="@+id/poster_picture_issue_details"
+                                android:scaleType="fitCenter"/>
+                        </FrameLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/member_head_picture_size"
