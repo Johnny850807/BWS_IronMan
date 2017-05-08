@@ -4,17 +4,22 @@ import android.os.AsyncTask;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.MyUtils.AsyncTaskController;
+import com.ood.waterball.teampathy.Domains.Entity;
 
-public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment<T> {
-    protected EntityController entityController = createEntityController();
+public abstract class AsyncQueryRecyclerFragment<T extends Entity> extends RecyclerViewFragment<T> {
+    protected EntityController<T> entityController = createEntityController();
 
-    protected abstract EntityController createEntityController();
+    protected abstract EntityController<T> createEntityController();
 
     protected final void CREATE(T entity , EntityController.OnFinishListener ...listeners){
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
-                entityController.create(entity);
+                try {
+                    entityController.create(entity);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 return null;
             }
 
@@ -32,7 +37,11 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
-                entityController.delete(entity);
+                try {
+                    entityController.delete(entity);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 return null;
             }
 
@@ -51,7 +60,11 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
-                entityController.update(entity);
+                try {
+                    entityController.update(entity);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 return null;
             }
 
