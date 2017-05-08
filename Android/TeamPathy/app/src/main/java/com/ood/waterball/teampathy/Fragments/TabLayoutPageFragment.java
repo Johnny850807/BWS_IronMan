@@ -1,4 +1,4 @@
-package com.ood.waterball.teampathy.Fragments.HomePage;
+package com.ood.waterball.teampathy.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,26 +13,24 @@ import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Project;
 import com.ood.waterball.teampathy.Domains.ProjectSection;
 import com.ood.waterball.teampathy.Fragments.Architecture.TemplateFragment;
-import com.ood.waterball.teampathy.Fragments.Forum.ForumFragment;
-import com.ood.waterball.teampathy.Fragments.TimeLineFragment;
 import com.ood.waterball.teampathy.R;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
-public class ProjectHomePageFragment extends TemplateFragment {
+public class TabLayoutPageFragment extends TemplateFragment {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private Project currentProject;
 
-    public static ProjectHomePageFragment getInstance(String projectId){
-        ProjectHomePageFragment fragment = new ProjectHomePageFragment();
+    public static TabLayoutPageFragment getInstance(String projectId){
+        TabLayoutPageFragment fragment = new TabLayoutPageFragment();
         Bundle args = new Bundle();
         args.putString("projectId",projectId);
         fragment.setArguments(args);
         return fragment;
     }
 
-    public ProjectHomePageFragment() {
+    public TabLayoutPageFragment() {
         // Required empty public constructor
     }
 
@@ -105,5 +103,6 @@ public class ProjectHomePageFragment extends TemplateFragment {
             return ProjectSection.values().length;
         }
     }
+
 
 }

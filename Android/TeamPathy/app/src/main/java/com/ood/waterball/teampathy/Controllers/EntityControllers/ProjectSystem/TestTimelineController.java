@@ -32,7 +32,7 @@ public class TestTimelineController implements EntityController<Timeline> {
         if (timelineList != null)
             return timelineList;
         timelineList = new ArrayList<>();
-        timelineList.add(new Timeline(zheng,"Get sdfsdfsjlkfjsdlkfjlsfksdjflksdnfkl",new Date()));
+        timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過2!!",new Date()));
         timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過2!!",new Date()));
         timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過3!!",new Date()));
         timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過4!!",new Date()));

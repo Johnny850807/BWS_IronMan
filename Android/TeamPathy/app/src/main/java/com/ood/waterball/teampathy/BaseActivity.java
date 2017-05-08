@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.ood.waterball.teampathy.Controllers.PageController;
-import com.ood.waterball.teampathy.Fragments.HomePage.MemberHomePageFragment;
+import com.ood.waterball.teampathy.Fragments.MemberHomePageFragment;
 
 public class BaseActivity extends AppCompatActivity implements ParentActivityCallBack {
     private PageController pageController;

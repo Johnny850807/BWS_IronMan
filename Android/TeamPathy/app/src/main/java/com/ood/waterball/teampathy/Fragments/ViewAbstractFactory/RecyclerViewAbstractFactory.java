@@ -20,7 +20,6 @@ public abstract class RecyclerViewAbstractFactory<TEntity> {
         this.context = rootView.getContext();
         init();
     }
-
     private void init(){
         recyclerView = createRecyclerView();
         adapter = createRecyclerAdapter(entityList);
@@ -29,30 +28,23 @@ public abstract class RecyclerViewAbstractFactory<TEntity> {
         recyclerView.setLayoutManager(layoutManager);
         onFurtherRecyclerViewConfig(recyclerView,adapter,layoutManager);
     }
-
     protected abstract RecyclerView createRecyclerView();
-
     protected abstract RecyclerView.Adapter createRecyclerAdapter(List<TEntity> entityList);
-
     protected abstract RecyclerView.LayoutManager createLayoutManager();
-
-    protected void onFurtherRecyclerViewConfig(RecyclerView  recyclerView, RecyclerView.Adapter adapter , RecyclerView.LayoutManager layoutManager) {
-        /**hook method**/
-    }
-
     public RecyclerView.Adapter getAdapter() {
         return adapter;
     }
-
     public RecyclerView.LayoutManager getLayoutManager() {
         return layoutManager;
     }
-
     public RecyclerView getRecyclerView() {
         return recyclerView;
     }
-
     public View getRootView() {
         return rootView;
+    }
+
+    protected void onFurtherRecyclerViewConfig(RecyclerView  recyclerView, RecyclerView.Adapter adapter , RecyclerView.LayoutManager layoutManager) {
+        /**hook method**/
     }
 }

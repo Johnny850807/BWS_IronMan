@@ -1,4 +1,4 @@
-package com.ood.waterball.teampathy.Fragments.HomePage;
+package com.ood.waterball.teampathy.Fragments;
 
 
 import android.support.design.widget.FloatingActionButton;
@@ -9,7 +9,7 @@ import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityControlle
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Project;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
-import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.ProjectGridRecyclerViewFactory;
+import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.MemberHomePageRecyclerViewFactory;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.R;
 
@@ -17,12 +17,7 @@ import java.util.List;
 
 public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> {
     private FloatingActionButton fab;
-
-    public MemberHomePageFragment() {
-        // Required empty public constructor
-    }
-
-
+    public MemberHomePageFragment() {}
     @Override
     protected int getLayoutResource() {
         return R.layout.fragment_member_home_page;
@@ -38,17 +33,14 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
         }
         return null;
     }
-
     @Override
     protected RecyclerViewAbstractFactory<Project> createRecyclerFactory(View parentView, List<Project> entityList) {
-        return new ProjectGridRecyclerViewFactory(parentView,entityList);
+        return new MemberHomePageRecyclerViewFactory(parentView,entityList);
     }
-
     @Override
     protected void onFindUseCaseViews(View parentView) {
         fab = (FloatingActionButton) parentView.findViewById(R.id.fab);
     }
-
     @Override
     protected void onControlViews() {
         fab.setOnClickListener(new View.OnClickListener() {
@@ -59,10 +51,15 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
             }
         });
     }
-
     @Override
     protected EntityController<Project> createEntityController() {
         return Global.getProjectController();
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        //回收時把主Activity也回收，不然會留下空區塊
+        getParentActivity().finish();
+    }
 }

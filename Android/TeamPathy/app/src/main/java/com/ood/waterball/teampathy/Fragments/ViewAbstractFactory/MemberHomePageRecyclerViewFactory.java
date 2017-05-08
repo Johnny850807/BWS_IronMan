@@ -12,15 +12,15 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.ood.waterball.teampathy.BaseActivity;
 import com.ood.waterball.teampathy.Domains.Project;
-import com.ood.waterball.teampathy.Fragments.HomePage.ProjectHomePageFragment;
+import com.ood.waterball.teampathy.Fragments.TabLayoutPageFragment;
 import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
-public class ProjectGridRecyclerViewFactory extends RecyclerViewAbstractFactory<Project>{
+public class MemberHomePageRecyclerViewFactory extends RecyclerViewAbstractFactory<Project>{
     private static final int NUM_OS_COL = 3;
 
-    public ProjectGridRecyclerViewFactory(View rootView,List<Project> projectList) {
+    public MemberHomePageRecyclerViewFactory(View rootView, List<Project> projectList) {
         super(rootView,projectList);
     }
 
@@ -52,7 +52,7 @@ public class ProjectGridRecyclerViewFactory extends RecyclerViewAbstractFactory<
                     @Override
                     public void onClick(View view) {
                         String projectId = project.getId();
-                        ((BaseActivity)context).changePage( ProjectHomePageFragment.getInstance(projectId) );
+                        ((BaseActivity)context).changePage( TabLayoutPageFragment.getInstance(projectId) );
                     }
                 });
             }
@@ -79,5 +79,7 @@ public class ProjectGridRecyclerViewFactory extends RecyclerViewAbstractFactory<
     protected RecyclerView.LayoutManager createLayoutManager() {
         return new GridLayoutManager(context,NUM_OS_COL);
     }
+
+
 
 }

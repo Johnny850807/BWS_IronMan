@@ -76,12 +76,16 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
 
     @Override
     protected void onControlViews() {
+        setupInputCardView();
+        initiateRecyclerView();
+        setListeners();
+    }
+
+    private void setupInputCardView(){
         Member currentUser = Global.getMemberController().getActiveMember();
         posternameTXT.setText(currentUser.getName());
         GlideHelper.loadToCircularImage(getContext(),inputPostHeaderImg,
                 currentUser.getImageUrl());
-        initiateRecyclerView();
-        setListeners();
     }
 
     private void setListeners(){
@@ -92,10 +96,7 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if ((event.getKeyCode() == KeyEvent.KEYCODE_ENTER) && (event.getAction() == KeyEvent.ACTION_DOWN ))
                     try {
-                        Member poster = Global.getMemberController().getActiveMember();
-                        Timeline timeline = new Timeline(poster,inputContentED.getText().toString(),new Date());
-                        addTimeline(timeline);
-                        clearInputEdittextStatus();
+                        addTimelineAndClearEditText();
                         return true;
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -105,14 +106,15 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
         });
     }
 
-    private void clearInputEdittextStatus() {
-        /**讓鍵盤卸下**/
-        inputContentED.setText("");
-        InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(inputContentED.getWindowToken(), 0);
+
+    private void addTimelineAndClearEditText() throws Exception {
+        Member poster = Global.getMemberController().getActiveMember();
+        final Timeline timeline = new Timeline(poster,inputContentED.getText().toString(),new Date());
+        addTimeLine(timeline);
+        clearInputEdittextStatus();
     }
 
-    private void addTimeline(final Timeline timeline) throws Exception {
+    private void addTimeLine(final Timeline timeline){
         CREATE(timeline, new EntityController.OnFinishListener() {
             @Override
             public void onFinish() {
@@ -121,9 +123,10 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
         });
     }
 
+
     private void snackberNotify(final Timeline timeline){
         /**工作小語新增完畢通知，設置UNDO供使用者移除工作心情小語，移除後又可以UNDO，造成遞迴**/
-        Snackbar.make(inputCardView,getString(R.string.timeline_created_completed),Snackbar.LENGTH_LONG)
+        Snackbar.make(getView(),getString(R.string.timeline_created_completed),Snackbar.LENGTH_LONG)
                 .setAction("UNDO", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -137,13 +140,22 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
                 }).show();
     }
 
+    private void clearInputEdittextStatus() {
+        /**讓鍵盤卸下**/
+        inputContentED.setText("");
+        InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(inputContentED.getWindowToken(), 0);
+    }
+
+
+
     public void removeTimeline(final Timeline timeline){
         Snackbar.make(inputCardView,getString(R.string.timeline_removed_completed),Snackbar.LENGTH_LONG)
                 .setAction("UNDO", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         try {
-                            addTimeline(timeline);
+                            addTimeLine(timeline);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

@@ -8,4 +8,5 @@ import android.support.v4.app.Fragment;
 
 public interface ParentActivityCallBack {
     public void changePage(Fragment fragment);
+    public void finish();
 }

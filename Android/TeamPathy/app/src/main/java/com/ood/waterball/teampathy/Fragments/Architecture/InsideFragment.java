@@ -32,7 +32,6 @@ public class InsideFragment extends Fragment {
         return parentActivityCallBack;
     }
 
-
     @Override
     public void onDetach() {
         super.onDetach();
