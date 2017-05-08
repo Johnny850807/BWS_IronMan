@@ -17,21 +17,9 @@ import com.ood.waterball.teampathy.R;
 import java.util.List;
 
 public class IssuesRecyclerViewFactory extends RecyclerViewAbstractFactory<Issue>{
-    private String projectId;
 
-    public IssuesRecyclerViewFactory(View rootView,String projectId) {
-        super(rootView);
-        this.projectId = projectId;
-    }
-
-    @Override
-    protected List<Issue> createEntityList() {
-        try {
-            return Global.getIssueController().readList(projectId);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+    public IssuesRecyclerViewFactory(View rootView,List<Issue> issueList) {
+        super(rootView,issueList);
     }
 
     @Override

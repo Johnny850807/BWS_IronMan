@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.GlideHelper;
 import com.ood.waterball.teampathy.Domains.Timeline;
 import com.ood.waterball.teampathy.R;
@@ -20,21 +19,9 @@ import java.util.List;
 import java.util.Random;
 
 public class TimeLineRecyclerViewFactory extends RecyclerViewAbstractFactory<Timeline>{
-    private String projectId;
 
-    public TimeLineRecyclerViewFactory(View rootView,String projectId) {
-        super(rootView);
-        this.projectId = projectId;
-    }
-
-    @Override
-    protected List<Timeline> createEntityList() {
-        try {
-            Global.getTimelineController().readList(projectId);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+    public TimeLineRecyclerViewFactory(View rootView,List<Timeline>timelineList) {
+        super(rootView,timelineList);
     }
 
     @Override

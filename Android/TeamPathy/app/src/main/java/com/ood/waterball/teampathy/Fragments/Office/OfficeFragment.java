@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Domains.Issue;
-import com.ood.waterball.teampathy.Fragments.AsyncQueryRecyclerFragment;
+import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.R;
 
@@ -27,7 +27,6 @@ public class OfficeFragment extends AsyncQueryRecyclerFragment {
 
     public OfficeFragment() {
         // Required empty public constructor
-        //todo 更換正確id
     }
 
 
@@ -47,8 +46,14 @@ public class OfficeFragment extends AsyncQueryRecyclerFragment {
         return null;
     }
 
+
     @Override
-    protected RecyclerViewAbstractFactory createRecyclerFactory(View parentView) {
+    protected List createEntityList() {
+        return null;
+    }
+
+    @Override
+    protected RecyclerViewAbstractFactory createRecyclerFactory(View parentView, List entityList) {
         return null;
     }
 

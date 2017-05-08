@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.ood.waterball.teampathy.BaseActivity;
-import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Project;
 import com.ood.waterball.teampathy.Fragments.HomePage.ProjectHomePageFragment;
 import com.ood.waterball.teampathy.R;
@@ -22,20 +21,10 @@ public class ProjectGridRecyclerViewFactory extends RecyclerViewAbstractFactory<
     private static final int NUM_OS_COL = 3;
     private String userId;
 
-    public ProjectGridRecyclerViewFactory(View rootView,String userId) {
-        super(rootView);
-        this.userId = userId;
+    public ProjectGridRecyclerViewFactory(View rootView,List<Project>projectList) {
+        super(rootView,projectList);
     }
 
-    @Override
-    protected List<Project> createEntityList() {
-        try {
-            return Global.getProjectController().readList(userId);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
     @Override
     protected RecyclerView createRecyclerView() {

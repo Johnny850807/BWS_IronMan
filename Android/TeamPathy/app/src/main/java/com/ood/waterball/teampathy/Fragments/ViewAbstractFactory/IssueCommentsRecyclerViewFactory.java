@@ -15,21 +15,9 @@ import java.util.List;
 
 
 public class IssueCommentsRecyclerViewFactory extends RecyclerViewAbstractFactory<IssueComment> {
-    private String issueId;
 
-    public IssueCommentsRecyclerViewFactory(View rootView,String issueId) {
-        super(rootView);
-        this.issueId = issueId;
-    }
-
-    @Override
-    protected List<IssueComment> createEntityList() {
-        try {
-            Global.getIssueController().readList(issueId);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+    public IssueCommentsRecyclerViewFactory(View rootView,List<IssueComment> issueCommentList) {
+        super(rootView,issueCommentList);
     }
 
     @Override

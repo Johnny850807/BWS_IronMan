@@ -16,12 +16,13 @@ import com.ood.waterball.teampathy.Controllers.MyUtils.Dialogs.TitleContentPosti
 import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.IssueComment;
 import com.ood.waterball.teampathy.Domains.Member;
-import com.ood.waterball.teampathy.Fragments.AsyncQueryRecyclerFragment;
+import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.IssueCommentsRecyclerViewFactory;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.R;
 
 import java.util.Date;
+import java.util.List;
 
 
 public class IssueDetailsFragment extends AsyncQueryRecyclerFragment<IssueComment> {
@@ -54,9 +55,19 @@ public class IssueDetailsFragment extends AsyncQueryRecyclerFragment<IssueCommen
 
 
     @Override
-    protected RecyclerViewAbstractFactory<IssueComment> createRecyclerFactory(View parentView) {
-        currentIssue = (Issue) getArguments().getSerializable("issue");
-        return new IssueCommentsRecyclerViewFactory(parentView,currentIssue.getId());
+    protected List<IssueComment> createEntityList() {
+        try {
+            currentIssue = (Issue) getArguments().getSerializable("issue");
+            Global.getIssueCommentController().readList(currentIssue.getId());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    protected RecyclerViewAbstractFactory<IssueComment> createRecyclerFactory(View parentView, List<IssueComment> entityList) {
+        return new IssueCommentsRecyclerViewFactory(parentView,entityList);
     }
 
     @Override

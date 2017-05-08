@@ -14,7 +14,7 @@ import com.ood.waterball.teampathy.Domains.Project;
 import com.ood.waterball.teampathy.Domains.ProjectSection;
 import com.ood.waterball.teampathy.Fragments.Forum.ForumFragment;
 import com.ood.waterball.teampathy.Fragments.Office.OfficeFragment;
-import com.ood.waterball.teampathy.Fragments.TemplateFragment;
+import com.ood.waterball.teampathy.Fragments.Architecture.TemplateFragment;
 import com.ood.waterball.teampathy.Fragments.TimeLineFragment;
 import com.ood.waterball.teampathy.Fragments.TodoList.TodoListFragment;
 import com.ood.waterball.teampathy.R;

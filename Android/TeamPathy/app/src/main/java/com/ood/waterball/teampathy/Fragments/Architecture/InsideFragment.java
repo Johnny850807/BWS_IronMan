@@ -1,4 +1,4 @@
-package com.ood.waterball.teampathy.Fragments;
+package com.ood.waterball.teampathy.Fragments.Architecture;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;

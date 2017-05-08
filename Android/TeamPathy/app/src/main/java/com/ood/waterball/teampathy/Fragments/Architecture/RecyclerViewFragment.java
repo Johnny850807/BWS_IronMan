@@ -1,4 +1,4 @@
-package com.ood.waterball.teampathy.Fragments;
+package com.ood.waterball.teampathy.Fragments.Architecture;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -19,18 +19,21 @@ public abstract class RecyclerViewFragment<T> extends AsyncTemplateFragment<T> {
     protected RecyclerView.Adapter recyclerAdapter;
 
     @Override
+    protected List<T> onFetchData(@Nullable Bundle arguBundle) {
+        entityList = createEntityList();
+        return entityList;
+    }
+
+    protected abstract List<T> createEntityList();
+
+    @Override
     protected final void onFindViews(View parentView) {
-        recyclerFactory = createRecyclerFactory(parentView);
+        recyclerFactory = createRecyclerFactory(parentView,entityList);
         initiateRecyclerView();
         onFindUseCaseViews(parentView);
     }
 
-    protected abstract RecyclerViewAbstractFactory<T> createRecyclerFactory(View parentView);
-
-    @Override
-    protected List<T> onFetchData(@Nullable Bundle arguBundle) {
-        return entityList = recyclerFactory.getEntityList();
-    }
+    protected abstract RecyclerViewAbstractFactory<T> createRecyclerFactory(View parentView,List<T> entityList);
 
     protected final void initiateRecyclerView(){
         recyclerAdapter = recyclerFactory.getAdapter();

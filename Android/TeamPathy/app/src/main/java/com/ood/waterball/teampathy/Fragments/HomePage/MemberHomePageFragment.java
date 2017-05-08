@@ -8,10 +8,12 @@ import android.view.View;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Domains.Project;
-import com.ood.waterball.teampathy.Fragments.AsyncQueryRecyclerFragment;
+import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.ProjectGridRecyclerViewFactory;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.R;
+
+import java.util.List;
 
 public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> {
     private FloatingActionButton fab;
@@ -27,9 +29,19 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
     }
 
     @Override
-    protected RecyclerViewAbstractFactory<Project> createRecyclerFactory(View parentView) {
-        String userId = Global.getMemberController().getActiveMember().getId();
-        return new ProjectGridRecyclerViewFactory(parentView,userId);
+    protected List<Project> createEntityList() {
+        try {
+            String userId = Global.getMemberController().getActiveMember().getId();
+            Global.getProjectController().readList(userId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    protected RecyclerViewAbstractFactory<Project> createRecyclerFactory(View parentView, List<Project> entityList) {
+        return new ProjectGridRecyclerViewFactory(parentView,entityList);
     }
 
     @Override

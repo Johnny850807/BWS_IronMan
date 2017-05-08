@@ -1,4 +1,4 @@
-package com.ood.waterball.teampathy.Fragments;
+package com.ood.waterball.teampathy.Fragments.Architecture;
 
 import android.os.AsyncTask;
 

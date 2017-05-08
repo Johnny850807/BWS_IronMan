@@ -18,10 +18,12 @@ import com.ood.waterball.teampathy.Controllers.MyUtils.AsyncTaskController;
 import com.ood.waterball.teampathy.Controllers.MyUtils.Dialogs.TitleContentPostingDialogBuilder;
 import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Domains.Member;
-import com.ood.waterball.teampathy.Fragments.AsyncQueryRecyclerFragment;
+import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.IssuesRecyclerViewFactory;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.R;
+
+import java.util.List;
 
 public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
     private String projectId;
@@ -55,9 +57,19 @@ public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
     }
 
     @Override
-    protected RecyclerViewAbstractFactory<Issue> createRecyclerFactory(View parentView) {
-        projectId = (String) getArguments().get("projectId");
-        return new IssuesRecyclerViewFactory(parentView,projectId);
+    protected List<Issue> createEntityList() {
+        try {
+            projectId = (String) getArguments().get("projectId");
+            Global.getIssueController().readList(projectId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    protected RecyclerViewAbstractFactory<Issue> createRecyclerFactory(View parentView, List<Issue> entityList) {
+        return new IssuesRecyclerViewFactory(parentView,entityList);
     }
 
     @Override

@@ -16,6 +16,7 @@ import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.GlideHelper;
 import com.ood.waterball.teampathy.Domains.Member;
 import com.ood.waterball.teampathy.Domains.Timeline;
+import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.TimeLineRecyclerViewFactory;
 import com.ood.waterball.teampathy.R;
@@ -25,9 +26,6 @@ import java.util.List;
 
 
 public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
-    private List<Timeline> timelineList;
-    private String projectId;
-
     private CardView inputCardView;
     private ImageView inputPostHeaderImg;
     private EditText inputContentED;
@@ -53,9 +51,19 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
 
 
     @Override
-    protected RecyclerViewAbstractFactory<Timeline> createRecyclerFactory(View parentView) {
-        projectId = (String) getArguments().get("projectId");
-        return new TimeLineRecyclerViewFactory(parentView,projectId);
+    protected RecyclerViewAbstractFactory<Timeline> createRecyclerFactory(View parentView,List<Timeline> entityList) {
+        return new TimeLineRecyclerViewFactory(parentView,entityList);
+    }
+
+    @Override
+    protected List<Timeline> createEntityList() {
+        try {
+            String projectId = (String) getArguments().get("projectId");
+            return Global.getTimelineController().readList(projectId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
