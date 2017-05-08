@@ -26,14 +26,10 @@ import java.util.List;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
-public class ForumFragment extends EntityAsyncCRUDFragment {
+public class ForumFragment extends EntityAsyncCRUDFragment<Issue> {
     private String projectId;
-    private List<Issue> issueList;
     private FloatingActionButton fab;
 
-    private RecyclerView issueRecyclerView;
-    private LinearLayoutManager layoutManager;
-    private MyRecyclerAdapter recyclerAdapter;
     private String issueType; //點選新增文章時會出現分類Spinner，將其選擇的選項字串儲存至issueType中
 
     public static ForumFragment getInstance(String projectId){
@@ -50,10 +46,10 @@ public class ForumFragment extends EntityAsyncCRUDFragment {
     }
 
     @Override
-    protected void onFetchData(@Nullable Bundle savedInstanceState, @Nullable Bundle arguBundle) {
+    protected void onFetchData (@Nullable Bundle arguBundle) {
         try {
             projectId = (String) arguBundle.get("projectId");
-            issueList = Global.getTeamPathyFacade().getIssueListByProjectId(projectId);
+            return Global.getTeamPathyFacade().getIssueListByProjectId(projectId);
             Log("文章數量:" + issueList.size());
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,7 +63,7 @@ public class ForumFragment extends EntityAsyncCRUDFragment {
 
     @Override
     protected void onFindViews(View parentView) {
-        issueRecyclerView = (RecyclerView) parentView.findViewById(R.id.issues_recyclerview_forum);
+        issueRecyclerView =
         fab = (FloatingActionButton) parentView.findViewById(R.id.fab_forum);
     }
 
@@ -77,12 +73,19 @@ public class ForumFragment extends EntityAsyncCRUDFragment {
         setListeners();
     }
 
-    private void initiateRecyclerView(){
-        recyclerAdapter = new MyRecyclerAdapter();
-        issueRecyclerView.setAdapter(recyclerAdapter);
-        layoutManager = new LinearLayoutManager(getContext());
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        issueRecyclerView.setLayoutManager(layoutManager);
+    @Override
+    protected void onFurtherRecyclerViewConfig(RecyclerView recyclerView, RecyclerView.Adapter adapter, RecyclerView.LayoutManager layoutManager) {
+
+    }
+
+    @Override
+    protected RecyclerView onFindRecyclerView(View parentView) {
+        return (RecyclerView) parentView.findViewById(R.id.issues_recyclerview_forum);;
+    }
+
+    @Override
+    protected RecyclerView.Adapter onInitiateAdapter(List<Issue> entityList) {
+        return null;
     }
 
     private void setListeners(){
