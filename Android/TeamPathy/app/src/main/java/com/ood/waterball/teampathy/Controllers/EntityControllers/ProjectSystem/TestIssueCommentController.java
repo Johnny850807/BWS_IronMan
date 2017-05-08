@@ -37,6 +37,7 @@ public class TestIssueCommentController implements EntityController<IssueComment
         issueCommentList.add( new IssueComment(new Member("曾韋傑","","",""),"幹 ",now));
         issueCommentList.add( new IssueComment(new Member("林宗億","","",""),"......被盜抱歉",now));
 
+
         return issueCommentList;
     }
 

@@ -150,8 +150,13 @@ public class IssueDetailsFragment extends AsyncQueryRecyclerFragment<IssueCommen
         });
     }
 
-    private void addNewIssueCommentAndRefresh(IssueComment issueComment) throws Exception {
-        CREATE(issueComment,()->snackbarNotify(issueComment));
+    private void addNewIssueCommentAndRefresh(final IssueComment issueComment) throws Exception {
+        CREATE(issueComment, new EntityController.OnFinishListener() {
+            @Override
+            public void onFinish() {
+                snackbarNotify(issueComment);
+            }
+        });
     }
 
     private void snackbarNotify(IssueComment issueComment){
@@ -165,7 +170,7 @@ public class IssueDetailsFragment extends AsyncQueryRecyclerFragment<IssueCommen
     }
 
     @Override
-    protected EntityController createEntityController() {
+    protected EntityController<IssueComment> createEntityController() {
         return Global.getIssueCommentController();
     }
 

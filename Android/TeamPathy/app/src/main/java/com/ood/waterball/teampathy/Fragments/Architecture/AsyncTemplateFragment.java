@@ -37,6 +37,7 @@ public abstract class AsyncTemplateFragment<T> extends InsideFragment {
                 onControlViews();
             }
         };
+
         AsyncTaskController.runAsyncTask(asyncTask);
     }
 

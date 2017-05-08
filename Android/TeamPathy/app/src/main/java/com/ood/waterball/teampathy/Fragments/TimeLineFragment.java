@@ -112,8 +112,13 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
         imm.hideSoftInputFromWindow(inputContentED.getWindowToken(), 0);
     }
 
-    private void addTimeline(Timeline timeline) throws Exception {
-        CREATE(timeline,()->snackberNotify(timeline));
+    private void addTimeline(final Timeline timeline) throws Exception {
+        CREATE(timeline, new EntityController.OnFinishListener() {
+            @Override
+            public void onFinish() {
+                snackberNotify(timeline);
+            }
+        });
     }
 
     private void snackberNotify(final Timeline timeline){
@@ -122,12 +127,17 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
                 .setAction("UNDO", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        DELETE(timeline,()->removeTimeline(timeline));
+                        DELETE(timeline, new EntityController.OnFinishListener() {
+                            @Override
+                            public void onFinish() {
+                                removeTimeline(timeline);
+                            }
+                        });
                     }
                 }).show();
     }
 
-    public void removeTimeline(Timeline timeline){
+    public void removeTimeline(final Timeline timeline){
         Snackbar.make(inputCardView,getString(R.string.timeline_removed_completed),Snackbar.LENGTH_LONG)
                 .setAction("UNDO", new View.OnClickListener() {
                     @Override
@@ -144,8 +154,8 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
 
 
     @Override
-    protected EntityController createEntityController() {
-        return null;
+    protected EntityController<Timeline> createEntityController() {
+        return Global.getTimelineController();
     }
 
 }

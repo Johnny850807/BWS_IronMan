@@ -61,7 +61,7 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
     }
 
     @Override
-    protected EntityController createEntityController() {
+    protected EntityController<Project> createEntityController() {
         return Global.getProjectController();
     }
 

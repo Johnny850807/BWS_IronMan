@@ -88,14 +88,18 @@ public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
                 builder.setContentTextInputEditTextId(R.id.issueContentED_issue_dialog)
                         .setTitleTextInputEditTextId(R.id.issueTitleED_issue_dialog)
                         .setErrorTextViewId(R.id.errorTxt_issue_dialog)
-                        .setOnFinishListener((title,content)-> {
+                        .setOnFinishListener(new TitleContentPostingDialogBuilder.onFinishListener() {
+                            @Override
+                            public void onFinish(String title, String content) {
                                 try {
                                     Member poster = Global.getMemberController().getActiveMember();
                                     addIssueAndNotify(new Issue(poster,title,content,issueType));
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
-                        })
+                            }
+                        }
+                        )
                         .setOnDetectListener(new TitleContentPostingDialogBuilder.OnDetectListener() {
                             @Override
                             public boolean onTextEmptyReport(int errorViewId,TextView errorText) {
@@ -148,7 +152,7 @@ public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
     }
 
 
-    private void setDialogSpinnerListener(View dialogView){
+    private void setDialogSpinnerListener(final View dialogView){
 
         AsyncTask<Void,Void,String[]> asyncTask = new AsyncTask<Void, Void, String[]>() {
             @Override
@@ -161,7 +165,7 @@ public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
                 return null;
             }
             @Override
-            protected void onPostExecute(String[] issueTypeList) {
+            protected void onPostExecute(final String[] issueTypeList) {
                 Spinner typeSpinner = (Spinner) dialogView.findViewById(R.id.typeSpinner_issue_dialog);
                 ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,issueTypeList);
                 typeSpinner.setAdapter(stringArrayAdapter);
@@ -181,7 +185,12 @@ public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
 
 
     private void addIssueAndNotify(final Issue issue) throws Exception {
-        CREATE(issue, ()->useSnackBarToNotify(issue));
+        CREATE(issue, new EntityController.OnFinishListener() {
+            @Override
+            public void onFinish() {
+                useSnackBarToNotify(issue);
+            }
+        });
     }
 
     private void useSnackBarToNotify(final Issue issue){
@@ -196,7 +205,7 @@ public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
     }
 
     @Override
-    protected EntityController createEntityController() {
+    protected EntityController<Issue> createEntityController() {
         return Global.getIssueController();
     }
 

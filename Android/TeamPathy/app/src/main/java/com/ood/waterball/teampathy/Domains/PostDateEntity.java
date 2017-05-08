@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class PostDateEntity extends Entity {
 
-    private Date postDate;
+    protected Date postDate;
 
     public PostDateEntity(Date date){
         this.postDate = date;

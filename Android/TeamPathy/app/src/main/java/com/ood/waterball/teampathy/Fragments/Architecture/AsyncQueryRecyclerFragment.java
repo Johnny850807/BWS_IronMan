@@ -11,7 +11,7 @@ public abstract class AsyncQueryRecyclerFragment<T extends Entity> extends Recyc
 
     protected abstract EntityController<T> createEntityController();
 
-    protected final void CREATE(T entity , EntityController.OnFinishListener ...listeners){
+    protected final void CREATE(final T entity , final EntityController.OnFinishListener ...listeners){
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
@@ -33,7 +33,7 @@ public abstract class AsyncQueryRecyclerFragment<T extends Entity> extends Recyc
         AsyncTaskController.runAsyncTask(asyncTask);
     }
 
-    protected void DELETE(T entity,EntityController.OnFinishListener ...listeners){
+    protected void DELETE(final T entity, final EntityController.OnFinishListener ...listeners){
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
@@ -56,7 +56,7 @@ public abstract class AsyncQueryRecyclerFragment<T extends Entity> extends Recyc
         QUERY();
     }
 
-    protected void UPDATE(T entity,EntityController.OnFinishListener ...listeners){
+    protected void UPDATE(final T entity, final EntityController.OnFinishListener ...listeners){
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {

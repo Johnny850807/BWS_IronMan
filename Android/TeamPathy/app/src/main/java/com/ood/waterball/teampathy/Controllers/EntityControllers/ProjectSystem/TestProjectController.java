@@ -19,7 +19,7 @@ public class TestProjectController implements EntityController<Project>{
 
     @Override
     public Project read(String id)throws Exception {
-        return null;
+        return project;
     }
 
     @Override

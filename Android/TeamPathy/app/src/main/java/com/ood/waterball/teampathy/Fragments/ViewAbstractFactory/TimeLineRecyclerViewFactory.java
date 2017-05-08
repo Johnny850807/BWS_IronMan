@@ -94,7 +94,7 @@ public class TimeLineRecyclerViewFactory extends RecyclerViewAbstractFactory<Tim
             TextView authorTxt;
             CardView cardview;
 
-            public MyViewHolder(View itemView) {
+            MyViewHolder(View itemView) {
                 super(itemView);
                 cardview = (CardView) itemView.findViewById(R.id.card_workline_item);
                 posterPictureImg = (ImageView) itemView.findViewById(R.id.poster_header_workline_item);
