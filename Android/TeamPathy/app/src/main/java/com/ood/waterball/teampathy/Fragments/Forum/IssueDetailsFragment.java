@@ -58,7 +58,7 @@ public class IssueDetailsFragment extends AsyncQueryRecyclerFragment<IssueCommen
     protected List<IssueComment> createEntityList() {
         try {
             currentIssue = (Issue) getArguments().getSerializable("issue");
-            Global.getIssueCommentController().readList(currentIssue.getId());
+            return Global.getIssueCommentController().readList(currentIssue.getId());
         } catch (Exception e) {
             e.printStackTrace();
         }

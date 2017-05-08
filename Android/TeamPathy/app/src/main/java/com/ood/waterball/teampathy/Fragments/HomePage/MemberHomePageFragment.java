@@ -32,7 +32,7 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
     protected List<Project> createEntityList() {
         try {
             String userId = Global.getMemberController().getActiveMember().getId();
-            Global.getProjectController().readList(userId);
+            return Global.getProjectController().readList(userId);
         } catch (Exception e) {
             e.printStackTrace();
         }

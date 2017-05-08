@@ -33,7 +33,7 @@ public abstract class AsyncTemplateFragment<T> extends InsideFragment {
 
             @Override
             protected void onPostExecute(List<T> entityList) {
-                onFindViews(view);
+                onFindViews(view,entityList);
                 onControlViews();
             }
         };
@@ -41,7 +41,7 @@ public abstract class AsyncTemplateFragment<T> extends InsideFragment {
     }
 
     protected abstract List<T> onFetchData(@Nullable Bundle arguBundle);
-    protected abstract void onFindViews(View parentView);
+    protected abstract void onFindViews(View parentView,List<T> entityList);
     protected abstract void onControlViews();
 
 }

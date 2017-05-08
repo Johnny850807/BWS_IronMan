@@ -19,9 +19,8 @@ import java.util.List;
 
 public class ProjectGridRecyclerViewFactory extends RecyclerViewAbstractFactory<Project>{
     private static final int NUM_OS_COL = 3;
-    private String userId;
 
-    public ProjectGridRecyclerViewFactory(View rootView,List<Project>projectList) {
+    public ProjectGridRecyclerViewFactory(View rootView,List<Project> projectList) {
         super(rootView,projectList);
     }
 

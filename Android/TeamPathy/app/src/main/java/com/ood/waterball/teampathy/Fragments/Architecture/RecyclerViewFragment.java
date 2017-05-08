@@ -27,7 +27,7 @@ public abstract class RecyclerViewFragment<T> extends AsyncTemplateFragment<T> {
     protected abstract List<T> createEntityList();
 
     @Override
-    protected final void onFindViews(View parentView) {
+    protected final void onFindViews(View parentView,List<T> entityList) {
         recyclerFactory = createRecyclerFactory(parentView,entityList);
         initiateRecyclerView();
         onFindUseCaseViews(parentView);

@@ -60,7 +60,7 @@ public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
     protected List<Issue> createEntityList() {
         try {
             projectId = (String) getArguments().get("projectId");
-            Global.getIssueController().readList(projectId);
+            return Global.getIssueController().readList(projectId);
         } catch (Exception e) {
             e.printStackTrace();
         }
