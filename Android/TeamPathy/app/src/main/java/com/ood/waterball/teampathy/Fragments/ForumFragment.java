@@ -16,8 +16,9 @@ import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityControlle
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.AsyncTaskController;
 import com.ood.waterball.teampathy.Controllers.MyUtils.Dialogs.TitleContentPostingDialogBuilder;
-import com.ood.waterball.teampathy.DomainModels.Issue;
-import com.ood.waterball.teampathy.DomainModels.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.Issue;
+import com.ood.waterball.teampathy.DomainModels.Domains.IssueType;
+import com.ood.waterball.teampathy.DomainModels.Domains.Member;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.IssuesRecyclerViewFactory;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
@@ -93,7 +94,7 @@ public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
                             public void onFinish(String title, String content) {
                                 try {
                                     Member poster = Global.getMemberController().getActiveMember();
-                                    addIssueAndNotify(new Issue(poster,title,content,issueType));
+                                    addIssueAndNotify(new Issue(poster,title,content,new IssueType(issueType)));
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -154,25 +155,28 @@ public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
 
     private void setDialogSpinnerListener(final View dialogView){
 
-        AsyncTask<Void,Void,String[]> asyncTask = new AsyncTask<Void, Void, String[]>() {
+        AsyncTask<Void,Void,List<IssueType>> asyncTask = new AsyncTask<Void, Void, List<IssueType>>() {
             @Override
-            protected String[] doInBackground(Void... voids) {
+            protected List<IssueType> doInBackground(Void... voids) {
                 try {
-                    return Global.getIssueController().readIssueTypeList(projectId);
+                    return Global.getIssuetypeController().readList(projectId);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 return null;
             }
             @Override
-            protected void onPostExecute(final String[] issueTypeList) {
+            protected void onPostExecute(final List<IssueType> issueTypeList) {
+                final String[] types = new String[issueTypeList.size()];
+                for ( int i = 0 ; i < types.length ; i ++ )
+                    types[i] = issueTypeList.get(i).getName();
                 Spinner typeSpinner = (Spinner) dialogView.findViewById(R.id.typeSpinner_issue_dialog);
-                ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,issueTypeList);
+                ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,types);
                 typeSpinner.setAdapter(stringArrayAdapter);
                 typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                        issueType = issueTypeList[position];
+                        issueType = types[position];
                     }
                     @Override
                     public void onNothingSelected(AdapterView<?> adapterView) {}

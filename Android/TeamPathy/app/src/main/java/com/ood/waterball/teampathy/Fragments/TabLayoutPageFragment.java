@@ -10,7 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.Global;
-import com.ood.waterball.teampathy.DomainModels.Project;
+import com.ood.waterball.teampathy.DomainModels.Domains.Project;
 import com.ood.waterball.teampathy.DomainModels.ProjectSection;
 import com.ood.waterball.teampathy.Fragments.Architecture.TemplateFragment;
 import com.ood.waterball.teampathy.R;

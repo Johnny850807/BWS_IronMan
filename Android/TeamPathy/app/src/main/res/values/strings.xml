@@ -70,5 +70,7 @@
     <string name="timeline_removed_completed">工作心情小語刪除完畢</string>
     <string name="send">送出</string>
     <string name="password_not_conform">密碼不吻合!</string>
+    <string name="pm">PM</string>
+    <string name="current_task">目前工作</string>
 
 </resources>

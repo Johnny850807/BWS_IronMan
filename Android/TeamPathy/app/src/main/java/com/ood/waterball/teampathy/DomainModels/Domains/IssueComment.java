@@ -1,9 +1,11 @@
-package com.ood.waterball.teampathy.DomainModels;
+package com.ood.waterball.teampathy.DomainModels.Domains;
 
+
+import com.ood.waterball.teampathy.DomainModels.PostDateEntity;
 
 import java.util.Date;
 
-public class IssueComment extends PostDateEntity{
+public class IssueComment extends PostDateEntity {
     private Member poster;
     private String content;
 

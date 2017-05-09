@@ -1,5 +1,7 @@
-package com.ood.waterball.teampathy.DomainModels;
+package com.ood.waterball.teampathy.DomainModels.Domains;
 
+
+import com.ood.waterball.teampathy.DomainModels.PostDateEntity;
 
 import java.util.Date;
 

@@ -1,7 +1,9 @@
-package com.ood.waterball.teampathy.DomainModels;
+package com.ood.waterball.teampathy.DomainModels.Domains;
 
 
-public class Project extends Entity{
+import com.ood.waterball.teampathy.DomainModels.Entity;
+
+public class Project extends Entity {
     private String name;
     private String description;
     private String type;

@@ -1,12 +1,14 @@
-package com.ood.waterball.teampathy.DomainModels;
+package com.ood.waterball.teampathy.DomainModels.Domains;
 
+
+import com.ood.waterball.teampathy.DomainModels.PostDateEntity;
 
 import java.util.Date;
 
 public class Issue extends PostDateEntity {
     private String title;
     private String content;
-    private String type;
+    private IssueType type;
     private Date postDate;
     private Member poster;
 
@@ -14,7 +16,7 @@ public class Issue extends PostDateEntity {
         super(new Date());
     }
 
-    public Issue(Member poster,String title,String content,String type){
+    public Issue(Member poster,String title,String content,IssueType type){
         super(new Date());
         this.poster = poster;
         this.title = title;
@@ -46,11 +48,11 @@ public class Issue extends PostDateEntity {
         this.poster = poster;
     }
 
-    public String getType() {
+    public IssueType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(IssueType type) {
         this.type = type;
     }
 

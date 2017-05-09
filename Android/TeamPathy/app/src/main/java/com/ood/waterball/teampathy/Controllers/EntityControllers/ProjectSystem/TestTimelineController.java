@@ -1,8 +1,8 @@
 package com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
-import com.ood.waterball.teampathy.DomainModels.Member;
-import com.ood.waterball.teampathy.DomainModels.Timeline;
+import com.ood.waterball.teampathy.DomainModels.Domains.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.Timeline;
 
 import java.util.ArrayList;
 import java.util.Date;

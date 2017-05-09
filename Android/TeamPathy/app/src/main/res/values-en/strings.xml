@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">TeamPathy</string>
+
+
+    <string name="Inputaccount">Input account</string>
+    <string name="Inputpassword">Input password</string>
+    <string name="logIn">Sign In</string>
+    <string name="register">Sign Up</string>
+    <string name="forgotPassword">Forgot password?</string>
+    <string name="inputname">Input your name</string>
+    <string name="inputPasswordConfirm">Confirm password</string>
+    <string name="finishRegistering">Done</string>
+
+
+    <!--Exception-->
+    <string name="accountDuplicated">Account exists.</string>
+    <string name="accountNotFound">Error with account or password.</string>
+    <string name="app_chinese_name">Mobile Teamwork App</string>
+    <string name="title_activity_project">ProjectActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="project_sections">
+        <item>TimeLine</item>>
+        <item>Forum</item>
+        <item>Todo</item>
+        <item>Office</item>
+    </string-array>
+
+    <string-array name="month_names">
+        <item>Jan.</item>
+        <item>Feb.</item>
+        <item>Mar.</item>
+        <item>Apr.</item>
+        <item>May.</item>
+        <item>June.</item>
+        <item>July.</item>
+        <item>Aug.</item>
+        <item>Sept.</item>
+        <item>Oct.</item>
+        <item>Nov.</item>
+        <item>Dec.</item>
+    </string-array>
+
+
+    <string name="issue_title">Title</string>
+    <string name="issue_content">Content</string>
+    <string name="CreateIssue">Create</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="make_sure_to_cancel">Are you sure to close?</string>
+    <string name="title_cannot_be_empty">Title cannot be empty.</string>
+    <string name="get_all_issue_types">Choose a category</string>
+    <string name="please_choose_an_issue_type">You mush choose one of a category.</string>
+    <string name="issue_content_cannot_be_empty">Content cannot be empty.</string>
+    <string name="issue_created_completed">Article created done.</string>
+    <string name="card_transitionname">card</string>
+    <string name="issue_title_transitionname">issuetitle</string>
+    <string name="test_long_string">就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了，我哭著臉回家找媽。就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了</string>
+    <string name="issue_content_transitionname">issuecontent</string>
+    <string name="create_issue_comment">Add comment.</string>
+    <string name="issue_comment_content">Comment content</string>
+    <string name="comment_created_completed">Comment added done.</string>
+    <string name="watch">Watch</string>
+    <string name="enter">Watch</string>
+    <string name="title_cannt_be_exceeding_12_words">Title cannot be longer than 12 words.</string>
+    <string name="describe_how_you_feel_about_working">Share how do you feel about the work!</string>
+    <string name="timeline_created_completed">Timeline added done.</string>
+    <string name="timeline_removed_completed">Timeline removed done.</string>
+    <string name="send">Send</string>
+    <string name="password_not_conform">Password valid failed.</string>
+
+</resources>

@@ -3,7 +3,7 @@ package com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.Exceptions.AccountDuplicatedException;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.Exceptions.AccountNotFoundException;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.Exceptions.PasswordNotConformException;
-import com.ood.waterball.teampathy.DomainModels.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.Member;
 
 
 public class TestMemberController extends MemberController {

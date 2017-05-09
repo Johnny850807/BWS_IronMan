@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
-import com.ood.waterball.teampathy.DomainModels.Issue;
+import com.ood.waterball.teampathy.DomainModels.Domains.Issue;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.R;

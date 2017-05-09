@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.ood.waterball.teampathy.BaseActivity;
-import com.ood.waterball.teampathy.DomainModels.Project;
+import com.ood.waterball.teampathy.DomainModels.Domains.Project;
 import com.ood.waterball.teampathy.Fragments.TabLayoutPageFragment;
 import com.ood.waterball.teampathy.R;
 

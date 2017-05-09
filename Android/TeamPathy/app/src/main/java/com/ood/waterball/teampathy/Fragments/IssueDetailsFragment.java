@@ -13,9 +13,9 @@ import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityControlle
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.Dialogs.TitleContentPostingDialogBuilder;
 import com.ood.waterball.teampathy.Controllers.MyUtils.GlideHelper;
-import com.ood.waterball.teampathy.DomainModels.Issue;
-import com.ood.waterball.teampathy.DomainModels.IssueComment;
-import com.ood.waterball.teampathy.DomainModels.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.Issue;
+import com.ood.waterball.teampathy.DomainModels.Domains.IssueComment;
+import com.ood.waterball.teampathy.DomainModels.Domains.Member;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.IssueCommentsRecyclerViewFactory;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;

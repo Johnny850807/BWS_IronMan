@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
+import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.R;
@@ -41,7 +42,7 @@ public class OfficeFragment extends AsyncQueryRecyclerFragment {
 
     @Override
     protected EntityController createEntityController() {
-        return null;
+        return Global.getMemberController();
     }
 
 
