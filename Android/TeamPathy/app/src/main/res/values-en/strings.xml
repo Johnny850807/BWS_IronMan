@@ -69,5 +69,12 @@
     <string name="timeline_removed_completed">Timeline removed done.</string>
     <string name="send">Send</string>
     <string name="password_not_conform">Password valid failed.</string>
+    <string name="pm">PM</string>
+    <string name="leader">Leader</string>
+    <string name="member">Member</string>
+    <string name="current_task">Current task</string>
+    <string name="member_list">Member list</string>
+    <string name="task_start_date">Start date</string>
+    <string name="task_end_date">End date</string>
 
 </resources>

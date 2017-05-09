@@ -75,5 +75,10 @@
     <string name="member">團員</string>
     <string name="current_task">目前工作</string>
     <string name="member_list">成員清單</string>
+    <string name="task_start_date">起始日期</string>
+    <string name="task_end_date">結束日期</string>
+    <!--todo 以下還沒英文化-->
+
+
 
 </resources>

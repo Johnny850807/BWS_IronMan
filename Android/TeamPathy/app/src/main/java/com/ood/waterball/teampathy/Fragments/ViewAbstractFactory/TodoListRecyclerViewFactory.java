@@ -15,7 +15,6 @@ import com.ood.waterball.teampathy.R;
 import java.util.List;
 
 
-
 public class TodoListRecyclerViewFactory extends RecyclerViewAbstractFactory<TodoTask> {
 
     public TodoListRecyclerViewFactory(View rootView, List<TodoTask> list) {
@@ -52,8 +51,11 @@ public class TodoListRecyclerViewFactory extends RecyclerViewAbstractFactory<Tod
             TodoTask todoTask = entityList.get(position);
             holder.nameTxt.setText(todoTask.getName());
             DateConvertStrategy dateConvertStrategy = Global.dateConvertStrategy;
-            String dateString = dateConvertStrategy.dateToTime(todoTask.getStartDate()) +
-                    "~" + dateConvertStrategy.dateToTime(todoTask.getEndDate());
+            String dateString = Global.resources.getString(R.string.task_start_date) + ": " +
+                    dateConvertStrategy.dateToTime(todoTask.getStartDate()) + "\n" +
+                    Global.resources.getString(R.string.task_end_date) + ": " +
+                    dateConvertStrategy.dateToTime(todoTask.getEndDate());
+
             holder.dateTxt.setText(dateString);
             holder.groupTxt.setText(todoTask.getGroupName());
         }
@@ -64,11 +66,13 @@ public class TodoListRecyclerViewFactory extends RecyclerViewAbstractFactory<Tod
         }
 
         class MyViewHolder extends RecyclerView.ViewHolder{
+            View view;
             TextView nameTxt;
             TextView dateTxt;
             TextView groupTxt;
             MyViewHolder(View itemView) {
                 super(itemView);
+                view = itemView;
                 nameTxt = (TextView) itemView.findViewById(R.id.name_todotask_item);
                 dateTxt = (TextView) itemView.findViewById(R.id.date_todotask_item);
                 groupTxt = (TextView) itemView.findViewById(R.id.group_todotask_item);
