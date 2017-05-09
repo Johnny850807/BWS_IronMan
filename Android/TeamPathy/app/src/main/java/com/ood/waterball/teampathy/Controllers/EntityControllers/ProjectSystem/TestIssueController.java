@@ -34,8 +34,8 @@ public class TestIssueController implements EntityController<Issue>{
         Member member = new Member("林宗億-紙箱大王","","","http://i.imgur.com/4wXEKrP.png");
 
         issueList = new ArrayList<Issue>();
-        issueList.add(new Issue(member,"TeamPathy", Global.resources.getString(R.string.test_long_string),new IssueType("議題")));
-        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
+        issueList.add(new Issue(member,"WooTalk很爛", Global.resources.getString(R.string.test_long_string),new IssueType("議題")));
+        issueList.add(new Issue(member,"班會有學分嗎?","如題，班會有學分??",new IssueType("討論")));
         issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
         issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
         issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));

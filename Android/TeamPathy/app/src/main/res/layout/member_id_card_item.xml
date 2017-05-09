@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight=".7"
                     android:gravity="end"
-                    android:textColor="#00aeff"
+                    android:textColor="@color/task_group_color"
                     android:textSize="14sp"
                     android:text="API實作"
                     android:id="@+id/member_current_task_groupname_id_card_item"/>
