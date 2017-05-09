@@ -2,13 +2,13 @@ package com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.E
 
 import com.ood.waterball.teampathy.R;
 
-import static com.ood.waterball.teampathy.Controllers.Global.globalResources;
+import static com.ood.waterball.teampathy.Controllers.Global.resources;
 
 
 public class AccountNotFoundException extends Exception {
 
     public AccountNotFoundException(){
-        super(globalResources.getString(R.string.accountNotFound));
+        super(resources.getString(R.string.accountNotFound));
     }
 
 }

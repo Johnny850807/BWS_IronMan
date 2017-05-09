@@ -22,7 +22,7 @@ import com.ood.waterball.teampathy.DomainModels.Domains.Timeline;
 import com.ood.waterball.teampathy.DomainModels.Models.MemberIdCardModel;
 
 public class Global {
-    public static Resources globalResources;
+    public static Resources resources;
     public static DateConvertStrategy dateConvertStrategy;
 
     private static MemberController memberController;
@@ -34,7 +34,7 @@ public class Global {
     private static EntityController<MemberIdCardModel> memberIdCardController;
 
     public static void init(Resources resources){
-        Global.globalResources = resources;
+        Global.resources = resources;
 
         dateConvertStrategy = new EnglishAbbreviationDateConvert();
 

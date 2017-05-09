@@ -51,12 +51,12 @@
     <string name="make_sure_to_cancel">Are you sure to close?</string>
     <string name="title_cannot_be_empty">Title cannot be empty.</string>
     <string name="get_all_issue_types">Choose a category</string>
-    <string name="please_choose_an_issue_type">You mush choose one of a category.</string>
+    <string name="please_choose_an_issue_type">You mush choose one of the following categories.</string>
     <string name="issue_content_cannot_be_empty">Content cannot be empty.</string>
     <string name="issue_created_completed">Article created done.</string>
     <string name="card_transitionname">card</string>
     <string name="issue_title_transitionname">issuetitle</string>
-    <string name="test_long_string">就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了，我哭著臉回家找媽。就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了</string>
+    <string name="test_long_string">This is what the story beginning.That sucks wootalk cannot server for male-to-female automatically choosing requirement! That useless Javascript jacking doesn\'t work well it,while I cann\'t get any improvement by the url request as well.Hence,that\'s why I\'m crying like a three-year-old baby, in a fucking mother\'s embrace,and keep asking for candies. fuck off everyone.This is what the story beginning.That sucks wootalk cannot server for male-to-female automatically choosing requirement! That useless Javascript jacking doesn\'t work well it,while I cann\'t get any improvement by the url request as well.Hence,that\'s why I\'m crying like a three-year-old baby, in a fucking mother\'s embrace,and keep asking for candies. fuck off everyone.</string>
     <string name="issue_content_transitionname">issuecontent</string>
     <string name="create_issue_comment">Add comment.</string>
     <string name="issue_comment_content">Comment content</string>

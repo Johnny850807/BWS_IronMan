@@ -34,7 +34,7 @@ public class TestIssueController implements EntityController<Issue>{
         Member member = new Member("林宗億-紙箱大王","","","http://i.imgur.com/4wXEKrP.png");
 
         issueList = new ArrayList<Issue>();
-        issueList.add(new Issue(member,"TeamPathy", Global.globalResources.getString(R.string.test_long_string),new IssueType("議題")));
+        issueList.add(new Issue(member,"TeamPathy", Global.resources.getString(R.string.test_long_string),new IssueType("議題")));
         issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
         issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
         issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
@@ -76,6 +76,6 @@ public class TestIssueController implements EntityController<Issue>{
     }
 
     public String[] readIssueTypeList(String id) throws Exception {
-        return new String[]{Global.globalResources.getString(R.string.get_all_issue_types),"投票","討論","議題","瞎聊"};
+        return new String[]{Global.resources.getString(R.string.get_all_issue_types),"投票","討論","議題","瞎聊"};
     }
 }

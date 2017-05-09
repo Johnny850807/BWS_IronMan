@@ -6,7 +6,7 @@ import com.ood.waterball.teampathy.R;
 public class PasswordNotConformException extends Exception {
 
     public PasswordNotConformException(){
-        super(Global.globalResources.getString(R.string.password_not_conform));
+        super(Global.resources.getString(R.string.password_not_conform));
     }
 
 }
