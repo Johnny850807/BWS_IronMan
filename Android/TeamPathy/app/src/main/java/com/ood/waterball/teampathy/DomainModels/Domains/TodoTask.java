@@ -3,13 +3,13 @@ package com.ood.waterball.teampathy.DomainModels.Domains;
 
 import com.ood.waterball.teampathy.DomainModels.Entity;
 
-public class TodoList extends Entity {
+public class TodoTask extends Entity {
     private String name;
     private String groupName;
 
-    public TodoList() {}
+    public TodoTask() {}
 
-    public TodoList(String groupName, String name) {
+    public TodoTask(String groupName, String name) {
         this.groupName = groupName;
         this.name = name;
     }

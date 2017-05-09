@@ -91,7 +91,7 @@ public class IssueDetailsFragment extends AsyncQueryRecyclerFragment<IssueCommen
     private void setupViews(){
         GlideHelper.loadToCircularImage(getContext(),posterHeadImg,currentIssue.getPoster().getImageUrl());
         issueContentTxt.setText(currentIssue.getContent());
-        issueTypeTxt.setText(currentIssue.getType());
+        issueTypeTxt.setText(currentIssue.getType().getName());
         issueTitleTxt.setText(currentIssue.getTitle());
         dateTxt.setText(currentIssue.getDateString());
     }

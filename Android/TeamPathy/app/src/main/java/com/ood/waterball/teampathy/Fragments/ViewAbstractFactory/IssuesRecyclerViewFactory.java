@@ -53,7 +53,7 @@ public class IssuesRecyclerViewFactory extends RecyclerViewAbstractFactory<Issue
         public void onBindViewHolder(MyViewHolder holder, int position) {
             Issue issue = entityList.get(position);
             holder.titleTxt.setText(issue.getTitle());
-            holder.typeTxt.setText(issue.getType());
+            holder.typeTxt.setText(issue.getType().getName());
             holder.dateTxt.setText(Global.dateConvertStrategy.dateToTime(entityList.get(position).getPostDate()));
             holder.authorTxt.setText(issue.getPoster().getName());
         }

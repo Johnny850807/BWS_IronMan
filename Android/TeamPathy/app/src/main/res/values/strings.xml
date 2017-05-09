@@ -71,6 +71,8 @@
     <string name="send">送出</string>
     <string name="password_not_conform">密碼不吻合!</string>
     <string name="pm">PM</string>
+    <string name="leader">團長</string>
+    <string name="member">團員</string>
     <string name="current_task">目前工作</string>
 
 </resources>

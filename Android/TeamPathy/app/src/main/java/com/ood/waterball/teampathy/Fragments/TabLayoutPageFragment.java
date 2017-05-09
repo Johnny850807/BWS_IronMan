@@ -94,6 +94,8 @@ public class TabLayoutPageFragment extends TemplateFragment {
                 return TimeLineFragment.getInstance(currentProject.getId());
             else if (position == ProjectSection.FORUM.ordinal())
                 return ForumFragment.getInstance(currentProject.getId());
+            else if (position == ProjectSection.OFFICE.ordinal())
+                return OfficeFragment.getInstance(currentProject.getId());
             else
                 return ForumFragment.getInstance(currentProject.getId());
         }

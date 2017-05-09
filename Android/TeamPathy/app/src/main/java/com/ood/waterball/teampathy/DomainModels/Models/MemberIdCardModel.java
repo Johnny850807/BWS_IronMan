@@ -2,17 +2,17 @@ package com.ood.waterball.teampathy.DomainModels.Models;
 
 
 import com.ood.waterball.teampathy.DomainModels.Domains.Member;
-import com.ood.waterball.teampathy.DomainModels.Domains.TodoList;
+import com.ood.waterball.teampathy.DomainModels.Domains.TodoTask;
 
-public class MemberIdCardModel {
+public class MemberIdCardModel{
     private Member member;
-    private TodoList todoList;
+    private TodoTask todoTask;
 
     public MemberIdCardModel(){}
 
-    public MemberIdCardModel(Member member,TodoList todoList){
+    public MemberIdCardModel(Member member,TodoTask todoTask){
         this.member = member;
-        this.todoList = todoList;
+        this.todoTask = todoTask;
     }
 
     public Member getMember() {
@@ -23,11 +23,11 @@ public class MemberIdCardModel {
         this.member = member;
     }
 
-    public TodoList getTodoList() {
-        return todoList;
+    public TodoTask getTodoTask() {
+        return todoTask;
     }
 
-    public void setTodoList(TodoList todoList) {
-        this.todoList = todoList;
+    public void setTodoTask(TodoTask todoTask) {
+        this.todoTask = todoTask;
     }
 }

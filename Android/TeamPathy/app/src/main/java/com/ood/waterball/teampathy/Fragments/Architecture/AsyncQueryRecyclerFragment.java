@@ -4,9 +4,8 @@ import android.os.AsyncTask;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.MyUtils.AsyncTaskController;
-import com.ood.waterball.teampathy.DomainModels.Entity;
 
-public abstract class AsyncQueryRecyclerFragment<T extends Entity> extends RecyclerViewFragment<T> {
+public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment<T> {
     protected EntityController<T> entityController = createEntityController();
 
     protected abstract EntityController<T> createEntityController();

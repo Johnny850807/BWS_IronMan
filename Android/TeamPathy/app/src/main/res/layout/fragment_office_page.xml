@@ -14,7 +14,7 @@
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/member_card_office">
+            android:id="@+id/member_recycler_card_office">
         </android.support.v7.widget.RecyclerView>
 
         <include layout="@layout/office_analysis_cardview"/>

@@ -8,6 +8,7 @@ public class Member extends Entity {
     private String account;
     private String password;
     private String imageUrl;
+    private String position;
 
     public Member(){}
 
@@ -51,4 +52,11 @@ public class Member extends Entity {
     }
 
 
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
 }

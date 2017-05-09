@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
-
 
 public class TestTimelineController implements EntityController<Timeline> {
     private  Member zheng = new Member("曾韋傑 Curry0423","","","http://imgur.com/download/c3qnbkg");
@@ -38,8 +36,6 @@ public class TestTimelineController implements EntityController<Timeline> {
         timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過4!!",new Date()));
         timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過5!!",new Date()));
         timelineList.add(new Timeline(zheng,"文案-專研初審文案提交審核通過6!!",new Date()));
-        for (Timeline timeline : timelineList )
-            Log(timeline.toString());
         return timelineList;
     }
 

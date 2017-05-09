@@ -6,13 +6,15 @@ import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
+import com.ood.waterball.teampathy.DomainModels.Models.MemberIdCardModel;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
+import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.OfficeRecyclerViewFactory;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
-public class OfficeFragment extends AsyncQueryRecyclerFragment {
+public class OfficeFragment extends AsyncQueryRecyclerFragment<MemberIdCardModel> {
 
 
     public static OfficeFragment getInstance(String projectId){
@@ -36,24 +38,27 @@ public class OfficeFragment extends AsyncQueryRecyclerFragment {
 
     @Override
     protected void onControlViews() {
-
     }
 
-
     @Override
-    protected EntityController createEntityController() {
-        return Global.getMemberController();
+    protected EntityController<MemberIdCardModel> createEntityController(){
+        return Global.getMemberIdCardController();
     }
 
-
     @Override
-    protected List createEntityList() {
+    protected List<MemberIdCardModel> createEntityList() {
+        String projectId = getArguments().getString("projectId");
+        try {
+            return Global.getMemberIdCardController().readList(projectId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
     @Override
-    protected RecyclerViewAbstractFactory createRecyclerFactory(View parentView, List entityList) {
-        return null;
+    protected RecyclerViewAbstractFactory<MemberIdCardModel> createRecyclerFactory(View parentView, List<MemberIdCardModel> entityList) {
+        return new OfficeRecyclerViewFactory(parentView,entityList);
     }
 
     @Override
