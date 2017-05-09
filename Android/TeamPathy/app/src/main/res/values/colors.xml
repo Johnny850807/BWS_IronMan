@@ -16,4 +16,5 @@
     <color name="timeline_colors_green">#e1ffe0</color>
     <color name="timeline_colors_orange">#fff1d2</color>
     <color name="timeline_colors_purple">#eedaff</color>
+    <color name="triangle_tuggle_color">@color/almost_white</color>
 </resources>

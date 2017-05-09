@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/line_with_tuggle_layout"
+    android:layout_marginTop="7dp"
+    android:layout_marginBottom="7dp">
+    <View
+        android:layout_width="15dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/corner_line_gray"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/member_list"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp" />
+    <View
+        android:layout_width="100dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:background="@drawable/corner_line_gray"/>
+
+    <ImageView android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="center"
+        android:src="@drawable/my_line_with_triangle_view"/>
+</LinearLayout>
