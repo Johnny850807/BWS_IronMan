@@ -1,13 +1,14 @@
-package com.ood.waterball.teampathy.Fragments.TodoList;
+package com.ood.waterball.teampathy.Fragments;
 
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
-import com.ood.waterball.teampathy.Domains.Issue;
+import com.ood.waterball.teampathy.DomainModels.Issue;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
+import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
@@ -52,7 +53,7 @@ public class TodoListFragment extends AsyncQueryRecyclerFragment {
 
     @Override
     protected int getLayoutResource() {
-        return 0;
+        return R.layout.fragment_todolist_page;
     }
 
     @Override

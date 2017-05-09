@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.ood.waterball.teampathy.BaseActivity;
 import com.ood.waterball.teampathy.Controllers.Global;
-import com.ood.waterball.teampathy.Domains.Issue;
+import com.ood.waterball.teampathy.DomainModels.Issue;
 import com.ood.waterball.teampathy.Fragments.IssueDetailsFragment;
 import com.ood.waterball.teampathy.R;
 

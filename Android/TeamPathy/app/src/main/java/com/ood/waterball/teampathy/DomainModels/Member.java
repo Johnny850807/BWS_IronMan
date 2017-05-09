@@ -1,7 +1,5 @@
-package com.ood.waterball.teampathy.Domains;
+package com.ood.waterball.teampathy.DomainModels;
 
-
-import com.ood.waterball.teampathy.Controllers.Global;
 
 public class Member extends Entity{
     private String name;

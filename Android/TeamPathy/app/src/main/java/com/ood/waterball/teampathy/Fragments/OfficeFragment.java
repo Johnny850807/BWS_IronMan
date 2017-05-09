@@ -1,11 +1,10 @@
-package com.ood.waterball.teampathy.Fragments.Office;
+package com.ood.waterball.teampathy.Fragments;
 
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
-import com.ood.waterball.teampathy.Domains.Issue;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.R;
@@ -14,7 +13,6 @@ import java.util.List;
 
 public class OfficeFragment extends AsyncQueryRecyclerFragment {
 
-    private List<Issue> issueList;
 
     public static OfficeFragment getInstance(String projectId){
         OfficeFragment fragment = new OfficeFragment();

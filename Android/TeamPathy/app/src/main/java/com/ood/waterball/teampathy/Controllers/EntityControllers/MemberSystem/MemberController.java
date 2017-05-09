@@ -4,7 +4,7 @@ package com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.Exceptions.AccountDuplicatedException;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.Exceptions.AccountNotFoundException;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.Exceptions.PasswordNotConformException;
-import com.ood.waterball.teampathy.Domains.Member;
+import com.ood.waterball.teampathy.DomainModels.Member;
 
 public abstract class MemberController {
     protected Member activeMember;

@@ -1,6 +1,6 @@
 package com.ood.waterball.teampathy.Controllers.EntityControllers;
 
-import com.ood.waterball.teampathy.Domains.Entity;
+import com.ood.waterball.teampathy.DomainModels.Entity;
 
 import java.util.List;
 

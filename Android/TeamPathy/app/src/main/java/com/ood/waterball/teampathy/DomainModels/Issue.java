@@ -1,4 +1,4 @@
-package com.ood.waterball.teampathy.Domains;
+package com.ood.waterball.teampathy.DomainModels;
 
 
 import java.util.Date;

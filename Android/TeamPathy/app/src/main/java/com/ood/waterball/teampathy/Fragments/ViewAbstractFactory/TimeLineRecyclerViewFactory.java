@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ood.waterball.teampathy.Controllers.MyUtils.GlideHelper;
-import com.ood.waterball.teampathy.Domains.Timeline;
+import com.ood.waterball.teampathy.DomainModels.Timeline;
 import com.ood.waterball.teampathy.R;
 
 import java.util.List;

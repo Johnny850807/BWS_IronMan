@@ -3,8 +3,8 @@ package com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
-import com.ood.waterball.teampathy.Domains.Issue;
-import com.ood.waterball.teampathy.Domains.Member;
+import com.ood.waterball.teampathy.DomainModels.Issue;
+import com.ood.waterball.teampathy.DomainModels.Member;
 import com.ood.waterball.teampathy.R;
 
 import java.util.ArrayList;

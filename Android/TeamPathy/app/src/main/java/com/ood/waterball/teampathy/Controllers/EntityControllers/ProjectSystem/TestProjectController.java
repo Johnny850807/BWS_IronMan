@@ -2,7 +2,7 @@ package com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem;
 
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
-import com.ood.waterball.teampathy.Domains.Project;
+import com.ood.waterball.teampathy.DomainModels.Project;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ood.waterball.teampathy.Controllers.Global;
-import com.ood.waterball.teampathy.Domains.IssueComment;
+import com.ood.waterball.teampathy.DomainModels.IssueComment;
 import com.ood.waterball.teampathy.R;
 
 import java.util.List;
