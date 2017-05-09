@@ -142,7 +142,7 @@ public class IssueDetailsFragment extends AsyncQueryRecyclerFragment<IssueCommen
                         .setCancelString(getString(R.string.cancel))
                         .setConfirmButtonId(R.id.confirmBTN_issue_comment_dialog)
                         .setCancelButtonId(R.id.cancelBTN_issue_comment_dialog)
-                        .setIcon(R.drawable.logo_transparent)
+                        .setIcon(R.drawable.logo)
                         .setView(view)
                         .setTitle(getString(R.string.create_issue_comment))
                         .show();

@@ -8,14 +8,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/TeamPathy">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -24,10 +23,7 @@
             android:name=".BaseActivity"
             android:label="@string/app_name"
             android:theme="@style/TeamPathy" />
-        <activity
-            android:name=".ProjectActivity"
-            android:label="@string/title_activity_project"
-            android:theme="@style/TeamPathy"></activity>
+
     </application>
 
 </manifest>
