@@ -12,6 +12,7 @@ import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.T
 import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.TestIssueController;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.TestProjectController;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.TestTimelineController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.TestTodoTaskController;
 import com.ood.waterball.teampathy.Controllers.MyUtils.DateConvertStrategy.DateConvertStrategy;
 import com.ood.waterball.teampathy.Controllers.MyUtils.DateConvertStrategy.EnglishAbbreviationDateConvert;
 import com.ood.waterball.teampathy.DomainModels.Domains.Issue;
@@ -19,6 +20,7 @@ import com.ood.waterball.teampathy.DomainModels.Domains.IssueComment;
 import com.ood.waterball.teampathy.DomainModels.Domains.IssueType;
 import com.ood.waterball.teampathy.DomainModels.Domains.Project;
 import com.ood.waterball.teampathy.DomainModels.Domains.Timeline;
+import com.ood.waterball.teampathy.DomainModels.Domains.TodoTask;
 import com.ood.waterball.teampathy.DomainModels.Models.MemberIdCardModel;
 
 public class Global {
@@ -32,6 +34,7 @@ public class Global {
     private static EntityController<IssueComment> issueCommentController;
     private static EntityController<Timeline> timelineController;
     private static EntityController<MemberIdCardModel> memberIdCardController;
+    private static EntityController<TodoTask> todotaskController;
 
     public static void init(Resources resources){
         Global.resources = resources;
@@ -45,6 +48,7 @@ public class Global {
         issueCommentController = new TestIssueCommentController();
         timelineController = new TestTimelineController();
         memberIdCardController = new TestMemberIdCardController();
+        todotaskController = new TestTodoTaskController();
     }
 
     public static EntityController<IssueComment> getIssueCommentController() {
@@ -73,5 +77,9 @@ public class Global {
 
     public static EntityController<IssueType> getIssuetypeController() {
         return issuetypeController;
+    }
+
+    public static EntityController<TodoTask> getTodotaskController() {
+        return todotaskController;
     }
 }

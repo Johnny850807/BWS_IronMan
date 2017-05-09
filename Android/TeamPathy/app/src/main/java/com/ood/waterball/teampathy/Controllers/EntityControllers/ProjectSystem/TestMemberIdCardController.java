@@ -35,10 +35,10 @@ public class TestMemberIdCardController implements EntityController<MemberIdCard
         zheng.setPosition(Global.resources.getString(R.string.member));
         Member chia = new Member("花柳齋","","","http://i.imgur.com/DuhZSwy.png");
         chia.setPosition(Global.resources.getString(R.string.member));
-        TodoTask todoTask1 = new TodoTask("設計","ER圖設計");
-        TodoTask todoTask4 = new TodoTask("實作","Android架構");
-        TodoTask todoTask2 = new TodoTask("實作","API 學習");
-        TodoTask todoTask3 = new TodoTask("文案","初審文案整理");
+        TodoTask todoTask1 = new TodoTask("設計","ER圖設計","");
+        TodoTask todoTask4 = new TodoTask("實作","Android架構","");
+        TodoTask todoTask2 = new TodoTask("實作","API 學習","");
+        TodoTask todoTask3 = new TodoTask("文案","初審文案整理","");
         memberIdCardModelList = new ArrayList<>();
         memberIdCardModelList.add(new MemberIdCardModel(zong,todoTask2));
         memberIdCardModelList.add(new MemberIdCardModel(wb,todoTask4));

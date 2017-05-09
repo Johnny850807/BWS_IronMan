@@ -97,7 +97,7 @@ public class TabLayoutPageFragment extends TemplateFragment {
             else if (position == ProjectSection.OFFICE.ordinal())
                 return OfficeFragment.getInstance(currentProject.getId());
             else
-                return ForumFragment.getInstance(currentProject.getId());
+                return TodoListFragment.getInstance(currentProject.getId());
         }
 
         @Override

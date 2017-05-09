@@ -5,16 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
-import com.ood.waterball.teampathy.DomainModels.Domains.Issue;
+import com.ood.waterball.teampathy.Controllers.Global;
+import com.ood.waterball.teampathy.DomainModels.Domains.TodoTask;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
+import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.TodoListRecyclerViewFactory;
 import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
-public class TodoListFragment extends AsyncQueryRecyclerFragment {
-
-    private List<Issue> issueList;
+public class TodoListFragment extends AsyncQueryRecyclerFragment<TodoTask> {
 
     public static TodoListFragment getInstance(String projectId){
         TodoListFragment fragment = new TodoListFragment();
@@ -27,23 +27,33 @@ public class TodoListFragment extends AsyncQueryRecyclerFragment {
 
     public TodoListFragment() {
         // Required empty public constructor
-        //todo 更換正確id
     }
 
 
     @Override
-    protected EntityController createEntityController() {
+    protected int getLayoutResource() {
+        return R.layout.fragment_todolist_page;
+    }
+
+    @Override
+    protected EntityController<TodoTask> createEntityController() {
+        return Global.getTodotaskController();
+    }
+
+    @Override
+    protected List<TodoTask> createEntityList() {
+        try {
+            String projectId = getArguments().getString("projectId");
+            return Global.getTodotaskController().readList(projectId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
     @Override
-    protected List createEntityList() {
-        return null;
-    }
-
-    @Override
-    protected RecyclerViewAbstractFactory createRecyclerFactory(View parentView, List entityList) {
-        return null;
+    protected RecyclerViewAbstractFactory<TodoTask> createRecyclerFactory(View parentView, List<TodoTask> entityList) {
+        return new TodoListRecyclerViewFactory(parentView,entityList);
     }
 
     @Override
@@ -52,12 +62,8 @@ public class TodoListFragment extends AsyncQueryRecyclerFragment {
     }
 
     @Override
-    protected int getLayoutResource() {
-        return R.layout.fragment_todolist_page;
-    }
-
-    @Override
     protected void onControlViews() {
 
     }
+
 }
