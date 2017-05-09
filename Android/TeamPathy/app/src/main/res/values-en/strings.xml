@@ -70,8 +70,8 @@
     <string name="send">Send</string>
     <string name="password_not_conform">Password valid failed.</string>
     <string name="pm">PM</string>
-    <string name="leader">Leader</string>
-    <string name="member">Member</string>
+    <string name="leader">LDR</string>
+    <string name="member">MEM</string>
     <string name="current_task">Current task</string>
     <string name="member_list">Member list</string>
     <string name="task_start_date">Start date</string>
