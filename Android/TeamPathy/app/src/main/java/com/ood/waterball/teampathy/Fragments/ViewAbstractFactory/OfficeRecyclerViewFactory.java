@@ -42,7 +42,6 @@ public class OfficeRecyclerViewFactory extends RecyclerViewAbstractFactory<Membe
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
-
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View v = LayoutInflater.from(context).inflate(R.layout.member_id_card_item,parent,false);
@@ -80,6 +79,11 @@ public class OfficeRecyclerViewFactory extends RecyclerViewAbstractFactory<Membe
                 taskNameTxt = (TextView) itemView.findViewById(R.id.member_current_task_name_id_card_item);
                 taskGroupTxt = (TextView) itemView.findViewById(R.id.member_current_task_groupname_id_card_item);
             }
+        }
+
+        @Override
+        public void onViewDetachedFromWindow(MyViewHolder holder) {
+            super.onViewDetachedFromWindow(holder);
         }
     }
 }
