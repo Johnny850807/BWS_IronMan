@@ -66,9 +66,11 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
                     public void onClick(DialogInterface dialogInterface, int position) {
                         switch (position){
                             case 0:
+                                Log(projectActions[0]);
                                 createNewProject();
                                 break;
                             case 1:
+                                Log(projectActions[1]);
                                 attendToExistsProject();
                         }
                     }
@@ -77,11 +79,11 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
     }
 
     private void createNewProject(){
-        Log(projectActions[0]);
+
     }
 
     private void attendToExistsProject(){
-        Log(projectActions[1]);
+
     }
 
     @Override
