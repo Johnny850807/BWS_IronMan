@@ -1,0 +1,64 @@
+﻿<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['gantt'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Task ID');
+            data.addColumn('string', 'Task Name');
+            data.addColumn('string', 'Resource');
+            data.addColumn('date', 'Start Date');
+            data.addColumn('date', 'End Date');
+            data.addColumn('number', 'Duration');
+            data.addColumn('number', 'Percent Complete');
+            data.addColumn('string', 'Dependencies');
+
+            data.addRows([
+                ['專案', 'TeamPathy', null,
+                    new Date(2017, 3, 1), new Date(2017, 9, 0), null, 0, null],
+                ['呈現設計', '總審呈現設計', '呈現',
+                    new Date(2017, 7, 1), new Date(2017, 7, 11), null, 0, null],
+                ['呈現講稿', '總審呈現講稿', '呈現',
+                    new Date(2017, 7, 1), new Date(2017, 7, 11), null, 0, null],
+                ['呈現練習', '總審呈現練習', '呈現',
+                    new Date(2017, 7, 15), new Date(2017, 8, 5), null, 0, null],
+                ['ER圖設計', '系統ER圖設計', '設計',
+                    new Date(2017, 3, 24), new Date(2017, 4, 20), null, 0, null],
+                ['介面', '介面設計', '設計',
+                    new Date(2017, 3, 24), new Date(2017, 4, 16), null, 0, null],
+                ['後端API', '後端API設計', '設計',
+                    new Date(2017, 4, 10), new Date(2017, 4, 20), null, 0, null],
+                ['問卷', '問卷調查', '設計',
+                    new Date(2017, 3, 24), new Date(2017, 4, 8), null, 0, null],
+                ['文案', '文案', '設計',
+                    new Date(2017, 3, 24), new Date(2017, 4, 1), null, 0, null],
+                ['初審', '初審文件', '文案',
+                    new Date(2017, 4, 1), new Date(2017, 4, 9), null, 0, '文案'],
+                ['總審文件', '總審文件', '文案',
+                    new Date(2017, 5, 15), new Date(2017, 6, 15), null, 0, '初審'],
+                ['總審簡報', '總審簡報', '文案',
+                    new Date(2017, 6, 1), new Date(2017, 7, 1), null, 0, '總審文件'],
+                
+            ]);
+
+            var options = {
+                height: 400,
+                gantt: {
+                    trackHeight: 30
+                }
+            };
+
+            var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <div id="chart_div"></div>
+</body>
+</html>
