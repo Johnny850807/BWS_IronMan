@@ -23,7 +23,9 @@ public class TodoListRecyclerViewFactory extends RecyclerViewAbstractFactory<Tod
 
     @Override
     protected RecyclerView createRecyclerView() {
-        return (RecyclerView) rootView.findViewById(R.id.recyclerview_todolist);
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview_todolist);
+        recyclerView.setNestedScrollingEnabled(false);
+        return recyclerView;
     }
 
     @Override
@@ -37,6 +39,7 @@ public class TodoListRecyclerViewFactory extends RecyclerViewAbstractFactory<Tod
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         return layoutManager;
     }
+
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 

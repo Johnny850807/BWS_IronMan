@@ -44,6 +44,14 @@ public class TestMemberIdCardController implements EntityController<MemberIdCard
         memberIdCardModelList.add(new MemberIdCardModel(wb,todoTask4));
         memberIdCardModelList.add(new MemberIdCardModel(zheng,todoTask1));
         memberIdCardModelList.add(new MemberIdCardModel(chia,todoTask3));
+        memberIdCardModelList.add(new MemberIdCardModel(zong,todoTask2));
+        memberIdCardModelList.add(new MemberIdCardModel(wb,todoTask4));
+        memberIdCardModelList.add(new MemberIdCardModel(zheng,todoTask1));
+        memberIdCardModelList.add(new MemberIdCardModel(chia,todoTask3));
+        memberIdCardModelList.add(new MemberIdCardModel(zong,todoTask2));
+        memberIdCardModelList.add(new MemberIdCardModel(wb,todoTask4));
+        memberIdCardModelList.add(new MemberIdCardModel(zheng,todoTask1));
+        memberIdCardModelList.add(new MemberIdCardModel(chia,todoTask3));
         return memberIdCardModelList;
     }
 
