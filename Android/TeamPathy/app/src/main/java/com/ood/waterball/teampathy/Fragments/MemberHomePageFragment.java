@@ -1,9 +1,11 @@
 package com.ood.waterball.teampathy.Fragments;
 
 
+import android.content.DialogInterface;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
+import android.widget.ArrayAdapter;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
@@ -15,7 +17,11 @@ import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
+import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
+
 public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> {
+    private String[] projectActions;
+
     private FloatingActionButton fab;
     public MemberHomePageFragment() {}
     @Override
@@ -39,6 +45,7 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
     }
     @Override
     protected void onFindUseCaseViews(View parentView) {
+        projectActions = new String[]{getString(R.string.create_a_new_project), getString(R.string.attend_to_exists_project)};
         fab = (FloatingActionButton) parentView.findViewById(R.id.fab);
     }
     @Override
@@ -46,11 +53,39 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                showDialogForCreatingProject();
             }
         });
     }
+
+    private void showDialogForCreatingProject(){
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1, projectActions);
+        new AlertDialog.Builder(getContext())
+                .setAdapter(adapter, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int position) {
+                        switch (position){
+                            case 0:
+                                Log(projectActions[0]);
+                                createNewProject();
+                                break;
+                            case 1:
+                                Log(projectActions[1]);
+                                attendToExistsProject();
+                        }
+                    }
+                })
+                .show();
+    }
+
+    private void createNewProject(){
+
+    }
+
+    private void attendToExistsProject(){
+
+    }
+
     @Override
     protected EntityController<Project> createEntityController() {
         return Global.getProjectController();

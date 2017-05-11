@@ -14,7 +14,7 @@ public class BaseActivity extends AppCompatActivity implements ParentActivityCal
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_interface_page);
+        setContentView(R.layout.activity_base_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         onPageControllerInitiate();

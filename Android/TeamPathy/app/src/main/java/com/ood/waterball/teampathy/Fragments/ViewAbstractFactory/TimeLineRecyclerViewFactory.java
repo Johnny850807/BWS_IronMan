@@ -26,7 +26,9 @@ public class TimeLineRecyclerViewFactory extends RecyclerViewAbstractFactory<Tim
 
     @Override
     protected RecyclerView createRecyclerView() {
-        return  (RecyclerView) rootView.findViewById(R.id.timeline_recyclerview_timeline);
+        RecyclerView recyclerView =  (RecyclerView) rootView.findViewById(R.id.timeline_recyclerview_timeline);
+        recyclerView.setNestedScrollingEnabled(false);
+        return recyclerView;
     }
 
     @Override

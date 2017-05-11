@@ -52,7 +52,7 @@ public class TabLayoutPageFragment extends TemplateFragment {
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.fragment_project_home_page;
+        return R.layout.fragment_tablayout_page;
     }
 
     @Override
