@@ -45,7 +45,7 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
     }
     @Override
     protected void onFindUseCaseViews(View parentView) {
-        projectActions = new String[]{getString(R.string.create_a_new_project), getString(R.string.attend_to_exists_project)};
+        projectActions = new String[]{getString(R.string.create_a_new_project), getString(R.string.participate_to_exists_project)};
         fab = (FloatingActionButton) parentView.findViewById(R.id.fab);
     }
     @Override
