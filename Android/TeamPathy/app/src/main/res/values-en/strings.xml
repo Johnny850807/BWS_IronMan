@@ -70,11 +70,21 @@
     <string name="send">Send</string>
     <string name="password_not_conform">Password valid failed.</string>
     <string name="pm">PM</string>
-    <string name="leader">Leader</string>
-    <string name="member">Member</string>
+    <string name="leader">LDR</string>
+    <string name="member">MEM</string>
     <string name="current_task">Current task</string>
     <string name="member_list">Member list</string>
     <string name="task_start_date">Start date</string>
     <string name="task_end_date">End date</string>
+    <string name="participate_to_exists_project">Participate to existing project</string>
+    <string name="create_a_new_project">Create a new project</string>
+    <string name="project_name">Project name</string>
+    <string name="project_description">Project description</string>
+    <string name="logout">Log out</string>
+    <string name="home_page">Home page</string>
+    <string name="profile">Profile</string>
+    <string name="whole_timeline">Timeline</string>
+    <string name="openDrawer">Open drawer</string>
+    <string name="closeDrawer">Close drawer</string>
 
 </resources>

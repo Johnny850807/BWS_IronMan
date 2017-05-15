@@ -75,6 +75,7 @@ public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
 
     @Override
     protected void onControlViews() {
+        setScrollingEnabled(true);
         setListeners();
     }
 

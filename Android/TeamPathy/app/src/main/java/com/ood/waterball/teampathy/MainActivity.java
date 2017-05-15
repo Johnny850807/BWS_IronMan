@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Global.init(this.getResources());  // 初始化全域變數 並傳入資源
 
         findViews();

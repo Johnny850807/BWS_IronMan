@@ -60,7 +60,18 @@ public class TestIssueController implements EntityController<Issue>{
         issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
         issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
         issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
-
+        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
+        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
+        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
+        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
+        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
+        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
+        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
+        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
+        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
+        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
+        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
+        issueList.add(new Issue(member,"TeamPathy","我們行不行 ? 絕對沒問題 !!! ",new IssueType("議題")));
 
         return issueList;
     }

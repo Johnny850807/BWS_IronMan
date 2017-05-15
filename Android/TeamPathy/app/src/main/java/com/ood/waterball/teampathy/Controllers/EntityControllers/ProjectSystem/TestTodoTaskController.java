@@ -35,6 +35,16 @@ public class TestTodoTaskController implements EntityController<TodoTask> {
         todoTaskList.add(new TodoTask("文案","專研初審",""));
         todoTaskList.add(new TodoTask("文案","總審簡報",""));
         todoTaskList.add(new TodoTask("文案","初審文獻審稿",""));
+        todoTaskList.add(new TodoTask("實作","API學習",""));
+        todoTaskList.add(new TodoTask("實作","Android介面",""));
+        todoTaskList.add(new TodoTask("設計","ER圖設計",""));
+        todoTaskList.add(new TodoTask("設計","後端API設計",""));
+        todoTaskList.add(new TodoTask("設計","GUI及UX設計",""));
+        todoTaskList.add(new TodoTask("設計","系統類別設計",""));
+        todoTaskList.add(new TodoTask("設計","報告設計",""));
+        todoTaskList.add(new TodoTask("文案","專研初審",""));
+        todoTaskList.add(new TodoTask("文案","總審簡報",""));
+        todoTaskList.add(new TodoTask("文案","初審文獻審稿",""));
 
         return todoTaskList;
     }

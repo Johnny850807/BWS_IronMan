@@ -25,7 +25,9 @@ public class OfficeRecyclerViewFactory extends RecyclerViewAbstractFactory<Membe
 
     @Override
     protected RecyclerView createRecyclerView() {
-        return (RecyclerView) rootView.findViewById(R.id.member_recycler_card_office);
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.member_recycler_card_office);
+        recyclerView.setNestedScrollingEnabled(false);
+        return recyclerView;
     }
 
     @Override
@@ -41,7 +43,6 @@ public class OfficeRecyclerViewFactory extends RecyclerViewAbstractFactory<Membe
     }
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
-
 
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -80,6 +81,11 @@ public class OfficeRecyclerViewFactory extends RecyclerViewAbstractFactory<Membe
                 taskNameTxt = (TextView) itemView.findViewById(R.id.member_current_task_name_id_card_item);
                 taskGroupTxt = (TextView) itemView.findViewById(R.id.member_current_task_groupname_id_card_item);
             }
+        }
+
+        @Override
+        public void onViewDetachedFromWindow(MyViewHolder holder) {
+            super.onViewDetachedFromWindow(holder);
         }
     }
 }

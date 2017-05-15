@@ -1,0 +1,96 @@
+﻿<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    google.charts.load('current', {'packages':['gantt']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function daysToMilliseconds(days) {
+      return days * 24 * 60 * 60 * 1000;
+    }
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Task ID');
+      data.addColumn('string', 'Task Name');
+      data.addColumn('string', 'Resource');
+      data.addColumn('date', 'Start Date');
+      data.addColumn('date', 'End Date');
+      data.addColumn('number', 'Duration');
+      data.addColumn('number', 'Percent Complete');
+      data.addColumn('string', 'Dependencies');
+
+      data.addRows([
+          ['問卷', '問卷', '設計',
+              new Date(2017, 3, 24), new Date(2017, 4, 1), daysToMilliseconds(7), 100, null],
+        ['初審', '初審文件', '文案',
+            new Date(2017, 3, 24), new Date(2017, 4, 9), daysToMilliseconds(15), 100, null],
+        ['介面', '介面設計', '設計',
+            new Date(2017, 3, 24), new Date(2017, 4, 1), daysToMilliseconds(7), 100, null],
+        ['ER', 'ER Diagram', '設計',
+            new Date(2017, 3, 24), new Date(2017, 4, 19), daysToMilliseconds(25), 100, null],
+        ['會員系統', '會員系統介面', '手機介面',
+            new Date(2017, 4, 1), new Date(2017, 4, 2), daysToMilliseconds(1), 100, null],
+        ['討論區', '討論區介面', '專案系統',
+            new Date(2017, 4, 3), new Date(2017, 4, 6), daysToMilliseconds(3), 100, null],
+        ['動態牆', '動態牆介面', '專案系統',
+            new Date(2017, 4, 6), new Date(2017, 4, 8), daysToMilliseconds(2), 100, null],
+        ['團隊成員', '團隊成員介面', '專案系統',
+            new Date(2017, 4, 8), new Date(2017, 4, 9), daysToMilliseconds(1), 100, null],
+        ['後端API', '後端API設計', '設計',
+            new Date(2017, 4, 10), new Date(2017, 4, 20), daysToMilliseconds(10), 100, null],
+        ['Gantt Chart', 'Gantt Chart API', '後端',
+            new Date(2017, 4, 10), new Date(2017, 4, 20), daysToMilliseconds(10), 100, null],
+        ['WBS Chart', 'WBS Chart API', '後端',
+            new Date(2017, 4, 10), new Date(2017, 4, 20), daysToMilliseconds(10), 100, null],
+        ['XML', 'XML系統', '模組',
+            new Date(2017, 4, 15), new Date(2017, 4, 25), daysToMilliseconds(10), 100, null],
+        ['資料庫', '資料庫建置', '後端',
+            new Date(2017, 4, 15), new Date(2017, 4, 22), daysToMilliseconds(7), 100, null],
+        ['辦公室', '辦公室介面', '專案系統',
+            new Date(2017, 4, 16), new Date(2017, 4, 18), daysToMilliseconds(2), 100, null],
+        ['Domains Classes', 'Domains Classes', '模組',
+            new Date(2017, 4, 17), new Date(2017, 4, 20), daysToMilliseconds(3), 100, null],
+        ['工作分析', '工作分析室', '專案系統',
+            new Date(2017, 4, 18), new Date(2017, 4, 28), daysToMilliseconds(10), 100, null],
+        ['推播', '推播', '模組',
+            new Date(2017, 4, 18), new Date(2017, 4, 20), daysToMilliseconds(2), 100, null],
+        ['連接後端', '連接後端API', '模組',
+            new Date(2017, 4, 20), new Date(2017, 4, 28), daysToMilliseconds(8), 100, '後端API'],
+        ['職位調整', '職位調整頁面', '專案系統',
+            new Date(2017, 4, 28), new Date(2017, 4, 31), daysToMilliseconds(3), 100, null],
+        ['Imgur', 'ImgurAPI', '模組',
+            new Date(2017, 5, 20), new Date(2017, 5, 26), daysToMilliseconds(6), 100, null],
+        ['Web APIs', 'Web APIs', '後端',
+            new Date(2017, 5, 1), new Date(2017, 6, 6), daysToMilliseconds(35), 100, null],
+        ['總審文件', '總審文件', '文案',
+            new Date(2017, 5, 15), new Date(2017, 6, 15), daysToMilliseconds(30), 100, '初審'],
+        ['總審簡報', '總審簡報', '文案',
+            new Date(2017, 6, 1), new Date(2017, 7, 1), daysToMilliseconds(30), 100, '總審文件'],
+        ['總審呈現設計', '總審呈現設計', '呈現',
+            new Date(2017, 7, 1), new Date(2017, 7, 11), daysToMilliseconds(10), 100, null],
+        ['總審呈現講稿', '總審呈現講稿', '呈現',
+            new Date(2017, 7, 1), new Date(2017, 7, 11), daysToMilliseconds(10), 100, null],
+        ['總審呈現練習', '總審呈現練習', '呈現',
+            new Date(2017, 7, 15), new Date(2017, 8, 5), daysToMilliseconds(35), 100, null],
+        ['代辦清單', '代辦清單介面', '專案系統',
+            new Date(2017, 4, 11), new Date(2017, 4, 16), daysToMilliseconds(5), 100, null],
+
+
+      ]);
+
+      var options = {
+        height: 1200
+      };
+
+      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+    </script>
+</head>
+<body>
+    <div id="chart_div"></div>
+</body>
+</html>

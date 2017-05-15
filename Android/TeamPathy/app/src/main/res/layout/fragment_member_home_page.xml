@@ -17,7 +17,7 @@
         android:id="@+id/projectGridMemberHomePage">
     </android.support.v7.widget.RecyclerView>
 
-    <!--todo 浮動按鈕的配色-->
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
