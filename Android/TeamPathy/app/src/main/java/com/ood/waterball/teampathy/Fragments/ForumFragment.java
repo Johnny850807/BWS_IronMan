@@ -27,15 +27,15 @@ import com.ood.waterball.teampathy.R;
 import java.util.List;
 
 public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
-    private String projectId;
+    private int projectId;
     private FloatingActionButton fab;
 
     private String issueType; //點選新增文章時會出現分類Spinner，將其選擇的選項字串儲存至issueType中
 
-    public static ForumFragment getInstance(String projectId){
+    public static ForumFragment getInstance(int projectId){
         ForumFragment fragment = new ForumFragment();
         Bundle args = new Bundle();
-        args.putString("projectId",projectId);
+        args.putInt("projectId",projectId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -60,7 +60,7 @@ public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
     @Override
     protected List<Issue> createEntityList() {
         try {
-            projectId = (String) getArguments().get("projectId");
+            projectId =  getArguments().getInt("projectId");
             return Global.getIssueController().readList(projectId);
         } catch (Exception e) {
             e.printStackTrace();

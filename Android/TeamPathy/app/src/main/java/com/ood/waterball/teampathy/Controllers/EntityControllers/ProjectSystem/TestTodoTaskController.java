@@ -15,12 +15,12 @@ public class TestTodoTaskController implements EntityController<TodoTask> {
     }
 
     @Override
-    public TodoTask read(String id) throws Exception {
+    public TodoTask read(int id) throws Exception {
         return null;
     }
 
     @Override
-    public List<TodoTask> readList(String id) throws Exception {
+    public List<TodoTask> readList(int id) throws Exception {
         if (todoTaskList != null)
             return todoTaskList;
 

@@ -18,12 +18,12 @@ public class TestProjectController implements EntityController<Project>{
     }
 
     @Override
-    public Project read(String id)throws Exception {
+    public Project read(int id)throws Exception {
         return project;
     }
 
     @Override
-    public List<Project> readList(String id) throws Exception{
+    public List<Project> readList(int id) throws Exception{
 
         if (projectList != null)
             return projectList;

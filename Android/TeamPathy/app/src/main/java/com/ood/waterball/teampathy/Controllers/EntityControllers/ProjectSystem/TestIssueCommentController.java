@@ -18,12 +18,12 @@ public class TestIssueCommentController implements EntityController<IssueComment
     }
 
     @Override
-    public IssueComment read(String id)throws Exception {
+    public IssueComment read(int id)throws Exception {
         return null;
     }
 
     @Override
-    public List<IssueComment> readList(String id)throws Exception {
+    public List<IssueComment> readList(int id)throws Exception {
         Date now = new Date();
         if ( issueCommentList != null )
             return issueCommentList;

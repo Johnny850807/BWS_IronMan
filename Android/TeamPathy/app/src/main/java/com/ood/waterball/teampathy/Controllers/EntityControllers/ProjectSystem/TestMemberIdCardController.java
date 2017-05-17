@@ -19,12 +19,12 @@ public class TestMemberIdCardController implements EntityController<MemberIdCard
     }
 
     @Override
-    public MemberIdCardModel read(String id) throws Exception {
+    public MemberIdCardModel read(int id) throws Exception {
         return null;
     }
 
     @Override
-    public List<MemberIdCardModel> readList(String id) throws Exception {
+    public List<MemberIdCardModel> readList(int id) throws Exception {
         if (memberIdCardModelList != null)
             return memberIdCardModelList;
         Member zong = new Member("林宗億","","","http://i.imgur.com/4wXEKrP.png");

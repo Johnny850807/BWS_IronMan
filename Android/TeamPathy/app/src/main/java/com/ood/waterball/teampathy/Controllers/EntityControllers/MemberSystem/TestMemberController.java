@@ -18,7 +18,7 @@ public class TestMemberController extends MemberController {
             throw new AccountNotFoundException();
 
         activeMember = new Member("Mr. Lin",account,password,"http://i.imgur.com/4wXEKrP.png");
-        activeMember.setId("sada564a56sd4as6d4a5s6d465as");
+        activeMember.setId(545345345);
     }
 
     @Override

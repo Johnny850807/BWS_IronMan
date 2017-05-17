@@ -31,10 +31,10 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
     private EditText inputContentED;
     private TextView posternameTXT;
 
-    public static TimeLineFragment getInstance(String projectId){
+    public static TimeLineFragment getInstance(int projectId){
         TimeLineFragment fragment = new TimeLineFragment();
         Bundle args = new Bundle();
-        args.putString("projectId",projectId);
+        args.putInt("projectId",projectId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -58,7 +58,7 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
     @Override
     protected List<Timeline> createEntityList() {
         try {
-            String projectId = (String) getArguments().get("projectId");
+            int projectId =  getArguments().getInt("projectId");
             return Global.getTimelineController().readList(projectId);
         } catch (Exception e) {
             e.printStackTrace();

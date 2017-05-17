@@ -17,10 +17,10 @@ import java.util.List;
 public class OfficeFragment extends AsyncQueryRecyclerFragment<MemberIdCardModel> {
 
 
-    public static OfficeFragment getInstance(String projectId){
+    public static OfficeFragment getInstance(int projectId){
         OfficeFragment fragment = new OfficeFragment();
         Bundle args = new Bundle();
-        args.putString("projectId",projectId);
+        args.putInt("projectId",projectId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -47,7 +47,7 @@ public class OfficeFragment extends AsyncQueryRecyclerFragment<MemberIdCardModel
 
     @Override
     protected List<MemberIdCardModel> createEntityList() {
-        String projectId = getArguments().getString("projectId");
+        int projectId = getArguments().getInt("projectId");
         try {
             return Global.getMemberIdCardController().readList(projectId);
         } catch (Exception e) {

@@ -22,12 +22,12 @@ public class TestIssueController implements EntityController<Issue>{
     }
 
     @Override
-    public Issue read(String id)throws Exception {
+    public Issue read(int id)throws Exception {
         return issue;
     }
 
     @Override
-    public List<Issue> readList(String id) throws Exception{
+    public List<Issue> readList(int id) throws Exception{
         if (issueList != null)
             return issueList;
 

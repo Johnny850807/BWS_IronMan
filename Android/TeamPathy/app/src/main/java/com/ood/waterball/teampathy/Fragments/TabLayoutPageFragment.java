@@ -22,10 +22,10 @@ public class TabLayoutPageFragment extends TemplateFragment {
     private TabLayout tabLayout;
     private Project currentProject;
 
-    public static TabLayoutPageFragment getInstance(String projectId){
+    public static TabLayoutPageFragment getInstance(int projectId){
         TabLayoutPageFragment fragment = new TabLayoutPageFragment();
         Bundle args = new Bundle();
-        args.putString("projectId",projectId);
+        args.putInt("projectId",projectId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -44,8 +44,7 @@ public class TabLayoutPageFragment extends TemplateFragment {
     }
 
     private void fetchCurrentProject(Bundle arguBundle) throws Exception {
-        String projectId = arguBundle.getString("projectId");
-        Log(projectId);
+        int projectId = arguBundle.getInt("projectId");
         currentProject = Global.getProjectController().read(projectId);
         Log("取得目前專案:" + currentProject.toString());
     }

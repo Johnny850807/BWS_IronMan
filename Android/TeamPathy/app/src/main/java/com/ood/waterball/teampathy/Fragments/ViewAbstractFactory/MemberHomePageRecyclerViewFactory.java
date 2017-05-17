@@ -51,7 +51,7 @@ public class MemberHomePageRecyclerViewFactory extends RecyclerViewAbstractFacto
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String projectId = project.getId();
+                        int projectId = project.getId();
                         ((BaseActivity)context).changePage( TabLayoutPageFragment.getInstance(projectId) );
                     }
                 });

@@ -16,10 +16,10 @@ import java.util.List;
 
 public class TodoListFragment extends AsyncQueryRecyclerFragment<TodoTask> {
 
-    public static TodoListFragment getInstance(String projectId){
+    public static TodoListFragment getInstance(int projectId){
         TodoListFragment fragment = new TodoListFragment();
         Bundle args = new Bundle();
-        args.putString("projectId",projectId);
+        args.putInt("projectId",projectId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -43,7 +43,7 @@ public class TodoListFragment extends AsyncQueryRecyclerFragment<TodoTask> {
     @Override
     protected List<TodoTask> createEntityList() {
         try {
-            String projectId = getArguments().getString("projectId");
+            int projectId = getArguments().getInt("projectId");
             return Global.getTodotaskController().readList(projectId);
         } catch (Exception e) {
             e.printStackTrace();

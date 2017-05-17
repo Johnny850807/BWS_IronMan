@@ -18,12 +18,12 @@ public class TestIssueTypeController implements EntityController<IssueType> {
     }
 
     @Override
-    public IssueType read(String id) throws Exception {
+    public IssueType read(int id) throws Exception {
         return null;
     }
 
     @Override
-    public List<IssueType> readList(String id) throws Exception {
+    public List<IssueType> readList(int id) throws Exception {
         if (issueTypeList != null)
             return issueTypeList;
         issueTypeList = new ArrayList<>();

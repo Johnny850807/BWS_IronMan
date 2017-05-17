@@ -21,12 +21,12 @@ public class TestTimelineController implements EntityController<Timeline> {
     }
 
     @Override
-    public Timeline read(String id)throws Exception {
+    public Timeline read(int id)throws Exception {
         return timeline;
     }
 
     @Override
-    public List<Timeline> readList(String id) throws Exception{
+    public List<Timeline> readList(int id) throws Exception{
         if (timelineList != null)
             return timelineList;
         timelineList = new ArrayList<>();
