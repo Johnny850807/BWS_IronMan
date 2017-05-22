@@ -1,0 +1,7 @@
+<!ELEMENT TaskGroup (TaskGroup*,TaskItem*)>
+<!ELEMENT TaskItem >
+
+<!ATTLIST TaskItem id ID #REQUIRED>
+<!ATTLIST TaskItem startDate CDATA #REQUIRED>
+<!ATTLIST TaskItem endDate CDATA #REQUIRED>
+<!ATTLIST TaskItem contribution CDATA #REQUIRED>
