@@ -1,1 +1,106 @@
-﻿
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Project:TeamPathy xmlns:Project="http://TP.xml.csie.mcu.edu.tw">  
+	<Project:TaskGroup name="伺服器" StartDate="" EndDate="" Contribution="">
+		<Project:TaskGroup name="工作分析網頁" StartDate="" EndDate="" Contribution="">
+			<Project:Task name="Gantt Chart" StartDate="" EndDate="" Contribution="">
+				<Description>123</Description>
+			</Project:Task>
+			
+			<Project:Task name="Web Chart" StartDate="" EndDate="" Contribution="">
+				<Description>123</Description>
+			</Project:Task>
+		</Project:TaskGroup>
+		
+		<Project:TaskGroup name="Web API" StartDate="" EndDate="" Contribution="">
+			<Project:Task name="CRUD" StartDate="" EndDate="" Contribution="">
+				<Description>123</Description>
+			</Project:Task>
+		</Project:TaskGroup>
+	</Project:TaskGroup>
+	
+	<Project:TaskGroup name="會員系統" StartDate="" EndDate="" Contribution="">
+		<Project:Task name="註冊或登入" StartDate="" EndDate="" Contribution="">
+			<Description>123</Description>
+		</Project:Task>
+		
+		<Project:TaskGroup name="專案清單" StartDate="" EndDate="" Contribution="">
+			<Project:Task name="加入現有專案" StartDate="" EndDate="" Contribution="">
+				<Description>123</Description>
+			</Project:Task>
+			
+			<Project:Task name="創建專案" StartDate="" EndDate="" Contribution="">
+				<Description>123</Description>
+			</Project:Task>
+		</Project:TaskGroup>
+		
+		<Project:Task name="動態通知" StartDate="" EndDate="" Contribution="">
+			<Description>123</Description>
+		</Project:Task>
+	</Project:TaskGroup>
+	
+	<Project:TaskGroup name="專案系統" StartDate="" EndDate="" Contribution="">
+		<Project:TaskGroup name="討論區" StartDate="" EndDate="" Contribution="">
+			<Project:Task name="文章發表與維護" StartDate="" EndDate="" Contribution="">
+				<Description>123</Description>
+			</Project:Task>
+			
+			<Project:Task name="文章留言" StartDate="" EndDate="" Contribution="">
+				<Description>123</Description>
+			</Project:Task>
+		</Project:TaskGroup>
+		
+		<Project:TaskGroup name="代辦清單" StartDate="" EndDate="" Contribution="">
+			<Project:Task name="工作維護" StartDate="" EndDate="" Contribution="">
+				<Description>123</Description>
+			</Project:Task>
+			
+			<Project:Task name="工作提交" StartDate="" EndDate="" Contribution="">
+				<Description>123</Description>
+			</Project:Task>
+		</Project:TaskGroup>
+		
+		<Project:Task name="成員清單" StartDate="" EndDate="" Contribution="">
+			<Description>123</Description>
+		</Project:Task>
+		
+		<Project:TaskGroup name="團隊動態牆" StartDate="" EndDate="" Contribution="">
+			<Project:Task name="成員鼓勵" StartDate="" EndDate="" Contribution="">
+				<Description>123</Description>
+			</Project:Task>
+			
+			<Project:Task name="發佈工作心情小語" StartDate="" EndDate="" Contribution="">
+				<Description>123</Description>
+			</Project:Task>
+		</Project:TaskGroup>
+		
+		<Project:TaskGroup name="辦公室" StartDate="" EndDate="" Contribution="">
+			<Project:TaskGroup name="團長功能" StartDate="" EndDate="" Contribution="">
+				<Project:Task name="成員管理" StartDate="" EndDate="" Contribution="">
+					<Description>123</Description>
+				</Project:Task>
+				
+				<Project:Task name="職位管理" StartDate="" EndDate="" Contribution="">
+					<Description>123</Description>
+				</Project:Task>
+				
+				<Project:Task name="專案完程度確認" StartDate="" EndDate="" Contribution="">
+					<Description>123</Description>
+				</Project:Task>
+			</Project:TaskGroup>
+			
+			<Project:TaskGroup name="專案管理者功能" StartDate="" EndDate="" Contribution="">
+				<Project:Task name="WEB製作" StartDate="" EndDate="" Contribution="">
+					<Description>123</Description>
+				</Project:Task>
+				
+				<Project:Task name="工作指派" StartDate="" EndDate="" Contribution="">
+				</Project:Task>
+			</Project:TaskGroup>
+		</Project:TaskGroup>
+		
+		<Project:Task name="觀看工作分析服務" StartDate="" EndDate="" Contribution="">
+			<Description>123</Description>
+		</Project:Task>
+	</Project:TaskGroup>
+</Project:TeamPathy>
