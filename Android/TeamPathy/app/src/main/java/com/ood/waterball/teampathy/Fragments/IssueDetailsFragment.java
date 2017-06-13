@@ -83,12 +83,11 @@ public class IssueDetailsFragment extends AsyncQueryRecyclerFragment<IssueCommen
 
     @Override
     protected void onControlViews() {
-        setupViews();
-        initiateRecyclerView();
+        setupIssueDetailsView();
         setCommentingFabListener();
     }
 
-    private void setupViews(){
+    private void setupIssueDetailsView(){
         GlideHelper.loadToCircularImage(getContext(),posterHeadImg,currentIssue.getPoster().getImageUrl());
         issueContentTxt.setText(currentIssue.getContent());
         issueTypeTxt.setText(currentIssue.getType().getName());
