@@ -28,7 +28,7 @@ public class InsideFragment extends Fragment {
         return (ParentActivityCallBack) context;
     }
 
-    protected ParentActivityCallBack getParentActivity(){
+    public ParentActivityCallBack getParentActivity(){
         return parentActivityCallBack;
     }
 

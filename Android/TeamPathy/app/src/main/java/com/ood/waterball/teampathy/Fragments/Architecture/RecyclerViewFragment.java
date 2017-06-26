@@ -57,4 +57,19 @@ public abstract class RecyclerViewFragment<T> extends AsyncTemplateFragment<T> {
         params.setScrollFlags(isEnabled ? flag : 0);
     }
 
+    public List<T> getEntityList() {
+        return entityList;
+    }
+
+    public RecyclerView getRecyclerView() {
+        return recyclerView;
+    }
+
+    public RecyclerView.LayoutManager getLayoutManager() {
+        return layoutManager;
+    }
+
+    public RecyclerView.Adapter getRecyclerAdapter() {
+        return recyclerAdapter;
+    }
 }
