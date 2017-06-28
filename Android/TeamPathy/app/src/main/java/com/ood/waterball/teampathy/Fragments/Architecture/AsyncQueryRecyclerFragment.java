@@ -10,7 +10,7 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
 
     protected abstract EntityController<T> createEntityController();
 
-    protected final void CREATE(final T entity , final EntityController.OnFinishListener ...listeners){
+    public final void CREATE(final T entity , final EntityController.OnFinishListener ...listeners){
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
@@ -24,7 +24,7 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
 
             @Override
             protected void onPostExecute(Void aVoid) {
-                QUERY();
+                READ_DATA();
                 for (EntityController.OnFinishListener listener : listeners )
                     listener.onFinish();
             }
@@ -32,7 +32,7 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
         AsyncTaskController.runAsyncTask(asyncTask);
     }
 
-    protected void DELETE(final T entity, final EntityController.OnFinishListener ...listeners){
+    public void DELETE(final T entity, final EntityController.OnFinishListener ...listeners){
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
@@ -46,16 +46,16 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
 
             @Override
             protected void onPostExecute(Void aVoid) {
-                QUERY();
+                READ_DATA();
                 for (EntityController.OnFinishListener listener : listeners )
                     listener.onFinish();
             }
         };
         AsyncTaskController.runAsyncTask(asyncTask);
-        QUERY();
+        READ_DATA();
     }
 
-    protected void UPDATE(final T entity, final EntityController.OnFinishListener ...listeners){
+    public void UPDATE(final T entity, final EntityController.OnFinishListener ...listeners){
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
@@ -69,17 +69,17 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
 
             @Override
             protected void onPostExecute(Void aVoid) {
-                QUERY();
+                READ_DATA();
                 for (EntityController.OnFinishListener listener : listeners )
                     listener.onFinish();
             }
         };
         AsyncTaskController.runAsyncTask(asyncTask);
-        QUERY();
+        READ_DATA();
     }
 
 
-    protected void QUERY(){
+    public void READ_DATA(){
         onFetchData(getArguments());
         recyclerAdapter.notifyDataSetChanged();
     }

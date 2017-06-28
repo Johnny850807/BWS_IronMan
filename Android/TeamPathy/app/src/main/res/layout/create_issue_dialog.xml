@@ -53,9 +53,8 @@
             android:layout_gravity="center_horizontal"
             app:counterEnabled="true"
             app:errorEnabled="true"
-
             style="@style/gray_textinputlayout">
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minLines="12"

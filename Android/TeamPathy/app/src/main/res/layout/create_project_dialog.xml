@@ -116,7 +116,6 @@
                 android:layout_weight="1"
                 android:text="@string/confirm"
                 android:layout_margin="12dp"/>
-
         </LinearLayout>
 
 
