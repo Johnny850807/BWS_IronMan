@@ -89,6 +89,9 @@
     <string name="closeDrawer">關閉</string>
     <string name="setPassword">設置密碼</string>
     <string name="project_category">專案類別</string>
+    <string name="please_input_project_title">請輸入專案名稱</string>
+    <string name="search">搜尋</string>
+    <string name="join">加入</string>
 
 
 
