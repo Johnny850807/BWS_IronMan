@@ -14,6 +14,8 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 
+import com.ood.waterball.teampathy.R;
+
 public abstract class ConfirmCancelDialog extends Dialog{
     private Button cancelBtn;
     private Button confirmBtn;
@@ -104,5 +106,6 @@ public abstract class ConfirmCancelDialog extends Dialog{
             }
         });
     }
+
 
 }

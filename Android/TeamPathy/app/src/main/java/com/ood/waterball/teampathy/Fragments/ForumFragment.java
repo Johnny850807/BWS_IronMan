@@ -1,7 +1,6 @@
 package com.ood.waterball.teampathy.Fragments;
 
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
@@ -18,11 +17,8 @@ import com.ood.waterball.teampathy.R;
 import java.util.List;
 
 public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
-    private ProgressDialog progressDialog;
     private int projectId;
     private FloatingActionButton fab;
-
-    private String issueType; //點選新增文章時會出現分類Spinner，將其選擇的選項字串儲存至issueType中
 
     public static ForumFragment getInstance(int projectId){
         ForumFragment fragment = new ForumFragment();
@@ -76,10 +72,6 @@ public class ForumFragment extends AsyncQueryRecyclerFragment<Issue> {
             @Override
             public void onClick(final View view) {
                 new CreateIssueDialog(ForumFragment.this)
-                        .iconId(R.drawable.logo)
-                        .cancelDialogContent(R.string.make_sure_to_cancel)
-                        .cancelStrId(R.string.cancel)
-                        .confirmStrId(R.string.confirm)
                         .show();
             }
         });

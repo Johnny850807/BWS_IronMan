@@ -2,8 +2,6 @@ package com.ood.waterball.teampathy.Fragments;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
@@ -11,17 +9,15 @@ import android.widget.TextView;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
-import com.ood.waterball.teampathy.Controllers.MyUtils.Dialogs.TitleContentPostingDialogBuilder;
 import com.ood.waterball.teampathy.Controllers.MyUtils.GlideHelper;
+import com.ood.waterball.teampathy.Dialogs.CreateIssueCommentDialog;
 import com.ood.waterball.teampathy.DomainModels.Domains.Issue;
 import com.ood.waterball.teampathy.DomainModels.Domains.IssueComment;
-import com.ood.waterball.teampathy.DomainModels.Domains.Member;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.IssueCommentsRecyclerViewFactory;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.R;
 
-import java.util.Date;
 import java.util.List;
 
 
@@ -99,73 +95,14 @@ public class IssueDetailsFragment extends AsyncQueryRecyclerFragment<IssueCommen
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View view = LayoutInflater.from(getContext()).inflate(R.layout.create_issue_comment_dialog,null);
-                TitleContentPostingDialogBuilder builder = new TitleContentPostingDialogBuilder(getContext());
-                builder.setContentTextInputEditTextId(R.id.commentContentED_issue_comment_dialog)
-                        .setErrorTextViewId(R.id.errorTxt_issue_comment_dialog)
-                        .setOnFinishListener(new TitleContentPostingDialogBuilder.onFinishListener() {
-                            @Override
-                            public void onFinish(String title,String content) {
-                                try {
-                                    Member poster = Global.getMemberController().getActiveMember();
-                                    addNewIssueCommentAndRefresh(new IssueComment(poster,content,new Date()));
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        })
-                        .setOnDetectListener(new TitleContentPostingDialogBuilder.OnDetectListener() {
-                            @Override
-                            public boolean onTextEmptyReport(int errorViewId,TextView errorText) {
-                                if (errorViewId == R.id.commentContentED_issue_comment_dialog)
-                                {
-                                    errorText.setText(getString(R.string.issue_content_cannot_be_empty));
-                                    return false;
-                                }
-                                return true;
-                            }
-
-                            @Override
-                            public boolean onElseDetect(TextView errorText) {
-                                return true;
-                            }
-
-                            @Override
-                            public boolean onDetectLength(int viewId, int length,TextView errorText) {
-                                return true;
-                            }
-                        })
-                        .setScrollviewId(R.id.scrollView_issue_comment_dialog)
-                        .setCancelDialogContentString(getString(R.string.make_sure_to_cancel))
-                        .setConfirmString(getString(R.string.confirm))
-                        .setCancelString(getString(R.string.cancel))
-                        .setConfirmButtonId(R.id.confirmBTN_issue_comment_dialog)
-                        .setCancelButtonId(R.id.cancelBTN_issue_comment_dialog)
-                        .setIcon(R.drawable.logo)
-                        .setView(view)
-                        .setTitle(getString(R.string.create_issue_comment))
+                new CreateIssueCommentDialog(IssueDetailsFragment.this)
                         .show();
             }
         });
     }
 
-    private void addNewIssueCommentAndRefresh(final IssueComment issueComment) throws Exception {
-        CREATE(issueComment, new EntityController.OnFinishListener() {
-            @Override
-            public void onFinish() {
-                snackbarNotify(issueComment);
-            }
-        });
-    }
-
-    private void snackbarNotify(IssueComment issueComment){
-        /**通知並且設定點擊觀看則scroll到新留言所在position**/
-        Snackbar.make(fab,R.string.comment_created_completed,Snackbar.LENGTH_SHORT).setAction(getString(R.string.watch), new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                scrollView.fullScroll(ScrollView.FOCUS_DOWN);
-            }
-        }).show();
+    public ScrollView getScrollView() {
+        return scrollView;
     }
 
     @Override

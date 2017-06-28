@@ -97,11 +97,11 @@ public class CreateIssueDialog extends MyConfirmCancelDialog {
             @Override
             public void onClick(View view) {
                 try {
-                    String title = titleTxt.getText().toString();
-                    String content = contentTxt.getText().toString();
-                    String issueType = typeOfIssueSpinner.getSelectedItem().toString();
                     if (checkAvailable())
                     {
+                        String title = titleTxt.getText().toString();
+                        String content = contentTxt.getText().toString();
+                        String issueType = typeOfIssueSpinner.getSelectedItem().toString();
                         Member poster = Global.getMemberController().getActiveMember();
                         addIssueAndNotify(new Issue(poster,title,content,new IssueType(issueType)));
                     }
@@ -123,6 +123,8 @@ public class CreateIssueDialog extends MyConfirmCancelDialog {
             errorTxt.setText(getContext().getString(R.string.please_choose_an_issue_type));
             errorTxt.setVisibility(View.VISIBLE);
         }
+        else
+            errorTxt.setVisibility(View.GONE);
         return !hasError;
     }
 
@@ -130,6 +132,7 @@ public class CreateIssueDialog extends MyConfirmCancelDialog {
         fragment.CREATE(issue, new EntityController.OnFinishListener() {
             @Override
             public void onFinish() {
+                CreateIssueDialog.this.dismiss();
                 useSnackBarToNotify(issue);
             }
         });
