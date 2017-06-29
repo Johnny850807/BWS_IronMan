@@ -9,7 +9,15 @@ public class Project extends Entity {
     private String description;
     private String type;
     private String imageUrl;
-    private String password;
+    private String password = NO_PASSWORD;
+
+    public Project(int id ,String name,String type,String description,String imageUrl){
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.imageUrl = imageUrl;
+    }
 
     public Project(String name,String type,String description,String imageUrl){
         this.name = name;
@@ -18,8 +26,8 @@ public class Project extends Entity {
         this.imageUrl = imageUrl;
     }
 
-    public Project(String name,String type,String description,String imageUrl,String password){
-        this(name,type,description,imageUrl);
+    public Project(int id ,String name,String type,String description,String imageUrl,String password){
+        this(id,name,type,description,imageUrl);
         this.password = password;
     }
 
@@ -61,5 +69,14 @@ public class Project extends Entity {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public boolean hasPassword(){
+        return !password.equals(NO_PASSWORD);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Project name : %s , description : %s" , name , description);
     }
 }

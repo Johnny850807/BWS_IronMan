@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Dialogs.CreateProjectDialog;
+import com.ood.waterball.teampathy.Dialogs.SearchProjectDialog;
 import com.ood.waterball.teampathy.DomainModels.Domains.Project;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.MemberHomePageRecyclerViewFactory;
@@ -83,7 +84,7 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
     }
 
     private void attendToExistsProject(){
-
+        new SearchProjectDialog(this).show();
     }
 
     @Override

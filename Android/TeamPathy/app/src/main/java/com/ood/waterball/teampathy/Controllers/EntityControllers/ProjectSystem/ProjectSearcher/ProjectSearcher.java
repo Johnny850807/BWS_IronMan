@@ -1,4 +1,4 @@
-package com.ood.waterball.teampathy.Controllers.EntityControllers;
+package com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.ProjectSearcher;
 
 
 import com.ood.waterball.teampathy.DomainModels.Domains.Project;

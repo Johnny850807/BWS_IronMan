@@ -20,8 +20,10 @@ public class CreateProjectDialog extends MyConfirmCancelDialog{
     private MemberHomePageFragment fragment;
     private TextInputEditText nameTxt;
     private TextInputEditText typeTxt;
+    private TextInputEditText descriptionTxt;
     private TextInputEditText passwordTxt;
     private CheckBox passwordChb;
+    private String password = "";
 
     public CreateProjectDialog(@NonNull MemberHomePageFragment fragment) {
         super(fragment.getContext());
@@ -36,6 +38,7 @@ public class CreateProjectDialog extends MyConfirmCancelDialog{
     }
 
     private void findViews() {
+        descriptionTxt = (TextInputEditText) findViewById(R.id.describeProjectED_createProject_dialog);
         nameTxt = (TextInputEditText) findViewById(R.id.projectTitleED_createProject_dialog);
         typeTxt = (TextInputEditText) findViewById(R.id.projectCategoryED_createProject_dialog);
         passwordTxt = (TextInputEditText) findViewById(R.id.projectPasswordED_createProject_dialog);
@@ -43,13 +46,21 @@ public class CreateProjectDialog extends MyConfirmCancelDialog{
     }
 
     private void setPasswordCheckboxListener(){
+        //todo password showing or not editagble problem
         passwordChb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean status) {
                 if (status)
-                    passwordTxt.setInputType(InputType.TYPE_NULL);
-                else
+                {
                     passwordTxt.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    passwordTxt.setText(password);
+                }
+                else
+                {
+                    password = passwordTxt.getText().toString();
+                    passwordTxt.setText("");
+                    passwordTxt.setInputType(InputType.TYPE_NULL);
+                }
             }
         });
     }
@@ -69,11 +80,22 @@ public class CreateProjectDialog extends MyConfirmCancelDialog{
                 String type = typeTxt.getText().toString();
                 boolean hasPassword = passwordChb.isChecked();
                 String password = hasPassword ? passwordTxt.getText().toString() : Project.NO_PASSWORD;
-                String description = "";  // todo 專案敘述
-                addProjectAndEnter(new Project(name,type,description,password));
-
+                String description = descriptionTxt.getText().toString();
+                if (isAvailable(name,type,description))
+                    addProjectAndEnter(new Project(name,type,description,password));
             }
         };
+    }
+
+    private boolean isAvailable(String name, String type, String description) {
+        boolean error;
+        if ( error = name.isEmpty() )
+            nameTxt.setError(getContext().getString(R.string.please_input_project_title));
+        if ( error |= type.isEmpty() )
+            typeTxt.setError(getContext().getString(R.string.please_input_project_type));
+        if ( error |= description.isEmpty() )
+            descriptionTxt.setError(getContext().getString(R.string.please_input_project_description));
+        return !error;
     }
 
     private void addProjectAndEnter(final Project project) {

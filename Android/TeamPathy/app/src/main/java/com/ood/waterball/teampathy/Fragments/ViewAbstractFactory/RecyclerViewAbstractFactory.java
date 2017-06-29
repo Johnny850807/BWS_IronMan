@@ -47,4 +47,12 @@ public abstract class RecyclerViewAbstractFactory<TEntity> {
     protected void onFurtherRecyclerViewConfig(RecyclerView  recyclerView, RecyclerView.Adapter adapter , RecyclerView.LayoutManager layoutManager) {
         /**hook method**/
     }
+
+    public void setEntityList(List<TEntity> entityList){
+        this.entityList = entityList;
+        notifyDataSetChanged();
+    }
+    public void notifyDataSetChanged(){
+        adapter.notifyDataSetChanged();
+    }
 }

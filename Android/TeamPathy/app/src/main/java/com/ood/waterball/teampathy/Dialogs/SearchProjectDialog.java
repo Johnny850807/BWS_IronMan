@@ -1,26 +1,33 @@
 package com.ood.waterball.teampathy.Dialogs;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 
 import com.ood.waterball.teampathy.Controllers.Global;
+import com.ood.waterball.teampathy.Controllers.MyUtils.AsyncTaskController;
 import com.ood.waterball.teampathy.DomainModels.Domains.Project;
 import com.ood.waterball.teampathy.Fragments.MemberHomePageFragment;
-import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.SearchProjectRecyclerViewFactory;
 import com.ood.waterball.teampathy.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchProjectDialog extends Dialog{
+public class SearchProjectDialog extends Dialog {
     private MemberHomePageFragment fragment;
     private List<Project> resultProjectList = new ArrayList<>();
+    private TextInputEditText keywordTxt;
+    private Button searchBtn;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private RecyclerViewAbstractFactory recyclerFactory;
+    private SearchProjectRecyclerViewFactory recyclerFactory;
 
     public SearchProjectDialog(@NonNull MemberHomePageFragment fragment) {
         super(fragment.getContext());
@@ -36,17 +43,51 @@ public class SearchProjectDialog extends Dialog{
     }
 
     private void findViews() {
-
+        searchBtn = (Button) findViewById(R.id.searchBTN_searchProject_dialog);
+        keywordTxt = (TextInputEditText) findViewById(R.id.projectTitleED_searchProject_dialog);
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    search(keywordTxt.getText().toString());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     private void initRecyclerView() {
-        recyclerFactory = new SearchProjectRecyclerViewFactory(fragment.getView(),resultProjectList);
+        View rootview = findViewById(R.id.rootView_searchDialog);
+        recyclerFactory = new SearchProjectRecyclerViewFactory(rootview, resultProjectList , fragment,this);
         recyclerView = recyclerFactory.getRecyclerView();
         adapter = recyclerFactory.getAdapter();
     }
 
-    private void search(String keyword) throws Exception {
-        resultProjectList = Global.getProjectSearcher().searchProject(keyword);
-        adapter.notifyDataSetChanged();
+    private void search(final String keyword) throws Exception {
+        final ProgressDialog dialog = new ProgressDialog(getContext());
+        dialog.setMessage(getContext().getString(R.string.searching_project));
+
+        dialog.show();
+        AsyncTaskController.runAsyncTask(new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+                    resultProjectList = Global.getProjectSearcher().searchProject(keyword);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                recyclerFactory.setEntityList(resultProjectList);
+                dialog.dismiss();
+            }
+        });
+
+
     }
 }
