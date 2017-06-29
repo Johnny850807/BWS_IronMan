@@ -26,9 +26,9 @@
 
             <ImageView
                 android:id="@+id/project_icon_searchProject_item"
-                android:layout_width="@dimen/member_head_icon_id_card_size"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/member_head_icon_id_card_size"
-                android:layout_weight=".5"
+                android:layout_weight="4"
                 android:scaleType="fitCenter"
                 android:src="@drawable/logo" />
 
@@ -36,17 +36,18 @@
                 android:id="@+id/project_title_searchProject_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:text="TeamPathy"
                 android:textColor="@color/app_black_word_color"
                 android:textSize="20sp" />
 
             <Button
                 android:id="@+id/joinBTN_searchProject_item"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight=".1"
+                android:layout_weight="4"
                 android:text="@string/join" />
 
         </LinearLayout>
@@ -58,7 +59,7 @@
             android:paddingTop="1dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/project_description"
                 android:textColor="#3e9bec"
@@ -69,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="2dp"
-                android:text="這是個讀了3年大學的大學生開發的軟體"
+                android:text="行動化團隊合作系統"
                 android:textColor="@color/app_black_word_color" />
         </LinearLayout>
 
