@@ -74,7 +74,7 @@ public class CreateIssueCommentDialog  extends MyConfirmCancelDialog{
         fragment.CREATE(issueComment, new EntityController.OnFinishListener() {
             @Override
             public void onFinish() {
-                CreateIssueCommentDialog.this.dismiss();
+                dismiss();
                 snackbarNotify(issueComment);
             }
         });

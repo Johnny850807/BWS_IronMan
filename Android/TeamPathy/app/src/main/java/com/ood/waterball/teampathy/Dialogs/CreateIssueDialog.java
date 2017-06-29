@@ -132,7 +132,7 @@ public class CreateIssueDialog extends MyConfirmCancelDialog {
         fragment.CREATE(issue, new EntityController.OnFinishListener() {
             @Override
             public void onFinish() {
-                CreateIssueDialog.this.dismiss();
+                dismiss();
                 useSnackBarToNotify(issue);
             }
         });

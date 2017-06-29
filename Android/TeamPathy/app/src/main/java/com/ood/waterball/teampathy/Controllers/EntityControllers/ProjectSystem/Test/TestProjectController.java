@@ -1,4 +1,4 @@
-package com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem;
+package com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.Test;
 
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
@@ -8,13 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestProjectController implements EntityController<Project>{
-    private static final String IMAGE_URL_PROJECT = "http://i.imgur.com/fIfxle9.png";
+    public static final String IMAGE_URL_PROJECT = "http://i.imgur.com/fIfxle9.png";
     private List<Project> projectList;
     private Project project = new Project("TeamPathy","軟體專案","行動化團隊合作系統",IMAGE_URL_PROJECT);
 
     @Override
     public Project create(Project project)throws Exception {
-        return null;
+        project.setImageUrl(IMAGE_URL_PROJECT);
+        projectList.add(project);
+        return project;
     }
 
     @Override
