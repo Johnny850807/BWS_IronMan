@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
+import com.ood.waterball.teampathy.Dialogs.CreateProjectDialog;
+import com.ood.waterball.teampathy.Dialogs.SearchProjectDialog;
 import com.ood.waterball.teampathy.DomainModels.Domains.Project;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.MemberHomePageRecyclerViewFactory;
@@ -17,9 +19,9 @@ import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
-import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
-
 public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> {
+    private final int CREATE_PROJECT_ACTION = 0;
+    private final int ATTEND_PROJECT_ACTION = 1;
     private String[] projectActions;
 
     private FloatingActionButton fab;
@@ -65,12 +67,10 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
                     @Override
                     public void onClick(DialogInterface dialogInterface, int position) {
                         switch (position){
-                            case 0:
-                                Log(projectActions[0]);
+                            case CREATE_PROJECT_ACTION:
                                 createNewProject();
                                 break;
-                            case 1:
-                                Log(projectActions[1]);
+                            case ATTEND_PROJECT_ACTION:
                                 attendToExistsProject();
                         }
                     }
@@ -79,11 +79,12 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
     }
 
     private void createNewProject(){
-
+        new CreateProjectDialog(this)
+                .show();
     }
 
     private void attendToExistsProject(){
-
+        new SearchProjectDialog(this).show();
     }
 
     @Override

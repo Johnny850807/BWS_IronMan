@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/rootView_searchDialog"
     android:paddingLeft="25dp"
     android:paddingRight="25dp">
 
@@ -48,9 +49,7 @@
             android:id="@+id/project_recycler_list_searchProjectDialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp">
+            android:layout_marginTop="15dp">
 
         </android.support.v7.widget.RecyclerView>
 

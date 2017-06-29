@@ -88,12 +88,13 @@
     <string name="openDrawer">開啟</string>
     <string name="closeDrawer">關閉</string>
     <string name="setPassword">設置密碼</string>
-    <string name="project_category">專案類別</string>
+    <string name="project_category">專案性質(團康,報告,工作..)</string>
     <string name="please_input_project_title">請輸入專案名稱</string>
+    <string name="please_input_project_type">請輸入專案性質</string>
+    <string name="please_input_project_description">請輸入專案敘述</string>
     <string name="search">搜尋</string>
     <string name="join">加入</string>
-
-
-
+    <string name="already_in_project">已加入</string>
+    <string name="searching_project">搜尋專案中...</string>
 
 </resources>

@@ -3,6 +3,7 @@ package com.ood.waterball.teampathy.Controllers.EntityControllers;
 import java.util.List;
 
 public interface EntityController<T> {
+    // todo 快取裝飾者
     public T create(T t) throws Exception;
     public T read(int id)throws Exception;
     public List<T> readList(int id)throws Exception;

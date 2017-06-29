@@ -96,7 +96,7 @@
             android:layout_gravity="center_horizontal"
             app:counterEnabled="true"
             app:errorEnabled="true" >
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/describeProjectED_createProject_dialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -82,10 +82,5 @@ public class OfficeRecyclerViewFactory extends RecyclerViewAbstractFactory<Membe
                 taskGroupTxt = (TextView) itemView.findViewById(R.id.member_current_task_groupname_id_card_item);
             }
         }
-
-        @Override
-        public void onViewDetachedFromWindow(MyViewHolder holder) {
-            super.onViewDetachedFromWindow(holder);
-        }
     }
 }

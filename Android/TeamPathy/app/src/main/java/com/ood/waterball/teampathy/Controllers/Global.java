@@ -6,13 +6,17 @@ import android.content.res.Resources;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.MemberController;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.TestMemberController;
-import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.TestIssueTypeController;
-import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.TestMemberIdCardController;
-import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.TestIssueCommentController;
-import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.TestIssueController;
-import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.TestProjectController;
-import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.TestTimelineController;
-import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.TestTodoTaskController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.ProjectMemberController.ProjectMemberController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.ProjectMemberController.TestProjectMemberController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.ProjectSearcher.ProjectSearcher;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.Test.TestIssueCommentController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.Test.TestIssueController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.Test.TestIssueTypeController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.Test.TestMemberIdCardController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.Test.TestProjectController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.Test.TestTimelineController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.Test.TestTodoTaskController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.ProjectSearcher.TestProjectSearcher;
 import com.ood.waterball.teampathy.Controllers.MyUtils.DateConvertStrategy.DateConvertStrategy;
 import com.ood.waterball.teampathy.Controllers.MyUtils.DateConvertStrategy.EnglishAbbreviationDateConvert;
 import com.ood.waterball.teampathy.DomainModels.Domains.Issue;
@@ -28,6 +32,8 @@ public class Global {
     public static DateConvertStrategy dateConvertStrategy;
 
     private static MemberController memberController;
+    private static ProjectSearcher projectSearcher;
+    private static ProjectMemberController projectMemberController;
     private static EntityController<Project> projectController;
     private static EntityController<IssueType> issuetypeController;
     private static EntityController<Issue> issueController;
@@ -41,6 +47,10 @@ public class Global {
 
         dateConvertStrategy = new EnglishAbbreviationDateConvert();
 
+        initiateTestControllers();
+    }
+
+    private static void initiateTestControllers() {
         memberController = new TestMemberController();
         projectController = new TestProjectController();
         issueController = new TestIssueController();
@@ -49,6 +59,16 @@ public class Global {
         timelineController = new TestTimelineController();
         memberIdCardController = new TestMemberIdCardController();
         todotaskController = new TestTodoTaskController();
+        projectSearcher = new TestProjectSearcher();
+        projectMemberController = new TestProjectMemberController();
+    }
+
+    public static ProjectMemberController getProjectMemberController() {
+        return projectMemberController;
+    }
+
+    public static ProjectSearcher getProjectSearcher() {
+        return projectSearcher;
     }
 
     public static EntityController<IssueComment> getIssueCommentController() {

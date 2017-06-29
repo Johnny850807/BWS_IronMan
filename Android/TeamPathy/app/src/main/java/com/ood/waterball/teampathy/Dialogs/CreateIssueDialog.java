@@ -116,9 +116,9 @@ public class CreateIssueDialog extends MyConfirmCancelDialog {
         boolean hasError;
         if ( hasError = titleTxt.getText().toString().isEmpty() )
             titleTxt.setError(getContext().getString(R.string.title_cannot_be_empty));
-        if ( hasError &= contentTxt.getText().toString().isEmpty() )
+        if ( hasError |= contentTxt.getText().toString().isEmpty() )
             contentTxt.setError(getContext().getString(R.string.issue_content_cannot_be_empty));
-        if ( hasError &= typeOfIssueSpinner.getSelectedItemPosition() == 0 )
+        if ( hasError |= typeOfIssueSpinner.getSelectedItemPosition() == 0 )
         {
             errorTxt.setText(getContext().getString(R.string.please_choose_an_issue_type));
             errorTxt.setVisibility(View.VISIBLE);
@@ -132,7 +132,7 @@ public class CreateIssueDialog extends MyConfirmCancelDialog {
         fragment.CREATE(issue, new EntityController.OnFinishListener() {
             @Override
             public void onFinish() {
-                CreateIssueDialog.this.dismiss();
+                dismiss();
                 useSnackBarToNotify(issue);
             }
         });
