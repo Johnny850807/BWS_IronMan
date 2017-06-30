@@ -18,7 +18,8 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,12 +36,12 @@
                     android:imeOptions="actionSearch"
                     android:inputType="text" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/searchBTN_searchProject_dialog"
-                    android:layout_width="match_parent"
+                    android:layout_width="45dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="7.5"
-                    android:text="@string/search"  />
+                    android:layout_weight=".1"
+                    android:src="@android:drawable/ic_menu_search"/>
             </LinearLayout>
         </android.support.design.widget.TextInputLayout>
 
