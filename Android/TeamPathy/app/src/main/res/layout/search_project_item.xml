@@ -12,11 +12,12 @@
     app:cardBackgroundColor="@color/app_textword_color"
     app:cardCornerRadius="12dp"
     app:cardElevation="50dp"
-    app:contentPadding="15dp">
+    app:contentPadding="7dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minWidth="260dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -30,25 +31,26 @@
                 android:layout_height="@dimen/member_head_icon_id_card_size"
                 android:layout_weight="4"
                 android:scaleType="fitCenter"
-                android:src="@drawable/logo"  />
+                android:src="@drawable/logo" />
 
             <TextView
                 android:id="@+id/project_title_searchProject_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
                 android:text="TeamPathy"
                 android:textColor="@color/app_black_word_color"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <Button
                 android:id="@+id/joinBTN_searchProject_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:text="@string/join" />
+                android:layout_weight="3.5"
+                android:text="@string/join"
+                android:textSize="12sp" />
 
         </LinearLayout>
 
