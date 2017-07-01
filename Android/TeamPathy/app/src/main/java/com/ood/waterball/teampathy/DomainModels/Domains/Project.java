@@ -10,6 +10,7 @@ public class Project extends Entity {
     private String type;
     private String imageUrl;
     private String password = NO_PASSWORD;
+    private String taskAnalysisXml;
 
     public Project(int id ,String name,String type,String description,String imageUrl){
         this.id = id;
@@ -29,6 +30,14 @@ public class Project extends Entity {
     public Project(int id ,String name,String type,String description,String imageUrl,String password){
         this(id,name,type,description,imageUrl);
         this.password = password;
+    }
+
+    public String getTaskAnalysisXml() {
+        return taskAnalysisXml;
+    }
+
+    public void setTaskAnalysisXml(String taskAnalysisXml) {
+        this.taskAnalysisXml = taskAnalysisXml;
     }
 
     public String getPassword() {

@@ -46,7 +46,7 @@ public class SearchProjectRecyclerViewFactory extends RecyclerViewAbstractFactor
 
     @Override
     protected RecyclerView createRecyclerView() {
-        return (RecyclerView) rootView.findViewById(R.id.project_recycler_card_searchProjectDialog);
+        return (RecyclerView) rootView.findViewById(R.id.project_recycler_list_searchProjectDialog);
     }
 
     @Override

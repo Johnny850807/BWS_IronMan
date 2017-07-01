@@ -6,9 +6,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.AsyncTaskController;
@@ -24,9 +23,7 @@ public class SearchProjectDialog extends Dialog {
     private MemberHomePageFragment fragment;
     private List<Project> resultProjectList = new ArrayList<>();
     private TextInputEditText keywordTxt;
-    private Button searchBtn;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
+    private ImageButton searchBtn;
     private SearchProjectRecyclerViewFactory recyclerFactory;
 
     public SearchProjectDialog(@NonNull MemberHomePageFragment fragment) {
@@ -43,7 +40,7 @@ public class SearchProjectDialog extends Dialog {
     }
 
     private void findViews() {
-        searchBtn = (Button) findViewById(R.id.searchBTN_searchProject_dialog);
+        searchBtn = (ImageButton) findViewById(R.id.searchBTN_searchProject_dialog);
         keywordTxt = (TextInputEditText) findViewById(R.id.projectTitleED_searchProject_dialog);
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,8 +57,6 @@ public class SearchProjectDialog extends Dialog {
     private void initRecyclerView() {
         View rootview = findViewById(R.id.rootView_searchDialog);
         recyclerFactory = new SearchProjectRecyclerViewFactory(rootview, resultProjectList , fragment,this);
-        recyclerView = recyclerFactory.getRecyclerView();
-        adapter = recyclerFactory.getAdapter();
     }
 
     private void search(final String keyword) throws Exception {

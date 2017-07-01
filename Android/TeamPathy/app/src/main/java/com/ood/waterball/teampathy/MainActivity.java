@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         Global.init(this.getResources());  // 初始化全域變數 並傳入資源
-
         findViews();
     }
 
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
                     passwordEd.getText().toString());
 
             startActivity(new Intent(this,BaseActivity.class));
-
         } catch (AccountNotFoundException e) {
             Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
         }

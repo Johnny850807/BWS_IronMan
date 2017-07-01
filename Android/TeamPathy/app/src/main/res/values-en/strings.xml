@@ -86,5 +86,14 @@
     <string name="whole_timeline">Timeline</string>
     <string name="openDrawer">Open drawer</string>
     <string name="closeDrawer">Close drawer</string>
+    <string name="setPassword">Setting password</string>
+    <string name="project_category">Project type(Work,Homework..)</string>
+    <string name="please_input_project_title">Project name</string>
+    <string name="please_input_project_type">Project type</string>
+    <string name="please_input_project_description">Project description</string>
+    <string name="search">Search</string>
+    <string name="join">Join</string>
+    <string name="already_in_project">Joined</string>
+    <string name="searching_project">Searching projects...</string>
 
 </resources>
