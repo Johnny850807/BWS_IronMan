@@ -18,4 +18,7 @@
     <color name="timeline_colors_purple">#eedaff</color>
     <color name="triangle_tuggle_color">@color/almost_white</color>
     <color name="task_group_color">#00aeff</color>
+
+    <color name="task_startdate_color">#fc8b2f</color>
+    <color name="task_enddate_color">#fa4343</color>
 </resources>
