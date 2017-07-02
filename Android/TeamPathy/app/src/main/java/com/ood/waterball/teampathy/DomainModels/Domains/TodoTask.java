@@ -14,6 +14,15 @@ public class TodoTask extends Entity {
 
     public TodoTask() {}
 
+    public TodoTask(int id,String groupName, String name,String content) {
+        this.id = id;
+        this.groupName = groupName;
+        this.name = name;
+        this.content = content;
+        startDate = new Date();
+        endDate = new Date();
+    }
+
     public TodoTask(String groupName, String name,String content) {
         this.groupName = groupName;
         this.name = name;
