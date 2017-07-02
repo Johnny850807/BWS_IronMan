@@ -17,7 +17,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minWidth="260dp"
+        android:minWidth="270dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -29,7 +29,7 @@
                 android:id="@+id/project_icon_searchProject_item"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/member_head_icon_id_card_size"
-                android:layout_weight="4"
+                android:layout_weight="4.4"
                 android:scaleType="fitCenter"
                 android:src="@drawable/logo" />
 
@@ -48,7 +48,7 @@
                 android:id="@+id/joinBTN_searchProject_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3.5"
+                android:layout_weight="3.6"
                 android:text="@string/join"
                 android:textSize="12sp" />
 
