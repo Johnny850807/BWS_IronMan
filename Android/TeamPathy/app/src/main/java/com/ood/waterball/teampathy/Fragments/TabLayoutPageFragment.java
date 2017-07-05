@@ -88,7 +88,6 @@ public class TabLayoutPageFragment extends TemplateFragment {
 
         @Override
         public Fragment getItem(int position) {
-
             if (position == ProjectSection.TIMELINE.ordinal())
                 return TimeLineFragment.getInstance(currentProject.getId());
             else if (position == ProjectSection.FORUM.ordinal())
