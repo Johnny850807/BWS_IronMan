@@ -96,5 +96,6 @@
     <string name="join">加入</string>
     <string name="already_in_project">已加入</string>
     <string name="searching_project">搜尋專案中...</string>
+    <string name="task_analysis">工作分析</string>
 
 </resources>

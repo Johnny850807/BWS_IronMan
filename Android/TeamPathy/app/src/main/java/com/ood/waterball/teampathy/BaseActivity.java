@@ -39,6 +39,7 @@ public class BaseActivity extends AppCompatActivity implements ParentActivityCal
         onPageControllerInitiate();
     }
 
+
     private void findViews() {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_base);
         navigationView = (NavigationView) findViewById(R.id.navigationView_base);

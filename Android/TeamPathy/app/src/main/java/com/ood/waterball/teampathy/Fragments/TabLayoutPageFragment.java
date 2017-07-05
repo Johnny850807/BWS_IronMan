@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.Global;
@@ -18,6 +21,7 @@ import com.ood.waterball.teampathy.R;
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
 public class TabLayoutPageFragment extends TemplateFragment {
+    private int projectId;
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private Project currentProject;
@@ -44,7 +48,7 @@ public class TabLayoutPageFragment extends TemplateFragment {
     }
 
     private void fetchCurrentProject(Bundle arguBundle) throws Exception {
-        int projectId = arguBundle.getInt("projectId");
+        projectId = arguBundle.getInt("projectId");
         currentProject = Global.getProjectController().read(projectId);
         Log("取得目前專案:" + currentProject.toString());
     }
@@ -52,6 +56,23 @@ public class TabLayoutPageFragment extends TemplateFragment {
     @Override
     protected int getLayoutResource() {
         return R.layout.fragment_tablayout_page;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_on_toolbar,menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId())
+        {
+            case R.id.menu_task_analysis:
+                getParentActivity().changePage(TaskAnalysisFragment.getInstance(projectId));
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
