@@ -6,8 +6,8 @@ import android.content.res.Resources;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.MemberController;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.TestMemberController;
-import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.ProjectMemberController.ProjectMemberController;
-import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.ProjectMemberController.TestProjectMemberController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.ProjectMemberController.OfficeController;
+import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.ProjectMemberController.TestOfficeController;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.ProjectSearcher.ProjectSearcher;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.Test.TestIssueCommentController;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.Test.TestIssueController;
@@ -33,7 +33,7 @@ public class Global {
 
     private static MemberController memberController;
     private static ProjectSearcher projectSearcher;
-    private static ProjectMemberController projectMemberController;
+    private static OfficeController officeController;
     private static EntityController<Project> projectController;
     private static EntityController<IssueType> issuetypeController;
     private static EntityController<Issue> issueController;
@@ -60,11 +60,11 @@ public class Global {
         memberIdCardController = new TestMemberIdCardController();
         todotaskController = new TestTodoTaskController();
         projectSearcher = new TestProjectSearcher();
-        projectMemberController = new TestProjectMemberController();
+        officeController = new TestOfficeController();
     }
 
-    public static ProjectMemberController getProjectMemberController() {
-        return projectMemberController;
+    public static OfficeController getOfficeController() {
+        return officeController;
     }
 
     public static ProjectSearcher getProjectSearcher() {
