@@ -7,14 +7,14 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/finish_btn_taskAnalysis">
+        android:layout_above="@+id/finish_btn_taskAnalysis">
         <org.apmem.tools.layouts.FlowLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingTop="6dp"
             android:id="@+id/panel_flowlayout_taskAnalysis"
-            android:gravity="fill">
+            android:gravity="center_horizontal">
         </org.apmem.tools.layouts.FlowLayout>
     </ScrollView>
 

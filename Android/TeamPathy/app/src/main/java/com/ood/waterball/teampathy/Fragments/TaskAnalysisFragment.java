@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.DomainModels.Domains.TaskItem;
+import com.ood.waterball.teampathy.DomainModels.Domains.TodoTask;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncTemplateFragment;
 import com.ood.waterball.teampathy.R;
 
@@ -55,6 +56,17 @@ public class TaskAnalysisFragment extends AsyncTemplateFragment<String> {
     @Override
     protected void onControlViews() {
         taskItemFactory = new TaskItemFactory(getContext(),this,taskPanelView);
+        test();
+    }
+
+    private void test() {
+        try {
+            List<TodoTask> todotasks = Global.getTodotaskController().readList(projectId);
+            for (TodoTask t :todotasks)
+                taskPanelView.addView(taskItemFactory.createItemView(t));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void addChildTask(@NonNull TaskItem taskItem){

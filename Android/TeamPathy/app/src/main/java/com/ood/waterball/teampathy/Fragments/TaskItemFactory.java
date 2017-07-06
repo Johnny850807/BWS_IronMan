@@ -31,8 +31,8 @@ public class TaskItemFactory {
         ImageView addImg = (ImageView) itemView.findViewById(R.id.add_img_taskItem);
         nameTxt.setText(todoTask.getName());
         ofGroupTxt.setText(todoTask.getOfGroupName());
-        if (!todoTask.hasChild())
-            addImg.setVisibility(View.GONE);
+        //if (!todoTask.hasChild())
+            //addImg.setVisibility(View.GONE);
 
         setAddChildWhenClick(itemView,todoTask);
         setEditWhenLongClick(itemView,todoTask);

@@ -6,7 +6,9 @@
     android:id="@+id/view_taskItem"
     android:layout_height="wrap_content"
     android:background="@drawable/corner_button"
-    android:padding="10dp">
+    android:padding="4dp"
+    android:layout_marginTop="7dp"
+    android:layout_marginLeft="7dp">
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -16,6 +18,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="15dp"
         android:orientation="vertical">
@@ -23,15 +26,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="實作"
-            android:textSize="18sp"
+            android:textSize="13sp"
             android:id="@+id/name_taskItem"
             android:textColor="@color/app_black_word_color"
             android:layout_gravity="center"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:textSize="12sp"
+            android:layout_gravity="end|bottom"
+            android:textSize="8sp"
             android:id="@+id/ofGroup_taskItem"
             android:text="TeamPathy"
             android:textColor="@color/app_black_word_color"/>

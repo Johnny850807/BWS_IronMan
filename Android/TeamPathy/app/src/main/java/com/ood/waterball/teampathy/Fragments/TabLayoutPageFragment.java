@@ -7,10 +7,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.DomainModels.Domains.Project;
@@ -20,6 +22,7 @@ import com.ood.waterball.teampathy.R;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
+/** project homepage, where begins to have a tablayout.**/
 public class TabLayoutPageFragment extends TemplateFragment {
     private int projectId;
     private ViewPager viewPager;
@@ -59,8 +62,14 @@ public class TabLayoutPageFragment extends TemplateFragment {
     }
 
     @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_on_toolbar,menu);
+        inflater.inflate(R.menu.menu_on_toolbar,menu);  //Task analysis button on the toolbar
         super.onCreateOptionsMenu(menu, inflater);
     }
 
