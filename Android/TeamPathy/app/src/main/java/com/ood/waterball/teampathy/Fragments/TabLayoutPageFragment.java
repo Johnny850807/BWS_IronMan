@@ -92,7 +92,7 @@ public class TabLayoutPageFragment extends TemplateFragment {
         tabLayout.setupWithViewPager(viewPager);
     }
 
-     class MyFragmentPageAdapter extends FragmentPagerAdapter{
+     private class MyFragmentPageAdapter extends FragmentPagerAdapter{
 
         private final String[] projectSections;
 
