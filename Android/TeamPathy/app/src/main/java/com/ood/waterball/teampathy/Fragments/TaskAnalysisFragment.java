@@ -69,8 +69,8 @@ public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implemen
             TaskItem taskRoot = createTestTaskRoot();
             for (TaskItem t : taskRoot)
                 taskPanelView.addView(taskItemFactory.createItemView(t));
-            Log(taskRoot.toString());
 
+            Log(taskRoot.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -82,20 +82,20 @@ public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implemen
 
         g1.addTaskChild(new TodoTask(g1.getName(),"t11",""));
         g1.addTaskChild(new TodoTask(g1.getName(),"t12",""));
-        g1.addTaskChild(new TodoTask(g1.getName(),"t13",""));
+        g1.addTaskChild(new TodoTask(g1.getName(),"=t13=",""));
 
-        TaskGroup g2 = new TaskGroup(root.getName(),"G2");
-        TaskGroup g21 = new TaskGroup(g2.getName(),"G21");
-        TaskGroup g22 = new TaskGroup(g2.getName(),"G22");
+        TaskGroup g2 = new TaskGroup(root.getName(),"=====G2===");
+        TaskGroup g21 = new TaskGroup(g2.getName(),"=G21=");
+        TaskGroup g22 = new TaskGroup(g2.getName(),"======G22======");
 
         g2.addTaskChild(g21);
         g2.addTaskChild(g22);
 
-        g21.addTaskChild(new TodoTask(g21.getName(),"t211",""));
-        g21.addTaskChild(new TodoTask(g21.getName(),"t212",""));
-        g22.addTaskChild(new TodoTask(g22.getName(),"t221",""));
+        g21.addTaskChild(new TodoTask(g21.getName(),"=========t211==========",""));
+        g21.addTaskChild(new TodoTask(g21.getName(),"==t212==",""));
+        g22.addTaskChild(new TodoTask(g22.getName(),"===t221===",""));
 
-        TaskGroup g3 = new TaskGroup(root.getName(),"G3");
+        TaskGroup g3 = new TaskGroup(root.getName(),"=G3=");
 
         g3.addTaskChild(new TaskGroup(g3.getName(),"G31"));
 
