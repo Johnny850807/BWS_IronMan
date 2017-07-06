@@ -64,7 +64,7 @@ public class TodoListRecyclerViewFactory extends RecyclerViewAbstractFactory<Tod
 
             holder.startdateTxt.setText(startDate);
             holder.enddateTxt.setText(endDate);
-            holder.groupTxt.setText(todoTask.getGroupName());
+            holder.groupTxt.setText(todoTask.getOfGroupName());
         }
 
         @Override

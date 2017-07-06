@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:minWidth="70dp"
+    android:id="@+id/view_taskItem"
+    android:layout_height="wrap_content"
+    android:background="@drawable/corner_button"
+    android:padding="10dp">
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/add_green_icon"
+        android:id="@+id/add_img_taskItem"
+        android:scaleType="fitCenter"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="實作"
+            android:textSize="18sp"
+            android:id="@+id/name_taskItem"
+            android:textColor="@color/app_black_word_color"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:textSize="12sp"
+            android:id="@+id/ofGroup_taskItem"
+            android:text="TeamPathy"
+            android:textColor="@color/app_black_word_color"/>
+    </LinearLayout>
+
+</LinearLayout>

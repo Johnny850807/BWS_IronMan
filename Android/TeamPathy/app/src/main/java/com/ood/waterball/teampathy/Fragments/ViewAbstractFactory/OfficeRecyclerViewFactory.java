@@ -59,7 +59,7 @@ public class OfficeRecyclerViewFactory extends RecyclerViewAbstractFactory<Membe
             holder.nameTxt.setText( member.getName());
             holder.positionTxt.setText(member.getPosition());
             holder.taskNameTxt.setText(todoTask.getName());
-            holder.taskGroupTxt.setText(todoTask.getGroupName());
+            holder.taskGroupTxt.setText(todoTask.getOfGroupName());
         }
 
         @Override

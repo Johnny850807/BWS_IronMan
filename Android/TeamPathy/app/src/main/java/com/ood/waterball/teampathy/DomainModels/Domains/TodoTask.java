@@ -5,38 +5,39 @@ import com.ood.waterball.teampathy.DomainModels.Entity;
 
 import java.util.Date;
 
-public class TodoTask extends Entity {
+public class TodoTask extends Entity implements TaskItem{
     private String name;
-    private String groupName;
+    private String ofGroupName;
     private String content;
     private Date startDate;
     private Date endDate;
+    private int contributePoint;
 
     public TodoTask() {}
 
-    public TodoTask(int id,String groupName, String name,String content) {
+    public TodoTask(int id, String ofGroupName, String name, String content) {
         this.id = id;
-        this.groupName = groupName;
+        this.ofGroupName = ofGroupName;
         this.name = name;
         this.content = content;
         startDate = new Date();
         endDate = new Date();
     }
 
-    public TodoTask(String groupName, String name,String content) {
-        this.groupName = groupName;
+    public TodoTask(String ofGroupName, String name, String content) {
+        this.ofGroupName = ofGroupName;
         this.name = name;
         this.content = content;
         startDate = new Date();
         endDate = new Date();
     }
 
-    public String getGroupName() {
-        return groupName;
+    public String getOfGroupName() {
+        return ofGroupName;
     }
 
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
+    public void setOfGroupName(String ofGroupName) {
+        this.ofGroupName = ofGroupName;
     }
 
     public String getName() {
@@ -69,5 +70,18 @@ public class TodoTask extends Entity {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public int getContributePoint() {
+        return contributePoint;
+    }
+
+    public void setContributePoint(int contributePoint) {
+        this.contributePoint = contributePoint;
+    }
+
+    @Override
+    public boolean hasChild() {
+        return false;
     }
 }
