@@ -1,10 +1,11 @@
-package com.ood.waterball.teampathy.DomainModels.Domains;
+package com.ood.waterball.teampathy.DomainModels.WBS;
 
+
+import org.w3c.dom.Node;
 
 import java.util.Date;
 
 public interface TaskItem {
-    //todo composition pattern which needed by TaskItem and TaskGroup
 
     public String getOfGroupName();
 
@@ -22,13 +23,19 @@ public interface TaskItem {
 
     public void setStartDate(Date startDate);
 
-    public String getContent();
+    public String getDescription();
 
-    public void setContent(String content);
+    public void setDescription(String description);
 
     public int getContributePoint();
 
     public void setContributePoint(int contributePoint);
 
-    public boolean hasChild();
+    public abstract Node toXmlNode();
+
+    public abstract boolean hasChild();
+
+    public abstract void addChild(WbsVisitor visitor);
+
+    public abstract void edit(WbsVisitor visitor);
 }

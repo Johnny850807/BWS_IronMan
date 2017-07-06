@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.Global;
-import com.ood.waterball.teampathy.DomainModels.Domains.TaskItem;
+import com.ood.waterball.teampathy.DomainModels.WBS.TaskItem;
 import com.ood.waterball.teampathy.DomainModels.Domains.TodoTask;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncTemplateFragment;
 import com.ood.waterball.teampathy.R;
@@ -68,6 +68,7 @@ public class TaskAnalysisFragment extends AsyncTemplateFragment<String> {
             e.printStackTrace();
         }
     }
+
 
     public void addChildTask(@NonNull TaskItem taskItem){
         //todo add child when click the task item view
