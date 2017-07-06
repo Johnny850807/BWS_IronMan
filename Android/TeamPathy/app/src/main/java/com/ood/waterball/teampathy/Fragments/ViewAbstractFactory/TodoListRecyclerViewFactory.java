@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.DateConvertStrategy.DateConvertStrategy;
-import com.ood.waterball.teampathy.DomainModels.Domains.TodoTask;
+import com.ood.waterball.teampathy.DomainModels.WBS.TodoTask;
 import com.ood.waterball.teampathy.R;
 
 import java.util.List;

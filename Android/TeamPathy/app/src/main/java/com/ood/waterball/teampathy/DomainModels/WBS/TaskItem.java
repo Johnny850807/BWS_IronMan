@@ -5,7 +5,13 @@ import org.w3c.dom.Node;
 
 import java.util.Date;
 
-public interface TaskItem {
+public interface TaskItem extends Iterable<TaskItem>{
+
+    public void addTaskChild(TaskItem taskItem);
+
+    public void setDegree(int degree);
+
+    public int getDegree();
 
     public String getOfGroupName();
 
@@ -35,7 +41,8 @@ public interface TaskItem {
 
     public abstract boolean hasChild();
 
-    public abstract void addChild(WbsVisitor visitor);
+    public abstract void onClick(WbsVisitor visitor);
 
-    public abstract void edit(WbsVisitor visitor);
+    public abstract void onLongClick(WbsVisitor visitor);
+
 }

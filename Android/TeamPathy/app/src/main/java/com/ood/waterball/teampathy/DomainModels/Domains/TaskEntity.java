@@ -5,23 +5,25 @@ import com.ood.waterball.teampathy.DomainModels.WBS.TaskItem;
 
 
 public abstract class TaskEntity extends Entity implements TaskItem{
+    protected int degree = 0;
     protected String name;
     protected String ofGroupName;
 
     public TaskEntity(String name) {
         this.name = name;
     }
+
     public TaskEntity(int id,String name) {
         this.name = name;
         this.id = id;
     }
-    public TaskEntity(int id,String name,String ofGroupName) {
+    public TaskEntity(int id,String ofGroupName,String name) {
         this.name = name;
         this.id = id;
         this.ofGroupName = ofGroupName;
     }
 
-    public TaskEntity(String name,String ofGroupName) {
+    public TaskEntity(String ofGroupName,String name) {
         this.name = name;
         this.ofGroupName = ofGroupName;
     }
@@ -46,4 +48,17 @@ public abstract class TaskEntity extends Entity implements TaskItem{
         this.ofGroupName = ofGroupName;
     }
 
+    @Override
+    public int getDegree() {
+        return degree;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("DFS: ");
+        for (TaskItem taskItem : this)
+            stringBuilder.append(" -> ").append(taskItem.getName()).append("-").append(taskItem.getDegree());
+        return stringBuilder.toString();
+    }
 }

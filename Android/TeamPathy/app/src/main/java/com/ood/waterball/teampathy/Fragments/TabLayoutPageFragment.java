@@ -17,13 +17,14 @@ import android.view.ViewGroup;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.DomainModels.Domains.Project;
 import com.ood.waterball.teampathy.DomainModels.ProjectSection;
+import com.ood.waterball.teampathy.DomainModels.WBS.WbsVisitor;
 import com.ood.waterball.teampathy.Fragments.Architecture.TemplateFragment;
 import com.ood.waterball.teampathy.R;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
 /** project homepage, where begins to have a tablayout.**/
-public class TabLayoutPageFragment extends TemplateFragment {
+public class TabLayoutPageFragment extends TemplateFragment{
     private int projectId;
     private ViewPager viewPager;
     private TabLayout tabLayout;

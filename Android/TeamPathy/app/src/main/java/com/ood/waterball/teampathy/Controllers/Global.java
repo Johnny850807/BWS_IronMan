@@ -24,7 +24,7 @@ import com.ood.waterball.teampathy.DomainModels.Domains.IssueComment;
 import com.ood.waterball.teampathy.DomainModels.Domains.IssueType;
 import com.ood.waterball.teampathy.DomainModels.Domains.Project;
 import com.ood.waterball.teampathy.DomainModels.Domains.Timeline;
-import com.ood.waterball.teampathy.DomainModels.Domains.TodoTask;
+import com.ood.waterball.teampathy.DomainModels.WBS.TodoTask;
 import com.ood.waterball.teampathy.DomainModels.Models.MemberIdCardModel;
 
 public class Global {

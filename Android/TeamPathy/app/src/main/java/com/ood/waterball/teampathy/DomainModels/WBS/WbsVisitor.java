@@ -1,16 +1,14 @@
 package com.ood.waterball.teampathy.DomainModels.WBS;
 
 
-import com.ood.waterball.teampathy.DomainModels.Domains.TodoTask;
+public interface WbsVisitor {
 
-public abstract class WbsVisitor {
+	public void taskViewOnClick(TaskGroup TaskGoup);
 
-	public abstract void taskViewOnClick(TaskGroup TaskGoup);
+	public void taskViewOnClick(TodoTask task);
 
-	public abstract void taskViewOnClick(TodoTask task);
+	public void taskViewOnLongClick(TaskGroup TaskGoup);
 
-	public abstract void taskViewOnLongClick(TaskGroup TaskGoup);
-
-	public abstract void taskViewOnLongClick(TodoTask task);
+	public void taskViewOnLongClick(TodoTask task);
 
 }

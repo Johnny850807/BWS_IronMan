@@ -1,7 +1,7 @@
 package com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.Test;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
-import com.ood.waterball.teampathy.DomainModels.Domains.TodoTask;
+import com.ood.waterball.teampathy.DomainModels.WBS.TodoTask;
 
 import java.util.ArrayList;
 import java.util.List;

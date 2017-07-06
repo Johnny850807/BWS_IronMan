@@ -1,12 +1,12 @@
-package com.ood.waterball.teampathy.DomainModels.Domains;
+package com.ood.waterball.teampathy.DomainModels.WBS;
 
 
-import com.ood.waterball.teampathy.DomainModels.WBS.TaskItem;
-import com.ood.waterball.teampathy.DomainModels.WBS.WbsVisitor;
+import com.ood.waterball.teampathy.DomainModels.Domains.TaskEntity;
 
 import org.w3c.dom.Node;
 
 import java.util.Date;
+import java.util.Iterator;
 
 public class TodoTask extends TaskEntity implements TaskItem {
     private String description;
@@ -19,17 +19,27 @@ public class TodoTask extends TaskEntity implements TaskItem {
     }
 
     public TodoTask(int id, String ofGroupName, String name, String description) {
-        super(id,name,ofGroupName);
+        super(id,ofGroupName,name);
         this.description = description;
         startDate = new Date();
         endDate = new Date();
     }
 
     public TodoTask(String ofGroupName, String name, String description) {
-        super(name,ofGroupName);
+        super(ofGroupName,name);
         this.description = description;
         startDate = new Date();
         endDate = new Date();
+    }
+
+    @Override
+    public void addTaskChild(TaskItem taskItem) {
+        throw new RuntimeException("Not Supported.");
+    }
+
+    @Override
+    public void setDegree(int degree) {
+        this.degree = degree;
     }
 
     public Date getEndDate() {
@@ -76,12 +86,31 @@ public class TodoTask extends TaskEntity implements TaskItem {
     }
 
     @Override
-    public void addChild(WbsVisitor visitor) {
+    public void onClick(WbsVisitor visitor) {
         visitor.taskViewOnClick(this);
     }
 
     @Override
-    public void edit(WbsVisitor visitor) {
+    public void onLongClick(WbsVisitor visitor) {
         visitor.taskViewOnLongClick(this);
+    }
+
+    @Override
+    public Iterator<TaskItem> iterator() {
+        return new MyIterator();
+    }
+
+    private class MyIterator implements java.util.Iterator<TaskItem>{
+        boolean available = true;
+        @Override
+        public boolean hasNext() {
+            return available;
+        }
+
+        @Override
+        public TaskItem next() {
+            available = false;
+            return TodoTask.this;
+        }
     }
 }

@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
-import com.ood.waterball.teampathy.DomainModels.Domains.TodoTask;
+import com.ood.waterball.teampathy.DomainModels.WBS.TodoTask;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.TodoListRecyclerViewFactory;

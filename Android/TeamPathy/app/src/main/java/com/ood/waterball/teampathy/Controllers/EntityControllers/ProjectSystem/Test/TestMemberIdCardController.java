@@ -3,7 +3,7 @@ package com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.DomainModels.Domains.Member;
-import com.ood.waterball.teampathy.DomainModels.Domains.TodoTask;
+import com.ood.waterball.teampathy.DomainModels.WBS.TodoTask;
 import com.ood.waterball.teampathy.DomainModels.Models.MemberIdCardModel;
 import com.ood.waterball.teampathy.R;
 
