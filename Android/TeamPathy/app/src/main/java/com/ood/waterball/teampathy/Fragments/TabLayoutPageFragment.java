@@ -22,6 +22,7 @@ import com.ood.waterball.teampathy.R;
 
 import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 
+/** project homepage, where begins to have a tablayout.**/
 public class TabLayoutPageFragment extends TemplateFragment {
     private int projectId;
     private ViewPager viewPager;
@@ -68,7 +69,7 @@ public class TabLayoutPageFragment extends TemplateFragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_on_toolbar,menu);
+        inflater.inflate(R.menu.menu_on_toolbar,menu);  //Task analysis button on the toolbar
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -100,7 +101,7 @@ public class TabLayoutPageFragment extends TemplateFragment {
         tabLayout.setupWithViewPager(viewPager);
     }
 
-     class MyFragmentPageAdapter extends FragmentPagerAdapter{
+     private class MyFragmentPageAdapter extends FragmentPagerAdapter{
 
         private final String[] projectSections;
 
