@@ -22,6 +22,14 @@ public class TaskGroup extends TaskEntity implements TaskItem {
 	}
 
 	@Override
+	public List<TaskItem> toList() {
+		List<TaskItem> taskItemList = new ArrayList<>();
+		for (TaskItem taskItem : this)
+			taskItemList.add(taskItem);
+		return taskItemList;
+	}
+
+	@Override
 	public void addTaskChild(TaskItem taskItem) {
 		taskItem.setDegree(getDegree() + 1);
 		taskList.add(taskItem);

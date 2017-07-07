@@ -5,8 +5,10 @@ import com.ood.waterball.teampathy.DomainModels.Domains.TaskEntity;
 
 import org.w3c.dom.Node;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 
 public class TodoTask extends TaskEntity implements TaskItem {
     private String description;
@@ -30,6 +32,13 @@ public class TodoTask extends TaskEntity implements TaskItem {
         this.description = description;
         startDate = new Date();
         endDate = new Date();
+    }
+
+    @Override
+    public List<TaskItem> toList() {
+        List<TaskItem> taskItemList = new ArrayList<>();
+        taskItemList.add(this);
+        return taskItemList;
     }
 
     @Override

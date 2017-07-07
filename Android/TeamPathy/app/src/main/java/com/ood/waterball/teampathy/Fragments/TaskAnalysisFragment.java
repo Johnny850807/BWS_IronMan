@@ -77,33 +77,42 @@ public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implemen
     }
 
     private TaskItem createTestTaskRoot(){
-        TaskItem root = new TaskRoot("TeamPathy");
-        TaskGroup g1 = new TaskGroup(root.getName(),"G1");
+        TaskItem teampathy = new TaskRoot("TeamPathy");
+        TaskGroup 設計 = new TaskGroup(teampathy.getName(),"設計");
+        TaskGroup 實作 = new TaskGroup(teampathy.getName(),"實作");
+        TaskGroup 文案 = new TaskGroup(teampathy.getName(),"文案");
 
-        g1.addTaskChild(new TodoTask(g1.getName(),"t11",""));
-        g1.addTaskChild(new TodoTask(g1.getName(),"t12",""));
-        g1.addTaskChild(new TodoTask(g1.getName(),"=t13=",""));
+        teampathy.addTaskChild(設計);
+        teampathy.addTaskChild(實作);
+        teampathy.addTaskChild(文案);
 
-        TaskGroup g2 = new TaskGroup(root.getName(),"=====G2===");
-        TaskGroup g21 = new TaskGroup(g2.getName(),"=G21=");
-        TaskGroup g22 = new TaskGroup(g2.getName(),"======G22======");
+        TaskGroup 系統設計 = new TaskGroup(設計.getName(),"系統分析");
+        TaskGroup 介面設計 = new TaskGroup(設計.getName(),"介面設計");
 
-        g2.addTaskChild(g21);
-        g2.addTaskChild(g22);
+        設計.addTaskChild(系統設計);
+        設計.addTaskChild(介面設計);
 
-        g21.addTaskChild(new TodoTask(g21.getName(),"=========t211==========",""));
-        g21.addTaskChild(new TodoTask(g21.getName(),"==t212==",""));
-        g22.addTaskChild(new TodoTask(g22.getName(),"===t221===",""));
+        系統設計.addTaskChild(new TodoTask(系統設計.getName(),"類別圖設計",""));
+        系統設計.addTaskChild(new TodoTask(系統設計.getName(),"ER Model 設計",""));
 
-        TaskGroup g3 = new TaskGroup(root.getName(),"=G3=");
+        TaskGroup 前端 = new TaskGroup(實作.getName(),"前端");
+        TaskGroup 後端 = new TaskGroup(實作.getName(),"後端");
 
-        g3.addTaskChild(new TaskGroup(g3.getName(),"G31"));
+        實作.addTaskChild(前端);
+        實作.addTaskChild(後端);
 
-        root.addTaskChild(g1);
-        root.addTaskChild(g2);
-        root.addTaskChild(g3);
+        前端.addTaskChild(new TodoTask(實作.getName(),"Android 開發",""));
+        前端.addTaskChild(new TodoTask(實作.getName(),"推播通知",""));
+        前端.addTaskChild(new TodoTask(實作.getName(),"XML to WBS",""));
 
-        return root;
+        後端.addTaskChild(new TodoTask(實作.getName(),"ASP.Net MVC 開發",""));
+        後端.addTaskChild(new TodoTask(實作.getName(),"Access Token 安全性設置",""));
+
+        文案.addTaskChild(new TodoTask(文案.getName(),"初審文件",""));
+        文案.addTaskChild(new TodoTask(文案.getName(),"總審文件",""));
+        文案.addTaskChild(new TodoTask(文案.getName(),"總審PPT",""));
+
+        return teampathy;
     }
 
 

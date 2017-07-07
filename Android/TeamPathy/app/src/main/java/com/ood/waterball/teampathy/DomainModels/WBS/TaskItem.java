@@ -4,8 +4,11 @@ package com.ood.waterball.teampathy.DomainModels.WBS;
 import org.w3c.dom.Node;
 
 import java.util.Date;
+import java.util.List;
 
 public interface TaskItem extends Iterable<TaskItem>{
+
+    public List<TaskItem> toList();
 
     public void addTaskChild(TaskItem taskItem);
 
