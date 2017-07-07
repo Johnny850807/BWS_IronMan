@@ -1,8 +1,12 @@
 package com.ood.waterball.teampathy.DomainModels.WBS;
 
 
+import com.ood.waterball.teampathy.Controllers.Global;
+import com.ood.waterball.teampathy.Controllers.MyUtils.DateConvertStrategy.DateConvertStrategy;
 import com.ood.waterball.teampathy.DomainModels.Domains.TaskEntity;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 import java.util.ArrayList;
@@ -31,6 +35,11 @@ public class TodoTask extends TaskEntity implements TaskItem {
         this.description = description;
         startDate = new Date();
         endDate = new Date();
+    }
+
+    public TodoTask(String ofGroupName, String name, String description, int contributePoint) {
+        this(ofGroupName,name,description);
+        this.contributePoint = contributePoint;
     }
 
     @Override
@@ -83,9 +92,15 @@ public class TodoTask extends TaskEntity implements TaskItem {
     }
 
     @Override
-    public Node toXmlNode() {
-        //todo xml to node
-        return null;
+    public Node toXmlNode(Document document) {
+        DateConvertStrategy strategy = Global.dateConvertStrategy;
+        Element element = document.createElement(XmlTranslatorImp.TASK_NAME);
+        element.setAttribute(XmlTranslatorImp.NAME_ATT,name);
+        element.setAttribute(XmlTranslatorImp.DESCRIPTION_ATT,description);
+        element.setAttribute(XmlTranslatorImp.STARTDATE_ATT,strategy.dateToTime(startDate));
+        element.setAttribute(XmlTranslatorImp.ENTDATE_ATT,strategy.dateToTime(endDate));
+        element.setAttribute(XmlTranslatorImp.CONTRIBUTION_ATT, String.valueOf(contributePoint));
+        return element;
     }
 
     @Override

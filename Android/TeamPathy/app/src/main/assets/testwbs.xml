@@ -1,94 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<TaskGroup name="TeamPathy">
-	<TaskGroup name="伺服器">
-		<TaskGroup name="工作分析網頁">
-			<Task name="Gantt Chart" Description="" StartDate="" EndDate="" Contribution=""/>
-			<Task name="Web Chart" Description="" StartDate="" EndDate="" Contribution=""/>
-		</TaskGroup>
-		
-		<TaskGroup name="Web API">
-			<Task name="CRUD" Description="" StartDate="" EndDate="" Contribution=""/>
-		</TaskGroup>
-	</TaskGroup>
-	
-	<TaskGroup name="會員系統">
-		<Task name="註冊或登入" Description="" StartDate="" EndDate="" Contribution=""/>
-		
-		<TaskGroup name="專案清單">
-			<Task name="加入現有專案" Description="" StartDate="" EndDate="" Contribution=""/>
-			<Task name="創建專案" Description="" StartDate="" EndDate="" Contribution=""/>
-		</TaskGroup>
-		
-		<Task name="動態通知" Description="" StartDate="" EndDate="" Contribution=""/>
-	</TaskGroup>
-
-	<TaskGroup name="會員系統">
-		<Task name="註冊或登入" Description="" StartDate="" EndDate="" Contribution=""/>
-
-		<TaskGroup name="專案清單">
-			<Task name="加入現有專案" Description="" StartDate="" EndDate="" Contribution=""/>
-			<Task name="創建專案" Description="" StartDate="" EndDate="" Contribution=""/>
-		</TaskGroup>
-
-		<Task name="動態通知" Description="" StartDate="" EndDate="" Contribution=""/>
-	</TaskGroup>
-
-	<TaskGroup name="會員系統">
-		<Task name="註冊或登入" Description="" StartDate="" EndDate="" Contribution=""/>
-
-		<TaskGroup name="專案清單">
-			<Task name="加入現有專案" Description="" StartDate="" EndDate="" Contribution=""/>
-			<Task name="創建專案" Description="" StartDate="" EndDate="" Contribution=""/>
-		</TaskGroup>
-
-		<Task name="動態通知" Description="" StartDate="" EndDate="" Contribution=""/>
-	</TaskGroup>
-
-	<TaskGroup name="會員系統">
-		<Task name="註冊或登入" Description="" StartDate="" EndDate="" Contribution=""/>
-
-		<TaskGroup name="專案清單">
-			<Task name="加入現有專案" Description="" StartDate="" EndDate="" Contribution=""/>
-			<Task name="創建專案" Description="" StartDate="" EndDate="" Contribution=""/>
-		</TaskGroup>
-
-		<Task name="動態通知" Description="" StartDate="" EndDate="" Contribution=""/>
-	</TaskGroup>
-
-	<TaskGroup name="會員系統">
-		<Task name="註冊或登入" Description="" StartDate="" EndDate="" Contribution=""/>
-
-		<TaskGroup name="專案清單">
-			<Task name="加入現有專案" Description="" StartDate="" EndDate="" Contribution=""/>
-			<Task name="創建專案" Description="" StartDate="" EndDate="" Contribution=""/>
-		</TaskGroup>
-
-		<Task name="動態通知" Description="" StartDate="" EndDate="" Contribution=""/>
-	</TaskGroup>
-
-	<TaskGroup name="會員系統">
-		<Task name="註冊或登入" Description="" StartDate="" EndDate="" Contribution=""/>
-
-		<TaskGroup name="專案清單">
-			<Task name="加入現有專案" Description="" StartDate="" EndDate="" Contribution=""/>
-			<Task name="創建專案" Description="" StartDate="" EndDate="" Contribution=""/>
-		</TaskGroup>
-
-		<Task name="動態通知" Description="" StartDate="" EndDate="" Contribution=""/>
-	</TaskGroup>
-
-	<TaskGroup name="會員系統123">
-		<Task name="註冊或登入" Description="" StartDate="" EndDate="" Contribution=""/>
-
-		<Task name="動態通知" Description="" StartDate="" EndDate="" Contribution=""/>
-	</TaskGroup>
-	<Task name="dasd" Description="" StartDate="" EndDate="" Contribution=""/>
-
-	<TaskGroup name="會員系統123">
-		<Task name="註冊或登入" Description="" StartDate="" EndDate="" Contribution=""/>
-		<Task name="動態通知" Description="" StartDate="" EndDate="" Contribution=""/>
-	</TaskGroup>
-
-
+<?xml version="1.0" encoding="UTF-8"?><TaskGroup name="TeamPathy">
+    <TaskGroup name="伺服器">
+        <TaskGroup name="工作分析網頁">
+            <Task name="Gantt Chart" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+            <Task name="Web Chart" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+        </TaskGroup>
+        <TaskGroup name="Web API">
+            <Task name="CRUD" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+        </TaskGroup>
+    </TaskGroup>
+    <TaskGroup name="會員系統">
+        <Task name="註冊或登入" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+        <TaskGroup name="專案清單">
+            <Task name="加入現有專案" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+            <Task name="創建專案" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+        </TaskGroup>
+        <Task name="動態通知" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+    </TaskGroup>
+    <TaskGroup name="會員系統">
+        <Task name="註冊或登入" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+        <TaskGroup name="專案清單">
+            <Task name="加入現有專案" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+            <Task name="創建專案" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+        </TaskGroup>
+        <Task name="動態通知" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+    </TaskGroup>
+    <TaskGroup name="會員系統">
+        <Task name="註冊或登入" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+        <TaskGroup name="專案清單">
+            <Task name="加入現有專案" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+            <Task name="創建專案" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+        </TaskGroup>
+        <Task name="動態通知" Description="" StartDate="2017 7 July. 22:36" EndDate="2017 7 July. 22:36" Contribution="0"/>
+    </TaskGroup>
 </TaskGroup>

@@ -2,6 +2,8 @@ package com.ood.waterball.teampathy.DomainModels.WBS;
 
 import com.ood.waterball.teampathy.DomainModels.Domains.TaskEntity;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ public class TaskGroup extends TaskEntity implements TaskItem {
 	public List<TaskItem> toList() {
 		List<TaskItem> list = new ArrayList<>();
         list.add(this);
-		for ( TaskItem taskItem : taskList )
+        for ( TaskItem taskItem : taskList )
 			list.addAll(taskItem.toList());
 		return list;
 	}
@@ -85,8 +87,12 @@ public class TaskGroup extends TaskEntity implements TaskItem {
 		throw new RuntimeException();
 	}
 
-	public Node toXmlNode() {  //todo to xml node
-		return null;
+	public Node toXmlNode(Document document) {
+        Element element = document.createElement(XmlTranslatorImp.TASK_GROUP_NAME);
+        element.setAttribute(XmlTranslatorImp.NAME_ATT,name);
+        for (TaskItem taskItem : taskList)
+            element.appendChild(taskItem.toXmlNode(document));
+		return element;
 	}
 
 	public boolean hasChild() {

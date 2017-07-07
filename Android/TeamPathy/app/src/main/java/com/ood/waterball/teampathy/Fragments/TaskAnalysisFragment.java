@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.Task;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.DomainModels.WBS.TaskGroup;
 import com.ood.waterball.teampathy.DomainModels.WBS.TaskItem;
@@ -52,7 +51,7 @@ public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implemen
             projectId = arguBundle.getInt("projectId");
             wbsXml = Global.getOfficeController().getTaskAnalysis(projectId);
             taskRoot = xmlTranslator.xmlToTasks(wbsXml);
-            Log(wbsXml+"\n"+taskRoot.toString());
+            Log(xmlTranslator.taskToXml(taskRoot));
         } catch (Exception e) {
             e.printStackTrace();
         }

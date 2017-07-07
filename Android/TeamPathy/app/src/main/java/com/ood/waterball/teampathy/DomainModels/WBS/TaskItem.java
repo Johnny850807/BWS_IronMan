@@ -1,6 +1,7 @@
 package com.ood.waterball.teampathy.DomainModels.WBS;
 
 
+import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
 import java.util.Date;
@@ -40,7 +41,7 @@ public interface TaskItem extends Iterable<TaskItem>{
 
     public void setContributePoint(int contributePoint);
 
-    public abstract Node toXmlNode();
+    public abstract Node toXmlNode(Document document);
 
     public abstract boolean hasChild();
 
