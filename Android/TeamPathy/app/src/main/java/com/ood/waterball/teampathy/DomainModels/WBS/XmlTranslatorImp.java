@@ -20,6 +20,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
+
 public class XmlTranslatorImp extends XmlTranslator {
     private final String TASK_GROUP_NAME = "TaskGroup";
     private final String TASK_NAME = "Task";
@@ -59,11 +61,16 @@ public class XmlTranslatorImp extends XmlTranslator {
         {
             taskItem = new TaskGroup(ofGroup,name);
             NodeList nodeList = element.getChildNodes();
+            Log(name + ":" + nodeList.getLength() );
             for ( int i = 0 ; i < nodeList.getLength() ; i ++ )
             {
                 Node node = nodeList.item(i);
                 if ( node.getNodeType() == Node.ELEMENT_NODE )
+                {
+                    Log(((Element)node).getAttribute(NAME_ATT));
                     taskItem.addTaskChild(createTaskItem((Element) node));
+                }
+
             }
         }
         else
