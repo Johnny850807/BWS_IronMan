@@ -6,12 +6,15 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Task;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.DomainModels.WBS.TaskGroup;
 import com.ood.waterball.teampathy.DomainModels.WBS.TaskItem;
 import com.ood.waterball.teampathy.DomainModels.WBS.TaskRoot;
 import com.ood.waterball.teampathy.DomainModels.WBS.TodoTask;
 import com.ood.waterball.teampathy.DomainModels.WBS.WbsVisitor;
+import com.ood.waterball.teampathy.DomainModels.WBS.XmlTranslator;
+import com.ood.waterball.teampathy.DomainModels.WBS.XmlTranslatorImp;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncTemplateFragment;
 import com.ood.waterball.teampathy.R;
 
@@ -25,6 +28,8 @@ import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
 public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implements WbsVisitor {
     private int projectId;
     private FlowLayout taskPanelView;
+    private XmlTranslator xmlTranslator = new XmlTranslatorImp();
+    private TaskItem taskRoot;
     private String wbsXml;
     private TaskItemFactory taskItemFactory;
 
@@ -46,7 +51,8 @@ public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implemen
         try {
             projectId = arguBundle.getInt("projectId");
             wbsXml = Global.getOfficeController().getTaskAnalysis(projectId);
-            //todo convert xml to todo Nodes structure
+            taskRoot = xmlTranslator.xmlToTasks(wbsXml);
+            Log(wbsXml+"\n"+taskRoot.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -66,7 +72,6 @@ public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implemen
 
     private void test() {
         try {
-            TaskItem taskRoot = createTestTaskRoot();
             for (TaskItem t : taskRoot)
                 taskPanelView.addView(taskItemFactory.createItemView(t));
 

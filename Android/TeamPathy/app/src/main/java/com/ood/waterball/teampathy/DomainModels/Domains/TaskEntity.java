@@ -3,6 +3,8 @@ package com.ood.waterball.teampathy.DomainModels.Domains;
 import com.ood.waterball.teampathy.DomainModels.Entity;
 import com.ood.waterball.teampathy.DomainModels.WBS.TaskItem;
 
+import java.util.Iterator;
+
 
 public abstract class TaskEntity extends Entity implements TaskItem{
     protected int degree = 0;
@@ -17,6 +19,7 @@ public abstract class TaskEntity extends Entity implements TaskItem{
         this.name = name;
         this.id = id;
     }
+
     public TaskEntity(int id,String ofGroupName,String name) {
         this.name = name;
         this.id = id;
@@ -60,5 +63,10 @@ public abstract class TaskEntity extends Entity implements TaskItem{
         for (TaskItem taskItem : this)
             stringBuilder.append(" -> ").append(taskItem.getName()).append("-").append(taskItem.getDegree());
         return stringBuilder.toString();
+    }
+
+    @Override
+    public Iterator<TaskItem> iterator() {
+        return toList().iterator();
     }
 }

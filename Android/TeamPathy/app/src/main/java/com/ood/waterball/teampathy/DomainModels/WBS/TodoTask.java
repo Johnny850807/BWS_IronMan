@@ -7,7 +7,6 @@ import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 public class TodoTask extends TaskEntity implements TaskItem {
@@ -104,22 +103,4 @@ public class TodoTask extends TaskEntity implements TaskItem {
         visitor.taskViewOnLongClick(this);
     }
 
-    @Override
-    public Iterator<TaskItem> iterator() {
-        return new MyIterator();
-    }
-
-    private class MyIterator implements java.util.Iterator<TaskItem>{
-        boolean available = true;
-        @Override
-        public boolean hasNext() {
-            return available;
-        }
-
-        @Override
-        public TaskItem next() {
-            available = false;
-            return TodoTask.this;
-        }
-    }
 }

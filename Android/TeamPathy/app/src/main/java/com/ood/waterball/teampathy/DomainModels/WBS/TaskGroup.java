@@ -6,7 +6,6 @@ import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 
@@ -23,10 +22,11 @@ public class TaskGroup extends TaskEntity implements TaskItem {
 
 	@Override
 	public List<TaskItem> toList() {
-		List<TaskItem> taskItemList = new ArrayList<>();
-		for (TaskItem taskItem : this)
-			taskItemList.add(taskItem);
-		return taskItemList;
+		List<TaskItem> list = new ArrayList<>();
+        list.add(this);
+		for ( TaskItem taskItem : taskList )
+			list.addAll(taskItem.toList());
+		return list;
 	}
 
 	@Override
@@ -99,51 +99,6 @@ public class TaskGroup extends TaskEntity implements TaskItem {
 
 	public void onLongClick(WbsVisitor visitor) {
 		visitor.taskViewOnLongClick(this);
-	}
-
-	@Override
-	public Iterator<TaskItem> iterator() {
-		return new MyIterator();
-	}
-
-	private class MyIterator implements Iterator<TaskItem>{
-		boolean visited = false;
-		int index = 0;
-		List<Iterator<TaskItem>> iteratorList = new ArrayList<>();
-
-		@Override
-		public boolean hasNext() {
-			return !visited || index < taskList.size() - 1;  // if index less than the size means still have child tasks not visited.
-		}
-
-		@Override
-		public TaskItem next() {
-			if (!visited){
-				visited = true;  //return self node if not visited
-				return TaskGroup.this;
-			}
-
-			Iterator<TaskItem> iterator = findCurrentIterator();
-			if (!iterator.hasNext())
-			{
-				index ++;
-				iterator = findCurrentIterator();
-			}
-			return iterator.next();
-		}
-
-		private Iterator<TaskItem> findCurrentIterator(){
-			Iterator<TaskItem> iterator;
-			if (index == iteratorList.size())
-			{
-				iterator = taskList.get(index).iterator();
-				iteratorList.add(iterator);
-			}
-			else
-				iterator = iteratorList.get(index);
-			return iterator;
-
-		}
 	}
 
 }
