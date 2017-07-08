@@ -1,15 +1,20 @@
 package com.ood.waterball.teampathy.Fragments;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.DomainModels.WBS.TaskGroup;
 import com.ood.waterball.teampathy.DomainModels.WBS.TaskItem;
-import com.ood.waterball.teampathy.DomainModels.WBS.TaskRoot;
 import com.ood.waterball.teampathy.DomainModels.WBS.TodoTask;
 import com.ood.waterball.teampathy.DomainModels.WBS.WbsVisitor;
 import com.ood.waterball.teampathy.DomainModels.WBS.XmlTranslator;
@@ -21,16 +26,17 @@ import org.apmem.tools.layouts.FlowLayout;
 
 import java.util.List;
 
-import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
-
 
 public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implements WbsVisitor {
     private int projectId;
-    private FlowLayout taskPanelView;
     private XmlTranslator xmlTranslator = new XmlTranslatorImp();
     private TaskItem taskRoot;
     private String wbsXml;
     private TaskItemFactory taskItemFactory;
+    private boolean wbs_updated = false;
+
+    private FlowLayout taskPanelView;
+    private Button finishBtn;
 
     public static TaskAnalysisFragment getInstance(int projectId){
         TaskAnalysisFragment fragment = new TaskAnalysisFragment();
@@ -46,12 +52,17 @@ public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implemen
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     protected List<String> onFetchData(@Nullable Bundle arguBundle) {
         try {
             projectId = arguBundle.getInt("projectId");
             wbsXml = Global.getOfficeController().getTaskAnalysis(projectId);
             taskRoot = xmlTranslator.xmlToTasks(wbsXml);
-            Log(xmlTranslator.taskToXml(taskRoot));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -59,71 +70,94 @@ public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implemen
     }
 
     @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.go_see_charts_menu_on_toolbar,menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if ( item.getItemId() == R.id.watch_charts_menu )
+        {
+            if (wbs_updated)
+                createDialogForSureToUpdateTaskAnaylsis(true);
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onFindViews(View parentView, List<String> entityList) {
         taskPanelView = (FlowLayout) parentView.findViewById(R.id.panel_flowlayout_taskAnalysis);
+        finishBtn = (Button) parentView.findViewById(R.id.save_btn_taskAnalysis);
     }
 
     @Override
     protected void onControlViews() {
         taskItemFactory = new TaskItemFactory(getContext(),this,taskPanelView);
-        test();
+        createAllTaskItemViews();
+        setFinishBtnListener();
     }
 
-    private void test() {
-        try {
-            for (TaskItem t : taskRoot)
-                taskPanelView.addView(taskItemFactory.createItemView(t));
-
-            Log(taskRoot.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    private void createAllTaskItemViews() {
+        for (TaskItem t : taskRoot)
+            taskPanelView.addView(taskItemFactory.createItemView(t));
     }
 
-    private TaskItem createTestTaskRoot(){
-        TaskItem teampathy = new TaskRoot("TeamPathy");
-        TaskGroup 設計 = new TaskGroup(teampathy.getName(),"設計");
-        TaskGroup 實作 = new TaskGroup(teampathy.getName(),"實作");
-        TaskGroup 文案 = new TaskGroup(teampathy.getName(),"文案");
+    private void setFinishBtnListener(){
+        finishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createDialogForSureToUpdateTaskAnaylsis(false);
+            }
+        });
+    }
 
-        teampathy.addTaskChild(設計);
-        teampathy.addTaskChild(實作);
-        teampathy.addTaskChild(文案);
-
-        TaskGroup 系統設計 = new TaskGroup(設計.getName(),"系統分析");
-        TaskGroup 介面設計 = new TaskGroup(設計.getName(),"介面設計");
-
-        設計.addTaskChild(系統設計);
-        設計.addTaskChild(介面設計);
-
-        系統設計.addTaskChild(new TodoTask(系統設計.getName(),"類別圖設計",""));
-        系統設計.addTaskChild(new TodoTask(系統設計.getName(),"ER Model 設計",""));
-
-        TaskGroup 前端 = new TaskGroup(實作.getName(),"前端");
-        TaskGroup 後端 = new TaskGroup(實作.getName(),"後端");
-
-        實作.addTaskChild(前端);
-        實作.addTaskChild(後端);
-
-        前端.addTaskChild(new TodoTask(實作.getName(),"Android 開發",""));
-        前端.addTaskChild(new TodoTask(實作.getName(),"推播通知",""));
-        前端.addTaskChild(new TodoTask(實作.getName(),"XML to WBS",""));
-
-        後端.addTaskChild(new TodoTask(實作.getName(),"ASP.Net MVC 開發",""));
-        後端.addTaskChild(new TodoTask(實作.getName(),"Access Token 安全性設置",""));
-
-        文案.addTaskChild(new TodoTask(文案.getName(),"初審文件",""));
-        文案.addTaskChild(new TodoTask(文案.getName(),"總審文件",""));
-        文案.addTaskChild(new TodoTask(文案.getName(),"總審PPT",""));
-
-        return teampathy;
+    private void createDialogForSureToUpdateTaskAnaylsis(final boolean goWatchChartsAfterSave){
+        new AlertDialog.Builder(getContext())
+                .setTitle(getString(R.string.update))
+                .setMessage(R.string.sure_to_update_task_analysis)
+                .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        updateTaskAnalysis();
+                        if (goWatchChartsAfterSave)
+                        //todo 前往 觀看工作分析圖 頁面
+                        ;
+                    }
+                })
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {}
+                })
+                .show();
     }
 
 
     @Override
-    public void taskViewOnClick(TaskGroup TaskGoup) {
+    public void taskViewOnClick(TaskGroup TaskGroup) {
         //todo show the options for choosing to add a task or to add a taskgroup
 
+    }
+
+    public void appendChildToGroup(TaskItem taskItem, TaskItem taskGroup) throws Exception {
+        taskGroup.addTaskChild(taskItem);
+        wbsXml = xmlTranslator.taskToXml(taskRoot);
+        taskPanelView.removeAllViews();
+        createAllTaskItemViews();
+    }
+
+    public void updateTaskAnalysis(){
+        new Thread(){
+            @Override
+            public void run() {
+                try {
+                    Global.getOfficeController().updateTaskAnalysis(wbsXml, projectId);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
     }
 
     @Override
@@ -133,12 +167,12 @@ public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implemen
     }
 
     @Override
-    public void taskViewOnLongClick(TaskGroup TaskGoup) {
-        //todo show a dialog for editting the taskgroup
+    public void taskViewOnLongClick(TaskGroup TaskGroup) {
+        //todo show a dialog for editting or deleting the taskgroup
     }
 
     @Override
     public void taskViewOnLongClick(TodoTask task) {
-        //todo show a dialog for editting the task item
+        //todo show a dialog for editting or deleting the task item
     }
 }

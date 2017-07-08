@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="實作"
-            android:textSize="13sp"
+            android:textSize="15sp"
             android:id="@+id/name_taskItem"
             android:textColor="@color/app_black_word_color"
             android:layout_gravity="center"/>
@@ -35,10 +35,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:id="@+id/ofGroup_taskItem"
             android:text="TeamPathy"
             android:textColor="@color/app_black_word_color"/>
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginRight="13dp"
+        android:background="@drawable/circle"
+        android:id="@+id/degree_img_taskItem"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="top"/>
 
 </LinearLayout>

@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.DomainModels.Domains.Project;
 import com.ood.waterball.teampathy.DomainModels.ProjectSection;
-import com.ood.waterball.teampathy.DomainModels.WBS.WbsVisitor;
 import com.ood.waterball.teampathy.Fragments.Architecture.TemplateFragment;
 import com.ood.waterball.teampathy.R;
 
@@ -70,7 +69,7 @@ public class TabLayoutPageFragment extends TemplateFragment{
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_on_toolbar,menu);  //Task analysis button on the toolbar
+        inflater.inflate(R.menu.task_analysis_menu_on_toolbar,menu);  //Task analysis button on the toolbar
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -78,7 +77,7 @@ public class TabLayoutPageFragment extends TemplateFragment{
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId())
         {
-            case R.id.menu_task_analysis:
+            case R.id.watch_charts_menu:
                 getParentActivity().changePage(TaskAnalysisFragment.getInstance(projectId));
                 break;
         }
