@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="UTF-16"?><head><script type="text/javascript" src="date.js"></script><script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><script type="text/javascript">
+                google.charts.load('current', {'packages':['gantt']});
+                google.charts.setOnLoadCallback(drawChart);
+                
+                function daysToMilliseconds(days) {
+                    return days * 24 * 60 * 60 * 1000;
+                }
+
+                function getDiffMillisecondsFromTwoDate(date1,date2) {
+                    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+                    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                    return daysToMilliseconds(diffDays);
+                }
+
+                function drawChart() {
+                    var date_pattern = 'yyyy d NNN.';
+                    var data = new google.visualization.DataTable();
+                    data.addColumn('string', 'Task ID');
+                    data.addColumn('string', 'Task Name');
+                    data.addColumn('string', 'Resource');
+                    data.addColumn('date', 'Start Date');
+                    data.addColumn('date', 'End Date');
+                    data.addColumn('number', 'Duration');
+                    data.addColumn('number', 'Percent Complete');
+                    data.addColumn('string', 'Dependencies');
+
+                    var rows = [];
+                    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', 'Gantt Chart', '工作分析網頁',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', 'Web Chart', '工作分析網頁',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Aug.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', 'CRUD', 'Web API',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Aug.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', '註冊或登入', '會員系統',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Aug.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', '加入現有專案', '專案清單',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Aug.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', '創建專案', '專案清單',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Sep.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', '動態通知', '會員系統',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Sep.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', '註冊或登入', '會員系統',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Sep.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', '加入現有專案', '專案清單',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Sep.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', '創建專案', '專案清單',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Oct.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', '動態通知', '會員系統',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Oct.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', '註冊或登入', '會員系統',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Oct.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', '加入現有專案', '專案清單',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Oct.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', '創建專案', '專案清單',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+        var startDate = getDateFromFormat('2017 7 Jul.',date_pattern);
+        var endDate = getDateFromFormat('2017 7 Dec.',date_pattern);
+        var month = startDate.getUTCMonth() + 1; //months from 1-12
+                    var day = startDate.getUTCDate();
+                    var year = startDate.getUTCFullYear();
+        rows.push(['', '動態通知', '會員系統',
+                          startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, null]);
+    
+                    
+                    data.addRows(rows);
+
+                    var options = {
+                        height:  rows.length * 44
+                    };
+
+                    var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+                    chart.draw(data, options);
+                }
+            </script></head><body><div id="chart_div"></div></body>

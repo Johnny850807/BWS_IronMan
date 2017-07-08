@@ -26,6 +26,8 @@ import org.apmem.tools.layouts.FlowLayout;
 
 import java.util.List;
 
+import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
+
 
 public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implements WbsVisitor {
     private int projectId;
@@ -63,6 +65,7 @@ public class TaskAnalysisFragment extends AsyncTemplateFragment<String> implemen
             projectId = arguBundle.getInt("projectId");
             wbsXml = Global.getOfficeController().getTaskAnalysis(projectId);
             taskRoot = xmlTranslator.xmlToTasks(wbsXml);
+            Log(wbsXml);
         } catch (Exception e) {
             e.printStackTrace();
         }

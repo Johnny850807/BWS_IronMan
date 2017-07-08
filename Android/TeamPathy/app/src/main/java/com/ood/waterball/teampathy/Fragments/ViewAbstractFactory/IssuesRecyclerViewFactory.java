@@ -54,7 +54,7 @@ public class IssuesRecyclerViewFactory extends RecyclerViewAbstractFactory<Issue
             Issue issue = entityList.get(position);
             holder.titleTxt.setText(issue.getTitle());
             holder.typeTxt.setText(issue.getType().getName());
-            holder.dateTxt.setText(Global.dateConvertStrategy.dateToTime(entityList.get(position).getPostDate()));
+            holder.dateTxt.setText(Global.dateConvertStrategy.dateToTime(entityList.get(position).getPostDate(),true));
             holder.authorTxt.setText(issue.getPoster().getName());
         }
 

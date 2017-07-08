@@ -22,6 +22,6 @@ public class PostDateEntity extends Entity {
     }
 
     public String getDateString(){
-        return Global.dateConvertStrategy.dateToTime(postDate);
+        return Global.dateConvertStrategy.dateToTime(postDate,true);
     }
 }

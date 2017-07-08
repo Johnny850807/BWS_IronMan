@@ -1,0 +1,18 @@
+<head>
+    <script type="text/javascript" src="date.js"></script>
+    <script type="text/javascript">
+        var date = getDateFromFormat("2017 7 Jul.", "yyyy d NNN.");
+        var date2 = getDateFromFormat("2017 7 Aug.", "yyyy d NNN.");
+        var date;
+        var date;
+
+        var month = date.getUTCMonth() + 1; //months from 1-12
+        var day = date.getUTCDate();
+        var year = date.getUTCFullYear();
+        alert(year + "/" + month + "/" + day);
+    </script>
+</head>
+
+<body>
+    <div id="chart_div"></div>
+</body>

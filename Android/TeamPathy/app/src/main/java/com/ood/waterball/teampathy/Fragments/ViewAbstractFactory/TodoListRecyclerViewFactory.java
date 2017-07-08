@@ -59,8 +59,8 @@ public class TodoListRecyclerViewFactory extends RecyclerViewAbstractFactory<Tod
             TodoTask todoTask = entityList.get(position);
             holder.nameTxt.setText(todoTask.getName());
             DateConvertStrategy dateConvertStrategy = Global.dateConvertStrategy;
-            String startDate = dateConvertStrategy.dateToTime(todoTask.getStartDate());
-            String endDate = dateConvertStrategy.dateToTime(todoTask.getEndDate());
+            String startDate = dateConvertStrategy.dateToTime(todoTask.getStartDate(),false);
+            String endDate = dateConvertStrategy.dateToTime(todoTask.getEndDate(),false);
 
             holder.startdateTxt.setText(startDate);
             holder.enddateTxt.setText(endDate);

@@ -54,7 +54,7 @@ public class IssueCommentsRecyclerViewFactory extends RecyclerViewAbstractFactor
             holder.authorTxt.setText(issueComment.getPoster().getName());
             holder.commentTxt.setText(issueComment.getContent());
             holder.dateTxt.setText(Global.dateConvertStrategy.
-                    dateToTime(issueComment.getPostDate()));
+                    dateToTime(issueComment.getPostDate(),true));
         }
 
         @Override

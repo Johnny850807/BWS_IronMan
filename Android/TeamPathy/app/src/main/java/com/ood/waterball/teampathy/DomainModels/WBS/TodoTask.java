@@ -97,8 +97,8 @@ public class TodoTask extends TaskEntity implements TaskItem {
         Element element = document.createElement(XmlTranslatorImp.TASK_NAME);
         element.setAttribute(XmlTranslatorImp.NAME_ATT,name);
         element.setAttribute(XmlTranslatorImp.DESCRIPTION_ATT,description);
-        element.setAttribute(XmlTranslatorImp.STARTDATE_ATT,strategy.dateToTime(startDate));
-        element.setAttribute(XmlTranslatorImp.ENTDATE_ATT,strategy.dateToTime(endDate));
+        element.setAttribute(XmlTranslatorImp.STARTDATE_ATT,strategy.dateToTime(startDate,false));
+        element.setAttribute(XmlTranslatorImp.ENTDATE_ATT,strategy.dateToTime(endDate,false));
         element.setAttribute(XmlTranslatorImp.CONTRIBUTION_ATT, String.valueOf(contributePoint));
         return element;
     }
