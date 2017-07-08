@@ -33,7 +33,7 @@ public class OfficeFragment extends AsyncQueryRecyclerFragment<MemberIdCardModel
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.fragment_office_page;
+        return R.layout.fragment_member_status_page;
     }
 
     @Override

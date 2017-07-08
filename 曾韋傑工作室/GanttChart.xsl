@@ -5,7 +5,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 <xsl:template match="/">
         <head>
-            <script type="text/javascript" src="date.js"></script>
+            <script type="text/javascript" src="http://yourjavascript.com/8514521737/date.js"></script>
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <script type="text/javascript">
                 google.charts.load('current', {'packages':['gantt']});
@@ -39,7 +39,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     data.addRows(rows);
 
                     var options = {
-                        height:  rows.length * 60
+                        height:  rows.length * 60,
+                        gantt: {
+                            innerGridHorizLine: {
+                                strokeWidth: 2
+                            },
+                        },
+                        backgroundColor: {fill: '#F8F9FA'}
                     };
 
                     var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
@@ -48,7 +54,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 }
             </script>
         </head>
-        <body>
+        <body style="background-image: url('http://i.imgur.com/StW51j2.png')">
             <div id="chart_div"></div>
         </body>
     </xsl:template>
@@ -56,7 +62,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template match="Task">
         var startDate = getDateFromFormat('<xsl:value-of select="@StartDate" />',date_pattern);
         var endDate = getDateFromFormat('<xsl:value-of select="@EndDate" />',date_pattern);
-         var dependency = '<xsl:value-of select="@Dependency" />'
+         var dependency = '<xsl:value-of select="@Dependency" />';
         if (dependency.length == 0)
             dependency = null;
         rows.push(['<xsl:value-of select="@name" />', '<xsl:value-of select="@name" />', '<xsl:value-of select="parent::*/@name" />',

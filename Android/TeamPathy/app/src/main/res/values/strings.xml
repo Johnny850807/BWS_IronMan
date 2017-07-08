@@ -105,8 +105,12 @@
     <string name="watch_charts"><u>觀看工作分析圖 →</u></string>
     <string name="update">更新</string>
     <string name="sure_to_update_task_analysis">確定要更新工作結構圖嗎？</string>
+    <string name="page_is_not_ready">頁面尚未準備完全。</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="task_analysis_sections">
+        <item>控制台</item>>
+        <item>工作結構圖</item>
+        <item>甘特圖</item>
+    </string-array>
 
 </resources>

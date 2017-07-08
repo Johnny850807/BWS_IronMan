@@ -25,7 +25,7 @@ public class OfficeRecyclerViewFactory extends RecyclerViewAbstractFactory<Membe
 
     @Override
     protected RecyclerView createRecyclerView() {
-        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.member_recycler_card_office);
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.member_recycler_card_memberstatus);
         recyclerView.setNestedScrollingEnabled(false);
         return recyclerView;
     }
