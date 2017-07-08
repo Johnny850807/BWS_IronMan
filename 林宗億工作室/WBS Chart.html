@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages:["orgchart"]});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Title');
+        data.addColumn('string', 'Manager');
+        data.addColumn('string', 'Description');
+
+        // For each orgchart box, provide the name, manager, and tooltip to show.
+        data.addRows([
+          ['TeamPathy', '', '專研'],
+          ['實作', 'TeamPathy', ''],
+          ['設計', 'TeamPathy', ''],
+          ['呈現', 'TeamPathy', ''],
+          ['前端', '實作', ''],
+          ['後端', '實作', ''],
+          ['系統ER圖設計', '設計', ''],
+          ['文案', '設計', ''],
+          ['介面設計', '設計', ''],
+          ['後端API設計', '設計', ''],
+          ['問卷調查', '設計', ''],
+          ['總審呈現設計', '呈現', ''],
+          ['總審呈現講稿', '呈現', ''],
+          ['總審呈現練習', '呈現', ''],
+          ['手機介面', '前端', ''],
+          ['模組', '前端', ''],
+          ['資料庫建置', '後端', ''],
+          ['Web APIs', '後端', ''],
+          ['Gantt chart', '後端', ''],
+          ['WBS chart', '後端', ''],
+          ['初審文件', '文案', ''],
+          ['總審文件', '文案', ''],
+          ['總審簡報', '文案', ''],
+          ['會員系統', '手機介面', ''],
+          ['專案系統', '手機介面', ''],
+          ['推播系統', '模組', ''],
+          ['連接後端API', '模組', ''],
+          ['Imgur API', '模組', ''],
+          ['XML系統', '模組', ''],
+          ['Domains Classes', '模組', ''],
+          ['討論區', '專案系統', ''],
+          ['代辦清單', '專案系統', ''],
+          ['辦公室葉面', '專案系統', ''],
+          ['工作分析室', '專案系統', ''],
+          ['職位調整頁面', '專案系統', ''],
+          ['團隊動態牆', '專案系統', ''],
+          ['成員清單牆', '專案系統', ''],
+
+        ]);
+
+        // Create the chart.
+        var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+        // Draw the chart, setting the allowHtml option to true for the tooltips.
+        chart.draw(data, {allowHtml:true});
+      }
+   </script>
+    </head>
+  <body>
+    <div id="chart_div"></div>
+  </body>
+</html>
