@@ -1,4 +1,4 @@
-package com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.ProjectMemberController;
+package com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.OfficeController;
 
 
 import com.ood.waterball.teampathy.DomainModels.Domains.Member;
