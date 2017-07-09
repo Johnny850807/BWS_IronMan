@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.ood.waterball.teampathy.Controllers.Global;
@@ -27,6 +28,9 @@ public class BaseActivity extends AppCompatActivity implements ParentActivityCal
     private View navlayoutView;
     private ImageView userHeadImgNav;
     private TextView userNameTxtNav;
+
+    private ProgressBar progressBar;
+    private int progressBarShowingRequestAmount = 0; // keep showing progress bar if amount greater than 0
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +50,16 @@ public class BaseActivity extends AppCompatActivity implements ParentActivityCal
         navlayoutView = navigationView.getHeaderView(0);
         userHeadImgNav = (ImageView) navlayoutView.findViewById(R.id.head_pic_nav);
         userNameTxtNav = (TextView) navlayoutView.findViewById(R.id.name_txt_nav);
+        progressBar = (ProgressBar) findViewById(R.id.progress_spinner_base);
     }
 
-    private void setupDrawerlayout(){
+    private void setupDrawerlayout() {
         setupNavView();
         setupActionBarDrawerToggle();
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override public boolean onNavigationItemSelected(@NonNull  MenuItem menuItem) {
-                switch(menuItem.getItemId()){
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
                     case R.id.menu_homepage_nav:
                         changePage(new MemberHomePageFragment());
                         break;
@@ -72,12 +78,12 @@ public class BaseActivity extends AppCompatActivity implements ParentActivityCal
 
     private void setupNavView() {
         Member member = Global.getMemberController().getActiveMember();
-        GlideHelper.loadToCircularImage(BaseActivity.this,userHeadImgNav,member.getImageUrl());
+        GlideHelper.loadToCircularImage(BaseActivity.this, userHeadImgNav, member.getImageUrl());
         userNameTxtNav.setText(member.getName());
     }
 
     private void setupActionBarDrawerToggle() {
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle( this, drawerLayout, toolbar, R.string.openDrawer , R.string.closeDrawer){
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer) {
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
@@ -93,8 +99,8 @@ public class BaseActivity extends AppCompatActivity implements ParentActivityCal
         actionBarDrawerToggle.syncState();
     }
 
-    private void onPageControllerInitiate(){
-        pageController = new PageController(this,getSupportFragmentManager(),R.id.base_interface_fragment_content);
+    private void onPageControllerInitiate() {
+        pageController = new PageController(this, getSupportFragmentManager(), R.id.base_interface_fragment_content);
         pageController.changePage(new MemberHomePageFragment());
     }
 
@@ -102,6 +108,28 @@ public class BaseActivity extends AppCompatActivity implements ParentActivityCal
     @Override
     public void changePage(Fragment fragment) {
         pageController.changePage(fragment);
+    }
+
+    @Override
+    public void popPage() {
+        getFragmentManager().popBackStack();
+    }
+
+    @Override
+    public void showProgressBar() {
+        if (progressBar != null && progressBarShowingRequestAmount++ == 0)
+            progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgressBar() {
+        if (progressBar != null && --progressBarShowingRequestAmount == 0)
+            progressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public boolean isProgressBarShowing() {
+        return progressBar.getVisibility() == View.VISIBLE;
     }
 
 }

@@ -13,6 +13,8 @@ import com.ood.waterball.teampathy.R;
 
 import java.util.List;
 
+import static com.ood.waterball.teampathy.Controllers.MyLog.Log;
+
 
 public class IssueCommentsRecyclerViewFactory extends RecyclerViewAbstractFactory<IssueComment> {
 
@@ -59,6 +61,7 @@ public class IssueCommentsRecyclerViewFactory extends RecyclerViewAbstractFactor
 
         @Override
         public int getItemCount() {
+            Log(String.valueOf(entityList.size()));
             return entityList.size();
         }
 
@@ -67,7 +70,7 @@ public class IssueCommentsRecyclerViewFactory extends RecyclerViewAbstractFactor
             private TextView authorTxt;
             private TextView dateTxt;
 
-            public ViewHolder(View itemView) {
+            ViewHolder(View itemView) {
                 super(itemView);
                 commentTxt = (TextView) itemView.findViewById(R.id.comment_text_issue_details_item);
                 authorTxt = (TextView) itemView.findViewById(R.id.author_text_issue_details_item);

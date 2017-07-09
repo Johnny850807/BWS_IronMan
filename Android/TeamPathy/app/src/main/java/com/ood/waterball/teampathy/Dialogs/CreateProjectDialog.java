@@ -99,10 +99,12 @@ public class CreateProjectDialog extends MyConfirmCancelDialog{
     }
 
     private void addProjectAndEnter(final Project project) {
-        fragment.CREATE(project, new EntityController.OnFinishListener() {
+        fragment.getProgressDialog().show();
+        fragment.CREATE(project, false, new EntityController.OnFinishListener() {
             @Override
             public void onFinish() {
                 dismiss();
+                fragment.getProgressDialog().dismiss();
                 ((BaseActivity)fragment.getContext()).changePage( TabLayoutPageFragment.getInstance(project.getId()) );
             }
         });

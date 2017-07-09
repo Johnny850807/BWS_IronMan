@@ -32,7 +32,6 @@ public class WbsEditPanelFragment extends AsyncTemplateFragment<String> implemen
     private TaskItem taskRoot;
     private String wbsXml;
     private TaskItemFactory taskItemFactory;
-    private boolean wbs_updated = false;
 
     private FlowLayout taskPanelView;
 
@@ -90,6 +89,7 @@ public class WbsEditPanelFragment extends AsyncTemplateFragment<String> implemen
     protected void onControlViews() {
         taskItemFactory = new TaskItemFactory(getContext(),this,taskPanelView);
         createAllTaskItemViews();
+
     }
 
     private void createAllTaskItemViews() {
@@ -100,6 +100,7 @@ public class WbsEditPanelFragment extends AsyncTemplateFragment<String> implemen
 
     private void createDialogForSureToUpdateTaskAnaylsis(final boolean goWatchChartsAfterSave){
         new AlertDialog.Builder(getContext())
+                .setIcon(R.drawable.logo_icon)
                 .setTitle(getString(R.string.update))
                 .setMessage(R.string.sure_to_update_task_analysis)
                 .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {

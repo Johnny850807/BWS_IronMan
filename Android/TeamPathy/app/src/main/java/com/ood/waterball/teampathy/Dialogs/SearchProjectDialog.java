@@ -64,7 +64,7 @@ public class SearchProjectDialog extends Dialog {
         dialog.setMessage(getContext().getString(R.string.searching_project));
 
         dialog.show();
-        AsyncTaskController.runAsyncTask(new AsyncTask<Void, Void, Void>() {
+        AsyncTaskController.runAsyncTask(fragment,new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
                 try {

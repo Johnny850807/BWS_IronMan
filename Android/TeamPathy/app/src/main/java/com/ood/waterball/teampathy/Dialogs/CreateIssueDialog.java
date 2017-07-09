@@ -87,7 +87,7 @@ public class CreateIssueDialog extends MyConfirmCancelDialog {
             }
         };
 
-        AsyncTaskController.runAsyncTask(asyncTask);
+        AsyncTaskController.runAsyncTask(fragment,asyncTask);
     }
 
     @NonNull

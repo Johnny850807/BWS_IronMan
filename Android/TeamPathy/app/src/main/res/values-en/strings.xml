@@ -95,5 +95,23 @@
     <string name="join">Join</string>
     <string name="already_in_project">Joined</string>
     <string name="searching_project">Searching projects...</string>
+    <string name="task_analysis">Task Analysis</string>
+    <string name="save">Save</string>
+    <string name="please_input_todotask_title">Task name</string>
+    <string name="start_date">Start date</string>
+    <string name="end_date">End date</string>
+    <string name="add">Create</string>
+    <string name="save_charts">Save Analysis</string>
+    <string name="update">Update</string>
+    <string name="sure_to_update_task_analysis">Are you sure to update the task analysis.</string>
+    <string name="page_is_not_ready">The page is not already.</string>
+    <string name="leave">Leave</string>
+    <string name="loading">Loading</string>
+    <string name="please_wait">Please wait…</string>
 
+    <string-array name="task_analysis_sections">
+        <item>Console</item>>
+        <item>WBS</item>
+        <item>Gantt</item>
+    </string-array>
 </resources>

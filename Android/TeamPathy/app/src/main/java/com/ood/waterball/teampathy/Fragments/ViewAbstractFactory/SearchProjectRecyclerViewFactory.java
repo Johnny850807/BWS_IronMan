@@ -151,7 +151,7 @@ public class SearchProjectRecyclerViewFactory extends RecyclerViewAbstractFactor
                     dialog.dismiss();
                 }
             };
-            AsyncTaskController.runAsyncTask(asyncTask);
+            AsyncTaskController.runAsyncTask(fragment,asyncTask);
         }
     }
 

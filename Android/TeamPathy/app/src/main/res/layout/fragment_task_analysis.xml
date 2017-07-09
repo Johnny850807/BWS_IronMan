@@ -9,6 +9,7 @@
     <android.support.design.widget.TabLayout
         android:id="@+id/tablayout_task_analysis"
         android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
         android:layout_height="@dimen/tab_height">
     </android.support.design.widget.TabLayout>
 
