@@ -26,7 +26,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     }
             </script>
         </head>
-        <body style="background-image: url('http://i.imgur.com/StW51j2.png')">
+        <body style="background-color:#01190C;">
             <div id="chart_div">
             </div>
         </body>

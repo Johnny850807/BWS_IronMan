@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.ood.waterball.teampathy.Controllers.Global;
@@ -36,7 +35,6 @@ public class WbsEditPanelFragment extends AsyncTemplateFragment<String> implemen
     private boolean wbs_updated = false;
 
     private FlowLayout taskPanelView;
-    private Button finishBtn;
 
     public static WbsEditPanelFragment getInstance(int projectId,String wbsXml){
         WbsEditPanelFragment fragment = new WbsEditPanelFragment();
@@ -79,25 +77,19 @@ public class WbsEditPanelFragment extends AsyncTemplateFragment<String> implemen
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if ( item.getItemId() == R.id.watch_charts_menu )
-        {
-            if (wbs_updated)
-                createDialogForSureToUpdateTaskAnaylsis(true);
-
-        }
+            createDialogForSureToUpdateTaskAnaylsis(false);
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     protected void onFindViews(View parentView, List<String> entityList) {
         taskPanelView = (FlowLayout) parentView.findViewById(R.id.panel_flowlayout_wbseditpanel);
-        finishBtn = (Button) parentView.findViewById(R.id.save_btn_wbseditpanel);
     }
 
     @Override
     protected void onControlViews() {
         taskItemFactory = new TaskItemFactory(getContext(),this,taskPanelView);
         createAllTaskItemViews();
-        setFinishBtnListener();
     }
 
     private void createAllTaskItemViews() {
@@ -105,14 +97,6 @@ public class WbsEditPanelFragment extends AsyncTemplateFragment<String> implemen
             taskPanelView.addView(taskItemFactory.createItemView(t));
     }
 
-    private void setFinishBtnListener(){
-        finishBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                createDialogForSureToUpdateTaskAnaylsis(false);
-            }
-        });
-    }
 
     private void createDialogForSureToUpdateTaskAnaylsis(final boolean goWatchChartsAfterSave){
         new AlertDialog.Builder(getContext())
@@ -122,9 +106,6 @@ public class WbsEditPanelFragment extends AsyncTemplateFragment<String> implemen
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         updateTaskAnalysis();
-                        if (goWatchChartsAfterSave)
-                        //todo 前往 觀看工作分析圖 頁面
-                        ;
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {

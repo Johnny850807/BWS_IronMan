@@ -5,7 +5,7 @@
 
     <xsl:template match="/">
         <head>
-            <script type="text/javascript" src="http://yourjavascript.com/8514521737/date.js"></script>
+            <script type="text/javascript" src="http://waterball.tk:8080/TriMago/date.js"></script>
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <script type="text/javascript">
                 google.charts.load('current', {'packages':['gantt']});
@@ -16,13 +16,19 @@
                 }
 
                 function getDiffMillisecondsFromTwoDate(date1,date2) {
+                return daysToMilliseconds(getDiffDaysFromTwoDate(date1,date2));
+                }
+
+                function getDiffDaysFromTwoDate(date1,date2) {
                 var timeDiff = Math.abs(date2.getTime() - date1.getTime());
                 var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-                return daysToMilliseconds(diffDays);
+                return diffDays;
                 }
 
                 function drawChart() {
                 var date_pattern = 'yyyy d NNN.';
+                var earliestDate = getDateFromFormat("5000 1 Jan.",date_pattern);
+                var largestDate = getDateFromFormat("1997 1 Jan.",date_pattern);
                 var data = new google.visualization.DataTable();
                 data.addColumn('string', 'Task ID');
                 data.addColumn('string', 'Task Name');
@@ -37,9 +43,10 @@
                 <xsl:apply-templates select="//Task"/>
 
                 data.addRows(rows);
-
+                var garttWidth = 154 + getDiffDaysFromTwoDate(earliestDate,largestDate) * 10;
                 var options = {
                 height:  rows.length * 60,
+                width: garttWidth,
                 gantt: {
                 innerGridHorizLine: {
                 strokeWidth: 2
@@ -53,9 +60,11 @@
                 chart.draw(data, options);
                 }
             </script>
+
         </head>
-        <body style="background-image: url('http://i.imgur.com/StW51j2.png')">
-            <div id="chart_div"></div>
+        <body style="background-color:#01190C;">
+            <div id="chart_div">
+            </div>
         </body>
     </xsl:template>
 
@@ -65,6 +74,11 @@
         var dependency = '<xsl:value-of select="@Dependency" />';
         if (dependency.length == 0)
         dependency = null;
+        if (compareTwoDates(largestDate,endDate) == -1)
+        largestDate = endDate;
+        if (compareTwoDates(earliestDate,startDate) == 1)
+        earliestDate = startDate;
+
         rows.push(['<xsl:value-of select="@name" />', '<xsl:value-of select="@name" />', '<xsl:value-of select="parent::*/@name" />',
         startDate  , endDate  , daysToMilliseconds(startDate,endDate) , 100, dependency ]);
     </xsl:template>

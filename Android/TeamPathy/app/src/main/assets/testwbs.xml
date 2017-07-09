@@ -2,11 +2,24 @@
 <TaskGroup name="TeamPathy">
     <TaskGroup name="伺服器">
         <TaskGroup name="工作分析網頁">
-            <Task name="Gantt Chart" Description="" StartDate="2017 7 Jul." EndDate="2017 15 Jul." Contribution="0" Dependency=""/>
-            <Task name="Web Chart" Description="" StartDate="2017 7 Jul." EndDate="2017 18 Jul." Contribution="0" Dependency=""/>
+            <Task name="XML定義" Description="" StartDate="2017 17 Jun." EndDate="2017 1 Jul." Contribution="0" Dependency=""/>
+            <Task name="Gantt Chart" Description="" StartDate="2017 7 Jul." EndDate="2017 15 Jul." Contribution="0" Dependency="XML定義"/>
+            <Task name="Web Chart" Description="" StartDate="2017 7 Jul." EndDate="2017 18 Jul." Contribution="0" Dependency="XML定義"/>
         </TaskGroup>
         <TaskGroup name="Web API">
-            <Task name="CRUD" Description="" StartDate="2017 7 Jul." EndDate="2017 7 Aug." Contribution="0" Dependency=""/>
+            <Task name="CRUD" Description="" StartDate="2017 20 Jul." EndDate="2017 7 Aug." Contribution="0" Dependency="Web Chart"/>
+        </TaskGroup>
+    </TaskGroup>
+
+    <TaskGroup name="文案">
+        <TaskGroup name="初審">
+            <Task name="製作初審Word" Description="" StartDate="2017 22 Jun." EndDate="2017 9 Aug." Contribution="0" Dependency=""/>
+            <Task name="投影片PPT及簡報製作" Description="" StartDate="2017 13 Jul." EndDate="2017 18 Jul." Contribution="0" Dependency=""/>
+            <Task name="報告練習" Description="" StartDate="2017 4 Aug." EndDate="2017 18 Aug." Contribution="0" Dependency="投影片PPT及簡報製作"/>
+        </TaskGroup>
+        <TaskGroup name="影片">
+            <Task name="導片" Description="" StartDate="2017 5 Aug." EndDate="2017 17 Sep." Contribution="0" Dependency="投影片PPT及簡報製作"/>
+            <Task name="製片" Description="" StartDate="2017 10 Sep." EndDate="2017 7 Oct." Contribution="0" Dependency="導片"/>
         </TaskGroup>
     </TaskGroup>
 

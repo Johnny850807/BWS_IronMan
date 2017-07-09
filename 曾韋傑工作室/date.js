@@ -1,4 +1,3 @@
-
 var MONTH_NAMES = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
 var DAY_NAMES = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
 function LZ(x) { return (x < 0 || x > 9 ? "" : "0") + x }
@@ -18,6 +17,16 @@ function _getInt(str, i, minlength, maxlength) {
 	}
 	return null;
 }
+
+function compareTwoDates(date1,date2){
+	if (date1 > date2)
+		return 1;
+	if (date1 < date2)
+		return -1;
+	if (date1 == date2)
+		return 0;
+}
+
 function getDateFromFormat(val, format) {
 	val = val + "";
 	format = format + "";
@@ -149,4 +158,3 @@ function getDateFromFormat(val, format) {
 	else if (hh > 11 && ampm == "AM") { hh -= 12; }
 	return new Date(year, month - 1, date, hh, mm, ss);
 }
-

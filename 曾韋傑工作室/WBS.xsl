@@ -24,6 +24,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         chart.draw(data, { allowHtml: true });
                     }
             </script>
+			<style>
+			body{
+				background-color:'#01190C';
+			}
+			</style>
         </head>
         <body>
             <div id="chart_div"></div>
