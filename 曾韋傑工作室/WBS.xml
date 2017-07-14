@@ -19,4 +19,41 @@
         <Task name="動態通知" Description="" StartDate="2017 7 Jul." EndDate="2017 7 Sep." Contribution="0" Dependency=""/>
     </TaskGroup>
 
-</TaskGroup>
+	<TaskGroup name="專案系統" StartDate="" EndDate="" Contribution="0">
+			<TaskGroup name="討論區" StartDate="" EndDate="" Contribution="0">
+				<Task Description="" name="文章發表與維護" StartDate="" EndDate="" Contribution="0"/>
+				<Task Description="" name="文章留言" StartDate="" EndDate="" Contribution="0"/>
+			</TaskGroup>
+			
+			<TaskGroup name="代辦清單" StartDate="" EndDate="" Contribution="">
+				<Task Description="" name="工作維護" StartDate="" EndDate="" Contribution="0"/>
+				
+				<Task Description="" name="工作提交" StartDate="" EndDate="" Contribution="0"/>
+			</TaskGroup>
+			
+			<Task Description="" name="成員清單" StartDate="" EndDate="" Contribution="0"/>
+			
+			<TaskGroup name="團隊動態牆" StartDate="" EndDate="" Contribution="">
+				<Task Description="" name="成員鼓勵" StartDate="" EndDate="" Contribution="0"/>			
+				<Task Description="" name="發佈工作心情小語" StartDate="" EndDate="" Contribution="0"/>
+			</TaskGroup>
+			
+			<TaskGroup name="辦公室" StartDate="" EndDate="" Contribution="0">
+				<TaskGroup name="團長功能" StartDate="" EndDate="" Contribution="0">
+					<Task Description="" name="成員管理" StartDate="" EndDate="" Contribution="0"/>
+					
+					<Task Description="" name="職位管理" StartDate="" EndDate="" Contribution="0"/>
+					
+					<Task Description="" name="專案完程度確認" StartDate="" EndDate="" Contribution="0"/>
+				</TaskGroup>
+				
+				<TaskGroup name="專案管理者功能" StartDate="" EndDate="" Contribution="0">
+					<Task Description="" name="WEB製作" StartDate="" EndDate="" Contribution="0"/>
+				
+					<Task Description="" name="工作指派" StartDate="" EndDate="" Contribution="0"/>
+				</TaskGroup>
+			</TaskGroup>
+		
+				 <Task Description="" name="觀看工作分析服務" StartDate="" EndDate="" Contribution="0"/>
+		</TaskGroup>
+ </TaskGroup>
