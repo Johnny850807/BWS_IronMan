@@ -5,7 +5,7 @@ import android.content.res.AssetManager;
 
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.FileParser;
-import com.ood.waterball.teampathy.DomainModels.Domains.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.User;
 
 import java.io.InputStream;
 
@@ -14,12 +14,12 @@ public class TestOfficeController implements OfficeController {
 
 
     @Override
-    public void modifyPosition(Member member, int projectId, Position position) throws Exception {
+    public void modifyPosition(User user, int projectId, Position position) throws Exception {
 
     }
 
     @Override
-    public void evictMember(Member member, int projectId) throws Exception {
+    public void evictMember(User user, int projectId) throws Exception {
 
     }
 

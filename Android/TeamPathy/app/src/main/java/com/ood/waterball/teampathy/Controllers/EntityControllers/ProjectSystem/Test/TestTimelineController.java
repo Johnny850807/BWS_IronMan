@@ -1,7 +1,7 @@
 package com.ood.waterball.teampathy.Controllers.EntityControllers.ProjectSystem.Test;
 
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
-import com.ood.waterball.teampathy.DomainModels.Domains.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.User;
 import com.ood.waterball.teampathy.DomainModels.Domains.Timeline;
 
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import java.util.List;
 
 
 public class TestTimelineController implements EntityController<Timeline> {
-    private  Member zheng = new Member("曾韋傑 Curry0423","","","http://imgur.com/download/c3qnbkg");
+    private User zheng = new User("曾韋傑 Curry0423","","","http://imgur.com/download/c3qnbkg");
     private Timeline timeline = new Timeline(zheng,"文案-專研初審文案提交審核通過1!!",new Date());
     private List<Timeline> timelineList;
 

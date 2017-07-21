@@ -6,24 +6,24 @@ import com.ood.waterball.teampathy.DomainModels.PostDateEntity;
 import java.util.Date;
 
 public class IssueComment extends PostDateEntity {
-    private Member poster;
+    private User poster;
     private String content;
 
     public IssueComment(){
         super(new Date());
     }
 
-    public IssueComment(Member poster,String content,Date postDate){
+    public IssueComment(User poster, String content, Date postDate){
         super(postDate);
         this.poster = poster;
         this.content = content;
     }
 
-    public Member getPoster() {
+    public User getPoster() {
         return poster;
     }
 
-    public void setPoster(Member poster) {
+    public void setPoster(User poster) {
         this.poster = poster;
     }
 

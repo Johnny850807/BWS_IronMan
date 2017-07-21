@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.GlideHelper;
 import com.ood.waterball.teampathy.Controllers.PageController;
-import com.ood.waterball.teampathy.DomainModels.Domains.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.User;
 import com.ood.waterball.teampathy.Fragments.MemberHomePageFragment;
 
 public class BaseActivity extends AppCompatActivity implements ParentActivityCallBack {
@@ -77,9 +77,9 @@ public class BaseActivity extends AppCompatActivity implements ParentActivityCal
     }
 
     private void setupNavView() {
-        Member member = Global.getMemberController().getActiveMember();
-        GlideHelper.loadToCircularImage(BaseActivity.this, userHeadImgNav, member.getImageUrl());
-        userNameTxtNav.setText(member.getName());
+        User user = Global.getMemberController().getActiveUser();
+        GlideHelper.loadToCircularImage(BaseActivity.this, userHeadImgNav, user.getImageUrl());
+        userNameTxtNav.setText(user.getName());
     }
 
     private void setupActionBarDrawerToggle() {

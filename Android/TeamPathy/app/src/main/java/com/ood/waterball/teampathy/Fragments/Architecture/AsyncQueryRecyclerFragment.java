@@ -26,6 +26,15 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
         getProgressDialog().dismiss();
     }
 
+    private void runListenersAndRead(boolean readAfterOperation, EntityController.OnFinishListener ... listeners){
+        for (EntityController.OnFinishListener listener : listeners )
+            listener.onFinish();
+        if(readAfterOperation)
+            READ_DATA();
+        else
+            getParentActivity().hideProgressBar();
+    }
+
     public final void CREATE(final T entity , final boolean readAfterOperation , final EntityController.OnFinishListener ...listeners){
         getParentActivity().showProgressBar();
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
@@ -42,12 +51,7 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
 
             @Override
             protected void onPostExecute(Void aVoid) {
-                if(readAfterOperation)
-                    READ_DATA();
-                else
-                    getProgressDialog().dismiss();
-                for (EntityController.OnFinishListener listener : listeners )
-                    listener.onFinish();
+                runListenersAndRead(readAfterOperation,listeners);
             }
         };
         AsyncTaskController.runAsyncTask(this,asyncTask);
@@ -58,7 +62,6 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
     }
 
     public void DELETE(final T entity, final boolean readAfterOperation, final EntityController.OnFinishListener ...listeners){
-        getProgressDialog().show();
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
@@ -72,12 +75,7 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
 
             @Override
             protected void onPostExecute(Void aVoid) {
-                if(readAfterOperation)
-                    READ_DATA();
-                else
-                    getProgressDialog().dismiss();
-                for (EntityController.OnFinishListener listener : listeners )
-                    listener.onFinish();
+                runListenersAndRead(readAfterOperation,listeners);
             }
         };
         AsyncTaskController.runAsyncTask(this,asyncTask);
@@ -88,7 +86,6 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
     }
 
     public void UPDATE(final T entity, final boolean readAfterOperation, final EntityController.OnFinishListener ...listeners){
-        getProgressDialog().show();
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
@@ -102,12 +99,7 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
 
             @Override
             protected void onPostExecute(Void aVoid) {
-                if(readAfterOperation)
-                    READ_DATA();
-                else
-                    getProgressDialog().dismiss();
-                for (EntityController.OnFinishListener listener : listeners )
-                    listener.onFinish();
+                runListenersAndRead(readAfterOperation,listeners);
             }
         };
         AsyncTaskController.runAsyncTask(this,asyncTask);
@@ -127,8 +119,6 @@ public abstract class AsyncQueryRecyclerFragment<T> extends RecyclerViewFragment
             @Override
             protected void onPostExecute(List<T> entityList) {
                 recyclerAdapter.notifyDataSetChanged();
-                /*if(progressDialog != null && progressDialog.isShowing())
-                    getProgressDialog().dismiss();*/
                 getParentActivity().hideProgressBar();
             }
         });

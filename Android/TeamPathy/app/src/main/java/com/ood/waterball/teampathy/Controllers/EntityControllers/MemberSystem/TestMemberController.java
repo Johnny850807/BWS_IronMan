@@ -3,7 +3,7 @@ package com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.Exceptions.AccountDuplicatedException;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.Exceptions.AccountNotFoundException;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.MemberSystem.Exceptions.PasswordNotConformException;
-import com.ood.waterball.teampathy.DomainModels.Domains.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.User;
 
 
 public class TestMemberController extends MemberController {
@@ -17,20 +17,20 @@ public class TestMemberController extends MemberController {
         if (!TEST_ACCOUNT.equals(account) || !TEST_PASSWORD.equals(password))
             throw new AccountNotFoundException();
 
-        activeMember = new Member("Mr. Lin",account,password,"http://i.imgur.com/4wXEKrP.png");
-        activeMember.setId(545345345);
+        activeUser = new User("Mr. Lin",account,password,"http://i.imgur.com/4wXEKrP.png");
+        activeUser.setId(545345345);
     }
 
     @Override
-    public void register(Member member,String passwordConfirm) throws PasswordNotConformException, AccountDuplicatedException {
-        validateRegister(member,passwordConfirm);
-        activeMember = member;
+    public void register(User user, String passwordConfirm) throws PasswordNotConformException, AccountDuplicatedException {
+        validateRegister(user,passwordConfirm);
+        activeUser = user;
     }
 
-    private void validateRegister(Member member,String passwordConfirm) throws AccountDuplicatedException, PasswordNotConformException {
-        if (member.getAccount().equals(TEST_ACCOUNT))
+    private void validateRegister(User user, String passwordConfirm) throws AccountDuplicatedException, PasswordNotConformException {
+        if (user.getAccount().equals(TEST_ACCOUNT))
             throw new AccountDuplicatedException();
-        if (!member.getPassword().equals(passwordConfirm))
+        if (!user.getPassword().equals(passwordConfirm))
             throw new PasswordNotConformException();
     }
 

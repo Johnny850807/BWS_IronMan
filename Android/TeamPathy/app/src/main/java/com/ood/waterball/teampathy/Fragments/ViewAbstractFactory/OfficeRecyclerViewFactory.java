@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ood.waterball.teampathy.Controllers.MyUtils.GlideHelper;
-import com.ood.waterball.teampathy.DomainModels.Domains.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.User;
 import com.ood.waterball.teampathy.DomainModels.WBS.TodoTask;
 import com.ood.waterball.teampathy.DomainModels.Models.MemberIdCardModel;
 import com.ood.waterball.teampathy.R;
@@ -53,11 +53,11 @@ public class OfficeRecyclerViewFactory extends RecyclerViewAbstractFactory<Membe
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
             MemberIdCardModel cardModel = entityList.get(position);
-            Member member = cardModel.getMember();
+            User user = cardModel.getUser();
             TodoTask todoTask = cardModel.getTodoTask();
-            GlideHelper.loadToCircularImage(context,holder.headImg,member.getImageUrl());
-            holder.nameTxt.setText( member.getName());
-            holder.positionTxt.setText(member.getPosition());
+            GlideHelper.loadToCircularImage(context,holder.headImg, user.getImageUrl());
+            holder.nameTxt.setText( user.getName());
+            holder.positionTxt.setText(user.getPosition());
             holder.taskNameTxt.setText(todoTask.getName());
             holder.taskGroupTxt.setText(todoTask.getOfGroupName());
         }

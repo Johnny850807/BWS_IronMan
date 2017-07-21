@@ -10,13 +10,13 @@ public class Issue extends PostDateEntity {
     private String content;
     private IssueType type;
     private Date postDate;
-    private Member poster;
+    private User poster;
 
     public Issue(){
         super(new Date());
     }
 
-    public Issue(Member poster,String title,String content,IssueType type){
+    public Issue(User poster, String title, String content, IssueType type){
         super(new Date());
         this.poster = poster;
         this.title = title;
@@ -40,11 +40,11 @@ public class Issue extends PostDateEntity {
         this.title = title;
     }
 
-    public Member getPoster() {
+    public User getPoster() {
         return poster;
     }
 
-    public void setPoster(Member poster) {
+    public void setPoster(User poster) {
         this.poster = poster;
     }
 

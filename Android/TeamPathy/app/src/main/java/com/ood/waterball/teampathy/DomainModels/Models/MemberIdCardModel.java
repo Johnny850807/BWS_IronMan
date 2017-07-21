@@ -1,26 +1,26 @@
 package com.ood.waterball.teampathy.DomainModels.Models;
 
 
-import com.ood.waterball.teampathy.DomainModels.Domains.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.User;
 import com.ood.waterball.teampathy.DomainModels.WBS.TodoTask;
 
 public class MemberIdCardModel{
-    private Member member;
+    private User user;
     private TodoTask todoTask;
 
     public MemberIdCardModel(){}
 
-    public MemberIdCardModel(Member member,TodoTask todoTask){
-        this.member = member;
+    public MemberIdCardModel(User user, TodoTask todoTask){
+        this.user = user;
         this.todoTask = todoTask;
     }
 
-    public Member getMember() {
-        return member;
+    public User getUser() {
+        return user;
     }
 
-    public void setMember(Member member) {
-        this.member = member;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public TodoTask getTodoTask() {

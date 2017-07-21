@@ -7,13 +7,13 @@ import java.util.Date;
 
 public class Timeline extends PostDateEntity {
 
-    private Member poster;
+    private User poster;
     private String content;
     private Date postdate;
     private int type;
     private int color;
 
-    public Timeline( Member poster,String content,Date postdate) {
+    public Timeline(User poster, String content, Date postdate) {
         super(postdate);
         this.content = content;
         this.postdate = postdate;
@@ -28,11 +28,11 @@ public class Timeline extends PostDateEntity {
         this.content = content;
     }
 
-    public Member getPoster() {
+    public User getPoster() {
         return poster;
     }
 
-    public void setPoster(Member poster) {
+    public void setPoster(User poster) {
         this.poster = poster;
     }
 
