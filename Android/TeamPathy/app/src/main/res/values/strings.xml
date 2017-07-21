@@ -109,6 +109,7 @@
     <string name="leave">離開</string>
     <string name="loading">載入中</string>
     <string name="please_wait">請等待...</string>
+    <string name="please_input_group_title">請輸入群組名稱</string>
 
     <string-array name="task_analysis_sections">
         <item>控制台</item>>
