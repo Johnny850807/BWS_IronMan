@@ -11,7 +11,7 @@ import android.widget.ScrollView;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.DomainModels.Domains.IssueComment;
-import com.ood.waterball.teampathy.DomainModels.Domains.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.User;
 import com.ood.waterball.teampathy.Fragments.IssueDetailsFragment;
 import com.ood.waterball.teampathy.R;
 
@@ -51,7 +51,7 @@ public class CreateIssueCommentDialog  extends MyConfirmCancelDialog{
                 {
                     try {
                         String content = contentTxt.getText().toString();
-                        Member poster = Global.getMemberController().getActiveMember();
+                        User poster = Global.getMemberController().getActiveUser();
                         addNewIssueCommentAndRefresh(new IssueComment(poster,content,new Date()));
                     } catch (Exception e) {
                         e.printStackTrace();

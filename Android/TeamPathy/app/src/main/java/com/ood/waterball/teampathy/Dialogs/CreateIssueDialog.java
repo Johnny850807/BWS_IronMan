@@ -16,7 +16,7 @@ import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.AsyncTaskController;
 import com.ood.waterball.teampathy.DomainModels.Domains.Issue;
 import com.ood.waterball.teampathy.DomainModels.Domains.IssueType;
-import com.ood.waterball.teampathy.DomainModels.Domains.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.User;
 import com.ood.waterball.teampathy.Fragments.ForumFragment;
 import com.ood.waterball.teampathy.Fragments.IssueDetailsFragment;
 import com.ood.waterball.teampathy.R;
@@ -102,7 +102,7 @@ public class CreateIssueDialog extends MyConfirmCancelDialog {
                         String title = titleTxt.getText().toString();
                         String content = contentTxt.getText().toString();
                         String issueType = typeOfIssueSpinner.getSelectedItem().toString();
-                        Member poster = Global.getMemberController().getActiveMember();
+                        User poster = Global.getMemberController().getActiveUser();
                         addIssueAndNotify(new Issue(poster,title,content,new IssueType(issueType)));
                     }
                 } catch (Exception e) {

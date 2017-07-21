@@ -38,7 +38,7 @@ public class SearchProjectRecyclerViewFactory extends RecyclerViewAbstractFactor
         this.fragment = fragment;
         this.dialog = dialog;
         try {
-            userOwnsProject = Global.getProjectController().readList(Global.getMemberController().getActiveMember().getId());
+            userOwnsProject = Global.getProjectController().readList(Global.getMemberController().getActiveUser().getId());
         } catch (Exception e) {
             e.printStackTrace();
         }

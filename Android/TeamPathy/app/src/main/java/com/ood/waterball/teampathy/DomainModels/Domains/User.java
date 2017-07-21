@@ -3,16 +3,16 @@ package com.ood.waterball.teampathy.DomainModels.Domains;
 
 import com.ood.waterball.teampathy.DomainModels.Entity;
 
-public class Member extends Entity {
+public class User extends Entity {
     private String name;
     private String account;
     private String password;
     private String imageUrl;
     private String position;
 
-    public Member(){}
+    public User(){}
 
-    public Member(String name,String account,String password,String imageUrl){
+    public User(String name, String account, String password, String imageUrl){
         this.name = name;
         this.account = account;
         this.password = password;

@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.ood.waterball.teampathy.Controllers.EntityControllers.EntityController;
 import com.ood.waterball.teampathy.Controllers.Global;
 import com.ood.waterball.teampathy.Controllers.MyUtils.GlideHelper;
-import com.ood.waterball.teampathy.DomainModels.Domains.Member;
+import com.ood.waterball.teampathy.DomainModels.Domains.User;
 import com.ood.waterball.teampathy.DomainModels.Domains.Timeline;
 import com.ood.waterball.teampathy.Fragments.Architecture.AsyncQueryRecyclerFragment;
 import com.ood.waterball.teampathy.Fragments.ViewAbstractFactory.RecyclerViewAbstractFactory;
@@ -82,7 +82,7 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
     }
 
     private void setupInputCardView(){
-        Member currentUser = Global.getMemberController().getActiveMember();
+        User currentUser = Global.getMemberController().getActiveUser();
         posternameTXT.setText(currentUser.getName());
         GlideHelper.loadToCircularImage(getContext(),inputPostHeaderImg,
                 currentUser.getImageUrl());
@@ -108,7 +108,7 @@ public class TimeLineFragment extends AsyncQueryRecyclerFragment<Timeline> {
 
 
     private void addTimelineAndClearEditText() throws Exception {
-        Member poster = Global.getMemberController().getActiveMember();
+        User poster = Global.getMemberController().getActiveUser();
         final Timeline timeline = new Timeline(poster,inputContentED.getText().toString(),new Date());
         addTimeLine(timeline);
         clearInputEdittextStatus();

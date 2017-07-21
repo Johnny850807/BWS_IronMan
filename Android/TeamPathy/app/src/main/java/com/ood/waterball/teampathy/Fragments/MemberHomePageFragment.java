@@ -34,7 +34,7 @@ public class MemberHomePageFragment extends AsyncQueryRecyclerFragment<Project> 
     @Override
     protected List<Project> createEntityList() {
         try {
-            int userId = Global.getMemberController().getActiveMember().getId();
+            int userId = Global.getMemberController().getActiveUser().getId();
             return Global.getProjectController().readList(userId);
         } catch (Exception e) {
             e.printStackTrace();
