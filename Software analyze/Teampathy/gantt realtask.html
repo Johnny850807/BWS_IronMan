@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-16"?>
+
+<head>
+    <script category="text/javascript" src="http://waterball.tk:8080/TriMago/date.js"></script>
+    <script category="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script category="text/javascript">
+        google.charts.load('current', { 'packages': ['gantt'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function daysToMilliseconds(days) {
+            return days * 24 * 60 * 60 * 1000;
+        }
+
+        function getDiffMillisecondsFromTwoDate(date1, date2) {
+            return daysToMilliseconds(getDiffDaysFromTwoDate(date1, date2));
+        }
+
+        function getDiffDaysFromTwoDate(date1, date2) {
+            var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+            return diffDays;
+        }
+
+        function drawChart() {
+            var date_pattern = 'yyyy d NNN.';
+            var earliestDate = getDateFromFormat("5000 1 Jan.", date_pattern);
+            var largestDate = getDateFromFormat("1997 1 Jan.", date_pattern);
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Task ID');
+            data.addColumn('string', 'Task Name');
+            data.addColumn('string', 'Resource');
+            data.addColumn('date', 'Start Date');
+            data.addColumn('date', 'End Date');
+            data.addColumn('number', 'Duration');
+            data.addColumn('number', 'Percent Complete');
+            data.addColumn('string', 'Dependencies');
+
+            var rows = [];
+
+            var startDate = getDateFromFormat('2017 25 Jul.', date_pattern);
+            var endDate = getDateFromFormat('2017 26 Jul.', date_pattern);
+            var dependency = 'Api Document';
+            if (dependency.length == 0)
+                dependency = null;
+            if (compareTwoDates(largestDate, endDate) == -1)
+                largestDate = endDate;
+            if (compareTwoDates(earliestDate, startDate) == 1)
+                earliestDate = startDate;
+
+            rows.push(['Design APP data transferring Process', 'Design APP data transferring Process', 'UI Crud Implement',
+                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
+
+            var startDate = getDateFromFormat('2017 26 Jul.', date_pattern);
+            var endDate = getDateFromFormat('2017 27 Jul.', date_pattern);
+            var dependency = 'Design APP data transferring Process';
+            if (dependency.length == 0)
+                dependency = null;
+            if (compareTwoDates(largestDate, endDate) == -1)
+                largestDate = endDate;
+            if (compareTwoDates(earliestDate, startDate) == 1)
+                earliestDate = startDate;
+
+            rows.push(['Create All Repositorie stubs', 'Create All Repositorie stubs', 'UI Crud Implement',
+                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
+
+            var startDate = getDateFromFormat('2017 27 Jul.', date_pattern);
+            var endDate = getDateFromFormat('2017 28 Jul.', date_pattern);
+            var dependency = 'Create All Repositorie stubs';
+            if (dependency.length == 0)
+                dependency = null;
+            if (compareTwoDates(largestDate, endDate) == -1)
+                largestDate = endDate;
+            if (compareTwoDates(earliestDate, startDate) == 1)
+                earliestDate = startDate;
+
+            rows.push(['Implement All dialog UIs', 'Implement All dialog UIs', 'UI Crud Implement',
+                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
+
+            var startDate = getDateFromFormat('2017 29 Jul.', date_pattern);
+            var endDate = getDateFromFormat('2017 30 Jul.', date_pattern);
+            var dependency = 'Create All Repositorie stubs';
+            if (dependency.length == 0)
+                dependency = null;
+            if (compareTwoDates(largestDate, endDate) == -1)
+                largestDate = endDate;
+            if (compareTwoDates(earliestDate, startDate) == 1)
+                earliestDate = startDate;
+
+            rows.push(['Finish all task commiting processing UI', 'Finish all task commiting processing UI', 'UI Crud Implement',
+                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
+
+            var startDate = getDateFromFormat('2017 1 Aug.', date_pattern);
+            var endDate = getDateFromFormat('2017 5 Aug.', date_pattern);
+            var dependency = 'Create All Repositorie stubs';
+            if (dependency.length == 0)
+                dependency = null;
+            if (compareTwoDates(largestDate, endDate) == -1)
+                largestDate = endDate;
+            if (compareTwoDates(earliestDate, startDate) == 1)
+                earliestDate = startDate;
+
+            rows.push(['Finish push Notification mechanism', 'Finish push Notification mechanism', 'UI Crud Implement',
+                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
+
+            var startDate = getDateFromFormat('2017 26 Jul.', date_pattern);
+            var endDate = getDateFromFormat('2017 28 Jul.', date_pattern);
+            var dependency = 'Api Document';
+            if (dependency.length == 0)
+                dependency = null;
+            if (compareTwoDates(largestDate, endDate) == -1)
+                largestDate = endDate;
+            if (compareTwoDates(earliestDate, startDate) == 1)
+                earliestDate = startDate;
+
+            rows.push(['Table Schema', 'Table Schema', 'Design',
+                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
+
+            var startDate = getDateFromFormat('2017 23 Jul.', date_pattern);
+            var endDate = getDateFromFormat('2017 24 Jul.', date_pattern);
+            var dependency = '';
+            if (dependency.length == 0)
+                dependency = null;
+            if (compareTwoDates(largestDate, endDate) == -1)
+                largestDate = endDate;
+            if (compareTwoDates(earliestDate, startDate) == 1)
+                earliestDate = startDate;
+
+            rows.push(['Api Document', 'Api Document', 'Design',
+                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
+
+            var startDate = getDateFromFormat('2017 29 Jul.', date_pattern);
+            var endDate = getDateFromFormat('2017 3 Aug.', date_pattern);
+            var dependency = 'Table Schema';
+            if (dependency.length == 0)
+                dependency = null;
+            if (compareTwoDates(largestDate, endDate) == -1)
+                largestDate = endDate;
+            if (compareTwoDates(earliestDate, startDate) == 1)
+                earliestDate = startDate;
+
+            rows.push(['Create Datebase tables', 'Create Datebase tables', 'Web API Implement',
+                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
+
+            var startDate = getDateFromFormat('2017 4 Aug.', date_pattern);
+            var endDate = getDateFromFormat('2017 10 Aug.', date_pattern);
+            var dependency = 'Create Datebase tables';
+            if (dependency.length == 0)
+                dependency = null;
+            if (compareTwoDates(largestDate, endDate) == -1)
+                largestDate = endDate;
+            if (compareTwoDates(earliestDate, startDate) == 1)
+                earliestDate = startDate;
+
+            rows.push(['ASP.NET web api', 'ASP.NET web api', 'Web API Implement',
+                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
+
+            var startDate = getDateFromFormat('2017 11 Aug.', date_pattern);
+            var endDate = getDateFromFormat('2017 12 Aug.', date_pattern);
+            var dependency = 'ASP.NET web api';
+            if (dependency.length == 0)
+                dependency = null;
+            if (compareTwoDates(largestDate, endDate) == -1)
+                largestDate = endDate;
+            if (compareTwoDates(earliestDate, startDate) == 1)
+                earliestDate = startDate;
+
+            rows.push(['API Deployment', 'API Deployment', 'Web API Implement',
+                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
+
+
+            data.addRows(rows);
+            var garttWidth = 154 + getDiffDaysFromTwoDate(earliestDate, largestDate) * 35;
+            var options = {
+                height: rows.length * 60,
+                width: garttWidth,
+                gantt: {
+                    innerGridHorizLine: {
+                        strokeWidth: 2
+                    },
+                },
+                backgroundColor: { fill: '#F8F9FA' }
+            };
+
+            var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body style="background-color:#01190C;">
+    <div id="chart_div" />
+</body>

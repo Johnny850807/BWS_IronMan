@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="GanttChart.xsl"?>
 <TaskGroup name="TeamPathy">
     <TaskGroup name="伺服器">
         <TaskGroup name="工作分析網頁">

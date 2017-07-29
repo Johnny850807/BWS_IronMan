@@ -1,0 +1,190 @@
+﻿<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="API_DOC.css" />
+</head>
+
+<body>
+
+    <section class="card endpoint">
+        <header>
+            <h2>
+                <span class="ep-type">POST</span>
+                <code>http://teampathy.tk/api/user/signIn</code>
+            </h2>
+        </header>
+
+        <div class="card-info">
+            <code>success</code>
+        </div>
+
+        <div class="card-info-more ep-response" style="display: block;">
+            <div class="codehilite">
+                <pre><code>
+                {
+                    "message":"success",
+                    "code":"200",
+                    "data":
+                    {
+                        "name":"..",
+                        "experience":"..",
+                        "imageUrl":"..",
+                        "access_token":"..",
+                    }
+                }
+                </code></pre>
+            </div>
+        </div>
+        <div class="card-description ep-description">
+            <p>
+                Sign in.
+            </p>
+
+            <table>
+                <caption><strong>Parameters</strong><i></i></caption>
+                <tbody>
+                    <tr>
+                        <th>account</th>
+                        <td>User's account.</td>
+                    </tr>
+                    <tr>
+                        <th>password</th>
+                        <td>User's password.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="card endpoint">
+        <header>
+            <h2>
+                <span class="ep-type">POST</span>
+                <code>http://teampathy.tk/api/user/signUp</code>
+            </h2>
+        </header>
+
+        <div class="card-info">
+            <code>success</code>
+        </div>
+
+        <div class="card-info-more ep-response" style="display: block;">
+            <div class="codehilite">
+                <pre><code>
+                {
+                    "code":"200",
+                    "message":"success",
+                    "data":
+                    {
+                        "id":"..",
+                        "name":"..",
+                        "experience":"..",
+                        "imageUrl":"..",
+                        "access_token":".."
+                    }
+                }
+                </code></pre>
+            </div>
+
+        <div class="card-info">
+            <code>Error</code>
+        </div>
+
+            <div class="codehilite">
+                <pre><code>
+                {
+                    "message":"Account is duplicated.",
+                    "code":"400",
+                    "data":{}
+                }
+                </code></pre>
+            </div>
+        </div>
+        <div class="card-description ep-description">
+            <p>
+                Sign up.
+            </p>
+
+            <table>
+                <caption><strong>Parameters</strong><i></i></caption>
+                <tbody>
+                    <tr>
+                        <th>name</th>
+                        <td>Registered user's name.</td>
+                    </tr>
+                    <tr>
+                        <th>account</th>
+                        <td>Registered account.</td>
+                    </tr>
+                    <tr>
+                        <th>password</th>
+                        <td>Registered password.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="card endpoint">
+        <header>
+            <h2>
+                <span class="ep-type">Get</span>
+                <code>http://teampathy.tk/api/project</code>
+            </h2>
+        </header>
+
+        <div class="card-info">
+            <code>success</code>
+        </div>
+
+        <div class="card-info-more ep-response" style="display: block;">
+            <div class="codehilite">
+                <pre><code>
+                {
+                    "code":"200",
+                    "message":"success",
+                    "data":
+                    [
+                        {
+                            "id":"..",
+                            "password":"..",
+                            "name":"..",
+                            "category":"..",
+                            "imageUrl":".."
+                            "taskAnalysisXml":"..."
+                        }
+                    ]
+                }
+                </code></pre>
+            </div>
+
+        </div>
+        <div class="card-description ep-description">
+            <p>
+                Get project list of user's.
+            </p>
+
+            <table>
+                <caption><strong>Parameters</strong><i></i></caption>
+                <tbody>
+                    <tr>
+                        <th>name</th>
+                        <td>Registered user's name.</td>
+                    </tr>
+                    <tr>
+                        <th>account</th>
+                        <td>Registered account.</td>
+                    </tr>
+                    <tr>
+                        <th>password</th>
+                        <td>Registered password.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    
+</body>
+
+</html>
