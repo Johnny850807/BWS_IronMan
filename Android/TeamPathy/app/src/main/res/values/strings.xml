@@ -1,0 +1,122 @@
+<resources>
+    <string name="app_name">TeamPathy</string>
+
+
+    <string name="Inputaccount">輸入帳號</string>
+    <string name="Inputpassword">輸入密碼</string>
+    <string name="logIn">登入</string>
+    <string name="register">註冊</string>
+    <string name="forgotPassword">忘記密碼?</string>
+    <string name="inputname">輸入暱稱</string>
+    <string name="inputPasswordConfirm">密碼確認</string>
+    <string name="finishRegistering">完成註冊</string>
+
+
+    <!--Exception-->
+    <string name="accountDuplicated">帳號已重複</string>
+    <string name="accountNotFound">帳號或密碼錯誤</string>
+    <string name="modelValidation">註冊格式錯誤</string>
+    <string name="app_chinese_name">行動化團隊合作系統</string>
+    <string name="title_activity_project">ProjectActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="project_sections">
+        <item>動態牆</item>>
+        <item>討論區</item>
+        <item>代辦清單</item>
+        <item>辦公室</item>
+    </string-array>
+
+    <string-array name="month_names">
+        <item>Jan.</item>
+        <item>Feb.</item>
+        <item>Mar.</item>
+        <item>Apr.</item>
+        <item>May.</item>
+        <item>June.</item>
+        <item>July.</item>
+        <item>Aug.</item>
+        <item>Sept.</item>
+        <item>Oct.</item>
+        <item>Nov.</item>
+        <item>Dec.</item>
+    </string-array>
+
+
+    <string name="issue_title">文章名稱</string>
+    <string name="issue_content">文章內容</string>
+    <string name="CreateIssue">新增文章</string>
+    <string name="create">新增</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">確認</string>
+    <string name="make_sure_to_cancel">確定要取消嗎?</string>
+    <string name="title_cannot_be_empty">標題不能為空。</string>
+    <string name="get_all_issue_types">選取文章分類</string>
+    <string name="please_choose_an_issue_type">請選擇文章分類</string>
+    <string name="issue_content_cannot_be_empty">文章內容不能為空</string>
+    <string name="issue_created_completed">文章新增完畢</string>
+    <string name="card_transitionname">card</string>
+    <string name="issue_title_transitionname">issuetitle</string>
+    <string name="test_long_string">就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了，我哭著臉回家找媽。就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了就是阿，這幾天我一直覺得Woo不太好用，我調查過他們的Request Url，想了很久怎麼讓我的配對結果只能是女人，但她嗎的，失敗了javaScript竟然失敗了</string>
+    <string name="issue_content_transitionname">issuecontent</string>
+    <string name="create_issue_comment">新增留言</string>
+    <string name="issue_comment_content">留言內容</string>
+    <string name="comment_created_completed">留言新增完畢</string>
+    <string name="watch">觀看</string>
+    <string name="enter">進入</string>
+    <string name="title_cannt_be_exceeding_12_words">標題請勿超過12個字</string>
+    <string name="describe_how_you_feel_about_working">表達你的工作心情吧!</string>
+    <string name="timeline_created_completed">工作心情小語新增完畢</string>
+    <string name="timeline_removed_completed">工作心情小語刪除完畢</string>
+    <string name="send">送出</string>
+    <string name="password_not_conform">密碼不吻合!</string>
+    <string name="pm">PM</string>
+    <string name="leader">團長</string>
+    <string name="user">團員</string>
+    <string name="current_task">目前工作</string>
+    <string name="member_list">成員清單</string>
+    <string name="task_start_date">起始日期</string>
+    <string name="task_end_date">結束日期</string>
+    <string name="participate_to_exists_project">加入現有專案</string>
+    <string name="create_a_new_project">創建新專案</string>
+    <string name="project_name">專案名稱</string>
+    <string name="project_description">專案敘述</string>
+    <string name="logout">登出</string>
+    <string name="home_page">首頁</string>
+    <string name="profile">個人資料</string>
+    <string name="whole_timeline">整體動態牆</string>
+    <string name="openDrawer">開啟</string>
+    <string name="closeDrawer">關閉</string>
+    <string name="setPassword">設置密碼</string>
+    <string name="project_category">專案性質(團康,報告,工作..)</string>
+    <string name="please_input_project_title">請輸入專案名稱</string>
+    <string name="please_input_project_type">請輸入專案性質</string>
+    <string name="please_input_project_description">請輸入專案敘述</string>
+    <string name="search">搜尋</string>
+    <string name="join">加入</string>
+    <string name="already_in_project">已加入</string>
+    <string name="searching_project">搜尋專案中...</string>
+    <string name="task_analysis">工作分析</string>
+    <string name="save">儲存</string>
+    <string name="please_input_todotask_title">請輸入工作名稱</string>
+    <string name="start_date">起始日期</string>
+    <string name="end_date">結束日期</string>
+    <string name="add">新增</string>
+    <string name="save_charts">儲存工作分析</string>
+    <string name="update">更新</string>
+    <string name="sure_to_update_task_analysis">確定要更新工作結構圖嗎？</string>
+    <string name="page_is_not_ready">頁面尚未準備完全。</string>
+    <string name="leave">離開</string>
+    <string name="loading">載入中</string>
+    <string name="please_wait">請等待...</string>
+    <string name="please_input_group_title">請輸入群組名稱</string>
+    <string name="member">成員</string>
+
+
+    <string-array name="task_analysis_sections">
+        <item>控制台</item>>
+        <item>工作結構圖</item>
+        <item>甘特圖</item>
+    </string-array>
+
+</resources>
