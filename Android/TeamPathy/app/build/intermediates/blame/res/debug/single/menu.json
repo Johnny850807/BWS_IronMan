@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_project.xml",
+        "source": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\src\\main\\res\\menu\\menu_project.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\menu\\navigationdrawer_main.xml",
+        "source": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\src\\main\\res\\menu\\navigationdrawer_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\menu\\go_see_charts_menu_on_toolbar.xml",
+        "source": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\src\\main\\res\\menu\\go_see_charts_menu_on_toolbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\menu\\task_analysis_menu_on_toolbar.xml",
+        "source": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\src\\main\\res\\menu\\task_analysis_menu_on_toolbar.xml"
+    }
+]

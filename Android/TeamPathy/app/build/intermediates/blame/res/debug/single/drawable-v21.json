@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\a5493bbca00e5ae246a6f25ca309fcfd3f7523d6\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\a5493bbca00e5ae246a6f25ca309fcfd3f7523d6\\output\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\a5493bbca00e5ae246a6f25ca309fcfd3f7523d6\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\526b7cc6f3d2e897d6a496cc32dbaccabf581ea8\\output\\res\\drawable-v21\\avd_hide_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\526b7cc6f3d2e897d6a496cc32dbaccabf581ea8\\output\\res\\drawable-v21\\design_password_eye.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\526b7cc6f3d2e897d6a496cc32dbaccabf581ea8\\output\\res\\drawable-v21\\avd_show_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\a5493bbca00e5ae246a6f25ca309fcfd3f7523d6\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\526b7cc6f3d2e897d6a496cc32dbaccabf581ea8\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
+    }
+]

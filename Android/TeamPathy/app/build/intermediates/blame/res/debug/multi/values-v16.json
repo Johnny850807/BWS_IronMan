@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 65,
+                    "endOffset": 116
+                },
+                "from": {
+                    "file": "C:\\Users\\Lin\\.android\\build-cache\\a5493bbca00e5ae246a6f25ca309fcfd3f7523d6\\output\\res\\values-v16\\values-v16.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 65,
+                        "endOffset": 116
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\a5493bbca00e5ae246a6f25ca309fcfd3f7523d6\\output\\res\\layout-v11\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\a5493bbca00e5ae246a6f25ca309fcfd3f7523d6\\output\\res\\layout-v11\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\a5493bbca00e5ae246a6f25ca309fcfd3f7523d6\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\a5493bbca00e5ae246a6f25ca309fcfd3f7523d6\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\a5493bbca00e5ae246a6f25ca309fcfd3f7523d6\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lin\\Documents\\GitHub\\BWS_IronMan_Practice_ChattingRoom\\Android\\TeamPathy\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\Lin\\.android\\build-cache\\a5493bbca00e5ae246a6f25ca309fcfd3f7523d6\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
+    }
+]

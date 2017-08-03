@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item android:id="@+id/menu_homepage_nav"
+            android:title="@string/home_page" />
+        <item android:id="@+id/profile_nav"
+            android:title="@string/profile" />
+        <item android:id="@+id/whole_timeline_nav"
+            android:title="@string/whole_timeline" />
+        <item android:id="@+id/log_out_nav"
+            android:title="@string/logout" />
+    </group>
+</menu>
