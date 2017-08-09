@@ -75,7 +75,7 @@ May-
     - 系統設計文案皆上傳
     - 目前套用單機模組
     - APP主題風格已經固定
-  - (林) 以友情價請設計師替專研 設計 **TeamPathy**的主要Logo !!
+  - (林) 以友情價請到設計師替專研 設計 **TeamPathy**的主要Logo !!
     - 介面設計已經提供完善 管線化支援前端開發
     - 學習 Javascript -> 已提供 Google Chart API 知識 -> For WBS & Gantt API 
     - 學習 Android 基本 Layout
