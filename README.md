@@ -86,7 +86,7 @@ July-
     - Android 最大改變 引入 **RxAndroid & Dagger IOC/DI Framework**
     - 學到了 **Clean Architecture** 架構，決定**重構** TeamPathy
   - (水/林) 迅速重構以及開發新的TeamPathy，合力撰寫超過50個類別。
-    - 成功引入XML-XSL系統作為 Gantt, WBS 技術底層
+    - 成功引入XML-XSL系統作為 Gantt, WBS 繪圖技術底層
     - Repository層進行模組單元測試
     
   - (黃) 進行遠端SQL Server及IIS 設置
