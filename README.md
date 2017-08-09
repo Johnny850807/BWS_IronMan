@@ -8,7 +8,8 @@ APP Server- **EC2 runs the Java TriMago Servlet** followed by 專研筆電 Serve
 
 Note:
 
-2016/
+>2016/
+
 December - 
 
   -學習合作機制 - **Github**
@@ -17,7 +18,8 @@ December -
     -湊齊所有功能形成一個主題
     -投票將主題進行篩選 
 
-2017/
+>2017/
+
 January -  
 
   - Github合作漸漸流暢 
