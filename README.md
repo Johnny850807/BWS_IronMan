@@ -95,7 +95,7 @@ July-  **暑假開始**
   - 暑修的暑修，上班的上班，(水) 開始實習
   - (水) 對 TeamPathy的願景重新定義 -> We should refactor it into another model design.
     - Android 最大改變 引入 **RxAndroid & Dagger IOC/DI Framework**
-    - 學到了 **Clean Architecture** 架構，發布專案正式決定**完整重構** TeamPathy
+    - 學到了 **Clean Architecture** 架構，發布議題正式決定**完整重構** TeamPathy
   - (水/林) 迅速重構以及開發新的TeamPathy，合力撰寫超過50個類別。
     - 重構完成後提升APP效率及UX
     - 成功引入XML-XSL系統作為 Gantt, WBS 繪圖技術底層
