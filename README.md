@@ -9,7 +9,7 @@ Log:
 
 >2016/
 
-December - **TeamPathy Start from here !**
+December - **TeamPathy Starts from here !**
 
   - (水)引入並奠定未來一年的合作機制 - **Github** 以提升效率
   - 開始**功能發散** 思考專研主題
