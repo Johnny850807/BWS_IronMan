@@ -66,6 +66,7 @@ May-
   - (林) 以友情價替專研 取得較低價格的 **TeamPathy**的主要Logo !!
     - 介面設計已經提供完善 管線化支援前端開發
     - 學習 Javascript -> 已提供 Google Chart API 知識 -> For WBS & Gantt API 
+    - 學習 Android 基本 Layout
 
 June-
 
