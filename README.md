@@ -76,7 +76,7 @@ May-
     - 目前套用單機模組
     - APP主題風格已經固定
   - (林) 以友情價請到設計師替專研 設計 **TeamPathy**的主要Logo !!
-    - 介面設計已經提供完善 管線化支援(水)前端開發 -> 最讚的合作經驗
+    - 介面設計已經提供完善 管線化支援(水)前端開發 -> 效率直接翻倍
     - 學習 Javascript -> 已提供 Google Chart API 知識 -> For WBS & Gantt API 
     - 學習 Android 基本 Layout
 
