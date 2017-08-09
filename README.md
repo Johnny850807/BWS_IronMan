@@ -92,8 +92,8 @@ June-
   - **期末考**進度不彰
 
 July-  **暑假開始**
-  - 暑修的暑修，上班的上班
-  - (水) 開始實習
+  - 暑修的暑修，上班的上班，(水) 開始實習
+  - (水) 對 TeamPathy的願景重新定義
     - Android 最大改變 引入 **RxAndroid & Dagger IOC/DI Framework**
     - 學到了 **Clean Architecture** 架構，決定**完整重構** TeamPathy
   - (水/林) 迅速重構以及開發新的TeamPathy，合力撰寫超過50個類別。
