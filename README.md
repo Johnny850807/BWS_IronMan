@@ -60,7 +60,7 @@ April-
 
   - **團隊合作平台**功能發想慢慢齊全，認為可以取代**InterLove** (再見...)。
   - (水) 正式報告 團隊合作平台的提案 Proposal
-  - (水) 給予正式投票命名 -> 結果 **TeamPathy** 面世 -> Teamwork with Empathy (卓學恩教的字)
+  - (水) 給予正式投票命名 -> 結果 **TeamPathy** 面世 -> Teamwork with Empathy (卓學恩教得很好)
   - 開發時程開始 (WBS -> Gantt chart)
     - (曾) 負責 ER圖 資料後設計
     - (林) 負責 APP介面設計發想 色碼攝取協調設計 以及助手
