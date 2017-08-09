@@ -83,6 +83,7 @@ June-
 
 July-
   - (水) 開始實習
+    - Android 最大改變 引入 RxAndroid & Dagger IOC/DI Framework
     - 學到了 Clean Architecture 架構，決定重構 TeamPathy
   - (水/林) 迅速重構以及開發新的TeamPathy，合力撰寫超過50個類別。
     - 介面測試以及模組單元測試
