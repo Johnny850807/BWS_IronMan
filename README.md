@@ -82,6 +82,7 @@ June-
   - **期末考**進度不彰
 
 July-
+  - 暑修的暑修，上班的上班
   - (水) 開始實習
     - Android 最大改變 引入 **RxAndroid & Dagger IOC/DI Framework**
     - 學到了 **Clean Architecture** 架構，決定**完整重構** TeamPathy
