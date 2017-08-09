@@ -68,7 +68,7 @@ May-
   - (水) Android 主要介面開發迅速
     - 套用單機模組
     - 風格固定
-  - (林) 以友情價替專研 取得較低價格的 **TeamPathy**的主要Logo !!
+  - (林) 以友情價請設計師替專研 設計 **TeamPathy**的主要Logo !!
     - 介面設計已經提供完善 管線化支援前端開發
     - 學習 Javascript -> 已提供 Google Chart API 知識 -> For WBS & Gantt API 
     - 學習 Android 基本 Layout
