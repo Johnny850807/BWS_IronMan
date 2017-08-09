@@ -106,6 +106,8 @@ August-
     - 登入系統 ok 8/1 
     - 專案系統 ok 8/3
     - Issue系統 ok 8/10
+    - Timeline 系統 
+    - 工作分析系統 
 
 September-
 
