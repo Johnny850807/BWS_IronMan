@@ -45,7 +45,7 @@ Feburary -
       - (水) 情侶情緒處理平台  ->  投票結果
     - 情侶情緒處理平台命名 -> **InterLove** -> Interaction with Love
   - 著手進行InterLove的功能發散 (發散點更集中)    
-  -  (水) 進行時程分析 Gantt Chart, WBS 分析
+  -  (水) 進行時程分析 Gantt Chart, WBS 分析 並彙整報告
 
 March-
 
