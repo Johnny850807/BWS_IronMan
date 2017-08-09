@@ -91,7 +91,7 @@ June-
     - Android APP開發暫緩 (而且APP架構耦合度高 -> 寫得有點疲倦 -> 重新系統設計)
   - **期末考**進度不彰
 
-July-
+July-  **暑假開始**
   - 暑修的暑修，上班的上班
   - (水) 開始實習
     - Android 最大改變 引入 **RxAndroid & Dagger IOC/DI Framework**
