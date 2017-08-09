@@ -102,7 +102,7 @@ August-
   - (水) 遇到問題: 使用SQL Server儲存XML-Based樹時，如何在後端維持資料一致性 ?
     - 請求豐緒 -> 我有空時豐緒沒空豐緒有空時我沒空
   - (水) Android 前後端開發持續提交
-    - 學會 API Blueprint 作為 API文件語言提升溝通效率
+    - 學會 API Blueprint 作為 API文件語言提升溝通效率 -> 讓(林)做Repository層時能參考
 
 September-
 
