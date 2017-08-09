@@ -99,7 +99,7 @@ July-  **暑假開始**
   - (水/林) 迅速重構以及開發新的TeamPathy，合力撰寫超過50個類別。
     - 重構完成後提升APP效率及UX
     - 成功引入XML-XSL系統作為 Gantt, WBS 繪圖技術底層
-    - APP 分層 : View -> Presenter -> Use Case -> Executor Thread -> Repository -> Model
+    - APP 分層 : View -> Presenter -> Use Case -> Executor Thread -> Repository -> Model 超級乾淨
     - Repository層進行模組單元測試  
   - (黃) 進行遠端SQL Server及IIS 設置
     - 遇到 EC2 權限問題 無法安裝SQL Server
