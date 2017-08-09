@@ -77,9 +77,14 @@ June-
     - XML Stub data
   - (林) 完成 Gantt Chart API 以及 WBS Chart API 之相關知識提供
     - 開始協助(水)開發介面
+  - (水) 持續學習後端開發 **ASP.NET MVC** 
+    - Android APP開發暫緩
   - **期末考**進度不彰
 
 July-
+  - (水) 開始實習
+    - 實習時學到了 Clean Architecture 架構，決定重構 TeamPathy
+  - (水/林) 迅速重構以及開發新的TeamPathy，合力撰寫超過50個類別。
 
 August-
 
