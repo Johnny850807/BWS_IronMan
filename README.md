@@ -36,7 +36,8 @@ Feburary -
       - (黃) 運動計分系統
       - (水) 情侶情緒處理平台  ->  冠軍
     - 情侶情緒處理平台命名 -> **InterLove**
-            
+  - 著手進行InterLove的功能發散 (發散點更集中)    
+  -  (水) 進行時程分析 Gantt Chart, WBS 分析
 
 March-
 
