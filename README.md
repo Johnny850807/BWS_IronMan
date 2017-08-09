@@ -95,6 +95,7 @@ July-
     - 拒絕參與了一項額外比賽 => 主題不符TeamPathy
     - PPT專案著手進行 (但對**參加特優組不用報告這件事很不爽**)
 August-
+  - (水) 遇到問題: 使用SQL Server儲存XML-Based樹時，如何在後端維持資料一致性 ? 
 
 September-
 
