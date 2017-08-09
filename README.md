@@ -10,3 +10,5 @@
 - 花柳齋簽到
 
 
+總審文案已上傳至Google共用區。
+APP Server- **EC2 runs the Java TriMago Servlet** followed by 專研筆電 Server. Loading balance with **Azure VM**.
