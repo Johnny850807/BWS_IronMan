@@ -82,7 +82,7 @@ May-
 
 June-
   - (黃/水) 使用**EC2**作為備案伺服器 -> 目前 [TriMago](teampathy.tk:8080/TriMago) 持續運行在EC2上 
-  - (曾) ER圖漸漸審核完畢
+  - (曾) ER圖漸漸審核完畢 
     - 並開始設計存放WBS資料的XML結構
     - XML Stub data
   - (林) 完成 Gantt Chart API 以及 WBS Chart API 之相關知識提供
