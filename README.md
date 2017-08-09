@@ -86,7 +86,8 @@ July-
     - Android 最大改變 引入 **RxAndroid & Dagger IOC/DI Framework**
     - 學到了 **Clean Architecture** 架構，決定**重構** TeamPathy
   - (水/林) 迅速重構以及開發新的TeamPathy，合力撰寫超過50個類別。
-    - 介面測試以及模組單元測試
+    - Repository層進行模組單元測試
+    
   - (黃) 進行遠端SQL Server及IIS 設置
     - 遇到 EC2 權限問題 無法安裝SQL Server
   - (曾) 轉職 行銷組長，為專研發揮呈現面及規劃出路
