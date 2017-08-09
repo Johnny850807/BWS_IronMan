@@ -120,14 +120,15 @@ August-
   - (水) Android 前後端開發持續提交
     - 學會 API Blueprint 作為 API文件語言提升溝通效率 -> 讓(林)做Repository層時能參考
     - 部屬 ASP.NET WebAPI 至 IIS 開始 Model-First TeamPathy專案
-    - 登入系統 ok 8/1 
-    - 專案系統 ok 8/3
-    - Issue系統 ok 8/10
-    - Timeline 系統 
-    - 待辦清單系統
-    - 工作分析系統(災難) 
-    - 推播系統
-    - 資安模組 ASP.NET Web API Identity (超難..)
+    - TODO
+      - 登入系統 ok 8/1 
+      - 專案系統 ok 8/3
+      - Issue系統 ok 8/10
+      - Timeline 系統 
+      - 待辦清單系統
+      - 工作分析系統(災難) 
+      - 推播系統
+      - 資安模組 ASP.NET Web API Identity (超難..)
   - (曾/林) 行銷組持續繪製簡報
     - 構思三分鐘介紹影片 (**還是很不懂做出一個產品不進行報告要拍影片的制度**)
 
