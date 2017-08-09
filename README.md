@@ -108,6 +108,7 @@ August-
     - Issue系統 ok 8/10
     - Timeline 系統 
     - 工作分析系統 
+    - 推播系統
 
 September-
 
