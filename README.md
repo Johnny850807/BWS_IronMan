@@ -102,6 +102,7 @@ August-
   - (水) 遇到問題: 使用SQL Server儲存XML-Based樹時，如何在後端維持資料一致性 ?
     - 請求豐緒 -> 我有空時豐緒沒空豐緒有空時我沒空
     - StackOverFlow -> 得到的答案都是風涼話 -> 用SQL處理XML資料本身是個災難，但是要怎麼存入一棵樹到SQL? 還是得靠XML!
+    - 8/9 還是沒有跟豐緒通到電話
   - (水) Android 前後端開發持續提交
     - 學會 API Blueprint 作為 API文件語言提升溝通效率 -> 讓(林)做Repository層時能參考
     - 登入系統 ok 8/1 
