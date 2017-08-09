@@ -105,6 +105,7 @@ August-
     - 學會 API Blueprint 作為 API文件語言提升溝通效率 -> 讓(林)做Repository層時能參考
     - 登入系統 ok 8/1 
     - 專案系統 ok 8/3
+    - Issue系統 ok 8/10
 
 September-
 
