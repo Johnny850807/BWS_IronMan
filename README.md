@@ -73,7 +73,7 @@ May-
   - (曾) 持續設計ER圖 每次報告時持續完善及更正
   - (水) Android 主要介面開發迅速
     - 目前套用單機模組
-    - 風格固定
+    - APP主題風格已經固定
   - (林) 以友情價請設計師替專研 設計 **TeamPathy**的主要Logo !!
     - 介面設計已經提供完善 管線化支援前端開發
     - 學習 Javascript -> 已提供 Google Chart API 知識 -> For WBS & Gantt API 
