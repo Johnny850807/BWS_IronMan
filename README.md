@@ -88,7 +88,7 @@ June-
   - (林) 完成 Gantt Chart API 以及 WBS Chart API 之相關知識提供
     - 開始協助(水)開發介面
   - (水) 持續學習後端開發 **ASP.NET MVC** 
-    - Android APP開發暫緩 (而且APP架構耦合度高 -> 寫得有點疲倦)
+    - Android APP開發暫緩 (而且APP架構耦合度高 -> 寫得有點疲倦 -> 重新系統設計)
   - **期末考**進度不彰
 
 July-
