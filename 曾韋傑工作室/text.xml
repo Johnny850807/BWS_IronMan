@@ -1,0 +1,19 @@
+﻿
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="GanttChart.xsl"?>
+<TaskGroup Name="測試專案44">
+  <Task Name="哈哈1123" Status="doing" Contribution="150" Dependency="" Description="asdsa" StartDate="2017 31 Jul." EndDate="2017 31 Aug." AssignedId="0" />
+  <Task Name="test1" Status="assigned" Contribution="150" Dependency="" Description="asdsa" StartDate="2017 31 Jul." EndDate="2017 31 Aug." AssignedId="5" />
+  <Task Name="test3" Status="assigned" Contribution="150" Dependency="" Description="asdsa" StartDate="2017 31 Jul." EndDate="2017 31 Aug." AssignedId="5" />
+  <Task Name="哈哈" Status="pass" Contribution="150" Dependency="" Description="asdsa" StartDate="2017 31 Jul." EndDate="2017 31 Aug." AssignedId="20" />
+  <Task Name="哈哈2" Status="assigned" Contribution="150" Dependency="" Description="asdsa" StartDate="2017 31 Jul." EndDate="2017 31 Aug." AssignedId="20" />
+  <Task Name="哈哈3" Status="assigned" Contribution="150" Dependency="" Description="asdsa" StartDate="2017 31 Jul." EndDate="2017 31 Aug." AssignedId="20" />
+  <Task Name="哈哈4" Status="assigned" Contribution="150" Dependency="" Description="asdsa" StartDate="2017 31 Jul." EndDate="2017 31 Aug." AssignedId="20" />
+  <Task Name="哈哈5" Status="assigned" Contribution="150" Dependency="" Description="asdsa" StartDate="2017 31 Jul." EndDate="2017 31 Aug." AssignedId="20" />
+  <Task Name="哈哈6" Status="assigned" Contribution="150" Dependency="" Description="asdsa" StartDate="2017 31 Jul." EndDate="2017 10 Aug." AssignedId="5" />
+  <Task Name="哈哈7" Status="pass" Contribution="150" Dependency="" Description="asdsa" StartDate="2017 31 Jul." EndDate="2017 18 Aug." AssignedId="20" />
+  <Task Name="哈哈8" Status="pending" Contribution="150" Dependency="" Description="asdsa" StartDate="2017 31 Jul." EndDate="2017 18 Sep." AssignedId="20" />
+  <Task Name="哈哈10" Status="pending" Contribution="150" Dependency="" Description="asdsa" StartDate="2017 31 Jul." EndDate="2017 05 Sep." AssignedId="20" />
+  <Task Name="畢旅" Status="none" Contribution="250" Dependency="銘傳資工" Description="畢業旅行" StartDate="2017 31 Jul." EndDate="2017 31 Aug." AssignedId="1" />
+  <TaskGroup Name="銘傳資工" />
+</TaskGroup>
