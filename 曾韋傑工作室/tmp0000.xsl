@@ -43,11 +43,10 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="Task">
+        <xsl:variable name="imgUrl" select='@AssignedUserImageUrl'/>
         rows.push([{v:'<xsl:value-of select="@Name" />', f:'<p style="color:black; font-size:14"><xsl:value-of select="@Name" /></p>
         <xsl:if test="@Status = 'assigned' or @Status = 'pass' or @Status = 'pending' or @Status = 'doing'">
-            <img style="width:38px; height:38px;" class="w3-circle" src="$imgUrl">
-                <xsl:attribute name="src"><xsl:value-of select="@AssignedUserImageUrl"/></xsl:attribute>
-            </img>
+            <img style="width:38px; height:38px;" class="w3-circle" src="$imgUrl"/>
         </xsl:if>
         <xsl:choose>
             <xsl:when test="@Status = 'assigned'">

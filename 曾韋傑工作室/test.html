@@ -1,111 +1,80 @@
-﻿<?xml version="1.0" encoding="UTF-16"?>
+﻿<?xml version="1.0" encoding="UTF-16"?><head><script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><script type="text/javascript">
+                google.charts.load('current', { packages: ["orgchart"] });
+                    google.charts.setOnLoadCallback(drawChart);
 
-<head>
-    <script type="text/javascript" src="http://waterball.tk:8080/TriMago/date.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', { 'packages': ['gantt'] });
-        google.charts.setOnLoadCallback(drawChart);
+                    function drawChart() {
+                        var data = new google.visualization.DataTable();
+                        data.addColumn('string', 'Title');
+                        data.addColumn('string', 'Manager');
+                        data.addColumn('string', 'Description');
 
-        function daysToMilliseconds(days) {
-            return days * 24 * 60 * 60 * 1000;
-        }
-
-        function getDiffMillisecondsFromTwoDate(date1, date2) {
-            return daysToMilliseconds(getDiffDaysFromTwoDate(date1, date2));
-        }
-
-        function getDiffDaysFromTwoDate(date1, date2) {
-            var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            return diffDays;
-        }
-
-        function drawChart() {
-            var date_pattern = 'yyyy d NNN.';
-            var earliestDate = getDateFromFormat("5000 1 Jan.", date_pattern);
-            var largestDate = getDateFromFormat("1997 1 Jan.", date_pattern);
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Task ID');
-            data.addColumn('string', 'Task Name');
-            data.addColumn('string', 'Resource');
-            data.addColumn('date', 'Start Date');
-            data.addColumn('date', 'End Date');
-            data.addColumn('number', 'Duration');
-            data.addColumn('number', 'Percent Complete');
-            data.addColumn('string', 'Dependencies');
-
-            var rows = [];
-
+                        var rows = [];
+                        
+        rows.push(['','','']);
+        
+    
+        rows.push(['','','']);
+        
+        
+        rows.push(['','','']);
+        
             
-
-            var startDate = getDateFromFormat('2017 31 Jul.', date_pattern);
-            var endDate = getDateFromFormat('2017 10 Aug.', date_pattern);
-            var dependency = '';
-            if (dependency.length == 0)
-                dependency = null;
-            if (compareTwoDates(largestDate, endDate) == -1)
-                largestDate = endDate;
-            if (compareTwoDates(earliestDate, startDate) == 1)
-                earliestDate = startDate;
-
-            rows.push(['', '', '',
-                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
-
-            var startDate = getDateFromFormat('2017 31 Jul.', date_pattern);
-            var endDate = getDateFromFormat('2017 18 Aug.', date_pattern);
-            var dependency = '';
-            if (dependency.length == 0)
-                dependency = null;
-            if (compareTwoDates(largestDate, endDate) == -1)
-                largestDate = endDate;
-            if (compareTwoDates(earliestDate, startDate) == 1)
-                earliestDate = startDate;
-
-            rows.push(['', '', '',
-                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
-
+        rows.push(['','','Xml define']);
+    
             
+        rows.push(['','','時程分析規劃']);
+    
+            
+        rows.push(['','','網路餅乾']);
+    
+        
+        
+        rows.push(['','','']);
+        
+            
+        rows.push(['','','API開發']);
+    
+        
+    
 
-            var startDate = getDateFromFormat('2017 31 Jul.', date_pattern);
-            var endDate = getDateFromFormat('2017 31 Aug.', date_pattern);
-            var dependency = '銘傳資工';
-            if (dependency.length == 0)
-                dependency = null;
-            if (compareTwoDates(largestDate, endDate) == -1)
-                largestDate = endDate;
-            if (compareTwoDates(earliestDate, startDate) == 1)
-                earliestDate = startDate;
+    
+        rows.push(['','','']);
+        
+        
+        rows.push(['','','']);
+        
+            
+        rows.push(['','','展示品']);
+    
+            
+        rows.push(['','','fbdgg']);
+    
+            
+        rows.push(['','','展示']);
+    
+            
+        rows.push(['','','報告詮釋']);
+    
+        
+        
+        rows.push(['','','']);
+        
+            
+        rows.push(['','','製片功夫']);
+    
+            
+        rows.push(['','','導演']);
+    
+        
+    
 
-            rows.push(['', '', '',
-                startDate, endDate, daysToMilliseconds(startDate, endDate), 100, dependency]);
+                        data.addRows(rows);
 
-
-            data.addRows(rows);
-            var garttWidth = 154 + getDiffDaysFromTwoDate(earliestDate, largestDate) * 10;
-            var options = {
-                height: rows.length * 60,
-                width: garttWidth,
-                gantt: {
-                    innerGridHorizLine: {
-                        strokeWidth: 2
-                    },
-                },
-                backgroundColor: { fill: '#F8F9FA' }
-            };
-
-            var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
-
-            chart.draw(data, options);
-        }
-    </script>
-    <style>
-        body {
-            background-color: '#01190C';
-        }
-    </style>
-</head>
-
-<body>
-    <div id="chart_div"></div>
-</body>
+                        var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+                        chart.draw(data, { allowHtml: true });
+                    }
+            </script><style>
+			body{
+				background-color:'#01190C';
+			}
+			</style></head><body><div id="chart_div"></div></body>
